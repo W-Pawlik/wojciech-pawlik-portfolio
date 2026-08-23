@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Same gate as locally: format, lint, types, tests.
+      - run: pnpm check
+
+      # A production build requires an https origin — it is baked into canonical,
+      # hreflang and the sitemap of every prerendered locale. CI only proves the build
+      # compiles, so the value just has to be the real production origin, not a secret.
+      # TODO(brief): podmień na docelową domenę projektu.
+      - run: pnpm build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://example.com

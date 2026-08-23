@@ -1,0 +1,262 @@
+/**
+ * Design tokens — the single source of truth for the site's visual language.
+ *
+ * Everything here becomes a Tailwind utility (`bg-surface`, `text-display-hero`,
+ * `py-section`, `ease-out-expo`, ...). Components must not hardcode hex values,
+ * pixel type sizes or bezier curves; if a value is missing, add a token here.
+ *
+ * Direction: **Editorial Engineering** — warm editorial surfaces, tight display
+ * typography, hairlines instead of shadows, one signal accent. Values come from the
+ * art-direction document and are recorded in
+ * .agents/decisions/0011-brand-values-in-tokens.md; the reasoning behind each role is
+ * in .agents/01-brand-and-design.md.
+ *
+ * Two rules this palette lives by, both verified on /pl/system:
+ * - every colour used for *reading* clears AA on the surfaces it is allowed on,
+ * - the accent is a signal: fills, markers and text on dark — never small text on light
+ *   (use `accent-strong` for that).
+ *
+ * Reference: .agents/02-design-system.md
+ */
+
+@theme {
+  /* ---------------------------------------------------------------------------
+   * Surfaces. Warm off-white, never pure white: #ffffff reads as a SaaS product,
+   * the warm base reads editorial. Depth comes from the small steps between
+   * canvas / surface / raised, never from large shadows.
+   * ------------------------------------------------------------------------- */
+  --color-canvas: #f3f0e9;
+  /* Second surface: panels, forms, single case-study fragments. Never every other
+     section — the rhythm comes from spacing and tone, not from stripes. */
+  --color-canvas-subtle: #e9e5dc;
+  /* Third step, derived (the art direction defines two light surfaces). Kept light
+     enough that content-secondary still clears AA on it. */
+  --color-canvas-deep: #e5e1d7;
+  --color-surface: #f8f6f1;
+  --color-surface-raised: #fdfcfa;
+
+  /* The tonal interlude. This is the CodeBros mode: same grid, same type, same radii,
+     inverted tone — "we are going deeper into engineering now". One or two sections
+     plus the footer. */
+  --color-canvas-invert: #11120f;
+  /* Surface on the dark tone. Used sparingly — a panel inside a dark section. */
+  --color-canvas-invert-surface: #1a1b18;
+
+  /* Hairlines. Borders are the load-bearing separator in this system; shadows are not
+     part of it at all. */
+  --color-line: #d5d1c7;
+  /* Stronger hairline: secondary button, emphasised separator. */
+  --color-line-strong: #b9b6ad;
+  /* Boundary of an interactive control whose border is its only affordance — a form
+     field. Dark enough to clear 3:1 (WCAG 1.4.11), which the two hairlines above do
+     not, on purpose: they are decoration, this one is information. */
+  --color-line-control: #85827a;
+  --color-line-invert: #30312d;
+  --color-line-invert-strong: #45463f;
+
+  /* ---------------------------------------------------------------------------
+   * Text hierarchy. On this warm base the palette carries two AA reading levels plus
+   * a decorative one — so the steps are assigned by *use*, not by taste:
+   *
+   *   content            headings, critical copy          AA everywhere
+   *   content-secondary  body copy (default for prose)    AA on every light surface
+   *   content-tertiary   metadata, labels, captions       AA on canvas + surface only
+   *   content-ghost      decoration, non-essential trace  below AA on purpose
+   *   content-dim        resting state of animated text   not a colour to read
+   *
+   * BUILD TRACE consequence: a label that carries meaning (`02 / SELECTED WORK`) is
+   * tertiary; a purely graphical mark (coordinates, `SYSTEM_02`, index digits next to a
+   * rule) may be ghost. Ratios are computed live on /system.
+   * ------------------------------------------------------------------------- */
+  --color-content: #11120f;
+  /* Body copy. The default for anything meant to be read. */
+  --color-content-secondary: #616259;
+  /* Metadata, captions, mono eyebrow labels. Not for use on canvas-subtle/deep. */
+  --color-content-tertiary: #6a6b64;
+  /* Decoration only — never for prose. Deliberately below AA. */
+  --color-content-ghost: #93938c;
+  /* Resting state of text lit by scroll. Not a colour to read. */
+  --color-content-dim: #b4b3aa;
+
+  --color-content-invert: #f3f0e9;
+  /* Hex rather than rgba: the contrast table can only compute a composited colour it
+     can actually see. */
+  --color-content-invert-secondary: #a7a79f;
+  --color-content-invert-tertiary: #8a8b83;
+
+  /* ---------------------------------------------------------------------------
+   * Accent — Signal Orange. Technical, physical, slightly industrial; deliberately
+   * not the blue of SaaS nor the neon green of AI decks. Used like a signal, not like
+   * decoration: at most one strong accent element per view (plus the navbar CTA), and
+   * roughly 5–8% of the visual surface at most. The design has to still work with the
+   * accent removed entirely.
+   * ------------------------------------------------------------------------- */
+  --color-accent: #ff5a36;
+  /* Hover of an accent fill. Also the focus ring: it is the one value in the family
+     that clears 3:1 against both the light canvas and the dark interlude. */
+  --color-accent-hover: #e94c2c;
+  /* The same signal, darkened until it is AA as *text* on light surfaces. Small accent
+     type, accent links and accent underlines use this; the bright orange above stays for
+     fills, markers and text on the dark tone. */
+  --color-accent-strong: #b03614;
+  /* Text placed *on* the accent — dark, because light text on Signal Orange is 2.7:1. */
+  --color-accent-contrast: #11120f;
+  /* Very quiet highlight behind a single piece of information. */
+  --color-accent-subtle: #f6e2d9;
+
+  /* Functional, deliberately outside the brand palette: with an orange accent a red
+     error would read as a call to action, so the error colour is a dark wine that
+     cannot be mistaken for a CTA. */
+  --color-danger: #8e1f2f;
+
+  /* ---------------------------------------------------------------------------
+   * Display typography — Instrument Sans, weight 500 throughout. Weights 700–900 are
+   * out of the system: at these sizes they read as a shout, and the direction is
+   * confident, not loud. Large steps carry tight line height and negative tracking,
+   * otherwise a big heading falls apart into separate words.
+   * ------------------------------------------------------------------------- */
+
+  /* DISPLAY XL — one per page, at most. Capped against viewport height as well as
+     width, so a hero plus a CTA row still fits a laptop window. 48px → 118px. */
+  --text-display-statement: clamp(3rem, min(7.3vw, 12vh), 7.375rem);
+  --text-display-statement--line-height: 0.9;
+  --text-display-statement--letter-spacing: -0.055em;
+  --text-display-statement--font-weight: 500;
+
+  /* H1. 46px → 96px. */
+  --text-display-hero: clamp(2.875rem, min(6vw, 10.5vh), 6rem);
+  --text-display-hero--line-height: 0.94;
+  --text-display-hero--letter-spacing: -0.045em;
+  --text-display-hero--font-weight: 500;
+
+  /* H2 — section headings. 36px → 68px. */
+  --text-display-section: clamp(2.25rem, 4.2vw, 4.25rem);
+  --text-display-section--line-height: 1;
+  --text-display-section--letter-spacing: -0.038em;
+  --text-display-section--font-weight: 500;
+
+  /* H3 — row titles (the service and project records this system prefers to cards).
+     27px → 40px. */
+  --text-display-project: clamp(1.6875rem, 2.6vw, 2.5rem);
+  --text-display-project--line-height: 1.05;
+  --text-display-project--letter-spacing: -0.025em;
+  --text-display-project--font-weight: 500;
+
+  /* Small titles: form legends, the rare card, the wordmark in the navbar. */
+  --text-display-card: clamp(1.375rem, 1.9vw, 1.75rem);
+  --text-display-card--line-height: 1.15;
+  --text-display-card--letter-spacing: -0.02em;
+  --text-display-card--font-weight: 500;
+
+  /* Editorial price and figure. Pricing is set as type on a rule, never as three
+     pricing cards. */
+  --text-numeric: clamp(2.25rem, 5vw, 4.25rem);
+  --text-numeric--line-height: 0.95;
+  --text-numeric--letter-spacing: -0.04em;
+  --text-numeric--font-weight: 500;
+
+  /* Pulled quote. Weight 400 on purpose: a real sentence from a real client reads
+     editorial, not like a marketing pull-quote. */
+  --text-quote: clamp(1.625rem, 2.8vw, 2.5rem);
+  --text-quote--line-height: 1.25;
+  --text-quote--letter-spacing: -0.02em;
+  --text-quote--font-weight: 400;
+
+  /* ---------------------------------------------------------------------------
+   * Body — nothing meant to be read drops below 15px.
+   * ------------------------------------------------------------------------- */
+  /* Lead paragraph. 20px → 26px, measured against --container-measure (720px). */
+  --text-body-lg: clamp(1.25rem, 1.6vw, 1.625rem);
+  --text-body-lg--line-height: 1.42;
+  --text-body-lg--letter-spacing: -0.012em;
+
+  /* 16px → 18px. */
+  --text-body: clamp(1rem, 0.6vw, 1.125rem);
+  --text-body--line-height: 1.6;
+
+  --text-body-sm: 0.9375rem;
+  --text-body-sm--line-height: 1.5;
+
+  /* ---------------------------------------------------------------------------
+   * Utility type — IBM Plex Mono. Labels, numbering, technical metadata: the BUILD
+   * TRACE layer. Never for prose, never for a whole heading.
+   * ------------------------------------------------------------------------- */
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.04em;
+  --text-label--font-weight: 500;
+
+  --text-meta: 0.6875rem;
+  --text-meta--line-height: 1.4;
+  --text-meta--letter-spacing: 0.04em;
+  --text-meta--font-weight: 500;
+
+  /* Instrument Sans, 15px. Buttons are quiet objects here. */
+  --text-button: 0.9375rem;
+  --text-button--line-height: 1;
+  --text-button--letter-spacing: -0.01em;
+  --text-button--font-weight: 500;
+
+  /* ---------------------------------------------------------------------------
+   * Layout — 1360px content shell inside a 1600px page maximum, 12 / 8 / 4 columns,
+   * measure capped at 720px.
+   * ------------------------------------------------------------------------- */
+  --container-shell: 85rem;
+  --container-wide: 100rem;
+  --container-measure: 45rem;
+
+  --breakpoint-3xl: 100rem;
+
+  /* Section rhythm: 128px standard, 160px between chapters, 200px for the big
+     transition, and two tighter steps for blocks inside a section. Mobile bottoms out
+     at 88–112px — the page still has to breathe on a phone. The five steps exist to be
+     interleaved (quiet → bold → quiet → visual → technical → quiet → conversion). */
+  --spacing-section-xl: clamp(7rem, 13vw, 12.5rem);
+  --spacing-section-lg: clamp(6.25rem, 10.5vw, 10rem);
+  --spacing-section: clamp(5.5rem, 8.5vw, 8rem);
+  --spacing-section-sm: clamp(4.5rem, 6.5vw, 6.5rem);
+  --spacing-section-tight: clamp(3rem, 4.5vw, 4.5rem);
+
+  /* Side padding: 20px mobile, 24px tablet, 32–48px desktop. */
+  --spacing-gutter: clamp(1.25rem, 3.5vw, 3rem);
+  /* Column gap: 12px mobile, 20px tablet, 24–32px desktop. */
+  --spacing-grid: clamp(0.75rem, 1.6vw, 2rem);
+
+  /* ---------------------------------------------------------------------------
+   * Radii — deliberately small. Large rounded cards are the signature of the AI/SaaS
+   * look this direction is defined against; the default here is a square corner.
+   * ------------------------------------------------------------------------- */
+  /* Buttons and form controls. */
+  --radius-control: 0.5rem;
+  /* Small functional blocks: badge, chip, the rare card (never larger than this). */
+  --radius-marker: 0.375rem;
+  /* Modal and drawer. */
+  --radius-panel: 0.75rem;
+  /* Media stays almost square — the crop is the frame. */
+  --radius-image: 0.25rem;
+
+  /* ---------------------------------------------------------------------------
+   * Easing — decisive start, soft settle. `out-quint` is the primary curve of this
+   * direction, `out-expo` the secondary one; symmetric ease-in-out is absent on
+   * purpose. Mirrored in src/lib/motion/tokens.ts; tokens.test.ts fails if the two
+   * drift apart.
+   * ------------------------------------------------------------------------- */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/**
+ * Font families resolve through --font-brand-* (declared in base.css), which point
+ * at the next/font variables set up in src/app/[locale]/layout.tsx. One indirection,
+ * so swapping a typeface touches two files and no components.
+ *
+ * Display and sans are the same family here (Instrument Sans) — the scale, not a second
+ * typeface, carries the contrast. Mono is IBM Plex Mono, for the BUILD TRACE layer only.
+ */
+@theme inline {
+  --font-display: var(--font-brand-display);
+  --font-sans: var(--font-brand-sans);
+  --font-mono: var(--font-brand-mono);
+}

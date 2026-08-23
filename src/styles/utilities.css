@@ -1,0 +1,151 @@
+/**
+ * Custom utilities — only for things Tailwind cannot already express.
+ * Before adding one, check that a composition of existing utilities or a UI
+ * primitive in src/components/ui would not be the better home.
+ */
+
+/* Escape the shell container and run to both viewport edges. */
+@utility bleed {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+/**
+ * Sticky navbar surface: the warm canvas at 92% behind a 12px blur, per the art
+ * direction. A utility rather than Tailwind classes because `bg-canvas/92` would snap to
+ * an opacity step and the blur radius is a fixed brand value (base.css owns both).
+ */
+@utility navbar-surface {
+  background-color: var(--navbar-scrolled-surface);
+  backdrop-filter: blur(var(--navbar-scrolled-blur));
+}
+
+/**
+ * BUILD TRACE — the signature element. A hairline that draws itself once the section
+ * comes into view: the construction line of a technical drawing, not a decoration.
+ * Toggled by the same IntersectionObserver as the reveals (ADR-0009).
+ */
+@utility trace-rule {
+  display: block;
+  height: 1px;
+  width: 100%;
+  transform-origin: left;
+  background-color: var(--color-line);
+}
+
+@utility trace-rule-shown {
+  animation: trace-draw var(--duration-hero) var(--ease-out-quint) both;
+}
+
+@keyframes trace-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Horizontal sliders scroll without a visible bar. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Row of text that animates in from behind a mask. The child does the moving. */
+@utility mask-row {
+  display: block;
+  overflow: hidden;
+  /* Descenders must not be clipped by the mask. */
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+/**
+ * Scroll reveal, in CSS. The class is toggled by one shared IntersectionObserver
+ * (`src/hooks/use-in-view.ts`) instead of by an animation library: the content then
+ * appears as soon as the small app chunk hydrates rather than after the library has
+ * been fetched, parsed and mounted. See .agents/decisions/0009-css-reveals.md.
+ */
+@utility reveal-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+@utility reveal-shown {
+  animation: reveal-in var(--duration-reveal) var(--ease-out-quint) both;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/**
+ * Hero entrance. Pure CSS and no JavaScript at all, so the first screen paints with
+ * the page instead of waiting for hydration — the hero is the one place where that
+ * delay is unmissable. Stagger comes from delay steps, not from a timeline.
+ *
+ * `both` fill mode keeps the from-state before the delay elapses, so nothing flashes.
+ */
+@utility hero-in {
+  animation: reveal-in var(--duration-reveal) var(--ease-out-quint) both;
+}
+
+@utility hero-in-mask {
+  animation: mask-in var(--duration-hero) var(--ease-out-quint) both;
+}
+
+@keyframes mask-in {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/** Navbar fade-in. CSS, so the bar does not wait for hydration either. */
+@utility navbar-in {
+  animation: navbar-in var(--duration-slow) var(--ease-out-quart) both;
+}
+
+@keyframes navbar-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/**
+ * Reduced motion: everything above collapses to "already there". The global block in
+ * base.css shortens durations, but an animation that starts from `opacity: 0` still has
+ * to be told to skip its from-state — otherwise the content never appears.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden,
+  .reveal-shown,
+  .hero-in,
+  .hero-in-mask,
+  .navbar-in,
+  .trace-rule-shown {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    animation: none;
+  }
+}

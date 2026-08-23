@@ -1,0 +1,131 @@
+/**
+ * Base layer — document defaults only. Anything component-specific belongs in
+ * the component, expressed with Tailwind utilities.
+ */
+
+:root {
+  /**
+   * Typeface hook. The real families are loaded with next/font in
+   * src/app/[locale]/layout.tsx and reach the theme through these three
+   * variables — one indirection, so a typeface swap touches two files.
+   *
+   * Display and sans are deliberately the same family: **Instrument Sans**. The
+   * contrast in this direction comes from the size jump between a 96px heading and
+   * an 11px mono label, not from a second display face. **IBM Plex Mono** carries the
+   * BUILD TRACE layer — labels, numbering, coordinates, dates — and nothing else.
+   *
+   * The fallbacks matter: they are what renders if the self-hosted file fails.
+   */
+  /* The `var(..., fallback)` form matters: if next/font is ever unwired the variables
+   * stop existing, and a bare `var(--missing)` in a font-family list invalidates the
+   * whole declaration instead of falling through to the next family. */
+  --font-brand-display: var(--font-sans-family, ui-sans-serif), system-ui, sans-serif;
+  --font-brand-sans: var(--font-sans-family, ui-sans-serif), system-ui, sans-serif;
+  --font-brand-mono: var(--font-mono-family, ui-monospace), 'Consolas', monospace;
+
+  /* Duration scale. Not a Tailwind theme namespace, so consume it as
+   * `duration-[var(--duration-base)]` in CSS transitions.
+   * Mirrored in src/lib/motion/tokens.ts for JS-driven animation.
+   *
+   * Mapped onto the art direction: `fast` is hover (160–220ms), `base` is UI
+   * (240–320ms), `slow` is the drawer (≈420ms), `reveal` is a section reveal
+   * (550–800ms) and `hero` is the largest transition allowed (800–1200ms). Nothing on
+   * this site animates for longer than `hero`. */
+  --duration-instant: 120ms;
+  --duration-fast: 200ms;
+  --duration-base: 320ms;
+  --duration-slow: 440ms;
+  --duration-reveal: 700ms;
+  --duration-hero: 1100ms;
+
+  /* Navbar height at rest and once the page has been scrolled. The bar shrinks rather
+   * than turning into a floating pill. */
+  --navbar-height: 5rem;
+  --navbar-height-scrolled: 4rem;
+
+  /* Sticky navbar background once the page has been scrolled: the warm canvas at 92%
+   * behind a small blur. Written out because `bg-canvas/92` would round to a Tailwind
+   * opacity step and this exact value is part of the art direction. */
+  --navbar-scrolled-surface: rgb(243 240 233 / 0.92);
+  --navbar-scrolled-blur: 12px;
+}
+
+@layer base {
+  html {
+    /* No `scroll-behavior: smooth`, and that is a decision rather than an omission:
+     * the CSS version gives no control over duration, so an anchor jump down the page
+     * animates for well over a second and reads as lag (ADR-0004, ADR-0009). */
+    /* Anchor links must not land under the sticky navbar. */
+    scroll-padding-top: var(--navbar-height);
+    background-color: var(--color-canvas);
+    -webkit-tap-highlight-color: transparent;
+    /* Declared here as well as on `body`, deliberately. The rule that lets a `body`
+     * value reach the viewport only applies while the root element's own overflow is
+     * `visible`, so the net below is one stylesheet edit away from being switched off.
+     * Mobile engines are the ones that punish that. */
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-content);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    /* Horizontal overflow is always a bug here — full-bleed media must be clipped
+     * by its own container, not by the document. */
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible focus ring for every keyboard-reachable element.
+   *
+   * `accent-hover` rather than `accent`: it is the one value in the accent family that
+   * clears 3:1 (WCAG 1.4.11) against *both* the warm canvas and the dark interlude, and
+   * the ring has to stay visible in the CodeBros section too. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-hover);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-contrast);
+  }
+
+  /* Media is always block-level and never overflows its box. */
+  img,
+  video,
+  canvas {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/**
+ * Reduced motion. This is the CSS half of the contract; the JS half lives in
+ * useReducedMotion() and the GSAP setup. See .agents/05-animation-system.md.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
