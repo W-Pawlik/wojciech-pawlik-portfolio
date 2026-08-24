@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { Container } from '@/components/ui/container'
-import { NAV_ITEM_ANCHORS, NAV_ITEM_KEYS, SECTION_IDS } from '@/data/navigation'
+import { NAV_ITEM_KEYS, NAV_ITEM_ROUTES } from '@/data/navigation'
 import { ROUTES } from '@/data/routes'
 import { siteConfig } from '@/data/site'
 import { withLocale } from '@/i18n/config'
@@ -21,8 +21,7 @@ export async function Footer() {
   const dict = await getDictionary()
   const locale = await getLocale()
 
-  const home = withLocale(ROUTES.home, locale)
-  const { email } = siteConfig.contact
+  const { email, phone, phoneHref } = siteConfig.contact
 
   return (
     <footer className="border-t border-line-invert bg-canvas-invert py-section-sm text-content-invert">
@@ -43,7 +42,7 @@ export async function Footer() {
               {NAV_ITEM_KEYS.map((key) => (
                 <li key={key}>
                   <Link
-                    href={`${home}#${NAV_ITEM_ANCHORS[key]}`}
+                    href={withLocale(NAV_ITEM_ROUTES[key], locale)}
                     className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-content-invert"
                   >
                     {dict.nav.items[key]}
@@ -52,7 +51,7 @@ export async function Footer() {
               ))}
               <li>
                 <Link
-                  href={`${home}#${SECTION_IDS.contact}`}
+                  href={withLocale(ROUTES.contact, locale)}
                   className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-content-invert"
                 >
                   {dict.footer.contactTitle}
@@ -74,14 +73,24 @@ export async function Footer() {
             <p className="font-mono text-meta text-content-invert-tertiary uppercase">
               {dict.footer.contactTitle}
             </p>
-            {email ? (
+            {email || phone ? (
               <address className="mt-5 not-italic">
-                <a
-                  href={`mailto:${email}`}
-                  className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-accent"
-                >
-                  {email}
-                </a>
+                {email && (
+                  <a
+                    href={`mailto:${email}`}
+                    className="block text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-accent"
+                  >
+                    {email}
+                  </a>
+                )}
+                {phone && (
+                  <a
+                    href={phoneHref}
+                    className="mt-2 block text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-accent"
+                  >
+                    {phone}
+                  </a>
+                )}
               </address>
             ) : (
               /* Visible on purpose: an unfinished footer has to be obvious to the person

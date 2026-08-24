@@ -2,18 +2,9 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { SectionHeader } from '@/components/ui/section-header'
 import { SECTION_IDS } from '@/data/navigation'
-import { PROCESS_STEPS } from '@/data/process'
+import { PROCESS_PHASES } from '@/data/process'
 import { getDictionary } from '@/i18n/server'
-import { formatOrdinal } from '@/lib/utils/format'
 
-/**
- * The process is the part of the offer that removes purchase risk: the visitor learns what
- * happens after they send the form, and that development is not also an improvised attempt
- * at designing the product.
- *
- * Seven steps as a vertical editorial list, not a seven-card timeline — seven cards would
- * make the process look like a product feature grid (.agents/01-brand-and-design.md).
- */
 export async function ProcessSection() {
   const dict = await getDictionary()
 
@@ -27,24 +18,51 @@ export async function ProcessSection() {
           aside={<p>{dict.process.intro}</p>}
         />
 
-        <ol className="mt-20 border-t border-line">
-          {PROCESS_STEPS.map((step, index) => (
-            <li
-              key={step}
-              className="grid grid-cols-12 items-baseline gap-grid border-b border-line py-7"
-            >
-              <span className="col-span-2 font-mono text-meta text-content-tertiary uppercase lg:col-span-1">
-                {formatOrdinal(index + 1)}
-              </span>
-              <h3 className="col-span-10 font-display text-display-card lg:col-span-4">
-                {dict.process.steps[step].title}
-              </h3>
-              <p className="col-span-12 mt-2 text-body text-content-secondary lg:col-span-6 lg:col-start-6 lg:mt-0">
-                {dict.process.steps[step].body}
-              </p>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-20 grid border-t border-line lg:grid-cols-3">
+          {PROCESS_PHASES.map((phase, phaseIndex) => {
+            const copy = dict.process.phases[phase.key]
+            return (
+              <article
+                key={phase.key}
+                className="border-b border-line px-0 py-10 lg:border-r lg:border-b-0 lg:px-7 lg:py-8 first:lg:pl-0 last:lg:border-r-0 last:lg:pr-0"
+              >
+                <p className="font-mono text-meta text-accent uppercase">
+                  {String(phaseIndex + 1).padStart(2, '0')} / {copy.label}
+                </p>
+                <h2 className="mt-6 max-w-[18rem] font-display text-display-project">
+                  {copy.title}
+                </h2>
+
+                <ol className="mt-8 border-l border-line pl-5">
+                  {phase.steps.map((step, index) => (
+                    <li key={step} className="relative pb-5 last:pb-0">
+                      <p className="font-mono text-label text-content uppercase">
+                        {dict.process.steps[step].title}
+                      </p>
+                      {index < phase.steps.length - 1 && (
+                        <span
+                          aria-hidden="true"
+                          className="absolute -bottom-0.5 -left-[1.35rem] text-meta text-accent"
+                        >
+                          ↓
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+
+                <p className="mt-8 max-w-[20rem] text-body text-content-secondary">
+                  {copy.statement}
+                </p>
+                <p className="mt-8 border-t border-line pt-4 font-mono text-meta uppercase">
+                  <span className="text-accent">{copy.outputLabel} / </span>
+                  <span className="text-content">{copy.output}</span>
+                </p>
+                <p className="mt-2 text-body-sm text-content-tertiary">{copy.outputDetail}</p>
+              </article>
+            )
+          })}
+        </div>
       </Container>
     </Section>
   )

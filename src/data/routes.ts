@@ -25,8 +25,21 @@ type Route = {
 
 export const ROUTES = {
   home: '/',
+  work: '/work',
+  services: '/services',
+  pricing: '/pricing',
+  about: '/about',
+  contact: '/contact',
+  planik: '/work/planik',
+  creditRisk: '/work/credit-risk-system',
   /** Internal design-system reference. Deliberately absent from `INDEXABLE_ROUTES`. */
   system: '/system',
+} as const
+
+export const SERVICE_ROUTES = {
+  websites: `${ROUTES.services}/websites`,
+  systems: `${ROUTES.services}/systems`,
+  ai: `${ROUTES.services}/ai`,
 } as const
 
 export type RouteKey = keyof typeof ROUTES
@@ -37,4 +50,16 @@ export type RouteKey = keyof typeof ROUTES
  * `/system` never appears here: it is excluded from the index by metadata, not by
  * robots.txt — those two mechanisms are mutually exclusive (.agents/08).
  */
-export const INDEXABLE_ROUTES: readonly Route[] = [{ path: ROUTES.home, priority: 1 }]
+export const INDEXABLE_ROUTES: readonly Route[] = [
+  { path: ROUTES.home, priority: 1 },
+  { path: ROUTES.work, priority: 0.8 },
+  { path: ROUTES.services, priority: 0.8 },
+  { path: ROUTES.pricing, priority: 0.7 },
+  { path: ROUTES.about, priority: 0.7 },
+  { path: ROUTES.planik, priority: 0.7 },
+  { path: ROUTES.creditRisk, priority: 0.7 },
+  { path: ROUTES.contact, priority: 0.6 },
+  { path: SERVICE_ROUTES.websites, priority: 0.65 },
+  { path: SERVICE_ROUTES.systems, priority: 0.65 },
+  { path: SERVICE_ROUTES.ai, priority: 0.65 },
+]

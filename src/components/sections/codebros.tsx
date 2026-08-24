@@ -3,8 +3,12 @@ import { Headline } from '@/components/ui/headline'
 import { MediaSlot } from '@/components/ui/media-slot'
 import { Section } from '@/components/ui/section'
 import { SectionLabel } from '@/components/ui/section-label'
+import { TextLink } from '@/components/ui/text-link'
 import { SECTION_IDS } from '@/data/navigation'
+import { ROUTES } from '@/data/routes'
 import { getDictionary } from '@/i18n/server'
+import { getLocale } from '@/i18n/server'
+import { withLocale } from '@/i18n/config'
 
 /**
  * The narrative turn of the page: light gives way to dark, and the visitor learns that a
@@ -23,6 +27,7 @@ export async function CodeBrosSection() {
   const dict = await getDictionary()
   const transition = dict.codebrosTransition
   const copy = dict.codebros
+  const locale = await getLocale()
 
   return (
     <Section id={SECTION_IDS.codebros} tone="invert" spacing="xl">
@@ -71,7 +76,14 @@ export async function CodeBrosSection() {
 
         <div className="mt-20 grid grid-cols-12 gap-grid">
           <div className="col-span-12 lg:col-span-7">
-            <MediaSlot id="IMG-03" ratio="16 / 9" label={copy.mediaPending} tone="invert" />
+            <MediaSlot
+              id="IMG-03"
+              ratio="16 / 9"
+              src="/images/zdjecie_CodeBros_konkurs.jpg"
+              alt={copy.mediaAlt}
+              label={copy.mediaPending}
+              tone="invert"
+            />
           </div>
 
           <div className="col-span-12 mt-10 lg:col-span-4 lg:col-start-9 lg:mt-0">
@@ -80,7 +92,7 @@ export async function CodeBrosSection() {
             </p>
 
             <ul className="mt-6">
-              {(['creditRisk', 'planik'] as const).map((key) => (
+              {(['planik', 'creditRisk'] as const).map((key) => (
                 <li key={key} className="border-t border-line-invert py-6 last:pb-0">
                   <h3 className="font-display text-display-card text-content-invert">
                     {copy.proofs[key].title}
@@ -88,6 +100,18 @@ export async function CodeBrosSection() {
                   <p className="mt-3 text-body-sm text-content-invert-secondary">
                     {copy.proofs[key].body}
                   </p>
+                  <TextLink
+                    href={withLocale(
+                      `${ROUTES.work}/${key === 'creditRisk' ? 'credit-risk-system' : key}`,
+                      locale,
+                    )}
+                    data-return-scroll
+                    tone="invert"
+                    accent
+                    className="mt-5"
+                  >
+                    {dict.work.caseStudyCta}
+                  </TextLink>
                 </li>
               ))}
             </ul>

@@ -52,9 +52,9 @@
 
 @layer base {
   html {
-    /* No `scroll-behavior: smooth`, and that is a decision rather than an omission:
-     * the CSS version gives no control over duration, so an anchor jump down the page
-     * animates for well over a second and reads as lag (ADR-0004, ADR-0009). */
+    /* Anchor navigation is intentionally calm on this editorial landing page. The
+     * reduced-motion block below restores an immediate jump for visitors who request it. */
+    scroll-behavior: smooth;
     /* Anchor links must not land under the sticky navbar. */
     scroll-padding-top: var(--navbar-height);
     background-color: var(--color-canvas);

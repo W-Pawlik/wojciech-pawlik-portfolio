@@ -10,16 +10,21 @@
  */
 
 export type PricingRow = {
-  key: 'website' | 'websiteCms' | 'advanced' | 'system' | 'ai'
+  key: 'landing' | 'websiteCms' | 'advanced' | 'system' | 'ai'
   from: number
   to?: number
   plus?: boolean
+  quote?: boolean
 }
 
 export const PRICING_ROWS: readonly PricingRow[] = [
-  { key: 'website', from: 5000, to: 8000 },
-  { key: 'websiteCms', from: 8000, to: 18000 },
-  { key: 'advanced', from: 15000, to: 30000, plus: true },
-  { key: 'system', from: 30000 },
-  { key: 'ai', from: 8000 },
+  { key: 'landing', from: 1200 },
+  { key: 'advanced', from: 1400 },
+  { key: 'websiteCms', from: 1400 },
+  { key: 'system', from: 0, quote: true },
+  { key: 'ai', from: 0, quote: true },
 ]
+
+export const AFTERCARE_OFFER = {
+  maintenance: 150,
+} as const

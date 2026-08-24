@@ -18,6 +18,14 @@ export const PROCESS_STEPS = [
 
 export type ProcessStep = (typeof PROCESS_STEPS)[number]
 
+export const PROCESS_PHASES = [
+  { key: 'direction', steps: ['understand', 'define', 'design'] },
+  { key: 'production', steps: ['build', 'review'] },
+  { key: 'release', steps: ['refine', 'launch'] },
+] as const
+
+export type ProcessPhase = (typeof PROCESS_PHASES)[number]
+
 /** What differentiates the offer, in three lines. Shown right after the hero. */
 export const PRINCIPLES = ['businessFirst', 'customByDefault', 'builtToShip'] as const
 

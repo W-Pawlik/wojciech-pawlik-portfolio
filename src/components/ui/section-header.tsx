@@ -14,6 +14,7 @@ type SectionHeaderProps = {
   tone?: 'default' | 'invert'
   className?: string
   headlineClassName?: string
+  headlineAs?: 'h1' | 'h2'
 }
 
 /**
@@ -32,6 +33,7 @@ export function SectionHeader({
   tone = 'default',
   className,
   headlineClassName,
+  headlineAs = 'h2',
 }: SectionHeaderProps) {
   return (
     <div className={cn('grid grid-cols-12 gap-grid', className)}>
@@ -39,7 +41,7 @@ export function SectionHeader({
         <SectionLabel index={index} tone={tone} className="mb-7">
           {label}
         </SectionLabel>
-        <Headline lines={headlineLines} className={headlineClassName} />
+        <Headline lines={headlineLines} as={headlineAs} className={headlineClassName} />
       </div>
 
       {aside && (

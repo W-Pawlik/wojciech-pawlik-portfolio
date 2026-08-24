@@ -70,11 +70,22 @@ Obecnie: hero używa CSS `hero-in` z templatki (paint bez hydracji), reszta jest
 
 ## Czego ta specyfikacja świadomie nie robi
 
-- **Podstrony** `/work`, `/work/[slug]`, `/services`, `/about`, `/contact` — nie powstają,
-  dopóki nie ma treści case studies. Selected Work pokazuje status
-  `CASE STUDY / W PRZYGOTOWANIU` zamiast linku, który dałby 404.
-- **Drawer usług** (Phase 04) — CTA w rows prowadzą na razie do kotwic i formularza.
+- **Podstrony** `/work`, `/services`, `/pricing`, `/about`, `/contact` oraz detale usług i
+  realizacji mają własne kompozycje opisane w [page-multipage.md](page-multipage.md). Landing
+  pozostaje skróconym lejkiem i nie jest layoutem tych tras.
+- **Drawer usług** (Phase 04) — landing prowadzi do dedykowanych stron usług.
 - **Prefill formularza z kontekstu** (`?type=website`) — Phase 04.
-- **Zdjęcia** — `MediaSlot` rysuje opisaną ramkę z ID ujęcia i proporcją ze shot listy.
-  Nie wstawiamy stocku ani generowanych obrazów.
+- **Zdjęcia** — portret Wojciecha i zdjęcie CodeBros są podłączone do odpowiednich sekcji.
+  Selected Work używa tymczasowych zdjęć zewnętrznych jako wizualizacji layoutu, wyraźnie
+  oznaczonych do późniejszej wymiany na prawdziwe screenshoty.
+
+### Ambient hero background
+
+Hero zachowuje kremową powierzchnię jako dominującą bazę. W pustej przestrzeni po prawej
+stronie H1 pojawiają się trzy bardzo słabe, asymetryczne warstwy: ciepła poświata, neutralny
+beż i niemal niewidoczna ciemna poświata. Warstwy są rozmyte i dryfują w cyklu 29–34 sekund;
+grain ma charakter editorial-print i pozostaje poniżej progu zauważalności. To dekoracja bez
+wpływu na kontrast ani interakcję z treścią. Przy `prefers-reduced-motion` warstwy są statyczne.
+Nie wstawiamy stocku ani generowanych obrazów.
+
 - **Analytics** — wymaga decyzji właściciela i ADR.

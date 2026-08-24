@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { INDEXABLE_ROUTES, ROUTES } from '@/data/routes'
 import { siteUrl } from '@/data/site'
-import { locales } from '@/i18n/config'
+import { locales, withLocale } from '@/i18n/config'
 
 import sitemap from './sitemap'
 
@@ -36,7 +36,9 @@ describe('sitemap', () => {
    * be advertised here — a sitemap entry is an invitation to crawl.
    */
   it('never advertises the internal system page', () => {
-    expect(entries.some((entry) => entry.url.includes(ROUTES.system))).toBe(false)
+    const internalPaths = locales.map((locale) => withLocale(ROUTES.system, locale))
+
+    expect(entries.some((entry) => internalPaths.includes(new URL(entry.url).pathname))).toBe(false)
   })
 
   /** No lastModified from the build clock: that would fake freshness on every deploy. */

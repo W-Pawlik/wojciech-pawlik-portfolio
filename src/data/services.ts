@@ -22,3 +22,22 @@ export const SERVICES: readonly Service[] = [
   { key: 'systems', target: SECTION_IDS.codebros, formContext: 'system' },
   { key: 'ai', target: SECTION_IDS.ai, formContext: 'ai' },
 ]
+
+/** Visual evidence used by the dedicated service pages. Copy and alt text stay localized. */
+export const SERVICE_MEDIA = {
+  websites: {
+    id: 'IMG-07',
+    ratio: '16 / 10',
+    src: '/images/Vanta_realizacja.PNG',
+  },
+  systems: {
+    id: 'IMG-08',
+    ratio: '16 / 9',
+    src: '/images/uslugi_custom_systems.jpg',
+  },
+  ai: {
+    id: 'IMG-09',
+    ratio: '16 / 9',
+    src: '/images/uslugi_ai.jpg',
+  },
+} as const

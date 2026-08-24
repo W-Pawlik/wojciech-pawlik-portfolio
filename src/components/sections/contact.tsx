@@ -13,7 +13,7 @@ import { getDictionary, getLocale } from '@/i18n/server'
  * Server section, one client island for the form. The success state replaces the form in
  * place, so nobody has to look for confirmation.
  */
-export async function ContactSection() {
+export async function ContactSection({ headlineAs = 'h2' }: { headlineAs?: 'h1' | 'h2' }) {
   const dict = await getDictionary()
   const locale = await getLocale()
 
@@ -24,6 +24,7 @@ export async function ContactSection() {
           index={9}
           label={dict.contact.label}
           headlineLines={dict.contact.headline}
+          headlineAs={headlineAs}
           aside={<p>{dict.contact.intro}</p>}
         />
 

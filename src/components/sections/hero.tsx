@@ -1,6 +1,7 @@
 import { ButtonLink, CtaArrow } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { Headline } from '@/components/ui/headline'
+import { AmbientBackground } from '@/components/ui/ambient-background'
 import { Section } from '@/components/ui/section'
 import { SECTION_IDS } from '@/data/navigation'
 import { getDictionary } from '@/i18n/server'
@@ -23,14 +24,12 @@ export async function HeroSection() {
   return (
     <Section
       spacing="none"
-      className="flex min-h-[min(88dvh,54rem)] flex-col justify-between pt-section-sm pb-section-tight"
+      className="relative isolate flex min-h-[calc(100svh-var(--navbar-height))] flex-col justify-center overflow-hidden py-section-sm"
     >
-      <Container className="flex flex-1 flex-col justify-center">
-        <p className="hero-in font-mono text-label text-content-tertiary uppercase">
-          {dict.hero.eyebrow}
-        </p>
+      <AmbientBackground className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" />
 
-        <div className="mt-8 grid grid-cols-12 gap-grid">
+      <Container className="relative z-10 flex flex-1 flex-col justify-center">
+        <div className="grid grid-cols-12 gap-grid">
           <Headline
             as="h1"
             lines={dict.hero.headline}
@@ -57,15 +56,6 @@ export async function HeroSection() {
 
       {/* BUILD TRACE: the technical footer of the first screen. Availability is a real
           statement from the brief, not a fabricated scarcity signal. */}
-      <Container>
-        <div className="mt-16 hero-in border-t border-line pt-4">
-          <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 font-mono text-meta text-content-tertiary uppercase">
-            <span>{dict.hero.availability}</span>
-            <span className="hidden md:inline">{dict.hero.trustLine}</span>
-            <span>{dict.hero.year}</span>
-          </div>
-        </div>
-      </Container>
     </Section>
   )
 }

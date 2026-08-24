@@ -3,16 +3,8 @@
  * hours, social links. Referenced by the footer, the contact section, the error page and
  * the metadata, so a change here propagates everywhere.
  *
- * +--------------------------------------------------------------------------+
- * | TODO(brief): CONTACT AND LEGAL VALUES ARE STILL EMPTY ON PURPOSE.        |
- * |                                                                          |
- * | Fill them from .agents/intake/03-business-facts.md. Do NOT invent an      |
- * | address, a phone number or a rating: on a site that sells services an     |
- * | invented fact is misinformation, not a placeholder.                       |
- * |                                                                          |
- * | Components check `hasPublishableContactDetails` before rendering a        |
- * | contact block, so an empty value renders nothing rather than a blank line.|
- * +--------------------------------------------------------------------------+
+ * Contact details are supplied by the owner and rendered wherever a direct contact route
+ * is useful. Legal details and social profiles remain empty until they are confirmed.
  *
  * This project is a personal brand, not a local business — see ADR-0010
  * (.agents/decisions/0010-personal-brand-and-two-tier-architecture.md):
@@ -61,7 +53,11 @@ export const siteConfig: SiteConfig = {
 
   address: { street: '', postalCode: '', city: '', country: 'PL' },
 
-  contact: { phone: '', phoneHref: '', email: '' },
+  contact: {
+    phone: '+48 666 223 853',
+    phoneHref: 'tel:+48666223853',
+    email: 'wojtek.pawlik17@gmail.com',
+  },
 
   /** Empty by design — a project service has no opening hours (ADR-0010). */
   openingHours: [],

@@ -5,8 +5,9 @@ import { cn } from '@/lib/utils/cn'
 
 type TextLinkProps = ComponentPropsWithoutRef<typeof Link> & {
   tone?: 'default' | 'invert'
+  accent?: boolean
   /** `up-right` for anything that leaves the page. */
-  arrow?: 'right' | 'up-right' | 'none'
+  arrow?: 'left' | 'right' | 'up-right' | 'none'
 }
 
 /**
@@ -23,6 +24,7 @@ type TextLinkProps = ComponentPropsWithoutRef<typeof Link> & {
  */
 export function TextLink({
   tone = 'default',
+  accent = false,
   arrow = 'right',
   className,
   children,
@@ -37,7 +39,9 @@ export function TextLink({
           'after:transition-transform after:duration-[var(--duration-base)] after:ease-out-quint',
           'group-hover:after:scale-x-100 group-focus-visible:after:scale-x-100',
           tone === 'invert'
-            ? 'text-content-invert after:bg-content-invert'
+            ? accent
+              ? 'text-content-invert after:bg-accent'
+              : 'text-content-invert after:bg-content-invert'
             : 'text-content after:bg-accent',
         )}
       >
@@ -48,10 +52,10 @@ export function TextLink({
           aria-hidden="true"
           className={cn(
             'inline-block transition-transform duration-[var(--duration-fast)] ease-out-quart group-hover:translate-x-1',
-            tone === 'invert' ? 'text-content-invert' : 'text-content',
+            tone === 'invert' ? (accent ? 'text-accent' : 'text-content-invert') : 'text-content',
           )}
         >
-          {arrow === 'up-right' ? '↗' : '→'}
+          {arrow === 'left' ? '←' : arrow === 'up-right' ? '↗' : '→'}
         </span>
       )}
     </Link>

@@ -33,8 +33,10 @@ export const en: Dictionary = {
     openMenu: 'Menu',
     closeMenu: 'Close',
     items: {
+      home: 'Home',
       work: 'Work',
       services: 'Services',
+      pricing: 'Pricing',
       about: 'About',
     },
     cta: 'Tell me about your project',
@@ -42,14 +44,10 @@ export const en: Dictionary = {
   },
 
   hero: {
-    eyebrow: 'Web & Product Engineer / Kraków, PL',
     headline: ['Websites and systems', 'built around the business.', 'Not around a template.'],
     body: 'I design and build custom websites, web applications and AI solutions for companies that need more than an off-the-shelf template.',
     ctaPrimary: 'Tell me about your project',
     ctaSecondary: 'See selected work',
-    availability: 'Available for select projects',
-    year: '2026 / PL',
-    trustLine: 'Ecommerce engineering / custom web / AI automation',
   },
 
   approach: {
@@ -74,43 +72,284 @@ export const en: Dictionary = {
 
   work: {
     label: 'Selected work',
+    indexTitle: 'Projects that show how I think.',
     headline: ['Selected work'],
+    pageHeadline: ['Projects that show', 'how I work.'],
+    pageIntro:
+      'A selection of websites, applications and systems where framing the problem mattered as much as the interface.',
     intro: 'A few projects where design, technology and a real business problem meet in one place.',
     tags: {
       webApp: 'Web application',
+      website: 'Website',
       productDesign: 'Product design',
       fullStack: 'Full-stack',
       internalSystem: 'Internal system',
       riskScoring: 'Risk scoring',
     },
     teamCodebros: 'CodeBros',
-    caseCta: 'Read the case study',
-    casePending: 'Case study / in preparation',
-    mediaPending: 'Product screenshot',
+    teamSolo: 'Solo build',
+    projectLabel: 'PROJECT',
+    caseStudyCta: 'Read the case study',
+    liveCta: 'Live version',
+    allProjectsCta: 'View all projects',
+    visualization: 'Layout visualisation — temporary image',
+    details: {
+      toggle: 'Project in brief',
+      projectLabel: 'Project',
+      problemLabel: 'Problem',
+      solutionLabel: 'Solution',
+      whyLabel: 'Why this direction',
+    },
     projects: {
+      mawAuto: {
+        title: 'Maw Autoserwis',
+        description: 'A website for Maw Autoserwis.',
+        details: {
+          project: 'Company website and services presentation.',
+          problem: 'The service range needed a clear, direct structure.',
+          solution: 'The page leads visitors from the key information to contact.',
+          why: 'The priority was quick orientation, without overloading the offer.',
+        },
+      },
+      agnieszkaLuzarska: {
+        title: 'Agnieszka Luzarska',
+        description: 'A website for Agnieszka Luzarska.',
+        details: {
+          project: 'Personal website and offer presentation.',
+          problem: 'The brand information needed a calm and coherent hierarchy.',
+          solution: 'The layout guides visitors through the offer in a clear sequence.',
+          why: 'The form had to build trust without looking like a service template.',
+        },
+      },
+      vantaDetailing: {
+        title: 'Vanta Detailing',
+        description: 'A website for Vanta, an automotive detailing service.',
+        details: {
+          project: 'A service website for automotive detailing.',
+          problem: 'The quality of the work needed a strong presentation before contact.',
+          solution: 'The visual layout connects the offer with the finished work.',
+          why: 'The rhythm and imagery communicate precision from the first view.',
+        },
+      },
       planik: {
         title: 'Planik',
         description:
           'A complete event-planning application, designed and built from scratch by two developers.',
+        details: {
+          project: 'An event-planning application from data model to interface.',
+          problem: 'Planning required many decisions and information in one place.',
+          solution: 'A coherent flow guides the user through the whole planning process.',
+          why: 'The product needed to fit the real process rather than add another form.',
+        },
       },
       creditRisk: {
         title: 'Credit Risk System',
         description:
           'A system supporting risk assessment for trade credit. Built for a competition run by Univio — we won it before we worked there.',
+        details: {
+          project: 'A system supporting risk assessment for trade credit.',
+          problem: 'The decision required risk data to be collected and structured.',
+          solution: 'The interface leads from information to a clear assessment and decision.',
+          why: 'Clarity of the process mattered more than the amount of data shown.',
+        },
       },
+    },
+  },
+
+  caseStudies: {
+    mawAuto: {
+      label: 'Case study / Maw Autoserwis',
+      title: 'Maw Autoserwis',
+      categories: 'Website / Product design',
+      statement: 'A website for Maw Autoserwis.',
+      meta: {
+        role: { label: 'Role', value: 'Web design / frontend' },
+        team: { label: 'Team', value: 'Wojciech / solo build' },
+        status: { label: 'Status', value: 'Completed project' },
+      },
+      context: { title: 'What I built', body: 'A company website for Maw Autoserwis.' },
+      problem: { title: 'Problem', body: 'The service range needed a clear presentation online.' },
+      solution: {
+        title: 'Solution',
+        body: 'A website focused on services and a direct path to contact.',
+      },
+      challenge: {
+        title: 'Technical challenge',
+        body: 'Structure the information so visitors can quickly find the right service.',
+      },
+      role: {
+        title: 'My role',
+        body: 'I designed and built the project independently.',
+        items: ['Web design', 'Frontend', 'Responsive implementation'],
+      },
+      result: { title: 'Result', body: 'A finished website for Maw Autoserwis.' },
+      galleryLabel: 'Website gallery / visual placeholders',
+      nextLabel: 'Next project',
+      contactCta: 'Discuss a similar website',
+    },
+    agnieszkaLuzarska: {
+      label: 'Case study / Agnieszka Luzarska',
+      title: 'Agnieszka Luzarska',
+      categories: 'Website / Product design',
+      statement: 'A website for Agnieszka Luzarska.',
+      meta: {
+        role: { label: 'Role', value: 'Web design / frontend' },
+        team: { label: 'Team', value: 'Wojciech / solo build' },
+        status: { label: 'Status', value: 'Completed project' },
+      },
+      context: { title: 'What I built', body: 'A personal website for Agnieszka Luzarska.' },
+      problem: {
+        title: 'Problem',
+        body: 'The personal brand needed a calm and clear presentation.',
+      },
+      solution: {
+        title: 'Solution',
+        body: 'The website organises the information and guides visitors through the offer.',
+      },
+      challenge: {
+        title: 'Technical challenge',
+        body: 'Build a layout that stays personal and readable on every screen.',
+      },
+      role: {
+        title: 'My role',
+        body: 'I designed and built the project independently.',
+        items: ['Web design', 'Frontend', 'Responsive implementation'],
+      },
+      result: { title: 'Result', body: 'A finished website for Agnieszka Luzarska.' },
+      galleryLabel: 'Website gallery / visual placeholders',
+      nextLabel: 'Next project',
+      contactCta: 'Discuss a similar website',
+    },
+    vantaDetailing: {
+      label: 'Case study / Vanta Detailing',
+      title: 'Vanta Detailing',
+      categories: 'Website / Product design',
+      statement: 'A website for Vanta, an automotive detailing service.',
+      meta: {
+        role: { label: 'Role', value: 'Web design / frontend' },
+        team: { label: 'Team', value: 'Wojciech / solo build' },
+        status: { label: 'Status', value: 'Completed project' },
+      },
+      context: { title: 'What I built', body: 'A service website for Vanta Detailing.' },
+      problem: {
+        title: 'Problem',
+        body: 'The quality of the detailing service needed a strong visual presentation.',
+      },
+      solution: {
+        title: 'Solution',
+        body: 'The website combines service information with a visual presentation of the work.',
+      },
+      challenge: {
+        title: 'Technical challenge',
+        body: 'Design an experience that builds trust before the first contact.',
+      },
+      role: {
+        title: 'My role',
+        body: 'I designed and built the project independently.',
+        items: ['Web design', 'Frontend', 'Responsive implementation'],
+      },
+      result: { title: 'Result', body: 'A finished website for Vanta Detailing.' },
+      galleryLabel: 'Website gallery / visual placeholders',
+      nextLabel: 'Next project',
+      contactCta: 'Discuss a similar website',
+    },
+    planik: {
+      label: 'Case study / Planik',
+      title: 'Planik',
+      categories: 'Web application / Product design / Full-stack',
+      statement: 'An event-planning application designed and built from scratch by CodeBros.',
+      meta: {
+        role: { label: 'Role', value: 'Product design / full-stack' },
+        team: { label: 'Team', value: 'Wojciech + Michał / CodeBros' },
+        status: { label: 'Status', value: 'Completed project' },
+      },
+      context: {
+        title: 'What we built',
+        body: 'Planik is a complete event-planning application. We designed and built it from scratch as a two-person team.',
+      },
+      problem: {
+        title: 'Problem',
+        body: 'The starting point was an event-planning process that needed many pieces of information and decisions to work together in one product.',
+      },
+      solution: {
+        title: 'Solution',
+        body: 'The solution brought the data model, interface and application logic into one coherent planning flow.',
+      },
+      challenge: {
+        title: 'Technical challenge',
+        body: 'The important part was translating a complex process into a structure that could grow without separating the user experience from the implementation.',
+      },
+      role: {
+        title: 'My role',
+        body: 'The project was delivered together with Michał Pawlik as CodeBros.',
+        items: ['Product thinking', 'UX and UI', 'Frontend', 'Backend', 'Data model'],
+      },
+      result: {
+        title: 'Result',
+        body: 'A complete event-planning application, from the data model to the interface.',
+      },
+      galleryLabel: 'Product gallery / visual placeholders',
+      nextLabel: 'Next project',
+      contactCta: 'Discuss a similar project',
+    },
+    creditRisk: {
+      label: 'Case study / Credit Risk System',
+      title: 'Credit Risk System',
+      categories: 'Internal system / Risk scoring / Full-stack',
+      statement: 'A system supporting risk assessment for trade credit.',
+      meta: {
+        role: { label: 'Role', value: 'Product design / full-stack' },
+        team: { label: 'Team', value: 'Wojciech + Michał / CodeBros' },
+        status: { label: 'Status', value: 'Competition project' },
+      },
+      context: {
+        title: 'What we built',
+        body: 'We built a system supporting risk assessment for trade credit.',
+      },
+      problem: {
+        title: 'Problem',
+        body: 'A credit decision required collecting and organising risk information in one place.',
+      },
+      solution: {
+        title: 'Solution',
+        body: 'The resulting system supports risk assessment and gives the process a clear user-facing structure.',
+      },
+      challenge: {
+        title: 'Technical challenge',
+        body: 'The challenge was turning the assessment process into a readable structure that helps move from data to a decision.',
+      },
+      role: {
+        title: 'My role',
+        body: 'The project was delivered together with Michał Pawlik as CodeBros.',
+        items: ['Product thinking', 'UX and UI', 'Frontend', 'Backend', 'Business logic'],
+      },
+      result: {
+        title: 'Result',
+        body: 'The project won a competition organised by Univio, before either of us worked there professionally.',
+      },
+      galleryLabel: 'System gallery / visual placeholders',
+      nextLabel: 'Next project',
+      contactCta: 'Discuss a similar project',
     },
   },
 
   services: {
     label: 'Services',
-    headline: ['From a company website', 'to a full system.'],
+    headline: ['From a simple website', 'to a dedicated system.'],
+    pageHeadline: ['Solutions shaped', 'around the problem.'],
+    pageIntro:
+      'Every project starts with a specific situation. I define the scope the company needs and expand it only when a real need appears.',
+    closingLabel: 'Next step',
+    closingHeadline: 'Do you have a concrete problem to solve?',
+    closingBody:
+      'Tell me what is happening in the company. After a short conversation, I will suggest a sensible scope and next step.',
+    closingCta: 'Tell me about your project',
     intro:
-      'A project can be small or very large. What matters is that the solution fits the problem.',
-    includesTitle: 'Included',
+      'I start by clarifying the problem and the goal. Then I define the scope and choose the technology needed to build the right solution — without adding features just because I can.',
     items: {
       websites: {
         title: 'Websites',
-        body: 'Custom websites for companies that want to look as professional as they operate.',
+        body: 'Brochure sites, company websites and landing pages built from scratch in code, without WordPress or ready-made builders. I can include company branding, a logo and visual direction in the same process.',
         cta: 'See the scope',
         includes: [
           'company websites',
@@ -118,23 +357,145 @@ export const en: Dictionary = {
           'CMS',
           'integrations',
           'custom UI',
+          'branding and logo',
           'performance',
           'responsive',
           'analytics',
+          'technical SEO',
+          'multiple languages',
         ],
       },
       systems: {
         title: 'Custom Systems',
-        body: 'Web applications and systems for processes no off-the-shelf tool handles sensibly.',
+        body: 'Dedicated applications, portals and internal systems shaped around the company’s process. For larger projects I work with my brother Michał as CodeBros.',
         cta: 'Meet CodeBros',
         includes: [],
       },
       ai: {
         title: 'AI Automation',
-        body: 'Automating repetitive work where AI genuinely saves time.',
+        body: 'I analyse repetitive work and check whether it can be simplified, automated or supported by AI.',
         cta: 'See what is possible',
         includes: [],
       },
+    },
+  },
+
+  servicePages: {
+    websites: {
+      title: 'Websites',
+      intro:
+        'I design websites that clarify the offer, build trust and guide the right people towards contact.',
+      mediaAlt: 'Vanta Detailing website interface',
+      mediaLabel: 'Website interface example',
+      problemTitle: 'What problem does it solve?',
+      problem:
+        'When the company has a strong service but the current website does not show its quality or makes the next step difficult.',
+      benefitsTitle: 'What a good website changes',
+      benefits: [
+        'People understand what you do and who you do it for faster.',
+        'The offer has a hierarchy that leads from first impression to contact.',
+        'The website feels like your company, not another version of the same template.',
+      ],
+      scopeTitle: 'What I can build for you',
+      scope: [
+        'Company website',
+        'Landing page',
+        'Site without CMS or with CMS',
+        'Forms, integrations and analytics',
+        'Responsive, animation and interaction',
+        'Company branding, logo and visual direction',
+        'Technical SEO and multiple languages',
+        'Domain, hosting, SSL, DNS and deployment',
+      ],
+      processTitle: 'How I work on a website',
+      process: [
+        'I organise the offer, the audience and the website’s main job. If needed, I also design the branding and logo.',
+        'I design the structure and interface around that job.',
+        'I build the site, test it across screens and prepare it for launch.',
+      ],
+      investmentTitle: 'A short conversation shapes the estimate',
+      investment:
+        'The pricing page shows the starting points I use for estimates. After a short conversation, I can prepare a more detailed estimate for your situation. Branding, a logo and SEO can be part of the same scope — I include them in the process and project price.',
+      fitTitle: 'When it is worth talking',
+      fit: 'When you want a website shaped around the company, not a company shaped around a ready-made theme.',
+      pricingCta: 'See indicative pricing',
+      contactCta: 'Tell me about your project',
+    },
+    systems: {
+      title: 'Custom Systems',
+      intro:
+        'I design and build dedicated web systems — both for improving how a company operates and for commissioned applications when a company has a specific idea or need.',
+      mediaAlt: 'Wojciech and Michał as CodeBros at a competition',
+      mediaLabel: 'CodeBros / project together',
+      problemTitle: 'What problem does it solve?',
+      problem:
+        'When information is scattered and the team works around spreadsheets, forms and several disconnected systems every day.',
+      benefitsTitle: 'What a dedicated system gives you',
+      benefits: [
+        'The team gets one tool instead of several spreadsheets and manual workarounds.',
+        'The process is captured in the system, so it is easier to repeat, control and improve.',
+        'Data, roles and permissions match how the company actually works.',
+      ],
+      scopeTitle: 'What I can build for you',
+      scope: [
+        'Web application',
+        'Client or operations panel',
+        'B2B portal, dashboard or configurator',
+        'Booking system and workflow',
+        'Data model, backend and integrations',
+        'Roles, permissions and business logic',
+      ],
+      processTitle: 'From process to a working system',
+      process: [
+        'I map the process, the users and the points where work gets stuck.',
+        'I shape the data model and prototype the most important scenarios.',
+        'I build, deploy and extend the system in stages with regular reviews.',
+      ],
+      investmentTitle: 'I break the system into stages first',
+      investment:
+        'I can build an internal tool, a customer-facing application or a product commissioned by a company. Scope and budget follow the goal, users, data, integrations and the first stage that should create real value.',
+      fitTitle: 'When it is worth talking',
+      fit: 'When the process matters to the company but there is no good ready-made solution for it.',
+      pricingCta: 'See investment levels',
+      contactCta: 'Tell me about the process',
+    },
+    ai: {
+      title: 'AI Automation',
+      intro:
+        'I look for the process that takes the team’s time — only then do I check whether AI can simplify it.',
+      mediaAlt: 'Server room as a visual metaphor for AI infrastructure',
+      mediaLabel: 'Infrastructure behind automation',
+      problemTitle: 'What problem does it solve?',
+      problem:
+        'When people read documents by hand, copy data between systems, answer the same questions or make repetitive decisions.',
+      benefitsTitle: 'What automation can unlock',
+      benefits: [
+        'Less manual copying and searching for information between systems.',
+        'Faster handling of repetitive work without promising that AI does everything alone.',
+        'Human review stays where experience and responsibility matter.',
+      ],
+      scopeTitle: 'What I can build for you',
+      scope: [
+        'Process analysis',
+        'Document processing',
+        'Data extraction and classification',
+        'Company knowledge search',
+        'Request analysis and workflow automation',
+        'Integration with existing systems',
+      ],
+      processTitle: 'Process first, tool second',
+      process: [
+        'I map the repetitive work and find where time is actually being lost.',
+        'I build a small prototype around a real example.',
+        'If the result makes sense, I integrate it and measure its effect on the work.',
+      ],
+      investmentTitle: 'Start with a small, testable step',
+      investment:
+        'The cost depends on data, exceptions, required review and integration with existing tools. You can start by assessing the process before deciding on a larger deployment.',
+      fitTitle: 'When it is worth talking',
+      fit: 'When you repeat a process every day and want to check whether it can be simplified without inflated promises.',
+      pricingCta: 'See investment levels',
+      contactCta: 'Tell me about the process',
     },
   },
 
@@ -162,13 +523,21 @@ export const en: Dictionary = {
         body: 'We designed and built a complete event-planning application between the two of us — from the data model to the interface.',
       },
     },
+    mediaAlt: 'Wojciech and Michał Pawlik at the CodeBros competition',
     mediaPending: 'Wojciech and Michał',
   },
 
   ai: {
     label: 'AI automation',
-    headline: ['AI where it actually', 'saves work.'],
-    body: 'I do not start with "where could we add AI?". I start with the process that eats your team’s time.',
+    headline: ['Process first.', 'Then AI.'],
+    body: 'AI is a tool. The starting point is a process that takes your team’s time, requires repetitive decisions or moves information between systems.',
+    processLabel: 'How I work',
+    process: ['Process analysis', 'Prototype', 'Integration', 'Measure the effect'],
+    explorerTitle: 'Choose the problem',
+    inputLabel: 'Input',
+    layerLabel: 'AI layer',
+    outputLabel: 'Output',
+    humanLabel: 'Human check',
     flowTitle: 'How it works',
     flow: {
       repetitiveWork: 'Repetitive work',
@@ -181,28 +550,73 @@ export const en: Dictionary = {
     useCases: {
       documents: {
         title: 'Documents',
-        body: 'Analysis, classification and data extraction.',
+        body: 'Documents processed by hand.',
+        input: 'PDF / email / scan',
+        layer: 'read → classify → validate',
+        output: 'CRM / ERP / database',
+        human: 'review exceptions',
       },
       knowledge: {
         title: 'Knowledge',
-        body: 'Finding information across internal sources.',
+        body: 'Knowledge scattered across the company.',
+        input: 'procedures / documentation / files',
+        layer: 'search → context → answer',
+        output: 'one answer in the right place',
+        human: 'source and decision check',
       },
       operations: {
         title: 'Operations',
-        body: 'Automating repetitive steps of a workflow.',
+        body: 'Repetitive operational decisions.',
+        input: 'data from several systems',
+        layer: 'rules → recommendation → action',
+        output: 'an updated process',
+        human: 'approval of unusual cases',
       },
       support: {
         title: 'Customer support',
-        body: 'Supporting the team with the company’s own knowledge.',
+        body: 'A high volume of similar questions.',
+        input: 'a customer or employee question',
+        layer: 'recognise → retrieve → prepare',
+        output: 'a faster answer grounded in company knowledge',
+        human: 'escalation of difficult cases',
       },
     },
-    cta: 'Let us talk about the process',
+    cta: 'Talk to me about the process',
   },
 
   process: {
     label: 'Process',
     headline: ['Decisions first.', 'Then code.'],
-    intro: 'That way development is not also a chaotic attempt at designing the product.',
+    intro:
+      'Every phase ends with a concrete result. So before development starts, I know what I am building, for whom and why.',
+    locked: 'Decisions locked → build starts',
+    phases: {
+      direction: {
+        label: 'Direction',
+        title: 'From the problem to a clear direction.',
+        statement:
+          'I understand the context, choose priorities and turn the idea into a product plan.',
+        outputLabel: 'Output',
+        output: 'Project direction',
+        outputDetail: 'UX / structure / visual direction',
+      },
+      production: {
+        label: 'Production',
+        title: 'I turn the direction into a working product.',
+        statement: 'Approved decisions become an implementation that can be tested in real use.',
+        outputLabel: 'Output',
+        output: 'Working product',
+        outputDetail: 'A working version for a shared review',
+      },
+      release: {
+        label: 'Release',
+        title: 'I do not stop at “it works”.',
+        statement: 'I refine the experience, check the details and prepare the product for launch.',
+        outputLabel: 'Output',
+        output: 'Production ready',
+        outputDetail: 'Responsive / interactions / testing / deployment',
+      },
+    },
     steps: {
       understand: {
         title: 'Understand',
@@ -210,7 +624,7 @@ export const en: Dictionary = {
       },
       define: {
         title: 'Define',
-        body: 'We agree on scope, goals and the decisions that matter.',
+        body: 'I agree on scope, goals and the decisions that matter.',
       },
       design: {
         title: 'Design',
@@ -222,7 +636,7 @@ export const en: Dictionary = {
       },
       review: {
         title: 'Review',
-        body: 'We look at a working product and collect feedback.',
+        body: 'I look at a working product and collect feedback.',
       },
       refine: {
         title: 'Refine',
@@ -237,41 +651,61 @@ export const en: Dictionary = {
 
   pricing: {
     label: 'Investment',
-    headline: ['What does good web cost?'],
+    headline: ['Start with the scope,', 'not a large budget.'],
+    pageHeadline: ['Scope first.', 'Then the estimate.'],
+    pageIntro:
+      'Indicative investment levels make it easier to assess fit. The final estimate depends on the problem, scope and integrations the project needs.',
+    minimumRateNote:
+      'The amounts below are the minimum starting points for an estimate. Current opening offer: the first 3 clients can get a landing page estimated from 900 PLN instead of the standard starting point of 1,200 PLN.',
     intro:
-      'I price every project individually, but the budget should not be a mystery until the first call.',
+      'I do not sell the largest possible solution. Scope, timing and price depend on the problem, content, number of pages, integrations and required logic. If you have a deadline, I can offer priority delivery for an additional fee when the date is realistic.',
     plusSuffix: '+',
+    quote: 'Individually scoped',
+    aftercareLabel: 'After launch',
+    aftercareTitle: 'The product is yours.',
+    aftercareBody:
+      'After the project is completed and settled, you receive the website, application, system or logic created for you. You can maintain it yourself, hand it to someone else or commission further development from me.',
+    maintenanceLabel: 'Optional maintenance',
+    maintenanceLimit: 'up to',
+    maintenancePeriod: 'per month',
+    maintenanceBody:
+      'Domain, hosting, monitoring, small fixes and response to problems. The maximum cost is 150 PLN per month.',
+    aftercareNote:
+      'The project includes 3 months of free small adjustments. This does not cover new pages, features, integrations, major redesigns or regular content updates. I can handle content updates for 70 PLN per hour, with a minimum order value of 50 PLN.',
     rows: {
-      website: {
-        title: 'Business website',
-        body: 'A well-made company or service website.',
+      landing: {
+        title: 'Landing page / simple brochure site',
+        body: 'A small website shaped around the company. It can take around 3 working days or 1–2 weeks, depending on scope.',
       },
       websiteCms: {
         title: 'Website + CMS',
-        body: 'More content, a panel to edit it, custom components.',
+        body: 'A headless CMS or dedicated panel when content or a company process needs regular management.',
       },
       advanced: {
-        title: 'Advanced web',
-        body: 'Unusual UX, configurators, integrations, richer motion.',
+        title: 'Custom business website',
+        body: 'A company or service website designed from scratch. It can include branding, a logo, SEO, configurators, extended logic, integrations and additional business requirements.',
       },
       system: {
         title: 'Custom system / CodeBros',
-        body: 'Accounts, roles, data, processes, backend, integrations.',
+        body: 'A client portal, B2B portal, workflow, dashboard, application or internal system. Timing and price are individual.',
       },
       ai: {
         title: 'AI prototype',
-        body: 'Process analysis and a working prototype on real data.',
+        body: 'Process analysis first, then a prototype or deployment. AI only when it solves a concrete problem.',
       },
     },
-    cta: 'I have a project — let us scope it',
+    cta: 'I have a project — define the scope with me',
   },
 
   about: {
     label: 'About',
     headline: ['I write code for a living.', 'I build things because I like it.'],
+    pageHeadline: ['One person', 'on the other side of the project.'],
+    pageIntro:
+      'I design and build the work personally. For larger systems I work with my brother Michał as CodeBros.',
     paragraphs: [
       'I am Wojciech Pawlik. By day I work on e-commerce systems at Univio. After hours I design and build websites and products for companies that want something more tailored than an off-the-shelf solution.',
-      'Earlier I also worked as an AI Engineer, building solutions that used AI to improve business processes.',
+      'Earlier I also worked as an AI Engineer, including work for ASML — one of Europe’s largest technology companies.',
       'What interests me most is the moment where technology, UX and a real business problem meet in one product.',
     ],
     trustTitle: 'Experience',
@@ -281,7 +715,12 @@ export const en: Dictionary = {
       builds: { label: 'Selected builds', value: 'Web + product' },
       teamMode: { label: 'Team mode', value: 'CodeBros' },
     },
+    pageFocusTitle: 'No handoffs between layers.',
+    pageFocusBody:
+      'You speak directly with the person designing and building the solution. Decisions stay shorter, and responsibility for the result stays on one side.',
+    mediaAlt: 'Portrait of Wojciech Pawlik',
     mediaPending: 'Portrait',
+    cta: 'Get to know me',
   },
 
   finalCta: {
@@ -292,6 +731,10 @@ export const en: Dictionary = {
   },
 
   contact: {
+    pageTitle: 'Tell me about the project',
+    pageHeadline: ['Tell me', 'about the project.'],
+    pageIntro:
+      'Describe the situation and I will come back with a concrete next step — even if the scope is not clear yet.',
     label: 'Contact',
     headline: ['Tell me', 'about your project.'],
     intro:
@@ -318,7 +761,7 @@ export const en: Dictionary = {
       phone: 'Phone',
       message: 'Project',
     },
-    messagePlaceholder: 'What are we building, for whom, and what should change because of it?',
+    messagePlaceholder: 'What should I build, for whom, and what should change because of it?',
     types: {
       website: 'Website',
       system: 'Custom system',

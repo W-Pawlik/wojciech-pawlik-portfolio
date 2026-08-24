@@ -115,6 +115,100 @@
   }
 }
 
+/**
+ * The hero's ambient surface: three oversized, asymmetric fields drift slowly so
+ * the canvas feels physical without announcing an animated background. The grain is
+ * a CSS texture rather than a WebGL loop, keeping the first screen inexpensive.
+ */
+.ambient-background__glow,
+.ambient-background__grain,
+.ambient-background__canvas {
+  pointer-events: none;
+  position: absolute;
+}
+
+.ambient-background__canvas {
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.92;
+}
+
+.ambient-background__glow {
+  z-index: 1;
+  border-radius: 999px;
+  filter: blur(var(--ambient-blur));
+  opacity: 0.9;
+  will-change: transform;
+}
+
+.ambient-background__glow--warm {
+  top: 4%;
+  right: -14%;
+  width: 52%;
+  height: 58%;
+  background: var(--color-ambient-warm);
+  transform: translate3d(-1rem, 0, 0) scale(1.08);
+  animation: ambient-drift-warm 16s var(--ease-in-out-quart) infinite alternate;
+}
+
+.ambient-background__glow--dark {
+  right: 7%;
+  bottom: -32%;
+  width: 48%;
+  height: 48%;
+  background: var(--color-ambient-dark);
+  transform: translate3d(0, -1rem, 0) scale(1.06);
+  animation: ambient-drift-dark 18s var(--ease-in-out-quart) infinite alternate;
+}
+
+.ambient-background__glow--neutral {
+  bottom: -28%;
+  left: 15%;
+  width: 52%;
+  height: 42%;
+  background: var(--color-ambient-neutral);
+  transform: translate3d(0, -1rem, 0) scale(1.05);
+  animation: ambient-drift-neutral 17s var(--ease-in-out-quart) infinite alternate;
+}
+
+.ambient-background__grain {
+  z-index: 2;
+  inset: 0;
+  opacity: var(--ambient-grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  background-size: var(--ambient-grain-size) var(--ambient-grain-size);
+  mix-blend-mode: multiply;
+}
+
+@keyframes ambient-drift-warm {
+  from {
+    transform: translate3d(-4rem, -1rem, 0) scale(1.02);
+  }
+  to {
+    transform: translate3d(4rem, 3rem, 0) scale(1.16);
+  }
+}
+
+@keyframes ambient-drift-dark {
+  from {
+    transform: translate3d(3rem, 2rem, 0) scale(1.02);
+  }
+  to {
+    transform: translate3d(-3rem, -3rem, 0) scale(1.14);
+  }
+}
+
+@keyframes ambient-drift-neutral {
+  from {
+    transform: translate3d(-2rem, 2rem, 0) scale(1.02);
+  }
+  to {
+    transform: translate3d(3rem, -3rem, 0) scale(1.12);
+  }
+}
+
 /** Navbar fade-in. CSS, so the bar does not wait for hydration either. */
 @utility navbar-in {
   animation: navbar-in var(--duration-slow) var(--ease-out-quart) both;
@@ -146,6 +240,10 @@
     opacity: 1;
     transform: none;
     clip-path: none;
+    animation: none;
+  }
+
+  .ambient-background__glow {
     animation: none;
   }
 }

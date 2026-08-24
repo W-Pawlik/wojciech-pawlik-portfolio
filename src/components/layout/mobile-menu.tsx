@@ -28,8 +28,19 @@ export function MobileMenu({ openLabel, closeLabel, items, cta }: MobileMenuProp
 
   return (
     <>
-      <Button variant="quiet" onClick={() => setOpen(true)} className="lg:hidden">
-        {openLabel}
+      <Button
+        variant="quiet"
+        onClick={() => setOpen(true)}
+        className="lg:hidden"
+        aria-label={openLabel}
+        aria-expanded={open}
+      >
+        <span aria-hidden="true" className="flex w-6 flex-col gap-1.5">
+          <span className="h-px w-full bg-current" />
+          <span className="h-px w-full bg-current" />
+          <span className="h-px w-full bg-current" />
+        </span>
+        <span className="sr-only">{openLabel}</span>
       </Button>
 
       <Overlay open={open} onClose={() => setOpen(false)} label={openLabel}>

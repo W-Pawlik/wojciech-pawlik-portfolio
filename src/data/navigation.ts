@@ -26,17 +26,20 @@ export type SectionId = (typeof SECTION_IDS)[keyof typeof SECTION_IDS]
  * Main navigation. Three entries plus the CTA: the navbar must not compete with the hero,
  * and a menu is not a table of contents (ADR-0006).
  *
- * These are **anchors on the home page**, not routes: `/work`, `/services` and `/about`
- * only get their own pages once there is case-study content to fill them
- * (.agents/specs/01-home.md). Labels come from `dict.nav.items`, keyed by these.
+ * Labels come from `dict.nav.items`, keyed by these. The navigation points to the detailed
+ * multipager routes; the homepage keeps shorter summary sections for the sales flow.
  */
-export const NAV_ITEM_KEYS = ['work', 'services', 'about'] as const
+export const NAV_ITEM_KEYS = ['home', 'work', 'services', 'pricing', 'about'] as const
 
 export type NavItemKey = (typeof NAV_ITEM_KEYS)[number]
 
 /** Nav key -> section anchor. Explicit, so a renamed anchor cannot silently 404. */
-export const NAV_ITEM_ANCHORS: Record<NavItemKey, SectionId> = {
-  work: SECTION_IDS.work,
-  services: SECTION_IDS.services,
-  about: SECTION_IDS.about,
+import { ROUTES } from './routes'
+
+export const NAV_ITEM_ROUTES: Record<NavItemKey, string> = {
+  home: ROUTES.home,
+  work: ROUTES.work,
+  services: ROUTES.services,
+  pricing: ROUTES.pricing,
+  about: ROUTES.about,
 }

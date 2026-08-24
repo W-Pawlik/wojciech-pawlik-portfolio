@@ -7,8 +7,9 @@ metadane i (później) JSON-LD.
 `BRAK` — pusta strona jest lepsza niż zła informacja. Nic tutaj nie zostanie „uzupełnione
 przykładowo”.
 
-> **Stan 2026-08-21:** uzupełnione tym, co jest w [strategii marki](00-brand-strategy-input.md)
-> (oferta, ceny, dowody, proces). **Wszystkie dane kontaktowe i formalne są `BRAK`** — i to one
+> **Stan 2026-08-24:** uzupełnione tym, co jest w [strategii marki](00-brand-strategy-input.md)
+> (oferta, ceny, dowody, proces). Dane kontaktowe do publikacji są uzupełnione; formalne nadal
+> pozostają `BRAK` — i to one
 > blokują stopkę, formularz, JSON-LD oraz publikację. Formularz tego dokumentu jest pisany pod
 > lokalną firmę usługową; pola nieadekwatne dla marki osobistej są oznaczone
 > _nie dotyczy_ — patrz [ADR-0010](../decisions/0010-personal-brand-and-two-tier-architecture.md).
@@ -23,10 +24,10 @@ przykładowo”.
   i właściciel chce go pokazać; nie jest potrzebny do sprzedaży tej usługi_
 - Kod pocztowy i miasto: `BRAK` — miasto warto podać nawet bez adresu (wiarygodność)
 - Kraj: Polska
-- Telefon (format do wyświetlenia): `BRAK` — decyzja, czy publikujemy w ogóle
-- Telefon (format do `tel:`): `BRAK`
+- Telefon (format do wyświetlenia): **+48 666 223 853**
+- Telefon (format do `tel:`): **tel:+48666223853**
 - Drugi telefon: _nie dotyczy_
-- E-mail: `BRAK` — potrzebny adres projektowy, inny niż służbowy
+- E-mail: **wojtek.pawlik17@gmail.com**
 - Rok założenia / „od kiedy działamy”: `BRAK`
 
 ## 2. Godziny otwarcia
@@ -51,21 +52,18 @@ _Nie dotyczy_ — usługa projektowa, zdalna, bez obsługi „z ulicy”. Zamias
 Jedna pozycja = jedna usługa, którą klient realnie zamawia. Ceny są **orientacyjne** —
 odpowiadają na pytanie „czy jesteśmy w podobnej kategorii budżetowej?”.
 
-| Nazwa usługi                            | Co obejmuje                                                                         | Cena od (liczba) | Od czego zależy cena                               | Czas realizacji | Gwarancja / warunki |
-| --------------------------------------- | ----------------------------------------------------------------------------------- | ---------------- | -------------------------------------------------- | --------------- | ------------------- |
-| Strona biznesowa                        | Kilka podstron, dopracowane UI, pełny responsive, SEO techniczne, formularz         | 5000             | Liczba podstron, ilość treści, poziom customizacji | `BRAK`          | `BRAK`              |
-| Rozbudowana strona / CMS                | Więcej treści, CMS, customowe komponenty, zaawansowane interakcje, integracje       | 8000             | CMS, liczba komponentów, integracje                | `BRAK`          | `BRAK`              |
-| Zaawansowany web experience             | Nietypowy UX, konfiguratory, integracje, dużo customowej logiki, rozbudowany motion | 15000            | Złożoność logiki i motion, integracje              | `BRAK`          | `BRAK`              |
-| Custom system (samodzielnie / CodeBros) | Logowanie, role, dane, procesy, dashboardy, backend, integracje, własna logika      | 30000            | Zakres funkcjonalny, etapy, integracje             | `BRAK`          | `BRAK`              |
-| AI — analiza procesu / discovery        | Wskazanie procesu, ocena potencjału automatyzacji, rekomendacja                     | 2500             | Liczba i złożoność procesów                        | `BRAK`          | `BRAK`              |
-| AI — prototyp / PoC                     | Działający prototyp na realnych danych                                              | 8000             | Dane, integracje, wymagana dokładność              | `BRAK`          | `BRAK`              |
-| AI — pełne wdrożenie                    | Wdrożenie w procesie firmy, integracja z istniejącymi systemami                     | 15000            | Skala procesu, integracje, utrzymanie              | `BRAK`          | `BRAK`              |
+| Nazwa usługi                 | Co obejmuje                                                                                   | Cena od (liczba) | Od czego zależy cena                       | Czas realizacji | Gwarancja / warunki |
+| ---------------------------- | --------------------------------------------------------------------------------------------- | ---------------- | ------------------------------------------ | --------------- | ------------------- |
+| Landing page                 | Niewielka customowa strona dopasowana do firmy.                                               | 1200             | Zakres treści i poziom dopracowania        | `BRAK`          | `BRAK`              |
+| Customowa strona internetowa | Strona firmowa lub usługowa, branding, logo, SEO, integracje i dodatkowe wymagania biznesowe. | 1400             | Zakres, treść, logika i integracje         | `BRAK`          | `BRAK`              |
+| Strona + CMS                 | Customowa strona z CMS-em albo dedykowanym panelem do zarządzania treścią.                    | 1400             | CMS, zakres treści i proces firmy          | `BRAK`          | `BRAK`              |
+| Custom system                | Aplikacja, portal, panel, obieg pracy lub system wewnętrzny.                                  | `IND`            | Zakres funkcjonalny, etapy, integracje     | `BRAK`          | `BRAK`              |
+| Prototyp AI                  | Analiza procesu i prototyp wtedy, gdy AI rozwiązuje konkretny problem.                        | `IND`            | Dane, proces, integracje i poziom kontroli | `BRAK`          | `BRAK`              |
 
-- Czy ceny wolno publikować? **tylko „od” / widełki orientacyjne**
-- Co jest usługą flagową (jedna): **Websites — strona biznesowa**
-- Czego **nie** robicie (a klienci pytają): `BRAK` — do potwierdzenia: identyfikacja wizualna /
-  logo od zera, copywriting, abonamentowe SEO i marketing, utrzymanie i hosting jako osobna
-  usługa, sklepy na gotowych platformach
+- Czy ceny wolno publikować? **tak, jako najniższą stawkę „od”; ostateczna wycena jest indywidualna**
+- Promocja otwarcia: **pierwszych 3 klientów może otrzymać landing page wyceniony od 900 zł zamiast standardowych 1 200 zł**
+- Co jest usługą flagową (jedna): **customowa strona internetowa**
+- Branding firmy, logo i SEO: **mogą wejść w zakres procesu i cenę projektu**
 
 ## 5. Dowody
 

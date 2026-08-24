@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
     // serve the smallest format the browser accepts.
     // See .agents/08-accessibility-and-performance.md.
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
   },
   experimental: {
     optimizePackageImports: ['motion', 'gsap'],

@@ -59,7 +59,14 @@ const MIN_SAVING = 0.1
  *   'project-<slug>':   { width: 2048, quality: 74 }   // 16:10, case study feature
  */
 const TARGETS = {
-  // 'hero-example': { width: 1600, quality: 72 },
+  // These widths preserve a 2x source for the widest desktop boxes and Retina displays.
+  // next/image creates the smaller device variants at request time.
+  zdjeice_Wojciech_Pawlik: { width: 1400, quality: 82 },
+  zdjecie_CodeBros_konkurs: { width: 1800, quality: 82 },
+  'ai-datacenter': { width: 1400, quality: 82 },
+  IMG_20250915_143621326_BURST000_COVER: { width: 1400, quality: 82 },
+  uslugi_custom_systems: { width: 1400, quality: 82 },
+  uslugi_ai: { width: 1400, quality: 82 },
 }
 
 const kb = (bytes) => `${Math.round(bytes / 1024)}kB`

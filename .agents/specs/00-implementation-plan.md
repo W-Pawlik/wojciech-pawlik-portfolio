@@ -107,13 +107,14 @@ Wykonane przy okazji:
 - [x] Primitives: `MediaSlot` (opisana ramka zamiast stocku), `TextLink`, `ChoiceGroup`
 - [ ] Visual QA na 1440 / 1280 / 768 / 390 / 320 px (Phase 07 briefu) — **jeszcze nie robione**
 
-## Etap 5 — Podstrony ⬜
+## Etap 5 — Podstrony 🟡
 
 | Trasa                  | Spec | Implementacja | Blokada                     |
 | ---------------------- | ---- | ------------- | --------------------------- |
-| `realizacje/[slug]`    | ⬜   | ⬜            | Treść case studies          |
-| `codebros`             | ⬜   | ⬜            | Decyzja o podstronie, zgoda |
-| `ai-automation`        | ⬜   | ⬜            | Decyzja o podstronie        |
+| `realizacje/[slug]`    | ✅   | ✅            | Dalsza treść case studies   |
+| `services/*`           | ✅   | ✅            | Dalsze dopracowanie detali  |
+| `codebros`             | ⬜   | ⬜            | Decyzja o osobnej trasie    |
+| `ai-automation`        | ⬜   | ⬜            | Decyzja o osobnej trasie    |
 | `polityka-prywatnosci` | ⬜   | ⬜            | Administrator danych, treść |
 
 ## Etap 6 — Motion pass ⬜

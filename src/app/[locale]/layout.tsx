@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation'
 
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
+import { SmoothAnchorScroll } from '@/components/motion/smooth-anchor-scroll'
+import { ReturnScrollPosition } from '@/components/motion/return-scroll-position'
 import { isLocale, locales, localeMeta } from '@/i18n/config'
 import { getDictionary } from '@/i18n/server'
 import { buildMetadata } from '@/lib/seo/metadata'
@@ -81,7 +83,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
           {dict.common.skipToContent}
         </a>
         <Navbar />
-        <main id="content">{children}</main>
+        <SmoothAnchorScroll />
+        <ReturnScrollPosition />
+        <main id="content">
+          <span id="top" aria-hidden="true" />
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
