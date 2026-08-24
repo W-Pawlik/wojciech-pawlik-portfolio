@@ -36,6 +36,7 @@ export async function ServicesIndexPage() {
                 <li key={service.key} className="border-b border-line">
                   <Link
                     href={href}
+                    data-return-scroll
                     className="group grid grid-cols-12 gap-grid py-10 transition-colors duration-[var(--duration-base)] hover:bg-canvas"
                   >
                     <span className="col-span-2 font-mono text-meta text-accent lg:col-span-1">

@@ -2,6 +2,7 @@ import { ButtonLink, CtaArrow } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { Headline } from '@/components/ui/headline'
 import { AmbientBackground } from '@/components/ui/ambient-background'
+import { HandwrittenSignature } from '@/components/ui/handwritten-signature'
 import { Section } from '@/components/ui/section'
 import { SECTION_IDS } from '@/data/navigation'
 import { getDictionary } from '@/i18n/server'
@@ -24,28 +25,39 @@ export async function HeroSection() {
   return (
     <Section
       spacing="none"
+      tone="invert"
       className="relative isolate flex min-h-[calc(100svh-var(--navbar-height))] flex-col justify-center overflow-hidden py-section-sm"
     >
-      <AmbientBackground className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" />
+      <AmbientBackground className="absolute inset-0 z-0 overflow-hidden" />
 
       <Container className="relative z-10 flex flex-1 flex-col justify-center">
         <div className="grid grid-cols-12 gap-grid">
           <Headline
             as="h1"
             lines={dict.hero.headline}
-            className="col-span-12 hero-in text-display-hero lg:col-span-10"
+            className="col-span-12 hero-in text-display-hero text-content-invert lg:col-span-10"
             lineClassName="mask-row"
           />
 
+          <HandwrittenSignature className="col-span-12 hidden text-accent lg:col-span-2 lg:col-start-6 lg:row-start-2 lg:block" />
+
           <div className="col-span-12 mt-4 lg:col-span-5 lg:col-start-8 lg:mt-10">
-            <p className="hero-in text-body-lg text-content-secondary">{dict.hero.body}</p>
+            <p className="hero-in text-body-lg text-content-invert">{dict.hero.body}</p>
 
             <div className="mt-9 flex hero-in flex-wrap items-center gap-x-8 gap-y-4">
-              <ButtonLink href={`#${SECTION_IDS.contact}`} size="lg">
+              <ButtonLink
+                href={`#${SECTION_IDS.contact}`}
+                size="lg"
+                className="bg-content-invert text-content hover:bg-accent hover:text-accent-contrast"
+              >
                 {dict.hero.ctaPrimary}
                 <CtaArrow />
               </ButtonLink>
-              <ButtonLink href={`#${SECTION_IDS.work}`} variant="quiet">
+              <ButtonLink
+                href={`#${SECTION_IDS.work}`}
+                variant="quiet"
+                className="text-content-invert hover:text-content-invert"
+              >
                 {dict.hero.ctaSecondary}
                 <span aria-hidden="true">↓</span>
               </ButtonLink>

@@ -1,8 +1,8 @@
+import { BackLink } from '@/components/ui/back-link'
 import { Container } from '@/components/ui/container'
 import { Headline } from '@/components/ui/headline'
 import { Section } from '@/components/ui/section'
 import { SectionLabel } from '@/components/ui/section-label'
-import { TextLink } from '@/components/ui/text-link'
 
 type PageHeaderProps = {
   label: string
@@ -20,11 +20,7 @@ export function PageHeader({ label, headlineLines, intro, backHref, backLabel }:
   return (
     <Section spacing="xl">
       <Container>
-        {backHref && backLabel ? (
-          <TextLink href={backHref} arrow="left">
-            {backLabel}
-          </TextLink>
-        ) : null}
+        {backHref && backLabel ? <BackLink href={backHref}>{backLabel}</BackLink> : null}
 
         <div className="mt-16 grid grid-cols-12 gap-grid border-t border-line pt-5">
           <div className="col-span-12 lg:col-span-7">

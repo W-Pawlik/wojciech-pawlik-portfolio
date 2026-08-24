@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 
 const STORAGE_KEY = 'landing-return-scroll'
 
-type SavedPosition = { landingPath: string; y: number }
+type SavedPosition = { sourcePath: string; y: number }
 
 export function ReturnScrollPosition() {
   const pathname = usePathname()
@@ -26,7 +26,7 @@ export function ReturnScrollPosition() {
       const link = target.closest<HTMLAnchorElement>('a[data-return-scroll]')
       if (!link) return
 
-      const position: SavedPosition = { landingPath: window.location.pathname, y: window.scrollY }
+      const position: SavedPosition = { sourcePath: window.location.pathname, y: window.scrollY }
       window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(position))
     }
 
@@ -40,7 +40,7 @@ export function ReturnScrollPosition() {
 
     try {
       const position = JSON.parse(stored) as SavedPosition
-      if (position.landingPath !== pathname) return
+      if (position.sourcePath !== pathname) return
       window.sessionStorage.removeItem(STORAGE_KEY)
       requestAnimationFrame(() => window.scrollTo({ top: position.y, behavior: 'auto' }))
     } catch {

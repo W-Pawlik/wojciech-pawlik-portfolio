@@ -1,7 +1,6 @@
 import { PageHeader } from '@/components/pages/page-header'
 import { Container } from '@/components/ui/container'
 import { MediaSlot } from '@/components/ui/media-slot'
-import { ProjectDetails } from '@/components/ui/project-details'
 import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
 import { PROJECTS } from '@/data/projects'
@@ -43,6 +42,9 @@ export async function WorkIndexPage() {
                       src={project.media.src}
                       alt={`${copy.title} — ${dict.work.visualization}`}
                       label={dict.work.visualization}
+                      fit="contain"
+                      zoomable
+                      closeLabel={dict.nav.closeMenu}
                     />
                   </div>
                   <div className="col-span-12 mt-8 lg:col-span-4 lg:col-start-9 lg:mt-0">
@@ -51,13 +53,24 @@ export async function WorkIndexPage() {
                     </p>
                     <h2 className="mt-4 font-display text-display-project">{copy.title}</h2>
                     <p className="mt-4 text-body text-content-secondary">{copy.description}</p>
-                    <TextLink
-                      href={withLocale(`${ROUTES.work}/${project.slug}`, locale)}
-                      className="mt-7"
-                    >
-                      {dict.work.caseStudyCta}
-                    </TextLink>
-                    <ProjectDetails copy={{ ...dict.work.details, ...copy.details }} />
+                    <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+                      <TextLink
+                        href={withLocale(`${ROUTES.work}/${project.slug}`, locale)}
+                        data-return-scroll
+                      >
+                        {dict.work.caseStudyCta}
+                      </TextLink>
+                      {project.liveUrl ? (
+                        <TextLink
+                          href={project.liveUrl}
+                          arrow="up-right"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {dict.work.liveCta}
+                        </TextLink>
+                      ) : null}
+                    </div>
                   </div>
                 </article>
               )

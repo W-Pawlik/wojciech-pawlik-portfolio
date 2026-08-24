@@ -22,6 +22,7 @@
   --font-brand-display: var(--font-sans-family, ui-sans-serif), system-ui, sans-serif;
   --font-brand-sans: var(--font-sans-family, ui-sans-serif), system-ui, sans-serif;
   --font-brand-mono: var(--font-mono-family, ui-monospace), 'Consolas', monospace;
+  --font-brand-signature: var(--font-signature-family, cursive);
 
   /* Duration scale. Not a Tailwind theme namespace, so consume it as
    * `duration-[var(--duration-base)]` in CSS transitions.

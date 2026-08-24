@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { IBM_Plex_Mono, Instrument_Sans } from 'next/font/google'
+import { Allura, IBM_Plex_Mono, Instrument_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
 
 import { Footer } from '@/components/layout/footer'
@@ -40,6 +40,13 @@ const mono = IBM_Plex_Mono({
   display: 'swap',
 })
 
+const signature = Allura({
+  variable: '--font-signature-family',
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 /** Every locale is prerendered as static HTML at build time. */
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -73,7 +80,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
   return (
     <html
       lang={localeMeta[locale].htmlLang}
-      className={cn('antialiased', sans.variable, mono.variable)}
+      className={cn('antialiased', sans.variable, mono.variable, signature.variable)}
     >
       <body>
         <a

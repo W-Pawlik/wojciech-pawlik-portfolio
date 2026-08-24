@@ -104,14 +104,12 @@
   /* Very quiet highlight behind a single piece of information. */
   --color-accent-subtle: #f6e2d9;
 
-  /* Ambient hero layers. They are intentionally composited below the visual threshold
-     of a gradient so the warm canvas remains the first thing the eye perceives. */
-  --color-ambient-warm: rgb(255 90 54 / 0.2);
-  --color-ambient-dark: rgb(17 18 15 / 0.1);
-  --color-ambient-neutral: rgb(229 225 215 / 0.7);
-  --ambient-blur: 10rem;
-  --ambient-grain-size: 0.375rem;
-  --ambient-grain-opacity: 0.035;
+  /* Hero shader overlays. The shader owns the movement; these tokens keep copy readable. */
+  --color-hero-overlay: rgb(17 18 15 / 0.72);
+  --color-hero-overlay-soft: rgb(17 18 15 / 0.12);
+  --color-hero-overlay-deep: rgb(17 18 15 / 0.82);
+  --color-hero-pointer: rgb(255 90 54 / 0.24);
+  --color-hero-pointer-soft: rgb(255 90 54 / 0.08);
 
   /* Functional, deliberately outside the brand palette: with an orange accent a red
      error would read as a call to action, so the error colour is a dark wine that

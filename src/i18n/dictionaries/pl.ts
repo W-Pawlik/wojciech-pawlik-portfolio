@@ -102,66 +102,27 @@ export const pl = {
     caseStudyCta: 'Zobacz case study',
     liveCta: 'Wersja online',
     allProjectsCta: 'Zobacz wszystkie realizacje',
-    visualization: 'Wizualizacja układu — tymczasowe zdjęcie',
-    details: {
-      toggle: 'Projekt w skrócie',
-      projectLabel: 'Projekt',
-      problemLabel: 'Problem',
-      solutionLabel: 'Rozwiązanie',
-      whyLabel: 'Dlaczego tak',
-    },
+    visualization: 'Widok realizacji',
     projects: {
       mawAuto: {
         title: 'Maw Autoserwis',
-        description: 'Strona internetowa dla Maw Autoserwis.',
-        details: {
-          project: 'Strona firmowa i prezentacja usług.',
-          problem: 'Zakres usług potrzebował prostego, czytelnego uporządkowania.',
-          solution: 'Strona prowadzi od najważniejszych informacji do kontaktu.',
-          why: 'Priorytetem była szybka orientacja, nie przeładowanie ofertą.',
-        },
+        description: 'Branding i strona internetowa dla wszechstronnego warsztatu samochodowego.',
       },
       agnieszkaLuzarska: {
         title: 'Agnieszka Luzarska',
-        description: 'Strona internetowa Agnieszki Luzarskiej.',
-        details: {
-          project: 'Osobista strona internetowa i prezentacja oferty.',
-          problem: 'Informacje o marce potrzebowały spokojnej, spójnej hierarchii.',
-          solution: 'Układ porządkuje treść i prowadzi użytkownika przez ofertę.',
-          why: 'Forma miała budować zaufanie bez typowego szablonu usługowego.',
-        },
+        description: 'Osobista strona dyrektor i konsultantki Mary Kay, oparta na storytellingu.',
       },
       vantaDetailing: {
         title: 'Vanta Detailing',
-        description: 'Strona internetowa dla Vanta — detailingu samochodowego.',
-        details: {
-          project: 'Strona usługowa dla detailingu samochodowego.',
-          problem: 'Jakość pracy wymagała mocnej prezentacji jeszcze przed kontaktem.',
-          solution: 'Wizualny układ łączy ofertę z prezentacją efektów usługi.',
-          why: 'Obraz i rytm strony mają od razu komunikować precyzję wykonania.',
-        },
+        description: 'Portfolio strony sprzedażowej dla studia detailingu samochodowego.',
       },
       planik: {
         title: 'Planik',
-        description:
-          'Kompleksowa aplikacja do planowania wydarzeń, zaprojektowana i zbudowana od zera przez dwóch twórców.',
-        details: {
-          project: 'Aplikacja do planowania wydarzeń od modelu danych po interfejs.',
-          problem: 'Planowanie wymagało połączenia wielu informacji i decyzji w jednym miejscu.',
-          solution: 'Powstał spójny przepływ, który prowadzi użytkownika przez cały proces.',
-          why: 'Zamiast kolejnego formularza potrzebny był produkt dopasowany do realnego procesu.',
-        },
+        description: 'Duża aplikacja CodeBros do planowania wydarzeń od pomysłu po rezerwację.',
       },
       creditRisk: {
         title: 'Credit Risk System',
-        description:
-          'System wspierający ocenę ryzyka przy udzielaniu kredytów kupieckich. Zbudowany na konkurs organizowany przez Univio — wygraliśmy go, jeszcze zanim tam pracowaliśmy.',
-        details: {
-          project: 'System wspierający ocenę ryzyka przy kredycie kupieckim.',
-          problem: 'Decyzja wymagała zebrania i uporządkowania danych o ryzyku.',
-          solution: 'Interfejs prowadzi od informacji do czytelnej oceny i decyzji.',
-          why: 'Najważniejsza była klarowność procesu, a nie sama ilość danych.',
-        },
+        description: 'System CodeBros do konfigurowalnej oceny ryzyka kredytu kupieckiego.',
       },
     },
   },
@@ -171,40 +132,8 @@ export const pl = {
       label: 'Case study / Maw Autoserwis',
       title: 'Maw Autoserwis',
       categories: 'Strona internetowa / Projektowanie produktu',
-      statement: 'Strona internetowa dla Maw Autoserwis.',
-      meta: {
-        role: { label: 'Rola', value: 'Projektowanie stron / frontend' },
-        team: { label: 'Zespół', value: 'Wojciech / projekt indywidualny' },
-        status: { label: 'Status', value: 'Projekt zrealizowany' },
-      },
-      context: { title: 'Co zbudowałem?', body: 'Stronę firmową dla Maw Autoserwis.' },
-      problem: {
-        title: 'Problem',
-        body: 'Oferta serwisu potrzebowała czytelnej prezentacji online.',
-      },
-      solution: {
-        title: 'Rozwiązanie',
-        body: 'Powstała strona skupiona na usługach i prostym przejściu do kontaktu.',
-      },
-      challenge: {
-        title: 'Wyzwanie techniczne',
-        body: 'Ułożyć informacje tak, aby użytkownik szybko znalazł właściwą usługę.',
-      },
-      role: {
-        title: 'Moja rola',
-        body: 'Projekt i wdrożenie wykonałem samodzielnie.',
-        items: ['Projektowanie stron', 'Frontend', 'Responsywne wdrożenie'],
-      },
-      result: { title: 'Rezultat', body: 'Gotowa strona internetowa dla Maw Autoserwis.' },
-      galleryLabel: 'Galeria strony / tymczasowe wizualizacje',
-      nextLabel: 'Następna realizacja',
-      contactCta: 'Porozmawiaj o podobnej stronie',
-    },
-    agnieszkaLuzarska: {
-      label: 'Case study / Agnieszka Luzarska',
-      title: 'Agnieszka Luzarska',
-      categories: 'Strona internetowa / Projektowanie produktu',
-      statement: 'Strona internetowa Agnieszki Luzarskiej.',
+      statement:
+        'Dla Maw Autoserwis stworzyłem branding i stronę, które pokazują doświadczenie warsztatu oraz szeroki zakres jego usług.',
       meta: {
         role: { label: 'Rola', value: 'Projektowanie stron / frontend' },
         team: { label: 'Zespół', value: 'Wojciech / projekt indywidualny' },
@@ -212,27 +141,76 @@ export const pl = {
       },
       context: {
         title: 'Co zbudowałem?',
-        body: 'Osobistą stronę internetową Agnieszki Luzarskiej.',
+        body: 'Stworzyłem cały branding firmy i przełożyłem go na stronę internetową. Kierunek marki wypracowaliśmy wspólnie z właścicielem podczas rozmów o przyszłości firmy i wartościach, na których ma opierać się jej wizerunek.',
       },
       problem: {
         title: 'Problem',
-        body: 'Oferta osobistej marki potrzebowała spokojnej i czytelnej prezentacji.',
+        body: 'Maw Autoserwis działa na rynku od 20 lat i obsługuje bardzo różne samochody. Strona musiała jednocześnie budować zaufanie oraz pokazywać wszechstronność warsztatu, od luksusowych aut osobowych po samochody dostawcze.',
       },
       solution: {
         title: 'Rozwiązanie',
-        body: 'Strona porządkuje informacje i prowadzi użytkownika przez ofertę.',
+        body: 'Wydzieliłem dwie warstwy oferty: auta osobowe i auta dostawcze. Przedstawiłem usługi oraz cennik, stworzyłem prosty formularz kontaktowy i ułatwiłem klientom znalezienie właściwej drogi do warsztatu.',
       },
       challenge: {
         title: 'Wyzwanie techniczne',
-        body: 'Zbudować układ, który pozostaje osobisty i czytelny na każdym ekranie.',
+        body: 'Najważniejsze było uporządkowanie wielu informacji bez przytłaczania użytkownika. Każda część strony ma wzmacniać wiarygodność firmy i prowadzić do kontaktu z warsztatem.',
       },
       role: {
         title: 'Moja rola',
-        body: 'Projekt i wdrożenie wykonałem samodzielnie.',
-        items: ['Projektowanie stron', 'Frontend', 'Responsywne wdrożenie'],
+        body: 'Odpowiadałem za branding, kierunek wizualny, projekt strony i wdrożenie.',
+        items: ['Branding', 'Projektowanie stron', 'Frontend', 'Formularz kontaktowy'],
       },
-      result: { title: 'Rezultat', body: 'Gotowa strona internetowa Agnieszki Luzarskiej.' },
-      galleryLabel: 'Galeria strony / tymczasowe wizualizacje',
+      result: {
+        title: 'Rezultat',
+        body: 'Powstała strona, która buduje zaufanie przez konkretne informacje o firmie i konsekwentnie zachęca do kontaktu.',
+      },
+      galleryLabel: 'Galeria strony',
+      nextLabel: 'Następna realizacja',
+      contactCta: 'Porozmawiaj o podobnej stronie',
+    },
+    agnieszkaLuzarska: {
+      label: 'Case study / Agnieszka Luzarska',
+      title: 'Agnieszka Luzarska',
+      categories: 'Strona internetowa / Projektowanie produktu',
+      statement:
+        'Osobista strona Agnieszki Luzarskiej przedstawia nie tylko ofertę Mary Kay, ale przede wszystkim kobietę, która za nią stoi.',
+      meta: {
+        role: { label: 'Rola', value: 'Projektowanie stron / frontend' },
+        team: { label: 'Zespół', value: 'Wojciech / projekt indywidualny' },
+        status: { label: 'Status', value: 'Projekt zrealizowany' },
+      },
+      context: {
+        title: 'Co zbudowałem?',
+        body: 'Stworzyłem stronę dla dyrektor i konsultantki Mary Kay. Jej celem było pokazanie Agnieszki jako osoby z własną historią, podejściem i zrozumieniem potrzeb innych kobiet.',
+      },
+      problem: {
+        title: 'Problem',
+        body: 'Sprzedaż kosmetyków była ważna, ale nie mogła przykryć osobistego charakteru marki. Strona miała pozwolić klientkom najpierw poznać Agnieszkę i poczuć, z kim będą pracować.',
+      },
+      solution: {
+        title: 'Rozwiązanie',
+        body: 'Postawiłem na storytelling. Użytkowniczka odkrywa postać Agnieszki przez przyjemne dla oka animacje i opowiedzianą w kolejnych sekcjach historię. Na stronie znajduje się również oferta kosmetyków, którą przy rzadkich zmianach aktualizuję jako administrator, bez rozbudowanego CMS-u.',
+      },
+      challenge: {
+        title: 'Wyzwanie techniczne',
+        body: 'Drugim ważnym elementem była karta potrzeb skóry. Przeniosłem krótki formularz z papierowej wersji do internetu, dzięki czemu klientki mogą łatwiej opisać swoje potrzeby i skontaktować się z Agnieszką.',
+      },
+      role: {
+        title: 'Moja rola',
+        body: 'Odpowiadałem za koncepcję, projekt, animacje i wdrożenie strony.',
+        items: [
+          'Storytelling',
+          'Projektowanie stron',
+          'Animacje',
+          'Frontend',
+          'Customowy formularz',
+        ],
+      },
+      result: {
+        title: 'Rezultat',
+        body: 'Powstała strona, która łączy osobistą historię z ofertą i ułatwia klientkom pierwszy kontakt. Jeśli oferta zaczęłaby zmieniać się częściej, stronę można rozbudować o CMS.',
+      },
+      galleryLabel: 'Galeria strony',
       nextLabel: 'Następna realizacja',
       contactCta: 'Porozmawiaj o podobnej stronie',
     },
@@ -240,32 +218,39 @@ export const pl = {
       label: 'Case study / Vanta Detailing',
       title: 'Vanta Detailing',
       categories: 'Strona internetowa / Projektowanie produktu',
-      statement: 'Strona internetowa dla Vanta — detailingu samochodowego.',
+      statement:
+        'Vanta Detailing to portfolio strony sprzedażowej dla studia detailingu samochodowego i demonstracja mojego warsztatu projektowego.',
       meta: {
         role: { label: 'Rola', value: 'Projektowanie stron / frontend' },
         team: { label: 'Zespół', value: 'Wojciech / projekt indywidualny' },
-        status: { label: 'Status', value: 'Projekt zrealizowany' },
+        status: { label: 'Status', value: 'Projekt portfolio' },
       },
-      context: { title: 'Co zbudowałem?', body: 'Stronę usługową dla Vanta Detailing.' },
+      context: {
+        title: 'Co zbudowałem?',
+        body: 'Stworzyłem nowoczesną stronę dla studia detailingu samochodowego. To projekt portfolio, a nie wdrożenie dla prawdziwego klienta, ale został zaprojektowany tak, jak strona, która ma realnie sprzedawać usługę.',
+      },
       problem: {
         title: 'Problem',
-        body: 'Jakość usługi detailingowej potrzebowała mocnej prezentacji wizualnej.',
+        body: 'Studio detailingu musi pokazać nie tylko zakres usług, ale również jakość pracy i różnicę między poszczególnymi wariantami. Użytkownik powinien szybko znaleźć cenę, pakiet i powód, żeby napisać.',
       },
       solution: {
         title: 'Rozwiązanie',
-        body: 'Strona łączy prezentację usług z wizualnym pokazaniem efektu pracy.',
+        body: 'Strona prezentuje studio, usługi, szczegółowy cennik i ofertę pakietową. Komponent before/after pokazuje efekt pracy, a formularz kontaktowy i sekcja opinii domykają drogę do zapytania.',
       },
       challenge: {
         title: 'Wyzwanie techniczne',
-        body: 'Zaprojektować doświadczenie, które buduje zaufanie przed pierwszym kontaktem.',
+        body: 'Zastosowałem nowoczesne animacje w wyważony sposób. Strona korzysta z aktualnego języka wizualnego, ale animacja nie konkuruje z ofertą i zdjęciami. Każdy element ma wspierać sprzedaż, a nie tylko wyglądać efektownie.',
       },
       role: {
         title: 'Moja rola',
-        body: 'Projekt i wdrożenie wykonałem samodzielnie.',
-        items: ['Projektowanie stron', 'Frontend', 'Responsywne wdrożenie'],
+        body: 'Samodzielnie zaprojektowałem i wdrożyłem całą stronę portfolio.',
+        items: ['UX i UI', 'Projektowanie stron', 'Before / after', 'Animacje', 'Frontend'],
       },
-      result: { title: 'Rezultat', body: 'Gotowa strona internetowa dla Vanta Detailing.' },
-      galleryLabel: 'Galeria strony / tymczasowe wizualizacje',
+      result: {
+        title: 'Rezultat',
+        body: 'Powstał kompletny przykład strony, którą można dostosować do prawdziwego studia detailingu. Jeśli podoba Ci się ten kierunek, mogę przełożyć go na potrzeby Twojego biznesu.',
+      },
+      galleryLabel: 'Galeria strony',
       nextLabel: 'Następna realizacja',
       contactCta: 'Porozmawiaj o podobnej stronie',
     },
@@ -274,7 +259,7 @@ export const pl = {
       title: 'Planik',
       categories: 'Aplikacja webowa / Projektowanie produktu / Frontend i backend',
       statement:
-        'Aplikacja do planowania wydarzeń zaprojektowana i zbudowana od podstaw przez CodeBros.',
+        'Planik to duża aplikacja webowa CodeBros do planowania wydarzeń, od pierwszego pomysłu po rezerwacje, budżet i współpracę grupy.',
       meta: {
         role: { label: 'Rola', value: 'Projektowanie produktu / frontend i backend' },
         team: { label: 'Zespół', value: 'Wojciech + Michał / CodeBros' },
@@ -282,30 +267,37 @@ export const pl = {
       },
       context: {
         title: 'Co budowaliśmy?',
-        body: 'Planik to kompleksowa aplikacja do planowania wydarzeń. Zaprojektowaliśmy i zbudowaliśmy ją od zera jako dwuosobowy zespół.',
+        body: 'Planik służy do organizowania wieczorów kawalerskich i panieńskich, urodzin oraz innych wydarzeń. Aplikacja zawiera katalog atrakcji, restauracji i noclegów, a także pełny system kont, logowania i uprawnień.',
       },
       problem: {
         title: 'Problem',
-        body: 'Punktem wyjścia był proces planowania wydarzenia, który wymagał połączenia wielu informacji i decyzji w jednym produkcie.',
+        body: 'Planowanie wydarzenia łączy wiele decyzji, osób i rezerwacji. Potrzebowaliśmy jednego miejsca, w którym użytkownik może przejść od inspiracji do gotowego planu, a grupa może wspólnie podejmować decyzje i kontrolować budżet.',
       },
       solution: {
         title: 'Rozwiązanie',
-        body: 'Rozwiązanie połączyło model danych, interfejs i logikę aplikacji w jeden spójny przepływ do planowania wydarzeń.',
+        body: 'Moduł planowania pozwala tworzyć wydarzenia, zapraszać znajomych, dodawać atrakcje z katalogu, proponować je w ankietach, wybierać pomocników, tworzyć rezerwacje i zarządzać budżetem. W evencie działają również czaty grupowe i zapis zdjęć. Plan można zacząć od przygotowanej przez nas templatki albo zbudować po wywiadzie z AI.',
       },
       challenge: {
         title: 'Wyzwanie techniczne',
-        body: 'Najważniejsze było przełożenie złożonego procesu na strukturę, którą da się rozwijać bez rozdzielania doświadczenia użytkownika od implementacji.',
+        body: 'Aplikacja obejmuje także moduł partnera z dostępem do tworzenia atrakcji i zarządzania nimi, system rezerwacji, monetyzację opartą na płatnościach za event i wyróżnienia ofert oraz panele administracyjne do zarządzania produktem i treścią. Największym wyzwaniem było połączenie tych obszarów w spójną całość.',
       },
       role: {
         title: 'Moja rola',
         body: 'Projekt realizowany razem z Michałem Pawlikiem jako CodeBros.',
-        items: ['Myślenie produktowe', 'UX i UI', 'Frontend', 'Backend', 'Model danych'],
+        items: [
+          'Myślenie produktowe',
+          'UX i UI',
+          'Frontend',
+          'Backend',
+          'Model danych',
+          'Logika biznesowa',
+        ],
       },
       result: {
         title: 'Rezultat',
-        body: 'Powstała kompletna aplikacja do planowania wydarzeń — od modelu danych po interfejs.',
+        body: 'Powstał rozbudowany produkt, który łączy planowanie wydarzeń, katalog, współpracę grupy, rezerwacje, płatności i narzędzia administracyjne w jednym systemie.',
       },
-      galleryLabel: 'Galeria produktu / tymczasowe wizualizacje',
+      galleryLabel: 'Galeria produktu',
       nextLabel: 'Następna realizacja',
       contactCta: 'Porozmawiaj o podobnym projekcie',
     },
@@ -313,7 +305,8 @@ export const pl = {
       label: 'Case study / Credit Risk System',
       title: 'Credit Risk System',
       categories: 'System wewnętrzny / Ocena ryzyka / Frontend i backend',
-      statement: 'System wspierający ocenę ryzyka przy udzielaniu kredytów kupieckich.',
+      statement:
+        'Credit Risk System był projektem CodeBros na konkurs UGotIt organizowany przez Univio. To właśnie dzięki niemu powstało CodeBros.',
       meta: {
         role: { label: 'Rola', value: 'Projektowanie produktu / frontend i backend' },
         team: { label: 'Zespół', value: 'Wojciech + Michał / CodeBros' },
@@ -321,30 +314,37 @@ export const pl = {
       },
       context: {
         title: 'Co budowaliśmy?',
-        body: 'Zbudowaliśmy system wspierający ocenę ryzyka przy udzielaniu kredytów kupieckich.',
+        body: 'Przed rozpoczęciem pracy w Univio stworzyliśmy na konkurs system dla firmy, która potrzebowała oceniać ryzyko udzielania klientom kredytu kupieckiego. Projekt połączył silnik decyzyjny, interfejs analityka i narzędzia dla handlowca.',
       },
       problem: {
         title: 'Problem',
-        body: 'Decyzja kredytowa wymagała zebrania i uporządkowania informacji o ryzyku w jednym miejscu.',
+        body: 'Ocena ryzyka opierała się na rozbudowanych wzorach i regułach. Analityk musiał mieć możliwość pełnej konfiguracji silnika, a handlowiec potrzebował jasnej informacji, z którymi klientami powinien się skontaktować i jakie tematy poruszyć.',
       },
       solution: {
         title: 'Rozwiązanie',
-        body: 'Powstał system, który wspiera ocenę ryzyka i porządkuje ten proces w interfejsie dla użytkownika.',
+        body: 'Stworzyliśmy konfigurowalny silnik obliczania ryzyka oraz AI do generowania podsumowań. Dodaliśmy również tablicę Kanban, na której handlowiec dostaje uporządkowanych klientów wraz z tematami wykrytymi przez silnik.',
       },
       challenge: {
         title: 'Wyzwanie techniczne',
-        body: 'Wyzwaniem było zamienić proces oceny ryzyka w czytelną strukturę, która pomaga przejść od danych do decyzji.',
+        body: 'Najtrudniejsze było połączenie skomplikowanych, konfigurowalnych reguł z prostym doświadczeniem użytkownika. System musiał być zrozumiały dla analityka pracującego na modelu ryzyka i dla handlowca, który korzystał z gotowych wniosków.',
       },
       role: {
         title: 'Moja rola',
         body: 'Projekt realizowany razem z Michałem Pawlikiem jako CodeBros.',
-        items: ['Myślenie produktowe', 'UX i UI', 'Frontend', 'Backend', 'Logika biznesowa'],
+        items: [
+          'Myślenie produktowe',
+          'UX i UI',
+          'Frontend',
+          'Backend',
+          'Silnik ryzyka',
+          'Integracja AI',
+        ],
       },
       result: {
         title: 'Rezultat',
-        body: 'Projekt wygrał konkurs organizowany przez Univio, jeszcze zanim pracowaliśmy tam zawodowo.',
+        body: 'Wygraliśmy konkurs, otrzymaliśmy 12 000 złotych i dostaliśmy szansę udziału w rekrutacji do Univio. Oboje dołączyliśmy później do firmy, a projekt stał się początkiem CodeBros.',
       },
-      galleryLabel: 'Galeria systemu / tymczasowe wizualizacje',
+      galleryLabel: 'Galeria systemu',
       nextLabel: 'Następna realizacja',
       contactCta: 'Porozmawiaj o podobnym projekcie',
     },

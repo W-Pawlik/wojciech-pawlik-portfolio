@@ -59,7 +59,7 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-08',
       ratio: '16 / 10',
-      src: '/images/Vanta_realizacja.PNG',
+      src: '/images/maw_autoserwis_realizacja.PNG',
     },
   },
   {
@@ -73,7 +73,7 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-09',
       ratio: '16 / 10',
-      src: '/images/IMG_20250915_143621326_BURST000_COVER.jpg',
+      src: '/images/Agnieszka_Luzarska_realizacja.PNG',
     },
   },
   {
@@ -100,7 +100,7 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-05',
       ratio: '16 / 10',
-      src: '/images/landing-collage-1.png',
+      src: '/images/planik_realizacja.PNG',
     },
   },
   {
@@ -113,7 +113,7 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-07',
       ratio: '16 / 10',
-      src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80',
+      src: '/images/risk_system_realizacja.PNG',
     },
   },
 ]

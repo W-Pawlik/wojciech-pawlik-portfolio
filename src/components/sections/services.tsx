@@ -45,6 +45,7 @@ export async function ServicesSection({ headlineAs = 'h2' }: { headlineAs?: 'h1'
                     arrow and the underline have to move together with the background. */}
                 <Link
                   href={href}
+                  data-return-scroll
                   className="block grid grid-cols-12 items-baseline gap-grid py-9 transition-colors duration-[var(--duration-base)] group-hover:bg-canvas-subtle"
                 >
                   <span className="col-span-2 font-mono text-meta text-accent uppercase lg:col-span-1">

@@ -1,5 +1,9 @@
-import Image from 'next/image'
+'use client'
 
+import Image from 'next/image'
+import { useState } from 'react'
+
+import { Overlay } from '@/components/ui/overlay'
 import { cn } from '@/lib/utils/cn'
 import { blurProps } from '@/lib/images/blur'
 
@@ -12,6 +16,9 @@ type MediaSlotProps = {
   label: string
   src?: string
   alt?: string
+  fit?: 'cover' | 'contain'
+  zoomable?: boolean
+  closeLabel?: string
   tone?: 'default' | 'invert'
   showAnnotation?: boolean
   className?: string
@@ -34,54 +41,103 @@ export function MediaSlot({
   label,
   src,
   alt,
+  fit = 'cover',
+  zoomable = false,
+  closeLabel,
   tone = 'default',
   showAnnotation = false,
   className,
 }: MediaSlotProps) {
-  return (
-    <div
-      style={{ aspectRatio: ratio }}
-      className={cn(
-        'relative flex w-full flex-col justify-between overflow-hidden rounded-image border p-5',
-        tone === 'invert'
-          ? 'border-line-invert bg-canvas-invert-surface'
-          : 'border-line bg-canvas-subtle',
-        className,
-      )}
-    >
-      {src && (
-        <Image
-          src={src}
-          alt={alt ?? label}
-          fill
-          sizes="(min-width: 64rem) 68vw, 100vw"
-          {...blurProps(src)}
-          className="object-cover"
-        />
-      )}
+  const [isZoomed, setIsZoomed] = useState(false)
+  const imageClassName = fit === 'contain' ? 'object-contain' : 'object-cover'
 
-      {showAnnotation && (
-        <div className="relative z-10 flex h-full flex-col justify-between">
-          <p
-            className={cn(
-              'w-fit px-2 py-1 font-mono text-meta uppercase',
-              src && (tone === 'invert' ? 'bg-canvas-invert/90' : 'bg-canvas/90'),
-              tone === 'invert' ? 'text-content-invert-tertiary' : 'text-content-tertiary',
-            )}
+  return (
+    <>
+      <div
+        style={{ aspectRatio: ratio }}
+        className={cn(
+          'relative flex w-full flex-col justify-between overflow-hidden rounded-image border p-5',
+          tone === 'invert'
+            ? 'border-line-invert bg-canvas-invert-surface'
+            : 'border-line bg-canvas-subtle',
+          className,
+        )}
+      >
+        {src && zoomable && closeLabel ? (
+          <button
+            type="button"
+            aria-label={alt ?? label}
+            className="absolute inset-0 z-0 block h-full w-full cursor-zoom-in border-0 bg-transparent p-0 text-left"
+            onClick={() => setIsZoomed(true)}
           >
-            {id} <span aria-hidden="true">/</span> {ratio.replace(/\s/g, '')}
-          </p>
-          <p
-            className={cn(
-              'w-fit px-2 py-1 font-mono text-meta uppercase',
-              src && (tone === 'invert' ? 'bg-canvas-invert/90' : 'bg-canvas/90'),
-              tone === 'invert' ? 'text-content-invert-tertiary' : 'text-content-tertiary',
-            )}
-          >
-            {label}
-          </p>
-        </div>
-      )}
-    </div>
+            <Image
+              src={src}
+              alt=""
+              fill
+              sizes="(min-width: 64rem) 68vw, 100vw"
+              {...blurProps(src)}
+              className={imageClassName}
+            />
+          </button>
+        ) : (
+          src && (
+            <Image
+              src={src}
+              alt={alt ?? label}
+              fill
+              sizes="(min-width: 64rem) 68vw, 100vw"
+              {...blurProps(src)}
+              className={imageClassName}
+            />
+          )
+        )}
+
+        {showAnnotation && (
+          <div className="relative z-10 flex h-full flex-col justify-between">
+            <p
+              className={cn(
+                'w-fit px-2 py-1 font-mono text-meta uppercase',
+                src && (tone === 'invert' ? 'bg-canvas-invert/90' : 'bg-canvas/90'),
+                tone === 'invert' ? 'text-content-invert-tertiary' : 'text-content-tertiary',
+              )}
+            >
+              {id} <span aria-hidden="true">/</span> {ratio.replace(/\s/g, '')}
+            </p>
+            <p
+              className={cn(
+                'w-fit px-2 py-1 font-mono text-meta uppercase',
+                src && (tone === 'invert' ? 'bg-canvas-invert/90' : 'bg-canvas/90'),
+                tone === 'invert' ? 'text-content-invert-tertiary' : 'text-content-tertiary',
+              )}
+            >
+              {label}
+            </p>
+          </div>
+        )}
+      </div>
+
+      {src && zoomable && closeLabel ? (
+        <Overlay
+          open={isZoomed}
+          onClose={() => setIsZoomed(false)}
+          label={alt ?? label}
+          className="!inset-0 !w-full !bg-canvas-invert"
+        >
+          <div className="relative h-full w-full">
+            <button
+              type="button"
+              aria-label={closeLabel}
+              className="absolute top-0 right-0 z-10 inline-flex h-12 w-12 items-center justify-center border border-line-invert-strong bg-canvas-invert text-body-lg text-content-invert transition-colors hover:border-content-invert hover:bg-canvas-invert-surface"
+              onClick={() => setIsZoomed(false)}
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+            <div className="relative h-full w-full">
+              <Image src={src} alt={alt ?? label} fill sizes="100vw" className="object-contain" />
+            </div>
+          </div>
+        </Overlay>
+      ) : null}
+    </>
   )
 }

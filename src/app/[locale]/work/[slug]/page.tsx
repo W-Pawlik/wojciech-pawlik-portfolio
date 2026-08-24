@@ -39,6 +39,7 @@ export default async function CaseStudyRoute(props: PageProps<'/[locale]/work/[s
   return (
     <CaseStudyPage
       copy={dictionaryFor(locale).caseStudies[project.key]}
+      closeLabel={dictionaryFor(locale).nav.closeMenu}
       liveCta={dictionaryFor(locale).work.liveCta}
       locale={locale}
       project={project}

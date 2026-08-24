@@ -15,3 +15,4 @@ Zasady:
   dopisz je do `CREDITS.json` w tym katalogu.
 - `og-default.jpg` — 1200 × 630, obraz Open Graph. Bez niego metadane nie deklarują obrazu
   (lepiej brak niż zepsuty link, który crawler zapamięta).
+

@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 import { Container } from '@/components/ui/container'
+import { BackLink } from '@/components/ui/back-link'
 import { MediaSlot } from '@/components/ui/media-slot'
 import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
@@ -28,6 +27,7 @@ type CaseStudyCopy = {
 
 type CaseStudyPageProps = {
   copy: CaseStudyCopy
+  closeLabel: string
   liveCta: string
   locale: Locale
   project: Project
@@ -36,14 +36,19 @@ type CaseStudyPageProps = {
 
 const CONTENT_SECTIONS = ['context', 'problem', 'solution', 'challenge'] as const
 
-export function CaseStudyPage({ copy, liveCta, locale, project, nextProject }: CaseStudyPageProps) {
+export function CaseStudyPage({
+  copy,
+  closeLabel,
+  liveCta,
+  locale,
+  project,
+  nextProject,
+}: CaseStudyPageProps) {
   return (
     <>
       <Section spacing="xl">
         <Container>
-          <TextLink href={withLocale(ROUTES.work, locale)} arrow="left">
-            {copy.label.split(' / ')[0]}
-          </TextLink>
+          <BackLink href={withLocale(ROUTES.work, locale)}>{copy.label.split(' / ')[0]}</BackLink>
 
           <div className="mt-16 grid grid-cols-12 gap-grid">
             <div className="col-span-12 lg:col-span-8">
@@ -57,16 +62,33 @@ export function CaseStudyPage({ copy, liveCta, locale, project, nextProject }: C
               </p>
             </div>
 
-            <div className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0" />
+            <div className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0">
+              {copy.meta ? (
+                <dl className="border-t border-line">
+                  {Object.values(copy.meta).map((item) => (
+                    <div
+                      key={item.label}
+                      className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-line py-4 font-mono text-meta uppercase"
+                    >
+                      <dt className="text-content-tertiary">{item.label}</dt>
+                      <dd className="text-content">{item.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : null}
+            </div>
           </div>
 
           <div className="mt-20">
             <MediaSlot
               id={project.media.id}
-              ratio="16 / 9"
+              ratio={project.media.ratio}
               src={project.media.src}
               alt={copy.title}
               label={copy.galleryLabel}
+              fit="contain"
+              zoomable
+              closeLabel={closeLabel}
             />
           </div>
         </Container>
@@ -102,6 +124,44 @@ export function CaseStudyPage({ copy, liveCta, locale, project, nextProject }: C
               )
             })}
           </div>
+
+          {copy.role ? (
+            <article className="mt-section-lg grid grid-cols-12 gap-grid border-t border-line pt-5">
+              <div className="col-span-12 lg:col-span-3">
+                <p className="font-mono text-meta text-content-tertiary uppercase">
+                  05 / {copy.role.title}
+                </p>
+              </div>
+              <div className="col-span-12 lg:col-span-7 lg:col-start-5">
+                <h2 className="font-display text-display-project">{copy.role.title}</h2>
+                <p className="mt-6 text-body-lg text-content-secondary">{copy.role.body}</p>
+                <ul className="mt-6 border-t border-line">
+                  {copy.role.items.map((item) => (
+                    <li
+                      key={item}
+                      className="border-b border-line py-3 text-body text-content-secondary"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ) : null}
+
+          {copy.result ? (
+            <article className="mt-section-lg grid grid-cols-12 gap-grid border-t border-line pt-5">
+              <div className="col-span-12 lg:col-span-3">
+                <p className="font-mono text-meta text-content-tertiary uppercase">
+                  06 / {copy.result.title}
+                </p>
+              </div>
+              <div className="col-span-12 lg:col-span-7 lg:col-start-5">
+                <h2 className="font-display text-display-project">{copy.result.title}</h2>
+                <p className="mt-6 text-body-lg text-content-secondary">{copy.result.body}</p>
+              </div>
+            </article>
+          ) : null}
         </Container>
       </Section>
 
@@ -113,24 +173,19 @@ export function CaseStudyPage({ copy, liveCta, locale, project, nextProject }: C
                 07 / {copy.galleryLabel}
               </p>
               <div className="mt-6 grid grid-cols-2 gap-grid">
-                <div className="relative aspect-square overflow-hidden rounded-image">
-                  <Image
+                {[0, 1].map((index) => (
+                  <MediaSlot
+                    key={index}
+                    id={`${project.media.id}-${index + 1}`}
+                    ratio={project.media.ratio}
                     src={project.media.src}
-                    alt=""
-                    fill
-                    sizes="(min-width: 64rem) 33vw, 50vw"
-                    className="object-cover"
+                    alt={copy.title}
+                    label={copy.galleryLabel}
+                    fit="contain"
+                    zoomable
+                    closeLabel={closeLabel}
                   />
-                </div>
-                <div className="relative aspect-square overflow-hidden rounded-image">
-                  <Image
-                    src={project.media.src}
-                    alt=""
-                    fill
-                    sizes="(min-width: 64rem) 33vw, 50vw"
-                    className="object-cover object-right"
-                  />
-                </div>
+                ))}
               </div>
             </div>
           </div>

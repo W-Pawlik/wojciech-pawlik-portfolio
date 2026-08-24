@@ -1,6 +1,5 @@
 import { Container } from '@/components/ui/container'
 import { MediaSlot } from '@/components/ui/media-slot'
-import { ProjectDetails } from '@/components/ui/project-details'
 import { Section } from '@/components/ui/section'
 import { SectionHeader } from '@/components/ui/section-header'
 import { TextLink } from '@/components/ui/text-link'
@@ -15,8 +14,8 @@ import { cn } from '@/lib/utils/cn'
 /**
  * One project per row keeps the work section closer to an editorial index than a card
  * grid. The title and description lead; the number is only a quiet registration mark.
- * The expandable summary adds useful context without turning the homepage into a case
- * study wall. Full case-study links wait until the routes and content exist.
+ * The landing page keeps the descriptions brief and sends the interested visitor to the
+ * full case study for context, decisions and implementation details.
  */
 type SelectedWorkSectionProps = {
   scope?: 'landing' | 'all'
@@ -72,6 +71,9 @@ export async function SelectedWorkSection({
                     src={project.media.src}
                     alt={`${copy.title} — ${dict.work.visualization}`}
                     label={dict.work.visualization}
+                    fit="contain"
+                    zoomable
+                    closeLabel={dict.nav.closeMenu}
                   />
                 </div>
 
@@ -118,8 +120,6 @@ export async function SelectedWorkSection({
                       </TextLink>
                     ) : null}
                   </div>
-
-                  <ProjectDetails copy={{ ...dict.work.details, ...copy.details }} />
                 </div>
               </article>
             )
