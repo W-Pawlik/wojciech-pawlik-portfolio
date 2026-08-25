@@ -7,7 +7,7 @@ import { locales, localeMeta, withLocale, type Locale } from '@/i18n/config'
 import { cn } from '@/lib/utils/cn'
 
 type LanguageSwitcherProps = {
-  /** From the dictionary — a client component cannot read it itself. */
+  /** From the dictionary - a client component cannot read it itself. */
   label: string
   className?: string
 }
@@ -18,7 +18,7 @@ type LanguageSwitcherProps = {
  * Client-side because it needs the current pathname. Rendered as links rather than a
  * select so it works without JavaScript and is crawlable.
  *
- * A single-locale project should not render this at all — hence the early return instead
+ * A single-locale project should not render this at all - hence the early return instead
  * of a one-item list, which would look like a broken control.
  */
 export function LanguageSwitcher({ label, className }: LanguageSwitcherProps) {

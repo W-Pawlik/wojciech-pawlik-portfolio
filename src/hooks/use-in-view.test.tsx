@@ -8,7 +8,7 @@ import { useInView } from './use-in-view'
  * and restores the original afterwards.
  *
  * The hook is exercised through a component rather than `renderHook`, because the ref has
- * to be attached to a real element while the effect runs — which is exactly the condition
+ * to be attached to a real element while the effect runs - which is exactly the condition
  * that decides whether anything is observed at all.
  */
 const original = window.IntersectionObserver

@@ -23,7 +23,7 @@ jobs:
       # Same gate as locally: format, lint, types, tests.
       - run: pnpm check
 
-      # A production build requires an https origin — it is baked into canonical,
+      # A production build requires an https origin - it is baked into canonical,
       # hreflang and the sitemap of every prerendered locale. CI only proves the build
       # compiles, so the value just has to be the real production origin, not a secret.
       # TODO(brief): podmień na docelową domenę projektu.

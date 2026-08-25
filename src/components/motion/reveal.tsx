@@ -10,8 +10,8 @@ import { cn } from '@/lib/utils/cn'
  * Scroll reveals, in CSS.
  *
  * The animation is a keyframe in `utilities.css`, switched on by one
- * IntersectionObserver. Behaviour is what the animation system asks for — fade with a
- * short lift, once, at 30% visibility — but it can happen as soon as the app chunk
+ * IntersectionObserver. Behaviour is what the animation system asks for - fade with a
+ * short lift, once, at 30% visibility - but it can happen as soon as the app chunk
  * hydrates instead of after an animation library has been fetched, parsed and mounted.
  * See .agents/decisions/0009-css-reveals.md.
  *
@@ -20,7 +20,7 @@ import { cn } from '@/lib/utils/cn'
 
 type RevealProps = {
   children: ReactNode
-  /** Seconds. Use sparingly — prefer RevealGroup for sequencing siblings. */
+  /** Seconds. Use sparingly - prefer RevealGroup for sequencing siblings. */
   delay?: number
   className?: string
 }
@@ -61,7 +61,7 @@ type RevealGroupProps = {
 
 /**
  * Parent of a staggered sequence. The **group** owns the observer, so one element
- * entering the viewport starts the whole row — which is what makes a stagger read as one
+ * entering the viewport starts the whole row - which is what makes a stagger read as one
  * movement instead of five independent ones.
  */
 export function RevealGroup({
@@ -92,7 +92,7 @@ type RevealItemProps = {
   className?: string
 }
 
-/** One element of a `RevealGroup`. Carries its own classes — it *is* the grid child. */
+/** One element of a `RevealGroup`. Carries its own classes - it *is* the grid child. */
 export function RevealItem({ children, index = 0, className }: RevealItemProps) {
   const { inView, stagger, delayChildren } = useContext(RevealGroupContext)
   const delay = delayChildren + index * stagger

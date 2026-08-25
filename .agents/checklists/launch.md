@@ -1,4 +1,4 @@
-# Checklist — uruchomienie
+# Checklist - uruchomienie
 
 Odhaczana **przed** wypuszczeniem strony pod prawdziwą domenę. Punkty oznaczone **BLOKER**
 zatrzymują publikację niezależnie od tego, jak dobrze strona wygląda.
@@ -25,7 +25,7 @@ zatrzymują publikację niezależnie od tego, jak dobrze strona wygląda.
 ## Sprawy prawne
 
 - [ ] **BLOKER** Polityka prywatności istnieje, jest podlinkowana i wymienia administratora danych.
-- [ ] Jeżeli są ciasteczka inne niż techniczne (mapa, analityka, chat, widget opinii) —
+- [ ] Jeżeli są ciasteczka inne niż techniczne (mapa, analityka, chat, widget opinii) -
       **BLOKER** banner zgody działa i domyślnie nic nie ładuje.
 - [ ] Dane rejestrowe firmy w stopce, jeżeli wymagane.
 - [ ] Prawa do wszystkich zdjęć potwierdzone; atrybucje, jeżeli licencja ich wymaga.
@@ -48,14 +48,14 @@ zatrzymują publikację niezależnie od tego, jak dobrze strona wygląda.
 - [ ] Obraz OG 1200 × 630 istnieje i wyświetla się w podglądzie linku.
 - [ ] Favicon i manifest mają właściwe kolory i nazwę.
 - [ ] 404 i błąd trasy wyglądają jak część strony i dają drogę wyjścia.
-- [ ] Przekierowanie ze starej strony (jeżeli była) — mapa 301 przygotowana.
+- [ ] Przekierowanie ze starej strony (jeżeli była) - mapa 301 przygotowana.
 - [ ] Domena z `www` i bez `www` prowadzą do jednej wersji (redirect, nie duplikat).
 - [ ] Certyfikat HTTPS działa, brak mixed content.
 
 ## Jakość odbioru
 
 - [ ] Sprawdzone na prawdziwym telefonie, nie tylko w emulatorze.
-- [ ] Sprawdzone na 360, 390, 768, 1024, 1440, 1920 px — brak poziomego scrolla.
+- [ ] Sprawdzone na 360, 390, 768, 1024, 1440, 1920 px - brak poziomego scrolla.
 - [ ] Sprawdzone z `prefers-reduced-motion`.
 - [ ] Nawigacja klawiaturą przechodzi całą stronę, focus zawsze widoczny.
 - [ ] Lighthouse mobile: Performance i Accessibility ≥ 90.

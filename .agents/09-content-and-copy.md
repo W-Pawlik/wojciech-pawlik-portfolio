@@ -1,18 +1,18 @@
-# 09 — Treść i copy
+# 09 - Treść i copy
 
 ## Skąd bierzemy treść
 
-0. [10-brand-strategy.md](10-brand-strategy.md) — hasła, claimy, ton głosu. Zatwierdzony
+0. [10-brand-strategy.md](10-brand-strategy.md) - hasła, claimy, ton głosu. Zatwierdzony
    bank haseł jest tam; nie wymyślamy nowego hasła w komponencie.
-1. Brief projektu — teksty sekcji podane wprost przez właściciela repo.
-2. `src/i18n/dictionaries/*` — **wszystkie** teksty widoczne dla użytkownika.
-3. `src/data/*.ts` — liczby, ceny, slugi, kolejność. Zero słów.
+1. Brief projektu - teksty sekcji podane wprost przez właściciela repo.
+2. `src/i18n/dictionaries/*` - **wszystkie** teksty widoczne dla użytkownika.
+3. `src/data/*.ts` - liczby, ceny, slugi, kolejność. Zero słów.
 
 **Nie wymyślamy treści.** Brakuje copy → pytamy właściciela repo. „Lorem ipsum” nie wchodzi do repo.
 
 Szczególnie nie wymyślamy: adresu, telefonu, godzin otwarcia, cen, terminów realizacji, opinii,
 nazw obsługiwanych marek, certyfikatów, liczby lat na rynku, liczby klientów. To są fakty
-o prawdziwej firmie — wymyślony fakt to wprowadzanie klienta w błąd, a nie placeholder.
+o prawdziwej firmie - wymyślony fakt to wprowadzanie klienta w błąd, a nie placeholder.
 
 Jeżeli sekcja wymaga danych, których nie ma, wstawiamy `TODO(brief)` w dokumentacji i **nie**
 publikujemy sekcji.
@@ -25,7 +25,7 @@ ostrzeżenie w buildzie i brak JSON-LD. Dane zastępcze muszą być **rozpoznawa
 
 - Interfejs i treść: języki ustalone w briefie. Główny język definiuje kształt słownika.
 - Kod, nazwy plików, identyfikatory, komentarze, commity: **angielski**.
-- Tłumaczenie nie jest przekładem słowo w słowo — to ta sama myśl powiedziana w drugim języku.
+- Tłumaczenie nie jest przekładem słowo w słowo - to ta sama myśl powiedziana w drugim języku.
   Nazwy własne, marki i nazwy usług technicznych zostają.
 - Obcojęzycznych wtrąceń w wersji głównej używamy tylko tam, gdzie brzmią naturalnie w branży.
   Nie mnożymy ich dla stylu.
@@ -52,7 +52,7 @@ Wzorzec: dwa zdania, drugie jest puentą.
 Sprzedażowe zadęcie: „pasja”, „excellence”, „najwyższe standardy”, „kompleksowa obsługa”,
 „indywidualne podejście”, „lider na rynku”, „innowacyjne rozwiązania”.
 
-Cenowe: „najtaniej”, „promocja”, „okazja”, „gwarancja najniższej ceny” — chyba że model biznesowy
+Cenowe: „najtaniej”, „promocja”, „okazja”, „gwarancja najniższej ceny” - chyba że model biznesowy
 firmy naprawdę na tym stoi i brief tak mówi.
 
 Niepewne: „spróbujemy pomóc”, „postaramy się”. Zamiast tego: konkret, co zrobimy.
@@ -68,18 +68,18 @@ Lista rozszerzona per projekt: [10-brand-strategy.md](10-brand-strategy.md#zakaz
 
 - Zawsze forma „od”, zawsze przez `formatPriceFrom()` z `@/lib/utils/format`.
 - W danych trzymamy liczbę (`450`), nigdy sformatowany string.
-- Spacje nierozdzielające — cena nie może się złamać między linie.
+- Spacje nierozdzielające - cena nie może się złamać między linie.
 - Bez groszy.
 - Cena „od” bez informacji, od czego zależy, jest gorsza niż brak ceny. Podajemy warunek.
 
 ### Liczby i oceny
 
-- Separator dziesiętny zgodny z locale (`4,9` w PL) — przez `formatDecimal()`.
+- Separator dziesiętny zgodny z locale (`4,9` w PL) - przez `formatDecimal()`.
 - Numeracja sekcji i kroków zawsze dwucyfrowa: `01`, `02`. Przez `formatOrdinal()`.
 
 ### Typografia treści
 
-- Półpauza `—` w wtrąceniach i pauzach retorycznych. Nie dywiz `-`.
+- Półpauza `-` w wtrąceniach i pauzach retorycznych. Nie dywiz `-`.
 - Cudzysłowy zgodne z językiem: polskie `„…”`, angielskie `“…”`.
 - Nagłówki wieloliniowe: łamanie linii jest **decyzją projektową**, przekazywaną jawnie jako
   tablica linii do `Headline` / `TextReveal`, nie zdane na przypadek.
@@ -90,20 +90,20 @@ Lista rozszerzona per projekt: [10-brand-strategy.md](10-brand-strategy.md#zakaz
 - Czasownik + korzyść. Nie: `Wyślij`, `Kliknij tutaj`, `Dowiedz się więcej`, `Czytaj dalej`.
 - Brzmienia są zatwierdzone w banku haseł. Nie wymyślamy wariantów w komponencie.
 - Na stronie jest kilka punktów CTA, ale **jeden cel**. Telefon i formularz to dwie drogi do tego
-  samego — telefon zwykle wygrywa na mobile, formularz na desktopie.
+  samego - telefon zwykle wygrywa na mobile, formularz na desktopie.
 
 ### Komunikaty formularza
 
 - Błąd mówi, co zrobić: `Podaj numer telefonu (9 cyfr).` Nie: `Nieprawidłowa wartość`.
 - Komunikaty walidacji są w słownikach i wstrzykiwane do schematu Zod
-  (`src/lib/validation/contact.ts`) — jedno miejsce, ten sam tekst na kliencie i na serwerze.
+  (`src/lib/validation/contact.ts`) - jedno miejsce, ten sam tekst na kliencie i na serwerze.
 - Success state mówi, **co się teraz stanie**: kto się odezwie i w jakim czasie.
   Nie „Formularz został wysłany”.
 - Pod formularzem zdejmujemy obawę: jedno krótkie zdanie („Bez zobowiązań.”).
 
 ## Dowód społeczny
 
-Konkret zamiast ogólników. Opinia bez kontekstu nie działa — najlepiej imię, inicjał nazwiska
+Konkret zamiast ogólników. Opinia bez kontekstu nie działa - najlepiej imię, inicjał nazwiska
 i **czego dotyczyła sprawa**.
 
 Opinie muszą być prawdziwe. Jeżeli klient ma opinie w publicznym profilu, cytujemy je z podaniem
@@ -126,4 +126,4 @@ Cena: od X
 Gwarancja / warunki: jeżeli są
 ```
 
-Czas realizacji i warunki podajemy zawsze, gdy je znamy — pokazują, że proces jest przewidywalny.
+Czas realizacji i warunki podajemy zawsze, gdy je znamy - pokazują, że proces jest przewidywalny.

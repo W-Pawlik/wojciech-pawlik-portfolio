@@ -22,7 +22,7 @@ type SectionHeaderProps = {
  * paragraph in the right ones.
  *
  * Not every section should use it. Once three sections in a row open the same way, the
- * page starts reading as a template — break the pattern deliberately by composing
+ * page starts reading as a template - break the pattern deliberately by composing
  * `SectionLabel` and `Headline` directly (.agents/01-brand-and-design.md).
  */
 export function SectionHeader({

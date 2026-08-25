@@ -1,4 +1,4 @@
-# ADR-0002 — Katalog `src/`, brak plików barrel
+# ADR-0002 - Katalog `src/`, brak plików barrel
 
 - **Status:** Accepted
 - **Data:** 2026-01-01
@@ -9,7 +9,7 @@ Next.js pozwala trzymać kod w katalogu głównym albo w `src/`. Osobno: w proje
 odruchowo powstają pliki `index.ts` re-eksportujące zawartość katalogu.
 
 W App Routerze pliki barrel mają konkretny, nieoczywisty koszt: import jednego komponentu z
-`components/ui` wciąga cały moduł barrel, a wraz z nim każdy plik, który on re-eksportuje — również
+`components/ui` wciąga cały moduł barrel, a wraz z nim każdy plik, który on re-eksportuje - również
 te z `'use client'`. Granica serwer/klient przestaje być widoczna w kodzie, a bundle rośnie
 z powodów, których nie widać w diffie.
 
@@ -25,7 +25,7 @@ z powodów, których nie widać w diffie.
 - Import jest dłuższy, ale mówi prawdę o grafie zależności.
 - Nie da się przypadkiem wciągnąć kodu klienckiego do serwerowego przez re-eksport.
 - Brak cykli importów wynikających z barreli.
-- Refaktor „przenieś plik” wymaga zmiany kilku importów. To akceptowalny koszt — IDE robi to samo.
+- Refaktor „przenieś plik” wymaga zmiany kilku importów. To akceptowalny koszt - IDE robi to samo.
 
 ## Rozważone alternatywy
 

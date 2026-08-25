@@ -1,6 +1,6 @@
 <!-- Favicon. Not a logo: TODO(brand) still stands for the real mark / typographic lockup
      (.agents/01-brand-and-design.md#logo). What this draws is the signature element of the
-     design system — a BUILD TRACE intersection: two construction hairlines and the signal
+     design system - a BUILD TRACE intersection: two construction hairlines and the signal
      point where they meet. Brand colours only, no invented monogram. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
   <rect width="32" height="32" fill="#11120f" />

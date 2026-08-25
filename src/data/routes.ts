@@ -1,7 +1,7 @@
 /**
  * Every route of the site, in one place.
  *
- * This is the source of truth for the sitemap — and the only mechanism that keeps a new
+ * This is the source of truth for the sitemap - and the only mechanism that keeps a new
  * page from being invisible to search engines. A route that is not listed here still
  * works when typed by hand, and nothing else will ever tell you it is missing.
  * See ADR-0006 and .agents/checklists/new-route.md.
@@ -9,8 +9,8 @@
  * Paths are written **without** the locale prefix; `withLocale()` adds it. Slugs follow
  * the main language (they are indexed) and are shared between locales (ADR-0003).
  *
- * TODO(brief): add the pages from the brief. Every route needs a reason — a search
- * intent or a sales purpose — not a slot in the menu.
+ * TODO(brief): add the pages from the brief. Every route needs a reason - a search
+ * intent or a sales purpose - not a slot in the menu.
  */
 
 type Route = {
@@ -48,7 +48,7 @@ export type RouteKey = keyof typeof ROUTES
  * Routes that belong in the sitemap and in hreflang sets.
  *
  * `/system` never appears here: it is excluded from the index by metadata, not by
- * robots.txt — those two mechanisms are mutually exclusive (.agents/08).
+ * robots.txt - those two mechanisms are mutually exclusive (.agents/08).
  */
 export const INDEXABLE_ROUTES: readonly Route[] = [
   { path: ROUTES.home, priority: 1 },

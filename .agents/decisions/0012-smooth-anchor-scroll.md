@@ -1,4 +1,4 @@
-# ADR-0012 — Płynne przewijanie kotwic
+# ADR-0012 - Płynne przewijanie kotwic
 
 - **Status:** Accepted
 - **Data:** 2026-08-23

@@ -3,30 +3,35 @@ import { BackLink } from '@/components/ui/back-link'
 import { MediaSlot } from '@/components/ui/media-slot'
 import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
+import { DeliverableIcon, type DeliverableIconName } from '@/components/ui/deliverable-icon'
 import type { Project } from '@/data/projects'
 import { ROUTES } from '@/data/routes'
 import { withLocale, type Locale } from '@/i18n/config'
 
 type CaseStudyCopy = {
-  label: string
   title: string
   categories: string
   statement: string
-  meta?: Record<'role' | 'team' | 'status', { label: string; value: string }>
+  meta?: { status: { label: string; value: string } }
   context: { title: string; body: string }
   problem: { title: string; body: string }
   solution: { title: string; body: string }
   challenge: { title: string; body: string }
-  role?: { title: string; body: string; items: string[] }
+  deliverables: {
+    title: string
+    items: ReadonlyArray<{ label: string; icon: DeliverableIconName }>
+  }
   result?: { title: string; body: string }
   testimonial?: { quote: string; author: string }
   galleryLabel: string
   nextLabel: string
-  contactCta: string
 }
 
 type CaseStudyPageProps = {
   copy: CaseStudyCopy
+  caseStudyLabel: string
+  caseStudyClosing: { title: string; body: string; cta: string }
+  codebrosLabel: string
   closeLabel: string
   liveCta: string
   locale: Locale
@@ -38,6 +43,9 @@ const CONTENT_SECTIONS = ['context', 'problem', 'solution', 'challenge'] as cons
 
 export function CaseStudyPage({
   copy,
+  caseStudyLabel,
+  caseStudyClosing,
+  codebrosLabel,
   closeLabel,
   liveCta,
   locale,
@@ -48,15 +56,26 @@ export function CaseStudyPage({
     <>
       <Section spacing="xl">
         <Container>
-          <BackLink href={withLocale(ROUTES.work, locale)}>{copy.label.split(' / ')[0]}</BackLink>
+          <BackLink href={withLocale(ROUTES.work, locale)}>{caseStudyLabel}</BackLink>
 
           <div className="mt-16 grid grid-cols-12 gap-grid">
             <div className="col-span-12 lg:col-span-8">
-              <p className="font-mono text-label text-content-tertiary uppercase">{copy.label}</p>
               <h1 className="mt-6 font-display text-display-section">{copy.title}</h1>
               <p className="mt-5 font-mono text-label text-accent-strong uppercase">
                 {copy.categories}
               </p>
+              {project.liveUrl ? (
+                <div className="mt-6">
+                  <TextLink
+                    href={project.liveUrl}
+                    arrow="up-right"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {liveCta}
+                  </TextLink>
+                </div>
+              ) : null}
               <p className="mt-10 max-w-measure text-body-lg text-content-secondary">
                 {copy.statement}
               </p>
@@ -65,16 +84,16 @@ export function CaseStudyPage({
             <div className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0">
               {copy.meta ? (
                 <dl className="border-t border-line">
-                  {Object.values(copy.meta).map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-line py-4 font-mono text-meta uppercase"
-                    >
-                      <dt className="text-content-tertiary">{item.label}</dt>
-                      <dd className="text-content">{item.value}</dd>
-                    </div>
-                  ))}
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-line py-4 font-mono text-meta uppercase">
+                    <dt className="text-content-tertiary">{copy.meta.status.label}</dt>
+                    <dd className="text-content">{copy.meta.status.value}</dd>
+                  </div>
                 </dl>
+              ) : null}
+              {project.team === 'codebros' ? (
+                <p className="mt-4 font-mono text-meta text-accent-strong uppercase">
+                  {codebrosLabel}
+                </p>
               ) : null}
             </div>
           </div>
@@ -96,72 +115,59 @@ export function CaseStudyPage({
 
       <Section spacing="large">
         <Container>
-          <div className="grid grid-cols-12 gap-grid">
-            <div className="col-span-12 lg:col-span-3">
-              <p className="font-mono text-meta text-content-tertiary uppercase">
-                01 / {copy.context.title}
-              </p>
-            </div>
-            <div className="col-span-12 lg:col-span-7 lg:col-start-5">
-              <h2 className="font-display text-display-project">{copy.context.title}</h2>
-              <p className="mt-6 text-body-lg text-content-secondary">{copy.context.body}</p>
-            </div>
-          </div>
-
-          <div className="mt-section-lg grid grid-cols-12 gap-grid">
-            {CONTENT_SECTIONS.slice(1).map((section, index) => {
+          <div>
+            {CONTENT_SECTIONS.map((section, index) => {
               const content = copy[section]
               return (
                 <article
                   key={section}
-                  className="col-span-12 border-t border-line pt-5 lg:col-span-5 lg:col-start-3"
+                  className="mt-section-lg grid grid-cols-12 gap-grid border-t border-line pt-5 first:mt-0"
                 >
-                  <p className="font-mono text-meta text-content-tertiary uppercase">
-                    {String(index + 2).padStart(2, '0')} / {content.title}
-                  </p>
-                  <p className="mt-5 text-body text-content-secondary">{content.body}</p>
+                  <div className="col-span-12 lg:col-span-3">
+                    <p className="font-mono text-meta text-content-tertiary uppercase">
+                      {String(index + 1).padStart(2, '0')} /
+                    </p>
+                  </div>
+                  <div className="col-span-12 lg:col-span-7 lg:col-start-5">
+                    <h2 className="font-display text-display-project">{content.title}</h2>
+                    <p className="mt-6 text-body-lg text-content-secondary">{content.body}</p>
+                  </div>
                 </article>
               )
             })}
-          </div>
 
-          {copy.role ? (
             <article className="mt-section-lg grid grid-cols-12 gap-grid border-t border-line pt-5">
               <div className="col-span-12 lg:col-span-3">
-                <p className="font-mono text-meta text-content-tertiary uppercase">
-                  05 / {copy.role.title}
-                </p>
+                <p className="font-mono text-meta text-content-tertiary uppercase">05 /</p>
               </div>
               <div className="col-span-12 lg:col-span-7 lg:col-start-5">
-                <h2 className="font-display text-display-project">{copy.role.title}</h2>
-                <p className="mt-6 text-body-lg text-content-secondary">{copy.role.body}</p>
+                <h2 className="font-display text-display-project">{copy.deliverables.title}</h2>
                 <ul className="mt-6 border-t border-line">
-                  {copy.role.items.map((item) => (
+                  {copy.deliverables.items.map((item) => (
                     <li
-                      key={item}
-                      className="border-b border-line py-3 text-body text-content-secondary"
+                      key={item.label}
+                      className="flex items-center gap-3 border-b border-line py-3 text-body text-content-secondary"
                     >
-                      {item}
+                      <DeliverableIcon name={item.icon} />
+                      <span>{item.label}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </article>
-          ) : null}
 
-          {copy.result ? (
-            <article className="mt-section-lg grid grid-cols-12 gap-grid border-t border-line pt-5">
-              <div className="col-span-12 lg:col-span-3">
-                <p className="font-mono text-meta text-content-tertiary uppercase">
-                  06 / {copy.result.title}
-                </p>
-              </div>
-              <div className="col-span-12 lg:col-span-7 lg:col-start-5">
-                <h2 className="font-display text-display-project">{copy.result.title}</h2>
-                <p className="mt-6 text-body-lg text-content-secondary">{copy.result.body}</p>
-              </div>
-            </article>
-          ) : null}
+            {copy.result ? (
+              <article className="mt-section-lg grid grid-cols-12 gap-grid border-t border-line pt-5">
+                <div className="col-span-12 lg:col-span-3">
+                  <p className="font-mono text-meta text-content-tertiary uppercase">06 /</p>
+                </div>
+                <div className="col-span-12 lg:col-span-7 lg:col-start-5">
+                  <h2 className="font-display text-display-project">{copy.result.title}</h2>
+                  <p className="mt-6 text-body-lg text-content-secondary">{copy.result.body}</p>
+                </div>
+              </article>
+            ) : null}
+          </div>
         </Container>
       </Section>
 
@@ -205,20 +211,32 @@ export function CaseStudyPage({
         </Section>
       ) : null}
 
-      <Section spacing="large">
+      <Section spacing="large" className="bg-canvas-subtle">
         <Container>
-          <div className="mt-section-lg flex flex-wrap items-center justify-between gap-6 border-t border-line pt-5">
-            {nextProject ? (
-              <TextLink href={withLocale(`${ROUTES.work}/${nextProject.slug}`, locale)}>
-                {copy.nextLabel} / {nextProject.title}
-              </TextLink>
-            ) : null}
-            {project.liveUrl ? (
-              <TextLink href={project.liveUrl} arrow="up-right" target="_blank" rel="noreferrer">
-                {liveCta}
-              </TextLink>
-            ) : null}
-            <TextLink href={withLocale(ROUTES.contact, locale)}>{copy.contactCta}</TextLink>
+          <div className="grid grid-cols-12 gap-grid border-t border-line pt-5">
+            <div className="col-span-12 lg:col-span-8">
+              <h2 className="font-display text-display-project">{caseStudyClosing.title}</h2>
+              <p className="mt-5 max-w-measure text-body-lg text-content-secondary">
+                {caseStudyClosing.body}
+              </p>
+              <div className="mt-8">
+                <TextLink href={withLocale(ROUTES.contact, locale)}>
+                  {caseStudyClosing.cta}
+                </TextLink>
+              </div>
+            </div>
+            <div className="col-span-12 flex flex-wrap items-end gap-x-6 gap-y-3 lg:col-span-3 lg:col-start-10 lg:justify-end">
+              {nextProject ? (
+                <TextLink href={withLocale(`${ROUTES.work}/${nextProject.slug}`, locale)}>
+                  {copy.nextLabel} / {nextProject.title}
+                </TextLink>
+              ) : null}
+              {project.liveUrl ? (
+                <TextLink href={project.liveUrl} arrow="up-right" target="_blank" rel="noreferrer">
+                  {liveCta}
+                </TextLink>
+              ) : null}
+            </div>
           </div>
         </Container>
       </Section>

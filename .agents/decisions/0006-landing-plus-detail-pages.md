@@ -1,4 +1,4 @@
-# ADR-0006 — Landing z całością treści plus podstrony szczegółowe
+# ADR-0006 - Landing z całością treści plus podstrony szczegółowe
 
 - **Status:** Accepted
 - **Data:** 2026-01-01
@@ -25,14 +25,14 @@ Model mieszany:
 2. **Podstrona istnieje dla szczegółu i dla konkretnej frazy**, nie dla porządku w menu.
    Jedna usługa = jedna intencja wyszukiwania = jedna trasa.
 3. **Każda trasa ma wpis w `src/data/routes.ts`.** To źródło prawdy dla nawigacji i sitemapy.
-   Trasa bez wpisu nie trafi do sitemapy — i to jest jedyny mechanizm, który o tym pilnuje.
+   Trasa bez wpisu nie trafi do sitemapy - i to jest jedyny mechanizm, który o tym pilnuje.
 4. Sekcja na landingu, która ma odpowiednik-podstronę, kończy się linkiem do niej. Nie duplikujemy
    treści: landing mówi „co i od ile”, podstrona mówi „jak dokładnie i dlaczego”.
 5. Nawigacja ma maksymalnie 4–5 pozycji. Menu nie jest spisem treści.
 
 ## Konsekwencje
 
-- Trzeba pilnować duplikacji treści między landingiem a podstroną — to praca redakcyjna, nie
+- Trzeba pilnować duplikacji treści między landingiem a podstroną - to praca redakcyjna, nie
   techniczna.
 - Liczba tras rośnie wolno i świadomie; każda ma powód zapisany w briefie.
 - Klient z reklamy dostaje wszystko na landingu; klient z wyszukiwarki trafia od razu na szczegół.

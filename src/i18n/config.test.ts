@@ -16,7 +16,7 @@ describe('locale configuration', () => {
   })
 
   /** A locale without metadata renders an empty language switcher entry and a wrong
-   * `lang` attribute — neither fails the build on its own. */
+   * `lang` attribute - neither fails the build on its own. */
   it.each(locales)('has metadata and an Open Graph tag for %s', (locale) => {
     expect(localeMeta[locale]).toBeDefined()
     expect(openGraphLocale[locale]).toBeTruthy()

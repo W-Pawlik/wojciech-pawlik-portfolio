@@ -18,7 +18,7 @@ type HeadlineProps = {
 
 /**
  * Multi-line display heading. Each line is its own block element, which is also the DOM
- * shape `TextReveal` needs — swapping this for the animated version changes the
+ * shape `TextReveal` needs - swapping this for the animated version changes the
  * component, not the markup.
  *
  * Defaults to the section step of the display scale. Hero and statements pass their own

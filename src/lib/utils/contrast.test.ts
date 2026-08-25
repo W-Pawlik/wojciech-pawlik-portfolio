@@ -22,7 +22,7 @@ describe('contrastRatio', () => {
     expect(contrastRatio('#777777', '#777777')).toBeCloseTo(1, 5)
   })
 
-  it('is symmetric — order of arguments does not matter', () => {
+  it('is symmetric - order of arguments does not matter', () => {
     expect(contrastRatio('#123456', '#eeeeee')).toBeCloseTo(contrastRatio('#eeeeee', '#123456'), 10)
   })
 })

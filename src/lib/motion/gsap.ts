@@ -4,7 +4,7 @@
  * GSAP is loaded **on demand**, not imported at module scope.
  *
  * The reason is measured, not stylistic: GSAP plus ScrollTrigger is ~459 KB raw /
- * ~128 KB gzip, and it exists here for scroll-driven sequences in one or two sections —
+ * ~128 KB gzip, and it exists here for scroll-driven sequences in one or two sections -
  * below the fold, unable to run before hydration, and switched off entirely under
  * `prefers-reduced-motion`. A static import would put all of it on the critical path of
  * every visit. See .agents/decisions/0005-lazy-gsap.md.
@@ -12,7 +12,7 @@
  * The promise is cached, so concurrent callers and remounts share one download and the
  * plugin is registered exactly once.
  *
- * Usage inside an effect — note the cancellation flag, because the component can unmount
+ * Usage inside an effect - note the cancellation flag, because the component can unmount
  * while the library is still downloading:
  *
  *     useEffect(() => {

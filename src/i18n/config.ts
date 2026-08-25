@@ -2,7 +2,7 @@
  * Locale configuration. Kept free of any Next.js import so it can be used from
  * Server Components, Client Components, Route Handlers and the proxy alike.
  *
- * TODO(brief): a single-language project keeps this structure and lists one locale —
+ * TODO(brief): a single-language project keeps this structure and lists one locale -
  * that costs a URL prefix and buys the ability to add a language later without
  * touching a component. Remove the extra locale here *and* its dictionary.
  *

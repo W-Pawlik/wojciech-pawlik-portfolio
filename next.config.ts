@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   // screenshot sent to the client, which instantly reads as "unfinished".
   devIndicators: false,
   images: {
-    // Photography usually carries most of the visual weight on a site like this —
+    // Photography usually carries most of the visual weight on a site like this -
     // serve the smallest format the browser accepts.
     // See .agents/08-accessibility-and-performance.md.
     formats: ['image/avif', 'image/webp'],

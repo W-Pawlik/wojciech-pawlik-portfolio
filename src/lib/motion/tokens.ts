@@ -1,5 +1,5 @@
 /**
- * Motion tokens — the JS mirror of the easing scale in src/styles/theme.css and
+ * Motion tokens - the JS mirror of the easing scale in src/styles/theme.css and
  * the duration scale in src/styles/base.css. Two representations are unavoidable
  * (Tailwind needs CSS custom properties, Motion and GSAP need numbers), so when
  * one changes, change the other. `tokens.test.ts` fails if they drift apart.
@@ -11,7 +11,7 @@
 
 export type Bezier = [number, number, number, number]
 
-/** Seconds — Motion and GSAP both take seconds, CSS takes the `ms` mirror. */
+/** Seconds - Motion and GSAP both take seconds, CSS takes the `ms` mirror. */
 export const DURATION = {
   instant: 0.12,
   fast: 0.2,
@@ -55,7 +55,7 @@ export const VIEWPORT = {
   amount: 0.3,
 } as const
 
-/** Vertical travel of a reveal, in pixels. Subtle by design — never 100px. */
+/** Vertical travel of a reveal, in pixels. Subtle by design - never 100px. */
 export const REVEAL_DISTANCE = 28
 
 /** Parallax range, in pixels. The effect should be almost subconscious. */

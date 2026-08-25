@@ -6,13 +6,13 @@ import type { Dictionary } from '../dictionaries'
  *
  * TODO(brief): the language decision (`pl` only vs `pl + en`) is still open
  * (.agents/00-project-brief.md#czego-brakuje--pytania-do-właściciela). This is a faithful
- * translation of the approved Polish copy, not separately approved copy — if English
+ * translation of the approved Polish copy, not separately approved copy - if English
  * stays, it needs one editorial pass by the owner. If it goes, delete this file and the
  * locale in `src/i18n/config.ts` (ADR-0003).
  */
 export const en: Dictionary = {
   meta: {
-    title: 'Wojciech Pawlik — Web & Product Engineer',
+    title: 'Wojciech Pawlik - Web & Product Engineer',
     description:
       'I design and build custom websites, web applications and AI automation for companies that need more than an off-the-shelf template.',
   },
@@ -81,16 +81,23 @@ export const en: Dictionary = {
     tags: {
       webApp: 'Web application',
       website: 'Website',
-      productDesign: 'Product design',
+      branding: 'Brand creation',
+      logoCreation: 'Logo creation',
+      businessAnalysis: 'Business analysis',
       fullStack: 'Full-stack',
       internalSystem: 'Internal system',
       riskScoring: 'Risk scoring',
     },
     teamCodebros: 'CodeBros',
     teamSolo: 'Solo build',
-    projectLabel: 'PROJECT',
+    caseStudyLabel: 'Case study',
     caseStudyCta: 'Read the case study',
     liveCta: 'Live version',
+    caseStudyClosing: {
+      title: 'Like this project?',
+      body: 'Want to create something similar for your business? Let’s talk about it.',
+      cta: 'Get in touch',
+    },
     allProjectsCta: 'View all projects',
     visualization: 'Project view',
     projects: {
@@ -120,19 +127,16 @@ export const en: Dictionary = {
 
   caseStudies: {
     mawAuto: {
-      label: 'Case study / Maw Autoserwis',
       title: 'Maw Autoserwis',
-      categories: 'Website / Product design',
+      categories: 'Website / Brand creation',
       statement:
         'For Maw Autoserwis, I created a brand and website that show the workshop’s experience and the breadth of its services.',
       meta: {
-        role: { label: 'Role', value: 'Web design / frontend' },
-        team: { label: 'Team', value: 'Wojciech / solo build' },
         status: { label: 'Status', value: 'Completed project' },
       },
       context: {
         title: 'What I built',
-        body: 'I created the company branding and translated it into a website. We shaped the direction together with the owner through conversations about the future of the business and the values its image should communicate.',
+        body: 'I created the company branding and translated it into a website. We shaped the direction together with the owner through conversations about the future of the business and the values its image should communicate. I also built the Google Business Profile.',
       },
       problem: {
         title: 'Problem',
@@ -140,16 +144,20 @@ export const en: Dictionary = {
       },
       solution: {
         title: 'Solution',
-        body: 'I separated the offer into two layers: passenger cars and commercial vehicles. I presented the services and pricing, created a simple contact form and made it easier for customers to find the right route to the workshop.',
+        body: 'I separated the offer into two layers: passenger cars and commercial vehicles. I added the services and pricing, while the contact form shortened the path from choosing a service to sending an enquiry.',
       },
       challenge: {
         title: 'Technical challenge',
         body: 'The main challenge was organising a lot of information without overwhelming the visitor. Every part of the site had to reinforce the company’s credibility and lead towards contact.',
       },
-      role: {
-        title: 'My role',
-        body: 'I handled the branding, visual direction, website design and implementation.',
-        items: ['Branding', 'Web design', 'Frontend', 'Contact form'],
+      deliverables: {
+        title: 'Scope',
+        items: [
+          { label: 'Branding', icon: 'branding' as const },
+          { label: 'Logo', icon: 'logo' as const },
+          { label: 'Website', icon: 'website' as const },
+          { label: 'Google Business Profile', icon: 'google' as const },
+        ],
       },
       result: {
         title: 'Result',
@@ -157,22 +165,18 @@ export const en: Dictionary = {
       },
       galleryLabel: 'Website gallery',
       nextLabel: 'Next project',
-      contactCta: 'Discuss a similar website',
     },
     agnieszkaLuzarska: {
-      label: 'Case study / Agnieszka Luzarska',
       title: 'Agnieszka Luzarska',
-      categories: 'Website / Product design',
+      categories: 'Website / Logo creation',
       statement:
         'Agnieszka Luzarska’s personal website presents not only the Mary Kay offer, but also the woman behind it.',
       meta: {
-        role: { label: 'Role', value: 'Web design / frontend' },
-        team: { label: 'Team', value: 'Wojciech / solo build' },
         status: { label: 'Status', value: 'Completed project' },
       },
       context: {
         title: 'What I built',
-        body: 'I created a website for a Mary Kay director and consultant. Its purpose was to show Agnieszka as a person with her own story, approach and understanding of other women’s needs.',
+        body: 'I created a website for a Mary Kay director and consultant. Its purpose was to show Agnieszka as a person with her own story, approach and understanding of other women’s needs. I also created the brand logo.',
       },
       problem: {
         title: 'Problem',
@@ -186,10 +190,12 @@ export const en: Dictionary = {
         title: 'Technical challenge',
         body: 'The other important element was a skin-needs card. I moved a short form from paper into a digital experience, making it easier for clients to describe their needs and contact Agnieszka.',
       },
-      role: {
-        title: 'My role',
-        body: 'I handled the concept, design, animations and implementation.',
-        items: ['Storytelling', 'Web design', 'Animation', 'Frontend', 'Custom form'],
+      deliverables: {
+        title: 'Scope',
+        items: [
+          { label: 'Logo', icon: 'logo' as const },
+          { label: 'Website', icon: 'website' as const },
+        ],
       },
       result: {
         title: 'Result',
@@ -197,17 +203,13 @@ export const en: Dictionary = {
       },
       galleryLabel: 'Website gallery',
       nextLabel: 'Next project',
-      contactCta: 'Discuss a similar website',
     },
     vantaDetailing: {
-      label: 'Case study / Vanta Detailing',
       title: 'Vanta Detailing',
-      categories: 'Website / Product design',
+      categories: 'Website / Brand creation',
       statement:
         'Vanta Detailing is a portfolio sales site for an automotive detailing studio and a demonstration of my design and frontend work.',
       meta: {
-        role: { label: 'Role', value: 'Web design / frontend' },
-        team: { label: 'Team', value: 'Wojciech / solo build' },
         status: { label: 'Status', value: 'Portfolio project' },
       },
       context: {
@@ -226,10 +228,13 @@ export const en: Dictionary = {
         title: 'Technical challenge',
         body: 'I used modern animation in a measured way. The site follows current visual language, but motion does not compete with the offer or the imagery. Each element supports selling the service instead of existing only for effect.',
       },
-      role: {
-        title: 'My role',
-        body: 'I designed and built the complete portfolio site independently.',
-        items: ['UX and UI', 'Web design', 'Before and after', 'Animation', 'Frontend'],
+      deliverables: {
+        title: 'Scope',
+        items: [
+          { label: 'Website', icon: 'website' as const },
+          { label: 'Logo', icon: 'logo' as const },
+          { label: 'Branding', icon: 'branding' as const },
+        ],
       },
       result: {
         title: 'Result',
@@ -237,17 +242,13 @@ export const en: Dictionary = {
       },
       galleryLabel: 'Website gallery',
       nextLabel: 'Next project',
-      contactCta: 'Discuss a similar website',
     },
     planik: {
-      label: 'Case study / Planik',
       title: 'Planik',
-      categories: 'Web application / Product design / Full-stack',
+      categories: 'Web application / Business analysis / Brand creation',
       statement:
         'Planik is a large CodeBros web application for planning events, from the first idea to bookings, budgets and group collaboration.',
       meta: {
-        role: { label: 'Role', value: 'Product design / full-stack' },
-        team: { label: 'Team', value: 'Wojciech + Michał / CodeBros' },
         status: { label: 'Status', value: 'Completed project' },
       },
       context: {
@@ -266,16 +267,14 @@ export const en: Dictionary = {
         title: 'Technical challenge',
         body: 'The application also includes a partner module for creating and managing attractions, a booking system, monetisation through per-event payments and promoted offers, and admin panels for managing the product and content. The main challenge was joining these areas into one coherent system.',
       },
-      role: {
-        title: 'My role',
-        body: 'The project was delivered together with Michał Pawlik as CodeBros.',
+      deliverables: {
+        title: 'Scope',
         items: [
-          'Product thinking',
-          'UX and UI',
-          'Frontend',
-          'Backend',
-          'Data model',
-          'Business logic',
+          { label: 'Business analysis', icon: 'analysis' as const },
+          { label: 'Branding', icon: 'branding' as const },
+          { label: 'UX and UI', icon: 'interface' as const },
+          { label: 'Data model', icon: 'data' as const },
+          { label: 'Business logic', icon: 'logic' as const },
         ],
       },
       result: {
@@ -284,17 +283,13 @@ export const en: Dictionary = {
       },
       galleryLabel: 'Product gallery',
       nextLabel: 'Next project',
-      contactCta: 'Discuss a similar project',
     },
     creditRisk: {
-      label: 'Case study / Credit Risk System',
       title: 'Credit Risk System',
       categories: 'Internal system / Risk scoring / Full-stack',
       statement:
         'Credit Risk System was a CodeBros project for the UGotIt competition organised by Univio. It is also where CodeBros began.',
       meta: {
-        role: { label: 'Role', value: 'Product design / full-stack' },
-        team: { label: 'Team', value: 'Wojciech + Michał / CodeBros' },
         status: { label: 'Status', value: 'Competition project' },
       },
       context: {
@@ -313,16 +308,13 @@ export const en: Dictionary = {
         title: 'Technical challenge',
         body: 'The hardest part was connecting complex, configurable rules with a simple user experience. The system had to make sense to an analyst working with the risk model and to a salesperson using the resulting recommendations.',
       },
-      role: {
-        title: 'My role',
-        body: 'The project was delivered together with Michał Pawlik as CodeBros.',
+      deliverables: {
+        title: 'Scope',
         items: [
-          'Product thinking',
-          'UX and UI',
-          'Frontend',
-          'Backend',
-          'Risk engine',
-          'AI integration',
+          { label: 'Business analysis', icon: 'analysis' as const },
+          { label: 'UX and UI', icon: 'interface' as const },
+          { label: 'Risk engine', icon: 'risk' as const },
+          { label: 'AI integration', icon: 'ai' as const },
         ],
       },
       result: {
@@ -331,7 +323,6 @@ export const en: Dictionary = {
       },
       galleryLabel: 'System gallery',
       nextLabel: 'Next project',
-      contactCta: 'Discuss a similar project',
     },
   },
 
@@ -347,11 +338,11 @@ export const en: Dictionary = {
       'Tell me what is happening in the company. After a short conversation, I will suggest a sensible scope and next step.',
     closingCta: 'Tell me about your project',
     intro:
-      'I start by clarifying the problem and the goal. Then I define the scope and choose the technology needed to build the right solution — without adding features just because I can.',
+      'I start by clarifying the problem and the goal. Then I define the scope and choose the technology needed to build the right solution - without adding features just because I can.',
     items: {
       websites: {
         title: 'Websites',
-        body: 'Brochure sites, company websites and landing pages built from scratch in code, without WordPress or ready-made builders. I can include company branding, a logo and visual direction in the same process.',
+        body: 'Brochure sites, company websites and landing pages built from scratch in code, without WordPress or ready-made builders. I can include company branding, a logo, visual direction and a Google Business Profile in the same process.',
         cta: 'See the scope',
         includes: [
           'company websites',
@@ -365,6 +356,7 @@ export const en: Dictionary = {
           'analytics',
           'technical SEO',
           'multiple languages',
+          'Google Business Profile',
         ],
       },
       systems: {
@@ -387,16 +379,17 @@ export const en: Dictionary = {
       title: 'Websites',
       intro:
         'I design websites that clarify the offer, build trust and guide the right people towards contact.',
-      mediaAlt: 'Vanta Detailing website interface',
+      mediaAlt: 'Business website shown on a laptop',
       mediaLabel: 'Website interface example',
-      problemTitle: 'What problem does it solve?',
+      problemTitle: 'Starting point',
       problem:
-        'When the company has a strong service but the current website does not show its quality or makes the next step difficult.',
-      benefitsTitle: 'What a good website changes',
+        'You have a strong service, but the current website does not show its value, build enough trust or guide visitors towards contact.',
+      benefitsTitle: 'A website that works for the business',
       benefits: [
-        'People understand what you do and who you do it for faster.',
-        'The offer has a hierarchy that leads from first impression to contact.',
+        'People quickly understand what you do, who you do it for and why they should choose you.',
+        'The offer has a clear hierarchy that leads from first impression to a concrete action.',
         'The website feels like your company, not another version of the same template.',
+        'It does more than look good: it supports sales and turns interest into enquiries.',
       ],
       scopeTitle: 'What I can build for you',
       scope: [
@@ -408,6 +401,7 @@ export const en: Dictionary = {
         'Company branding, logo and visual direction',
         'Technical SEO and multiple languages',
         'Domain, hosting, SSL, DNS and deployment',
+        'Google Business Profile',
       ],
       processTitle: 'How I work on a website',
       process: [
@@ -417,7 +411,7 @@ export const en: Dictionary = {
       ],
       investmentTitle: 'A short conversation shapes the estimate',
       investment:
-        'The pricing page shows the starting points I use for estimates. After a short conversation, I can prepare a more detailed estimate for your situation. Branding, a logo and SEO can be part of the same scope — I include them in the process and project price.',
+        'The pricing page shows the starting points I use for estimates. After a short conversation, I can prepare a more detailed estimate for your situation. Branding, a logo and SEO can be part of the same scope - I include them in the process and project price.',
       fitTitle: 'When it is worth talking',
       fit: 'When you want a website shaped around the company, not a company shaped around a ready-made theme.',
       pricingCta: 'See indicative pricing',
@@ -426,7 +420,7 @@ export const en: Dictionary = {
     systems: {
       title: 'Custom Systems',
       intro:
-        'I design and build dedicated web systems — both for improving how a company operates and for commissioned applications when a company has a specific idea or need.',
+        'I design and build dedicated web systems - both for improving how a company operates and for commissioned applications when a company has a specific idea or need.',
       mediaAlt: 'Wojciech and Michał as CodeBros at a competition',
       mediaLabel: 'CodeBros / project together',
       problemTitle: 'What problem does it solve?',
@@ -458,13 +452,13 @@ export const en: Dictionary = {
         'I can build an internal tool, a customer-facing application or a product commissioned by a company. Scope and budget follow the goal, users, data, integrations and the first stage that should create real value.',
       fitTitle: 'When it is worth talking',
       fit: 'When the process matters to the company but there is no good ready-made solution for it.',
-      pricingCta: 'See investment levels',
+      pricingCta: 'See indicative pricing',
       contactCta: 'Tell me about the process',
     },
     ai: {
       title: 'AI Automation',
       intro:
-        'I look for the process that takes the team’s time — only then do I check whether AI can simplify it.',
+        'I look for the process that takes the team’s time - only then do I check whether AI can simplify it.',
       mediaAlt: 'Server room as a visual metaphor for AI infrastructure',
       mediaLabel: 'Infrastructure behind automation',
       problemTitle: 'What problem does it solve?',
@@ -496,7 +490,7 @@ export const en: Dictionary = {
         'The cost depends on data, exceptions, required review and integration with existing tools. You can start by assessing the process before deciding on a larger deployment.',
       fitTitle: 'When it is worth talking',
       fit: 'When you repeat a process every day and want to check whether it can be simplified without inflated promises.',
-      pricingCta: 'See investment levels',
+      pricingCta: 'See indicative pricing',
       contactCta: 'Tell me about the process',
     },
   },
@@ -518,11 +512,11 @@ export const en: Dictionary = {
     proofs: {
       creditRisk: {
         title: 'Credit Risk System',
-        body: 'Before either of us worked at Univio, we entered a competition the company ran. We built a system supporting risk assessment for trade credit — and won.',
+        body: 'Before either of us worked at Univio, we entered a competition the company ran. We built a system supporting risk assessment for trade credit - and won.',
       },
       planik: {
         title: 'Planik',
-        body: 'We designed and built a complete event-planning application between the two of us — from the data model to the interface.',
+        body: 'We designed and built a complete event-planning application between the two of us - from the data model to the interface.',
       },
     },
     mediaAlt: 'Wojciech and Michał Pawlik at the CodeBros competition',
@@ -652,11 +646,11 @@ export const en: Dictionary = {
   },
 
   pricing: {
-    label: 'Investment',
+    label: 'Pricing',
     headline: ['Start with the scope,', 'not a large budget.'],
     pageHeadline: ['Scope first.', 'Then the estimate.'],
     pageIntro:
-      'Indicative investment levels make it easier to assess fit. The final estimate depends on the problem, scope and integrations the project needs.',
+      'Indicative price ranges make it easier to assess fit. The final estimate depends on the problem, scope and integrations the project needs.',
     minimumRateNote:
       'The amounts below are the minimum starting points for an estimate. Current opening offer: the first 3 clients can get a landing page estimated from 900 PLN instead of the standard starting point of 1,200 PLN.',
     intro:
@@ -696,7 +690,7 @@ export const en: Dictionary = {
         body: 'Process analysis first, then a prototype or deployment. AI only when it solves a concrete problem.',
       },
     },
-    cta: 'I have a project — define the scope with me',
+    cta: 'I have a project - define the scope with me',
   },
 
   about: {
@@ -706,16 +700,16 @@ export const en: Dictionary = {
     pageIntro:
       'I design and build the work personally. For larger systems I work with my brother Michał as CodeBros.',
     paragraphs: [
-      'I am Wojciech Pawlik. By day I work on e-commerce systems at Univio. After hours I design and build websites and products for companies that want something more tailored than an off-the-shelf solution.',
-      'Earlier I also worked as an AI Engineer, including work for ASML — one of Europe’s largest technology companies.',
+      'My name is Wojciech Pawlik. By day I work on e-commerce systems at Univio. After hours I design and build websites and products for companies that want something more tailored than an off-the-shelf solution.',
+      'Earlier I also worked as an AI Engineer, including work for ASML - one of Europe’s largest technology companies.',
       'What interests me most is the moment where technology, UX and a real business problem meet in one product.',
+      'I am interested in modern web design, animation, transitions and the details that make a website feel alive. I am creative and eager to try new things, so I do not see a project as impossible just because it does not fit a ready-made pattern.',
     ],
     trustTitle: 'Experience',
     trust: {
-      professional: { label: 'Professional', value: 'Ecommerce engineering' },
-      aiExperience: { label: 'Experience', value: 'AI engineering' },
-      builds: { label: 'Selected builds', value: 'Web + product' },
-      teamMode: { label: 'Team mode', value: 'CodeBros' },
+      experience: { label: 'Experience', value: 'E-commerce, AI' },
+      projects: { label: 'Projects', value: 'Websites, distributed systems, AI systems' },
+      hobbies: { label: 'Hobbies', value: 'Entrepreneurship, web design, sport' },
     },
     pageFocusTitle: 'No handoffs between layers.',
     pageFocusBody:
@@ -723,6 +717,27 @@ export const en: Dictionary = {
     mediaAlt: 'Portrait of Wojciech Pawlik',
     mediaPending: 'Portrait',
     cta: 'Get to know me',
+    codebros: {
+      label: 'CodeBros / Wojciech and Michał Pawlik',
+      headline: ['We combine experience', 'to build larger systems.'],
+      intro:
+        'CodeBros is our way of approaching larger projects together. We combine design, frontend, backend and systems experience, so decisions happen directly between the people building the product.',
+      personLabel: 'Michał Pawlik',
+      personTitle: 'Experienced software engineer',
+      personBody:
+        'Michał has 10 years of experience in software development. For most of his career he co-created banking systems at a software house. He later worked on AI systems. We eventually joined Univio together, where we build distributed e-commerce systems for one of the major retailers.',
+      benefitsTitle: 'Why we work together',
+      benefits: [
+        'We combine a broad product perspective with experience building complex systems.',
+        'We make decisions faster because we work directly on the same problem.',
+        'We share responsibility for architecture, interface, implementation and deployment.',
+      ],
+      mediaAlt: 'Michał Pawlik',
+      mediaPending: 'Portrait of Michał Pawlik',
+      teamMediaAlt: 'Wojciech and Michał Pawlik at the CodeBros competition',
+      teamMediaPending: 'Wojciech and Michał',
+      projectsCta: 'See CodeBros projects',
+    },
   },
 
   finalCta: {
@@ -736,7 +751,7 @@ export const en: Dictionary = {
     pageTitle: 'Tell me about the project',
     pageHeadline: ['Tell me', 'about the project.'],
     pageIntro:
-      'Describe the situation and I will come back with a concrete next step — even if the scope is not clear yet.',
+      'Describe the situation and I will come back with a concrete next step - even if the scope is not clear yet.',
     label: 'Contact',
     headline: ['Tell me', 'about your project.'],
     intro:
@@ -777,10 +792,10 @@ export const en: Dictionary = {
       help: 'I need help defining the solution',
     },
     budgets: {
-      '5-10k': '5–10k PLN',
-      '10-20k': '10–20k PLN',
-      '20-40k': '20–40k PLN',
-      '40k+': '40k+ PLN',
+      '900-2000': '900–2,000 PLN',
+      '2000-5000': '2,000–5,000 PLN',
+      '5000-10000': '5,000–10,000 PLN',
+      '10000+': '10,000+ PLN',
       unknown: 'Not sure yet',
     },
   },
@@ -789,7 +804,7 @@ export const en: Dictionary = {
     navTitle: 'Site',
     contactTitle: 'Contact',
     codebrosTitle: 'Larger projects',
-    codebrosLabel: 'CodeBros — Wojciech & Michał Pawlik',
+    codebrosLabel: 'CodeBros - Wojciech & Michał Pawlik',
     note: 'Designed & built by Wojciech Pawlik.',
     rights: 'All rights reserved.',
   },
@@ -804,7 +819,7 @@ export const en: Dictionary = {
   errorPage: {
     label: 'Error',
     headline: 'Something failed to load.',
-    body: 'Try again. If that does not help, write to me — I will reply.',
+    body: 'Try again. If that does not help, write to me - I will reply.',
     cta: 'Try again',
   },
 
@@ -814,7 +829,7 @@ export const en: Dictionary = {
     phone: 'Enter a phone number (9 digits) or leave this field empty.',
     projectType: 'Choose what you need.',
     stage: 'Choose the stage of the project.',
-    budget: 'Choose an indicative budget — "not sure yet" is an answer too.',
+    budget: 'Choose an indicative budget - "not sure yet" is an answer too.',
     message: 'Write a few sentences about the project.',
     consent: 'I need this consent to be able to reply.',
     maxLength: 'Maximum {max} characters.',

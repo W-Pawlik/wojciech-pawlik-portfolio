@@ -8,7 +8,7 @@ export type ButtonSize = 'md' | 'lg'
 
 /**
  * Solid, quiet, no effects: no glow, no gradient, no large shadow, no magnetic travel.
- * Only colour and a 1px lift animate — never width, height or padding, which would force
+ * Only colour and a 1px lift animate - never width, height or padding, which would force
  * layout on every frame, and never a scale on the whole control, which reads cheap.
  */
 const BASE_CLASS =
@@ -18,7 +18,7 @@ const BASE_CLASS =
 
 const VARIANT_CLASS: Record<ButtonVariant, string> = {
   /**
-   * Dark, not orange. The accent arrives on hover — a whole button in Signal Orange
+   * Dark, not orange. The accent arrives on hover - a whole button in Signal Orange
    * would blow the 5–8% accent budget on its own, and the flip to orange is the
    * clearest state change this palette can make (.agents/01-brand-and-design.md).
    */
@@ -76,7 +76,7 @@ export function ButtonLink({ variant, size, fullWidth, className, ...props }: Bu
 }
 
 /**
- * The small arrow that trails a CTA. Nudges 4px on the parent's hover — the button itself
+ * The small arrow that trails a CTA. Nudges 4px on the parent's hover - the button itself
  * stays put.
  */
 export function CtaArrow({ direction = 'right' }: { direction?: 'up-right' | 'right' }) {

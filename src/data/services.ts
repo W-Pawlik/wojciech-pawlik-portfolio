@@ -1,5 +1,5 @@
 /**
- * The three offer pillars. Structure and links only — copy lives in the dictionaries
+ * The three offer pillars. Structure and links only - copy lives in the dictionaries
  * under `services.items`, keyed by `key`.
  *
  * `formContext` is the value the lead form should preselect when a visitor arrives from
@@ -28,7 +28,7 @@ export const SERVICE_MEDIA = {
   websites: {
     id: 'IMG-07',
     ratio: '16 / 10',
-    src: '/images/Vanta_realizacja.PNG',
+    src: '/images/homepage-seen-laptop-screen.jpg',
   },
   systems: {
     id: 'IMG-08',

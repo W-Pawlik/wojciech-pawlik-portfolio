@@ -1,7 +1,7 @@
 /**
  * Section anchors and the main navigation.
  *
- * Anchors end up in the URL as `#work`, so they stay in English — a translated fragment
+ * Anchors end up in the URL as `#work`, so they stay in English - a translated fragment
  * on a translated page reads as sloppy. Route slugs are the opposite case: they are
  * indexed, so they follow the main language (see `routes.ts` and ADR-0003).
  *

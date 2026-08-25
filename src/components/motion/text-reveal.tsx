@@ -22,11 +22,11 @@ type TextRevealProps = {
 /**
  * Headline that slides out line by line from behind a mask.
  *
- * CSS keyframes plus one IntersectionObserver — same implementation note as `Reveal`:
+ * CSS keyframes plus one IntersectionObserver - same implementation note as `Reveal`:
  * no animation library on the critical path (ADR-0009).
  *
- * Accessibility: the visible text is the real text — the mask is a wrapper, not a
- * replacement — so screen readers and search engines see the full headline even before
+ * Accessibility: the visible text is the real text - the mask is a wrapper, not a
+ * replacement - so screen readers and search engines see the full headline even before
  * the animation runs.
  */
 export function TextReveal({

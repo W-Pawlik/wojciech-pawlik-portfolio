@@ -1,5 +1,5 @@
 /**
- * Base layer — document defaults only. Anything component-specific belongs in
+ * Base layer - document defaults only. Anything component-specific belongs in
  * the component, expressed with Tailwind utilities.
  */
 
@@ -7,12 +7,12 @@
   /**
    * Typeface hook. The real families are loaded with next/font in
    * src/app/[locale]/layout.tsx and reach the theme through these three
-   * variables — one indirection, so a typeface swap touches two files.
+   * variables - one indirection, so a typeface swap touches two files.
    *
    * Display and sans are deliberately the same family: **Instrument Sans**. The
    * contrast in this direction comes from the size jump between a 96px heading and
    * an 11px mono label, not from a second display face. **IBM Plex Mono** carries the
-   * BUILD TRACE layer — labels, numbering, coordinates, dates — and nothing else.
+   * BUILD TRACE layer - labels, numbering, coordinates, dates - and nothing else.
    *
    * The fallbacks matter: they are what renders if the self-hosted file fails.
    */
@@ -74,7 +74,7 @@
     font-size: var(--text-body);
     line-height: 1.6;
     text-rendering: optimizeLegibility;
-    /* Horizontal overflow is always a bug here — full-bleed media must be clipped
+    /* Horizontal overflow is always a bug here - full-bleed media must be clipped
      * by its own container, not by the document. */
     overflow-x: clip;
   }

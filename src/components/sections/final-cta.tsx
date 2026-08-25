@@ -11,7 +11,7 @@ import { getDictionary } from '@/i18n/server'
  * The end of the narrative, and a full section rather than a small CTA card: this is the
  * one place on the page allowed to use `display-statement`, the largest type step.
  *
- * The email is the secondary route and renders only once `src/data/site.ts` has one — an
+ * The email is the secondary route and renders only once `src/data/site.ts` has one - an
  * invented address on the page whose job is starting a conversation would be the worst
  * possible placeholder (.agents/09-content-and-copy.md).
  */

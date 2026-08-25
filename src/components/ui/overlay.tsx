@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils/cn'
 type OverlayProps = {
   open: boolean
   onClose: () => void
-  /** Accessible name of the dialog. Required — an unnamed dialog is announced as nothing. */
+  /** Accessible name of the dialog. Required - an unnamed dialog is announced as nothing. */
   label: string
   children: ReactNode
   className?: string

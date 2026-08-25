@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils/cn'
 
 type ChoiceGroupProps<Value extends string> = {
-  /** Form field name. The same for every option — that is what makes it one answer. */
+  /** Form field name. The same for every option - that is what makes it one answer. */
   name: string
   /** The question, rendered as the fieldset legend. */
   legend: string
@@ -21,7 +21,7 @@ type ChoiceGroupProps<Value extends string> = {
  * dashboard-style checkbox (.agents/01-brand-and-design.md).
  *
  * No `'use client'`: the parent form is the client island, and this component holds no
- * state of its own — the DOM does.
+ * state of its own - the DOM does.
  */
 export function ChoiceGroup<Value extends string>({
   name,
@@ -57,10 +57,10 @@ export function ChoiceGroup<Value extends string>({
                 'hover:border-content-tertiary hover:text-content',
                 'peer-checked:border-accent peer-checked:bg-accent-subtle peer-checked:text-content',
                 // The dot is a descendant, not a sibling of the radio, so `peer-checked:`
-                // alone would never reach it — hence the nested selector.
+                // alone would never reach it - hence the nested selector.
                 'peer-checked:[&>span]:bg-accent',
                 // The ring has to follow the radio, which is the element that receives
-                // focus — the visible box is a sibling.
+                // focus - the visible box is a sibling.
                 'peer-focus-visible:outline-2 peer-focus-visible:outline-offset-3 peer-focus-visible:outline-accent-hover',
               )}
             >

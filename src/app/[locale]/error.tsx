@@ -12,7 +12,7 @@ import { dictionaryForUnknown } from '@/i18n/dictionaries'
 
 /**
  * Route-level error boundary. Never shows the raw error to the visitor, and always leaves
- * a way to reach the business — a failed page must not cost a phone call.
+ * a way to reach the business - a failed page must not cost a phone call.
  *
  * This is a Client Component, so it cannot use `next/root-params`. The locale is read from
  * the URL instead, falling back to the default.

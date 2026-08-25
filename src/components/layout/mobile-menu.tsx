@@ -17,7 +17,7 @@ type MobileMenuProps = {
 
 /**
  * The navbar's only client island. The bar itself, its links and the CTA stay on the
- * server — this exists because a menu has open/closed state, and nothing else does
+ * server - this exists because a menu has open/closed state, and nothing else does
  * (.agents/03-architecture.md).
  *
  * Escape, the focus trap and the scroll lock come from `Overlay`, so they are not
@@ -28,20 +28,22 @@ export function MobileMenu({ openLabel, closeLabel, items, cta }: MobileMenuProp
 
   return (
     <>
-      <Button
-        variant="quiet"
-        onClick={() => setOpen(true)}
-        className="lg:hidden"
-        aria-label={openLabel}
-        aria-expanded={open}
-      >
-        <span aria-hidden="true" className="flex w-6 flex-col gap-1.5">
-          <span className="h-px w-full bg-current" />
-          <span className="h-px w-full bg-current" />
-          <span className="h-px w-full bg-current" />
-        </span>
-        <span className="sr-only">{openLabel}</span>
-      </Button>
+      <div className="relative z-10 lg:hidden">
+        <Button
+          variant="quiet"
+          onClick={() => setOpen(true)}
+          className="min-h-12 min-w-12 cursor-pointer touch-manipulation"
+          aria-label={openLabel}
+          aria-expanded={open}
+        >
+          <span aria-hidden="true" className="flex w-6 flex-col gap-1.5">
+            <span className="h-px w-full bg-current" />
+            <span className="h-px w-full bg-current" />
+            <span className="h-px w-full bg-current" />
+          </span>
+          <span className="sr-only">{openLabel}</span>
+        </Button>
+      </div>
 
       <Overlay open={open} onClose={() => setOpen(false)} label={openLabel}>
         <div className="flex h-full flex-col">

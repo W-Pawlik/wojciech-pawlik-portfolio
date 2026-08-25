@@ -5,7 +5,7 @@ import { defaultLocale } from '@/i18n/config'
 
 /**
  * The single SVG mark doubles as the favicon (`app/icon.svg`) and the manifest icon.
- * Raster sizes are missing on purpose — an installed shortcut falls back to the SVG,
+ * Raster sizes are missing on purpose - an installed shortcut falls back to the SVG,
  * which is better than pointing at files that do not exist.
  *
  * Colours match `--color-canvas` in theme.css and `viewport.themeColor` in the layout.

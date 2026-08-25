@@ -8,7 +8,7 @@ import { DURATION, EASE } from './tokens'
  * Guard tests for a duplication we accepted on purpose: the easing and duration
  * scales exist twice, as CSS custom properties (for Tailwind) and as numbers (for
  * Motion and GSAP). A change on one side that is not mirrored on the other produces
- * two slightly different motion languages on the same page — visible, but almost
+ * two slightly different motion languages on the same page - visible, but almost
  * impossible to attribute. See .agents/02-design-system.md.
  */
 

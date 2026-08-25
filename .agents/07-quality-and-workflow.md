@@ -1,4 +1,4 @@
-# 07 — Jakość kodu i przebieg pracy
+# 07 - Jakość kodu i przebieg pracy
 
 ## Bramka jakości
 
@@ -14,14 +14,14 @@ Pojedyncze polecenia:
 | Polecenie                          | Rola                                                                 |
 | ---------------------------------- | -------------------------------------------------------------------- |
 | `pnpm dev`                         | serwer developerski (Turbopack)                                      |
-| `pnpm build`                       | build produkcyjny — jedyny pełny test typów w plikach konwencji Next |
+| `pnpm build`                       | build produkcyjny - jedyny pełny test typów w plikach konwencji Next |
 | `pnpm format`                      | Prettier zapisuje zmiany                                             |
 | `pnpm lint` / `pnpm lint:fix`      | ESLint                                                               |
 | `pnpm typecheck`                   | `next typegen && tsc --noEmit`                                       |
 | `pnpm test` / `pnpm test:coverage` | Vitest                                                               |
 
 Zasada: **nie wyłączamy reguły, żeby przejść bramkę.** Reguła jest błędem projektowym albo kod
-jest błędny. Jeżeli wyłączenie jest jedynym wyjściem — `eslint-disable-next-line` z komentarzem
+jest błędny. Jeżeli wyłączenie jest jedynym wyjściem - `eslint-disable-next-line` z komentarzem
 _dlaczego_, nigdy blokowo na plik.
 
 `pnpm build` wymaga `NEXT_PUBLIC_SITE_URL` w produkcji (patrz `.env.example`).
@@ -41,7 +41,7 @@ Zadanie jest skończone, gdy **wszystkie** punkty są spełnione:
 8. Nowe tokeny i primitives widoczne na `/system`.
 9. Nowa logika ma testy (patrz [06-testing.md](06-testing.md)).
 10. Nowa trasa jest w `src/data/routes.ts`, więc trafia do nawigacji i sitemapy.
-11. Treść jest we **wszystkich** słownikach projektu — brakujący klucz to błąd kompilacji, ale
+11. Treść jest we **wszystkich** słownikach projektu - brakujący klucz to błąd kompilacji, ale
     przetłumaczony byle jak przechodzi. Sprawdź, że tłumaczenie jest zdaniem, nie kalką.
 12. Brak martwego kodu, brak `TODO` bez wskazania na ADR, `specs/`, `TODO(brief)` lub `TODO(brand)`.
 13. Dokumentacja w `.agents/` zaktualizowana, jeżeli zmieniła się zasada, a nie tylko implementacja.
@@ -64,15 +64,15 @@ Zadanie jest skończone, gdy **wszystkie** punkty są spełnione:
 ```
 
 Kolejność ma znaczenie: **najpierw działający, semantyczny HTML, potem animacja.**
-Strona musi mieć sens bez JavaScriptu i bez animacji — u lokalnej firmy to nie ćwiczenie
+Strona musi mieć sens bez JavaScriptu i bez animacji - u lokalnej firmy to nie ćwiczenie
 teoretyczne, tylko klient na słabym LTE.
 
 ## Specyfikacja sekcji
 
 Plik w `.agents/specs/`, minimalnie:
 
-- Funkcja sekcji w lejku — patrz [00-project-brief.md](00-project-brief.md#główny-lejek).
-- Copy — dokładne teksty, we wszystkich językach projektu.
+- Funkcja sekcji w lejku - patrz [00-project-brief.md](00-project-brief.md#główny-lejek).
+- Copy - dokładne teksty, we wszystkich językach projektu.
 - Struktura HTML i hierarchia nagłówków.
 - Wymagane dane i ich kształt.
 - Zachowanie na desktopie i na mobile.
@@ -127,4 +127,4 @@ Rozjazd między kodem a `.agents/` traktujemy jak błąd, nie jak dług.
 
 Zmiana, która dotyczy **każdego** projektu z tej templatki (reguła architektury, reguła lintu,
 poprawka w primitives), powinna wrócić do repozytorium templatki. Zmiana specyficzna dla
-klienta — nigdy.
+klienta - nigdy.

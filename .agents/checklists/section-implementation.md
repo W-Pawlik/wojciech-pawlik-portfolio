@@ -1,4 +1,4 @@
-# Checklist — implementacja sekcji
+# Checklist - implementacja sekcji
 
 Do odhaczenia przed zgłoszeniem sekcji jako gotowej.
 
@@ -7,7 +7,7 @@ Do odhaczenia przed zgłoszeniem sekcji jako gotowej.
 - [ ] Istnieje zaakceptowana specyfikacja w `.agents/specs/`.
 - [ ] Znana funkcja sekcji w lejku i powód, dla którego jest na stronie.
 - [ ] Copy dostarczone (brief lub właściciel repo), we wszystkich językach. Zero wypełniaczy.
-- [ ] Fakty (ceny, terminy, zakres) potwierdzone — nie zgadywane.
+- [ ] Fakty (ceny, terminy, zakres) potwierdzone - nie zgadywane.
 - [ ] Zdjęcia dostarczone albo świadomie zastąpione placeholderem o docelowych proporcjach.
 
 ## Struktura
@@ -16,7 +16,7 @@ Do odhaczenia przed zgłoszeniem sekcji jako gotowej.
 - [ ] Owinięta w `Section` z `id` z `SECTION_IDS`, jeżeli jest celem nawigacji.
 - [ ] Poprawna hierarchia nagłówków (`h2` dla nagłówka sekcji, bez przeskoków).
 - [ ] Semantyczne elementy tam, gdzie mają sens (`dl`, `blockquote`, `nav`, `ol`, `address`).
-- [ ] Interaktywność wydzielona jako osobny `'use client'` — nie cała sekcja.
+- [ ] Interaktywność wydzielona jako osobny `'use client'` - nie cała sekcja.
 - [ ] Treść przez `getDictionary()`; komponent kliencki dostaje teksty propsami.
 - [ ] Dane w `src/data/`, typowane, `as const`, ceny jako liczby.
 
@@ -27,7 +27,7 @@ Do odhaczenia przed zgłoszeniem sekcji jako gotowej.
 - [ ] Klasy łączone przez `cn()`.
 - [ ] Nowy token → dodany w `theme.css`, uwzględniony w `cn.ts` (jeśli `text-*`), pokazany na `/system`.
 - [ ] Tekst akapitowy ograniczony `max-w-measure`.
-- [ ] Akcent użyty oszczędnie — maksymalnie jeden element w widoku.
+- [ ] Akcent użyty oszczędnie - maksymalnie jeden element w widoku.
 - [ ] Sekcja nie powtarza kompozycji poprzedniej, jeżeli to już trzecia taka z rzędu.
 
 ## Animacja
@@ -37,9 +37,9 @@ Do odhaczenia przed zgłoszeniem sekcji jako gotowej.
 - [ ] Użyte primitives z `components/motion/`, nie ręczne `initial`/`animate`.
 - [ ] Czasy i easingi z `lib/motion/tokens.ts`.
 - [ ] Animowane tylko `transform` i `opacity`.
-- [ ] Reveal odtwarza się raz — nie wraca przy scrollu w górę.
+- [ ] Reveal odtwarza się raz - nie wraca przy scrollu w górę.
 - [ ] GSAP ładowany leniwie i czyszczony przy unmount.
-- [ ] Intensywność zgodna z budżetem ze specyfikacji — nie każda sekcja dostaje wszystko.
+- [ ] Intensywność zgodna z budżetem ze specyfikacji - nie każda sekcja dostaje wszystko.
 
 ## Responsywność
 
@@ -54,14 +54,14 @@ Do odhaczenia przed zgłoszeniem sekcji jako gotowej.
 - [ ] Nawigacja klawiaturą, logiczna kolejność Tab, widoczny focus.
 - [ ] Wszystkie obrazy z sensownym `alt` (lub `alt=""` dla dekoracyjnych).
 - [ ] Kontrast zgodny z zasadami z `08-accessibility-and-performance.md`.
-- [ ] Sprawdzone z `prefers-reduced-motion` — sekcja jest czytelna i użyteczna.
+- [ ] Sprawdzone z `prefers-reduced-motion` - sekcja jest czytelna i użyteczna.
 
 ## Wydajność
 
 - [ ] `next/image` z poprawnym `sizes`.
 - [ ] `priority` tylko dla hero.
 - [ ] Zdjęcia przepuszczone przez `pnpm images:prepare` i mają `blurProps`.
-- [ ] Wymiary obrazów zarezerwowane — brak przesuwania layoutu.
+- [ ] Wymiary obrazów zarezerwowane - brak przesuwania layoutu.
 
 ## Domknięcie
 

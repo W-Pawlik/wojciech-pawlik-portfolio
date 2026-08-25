@@ -1,4 +1,5 @@
 import { PageHeader } from '@/components/pages/page-header'
+import { ButtonLink, CtaArrow } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { MediaSlot } from '@/components/ui/media-slot'
 import { Section } from '@/components/ui/section'
@@ -15,11 +16,7 @@ export async function WorkIndexPage() {
 
   return (
     <>
-      <PageHeader
-        label={dict.work.label}
-        headlineLines={dict.work.pageHeadline}
-        intro={dict.work.pageIntro}
-      />
+      <PageHeader headlineLines={dict.work.pageHeadline} intro={dict.work.pageIntro} />
       <Section spacing="large" className="bg-canvas-subtle">
         <Container>
           <div className="border-t border-line">
@@ -40,7 +37,7 @@ export async function WorkIndexPage() {
                       id={project.media.id}
                       ratio={project.media.ratio}
                       src={project.media.src}
-                      alt={`${copy.title} — ${dict.work.visualization}`}
+                      alt={`${copy.title} - ${dict.work.visualization}`}
                       label={dict.work.visualization}
                       fit="contain"
                       zoomable
@@ -75,6 +72,30 @@ export async function WorkIndexPage() {
                 </article>
               )
             })}
+          </div>
+        </Container>
+      </Section>
+
+      <Section spacing="large" tone="invert">
+        <Container>
+          <div className="grid grid-cols-12 gap-grid">
+            <div className="col-span-12 lg:col-span-7">
+              <p className="font-mono text-meta text-content-invert-tertiary uppercase">
+                {dict.services.closingLabel}
+              </p>
+              <h2 className="mt-6 font-display text-display-section text-content-invert">
+                {dict.services.closingHeadline}
+              </h2>
+            </div>
+            <div className="col-span-12 mt-8 lg:col-span-4 lg:col-start-9 lg:mt-0 lg:self-end">
+              <p className="text-body-lg text-content-invert-secondary">
+                {dict.services.closingBody}
+              </p>
+              <ButtonLink href={withLocale(ROUTES.contact, locale)} size="lg" className="mt-8">
+                {dict.services.closingCta}
+                <CtaArrow />
+              </ButtonLink>
+            </div>
           </div>
         </Container>
       </Section>

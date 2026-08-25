@@ -1,4 +1,4 @@
-# 04 — Praktyki kodowania
+# 04 - Praktyki kodowania
 
 ## TypeScript
 
@@ -6,10 +6,10 @@
 `noImplicitOverride`, `noFallthroughCasesInSwitch`, `verbatimModuleSyntax`.
 
 - **`any` jest zabronione** (lint: error). Nie wiesz typu → `unknown` i zawężaj.
-- Rzutowanie `as` to sygnał ostrzegawczy. Dozwolone przy granicach bibliotek —
+- Rzutowanie `as` to sygnał ostrzegawczy. Dozwolone przy granicach bibliotek -
   z komentarzem _dlaczego_.
 - Nie piszemy typu zwracanego przy komponentach React. Piszemy go przy funkcjach z `lib/`
-  i hookach — to kontrakt.
+  i hookach - to kontrakt.
 - Union zamiast boolean flag. `tone: 'default' | 'invert'` zamiast `isInverted`.
 - Typy wyprowadzamy z danych, nie duplikujemy: `type ServiceSlug = (typeof SERVICES)[number]['slug']`.
 - `import type` jawnie (`verbatimModuleSyntax` tego wymaga, lint poprawia automatycznie).
@@ -27,18 +27,18 @@
 
 ## Stan
 
-- Stan trzymamy tak lokalnie, jak to możliwe. Brak globalnego store — strona wizytówka go nie
+- Stan trzymamy tak lokalnie, jak to możliwe. Brak globalnego store - strona wizytówka go nie
   potrzebuje.
 - Wartości pochodne **wyliczamy w renderze**, nie trzymamy w stanie i nie synchronizujemy efektem.
 - Reguła `react-hooks/set-state-in-effect` jest błędem. `setState` w ciele efektu = zła architektura.
 
 ```tsx
-// źle — kaskadowy render
+// źle - kaskadowy render
 useEffect(() => {
   if (reduceMotion) setDisplayed(value)
 }, [reduceMotion, value])
 
-// dobrze — pochodne w renderze
+// dobrze - pochodne w renderze
 const displayed = reduceMotion ? value : isInView ? animatedValue : 0
 ```
 
@@ -90,4 +90,4 @@ oznaczający, że czekamy na decyzję właściciela repo. `TODO` bez właścicie
 ## Formatowanie
 
 Prettier decyduje o wszystkim (bez średników, apostrofy pojedyncze, 100 kolumn, przecinki końcowe).
-`prettier-plugin-tailwindcss` sortuje klasy — **nie sortujemy ręcznie**, nie walczymy z wynikiem.
+`prettier-plugin-tailwindcss` sortuje klasy - **nie sortujemy ręcznie**, nie walczymy z wynikiem.

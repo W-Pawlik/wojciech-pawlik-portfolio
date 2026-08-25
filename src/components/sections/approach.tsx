@@ -11,7 +11,7 @@ import { formatOrdinal } from '@/lib/utils/format'
  * Differentiation, right after the hero: why work with this person rather than a cheaper
  * freelancer or an agency. Answered with a way of working, not with claims.
  *
- * A deliberately quiet section — the page rhythm is `quiet → bold → quiet` and the hero
+ * A deliberately quiet section - the page rhythm is `quiet → bold → quiet` and the hero
  * was loud. No image, no accent: grid, type and hairlines only. The label runs in the
  * left margin instead of above the headline, so the numbering system does not read as a
  * template three sections in a row (.agents/01-brand-and-design.md).

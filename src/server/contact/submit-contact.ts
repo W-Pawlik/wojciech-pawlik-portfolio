@@ -13,7 +13,7 @@ import type { ContactFormState } from './contact-form-state'
  * anything is delivered. See .agents/03-architecture.md.
  *
  * The locale travels in the form so the error messages come back in the language the
- * visitor is reading — `next/root-params` is not available inside an action.
+ * visitor is reading - `next/root-params` is not available inside an action.
  */
 export async function submitContact(
   _previous: ContactFormState,

@@ -24,7 +24,7 @@ type FieldProps = {
  *
  * Contract from .agents/08: every field has a real `<label>` (a placeholder is not a
  * label), and a validation message is associated with its control through
- * `aria-describedby` — otherwise a screen reader announces the error nowhere near the
+ * `aria-describedby` - otherwise a screen reader announces the error nowhere near the
  * input it belongs to.
  */
 export function Field({ label, hint, error, required, className, children }: FieldProps) {
@@ -35,7 +35,7 @@ export function Field({ label, hint, error, required, className, children }: Fie
 
   return (
     <div className={cn('flex flex-col gap-2', className)}>
-      {/* Labels are always visible — no floating labels, no placeholder-as-label. Set in
+      {/* Labels are always visible - no floating labels, no placeholder-as-label. Set in
           `content-secondary` rather than `content-tertiary`: a form usually sits on
           `canvas-subtle`, where tertiary drops below AA (see theme.css). */}
       <label htmlFor={id} className="font-mono text-label text-content-secondary uppercase">
@@ -59,7 +59,7 @@ export function Field({ label, hint, error, required, className, children }: Fie
 }
 
 /**
- * Shared input styling. Inputs are not primitives on their own — they are always fields.
+ * Shared input styling. Inputs are not primitives on their own - they are always fields.
  *
  * Two deliberate choices from the art direction and .agents/08:
  * - the border is `line-control`, the one hairline dark enough to clear 3:1; on a form

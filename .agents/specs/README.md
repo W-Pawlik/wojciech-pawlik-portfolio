@@ -4,16 +4,16 @@ Jeden plik = jedna sekcja albo jedna podstrona. Nazwa: `NN-nazwa.md`, numer zgod
 na stronie (podstrony: `page-nazwa.md`).
 
 Specyfikacja powstaje **przed** kodem i musi być zaakceptowana przez właściciela repo.
-Bez niej nie zaczynamy implementacji — patrz [../07-quality-and-workflow.md](../07-quality-and-workflow.md).
+Bez niej nie zaczynamy implementacji - patrz [../07-quality-and-workflow.md](../07-quality-and-workflow.md).
 
 Plan etapów: [00-implementation-plan.md](00-implementation-plan.md).
 
-W świeżej templatce nie ma tu żadnej specyfikacji — bo nie ma jeszcze briefu ani wireframe'u.
+W świeżej templatce nie ma tu żadnej specyfikacji - bo nie ma jeszcze briefu ani wireframe'u.
 
 ## Szablon
 
 ```markdown
-# NN — Nazwa sekcji
+# NN - Nazwa sekcji
 
 - **Funkcja w lejku:** (etap z briefu)
 - **Funkcja sprzedażowa:** jedno zdanie, po co ta sekcja istnieje
@@ -38,9 +38,9 @@ Hierarchia elementów i nagłówków. Co jest h2, co listą, co blockquote, co a
 
 Kształt wymaganych danych i plik w src/data/.
 
-## Zachowanie — desktop
+## Zachowanie - desktop
 
-## Zachowanie — mobile
+## Zachowanie - mobile
 
 Co zostaje uproszczone i dlaczego.
 

@@ -1,4 +1,4 @@
-# ADR-0007 — Dostarczanie zgłoszeń z formularza
+# ADR-0007 - Dostarczanie zgłoszeń z formularza
 
 - **Status:** Accepted
 - **Data:** 2026-01-01
@@ -6,7 +6,7 @@
 ## Kontekst
 
 Formularz jest celem konwersji strony. Zgłoszenie musi dotrzeć do skrzynki, którą właściciel firmy
-naprawdę czyta — nie do panelu, w który nikt nie zagląda, i nie do bazy, której nie ma kto obsłużyć.
+naprawdę czyta - nie do panelu, w który nikt nie zagląda, i nie do bazy, której nie ma kto obsłużyć.
 
 Jednocześnie na etapie budowy strony nie ma jeszcze konta u dostawcy e-mail ani zweryfikowanej
 domeny, a formularz musi być testowalny.
@@ -19,7 +19,7 @@ domeny, a formularz musi być testowalny.
    `src/server/contact/contact-delivery.ts`. Wymiana dostawcy to zmiana tego pliku i niczego więcej.
 3. Dopóki zmienne środowiskowe dostawcy są puste, zgłoszenie jest **logowane po stronie serwera**
    (dane wrażliwe zredukowane) i traktowane jako dostarczone. Formularz jest wtedy w pełni
-   testowalny, ale **nikt zgłoszenia nie dostaje** — podłączenie dostawcy jest blokerem
+   testowalny, ale **nikt zgłoszenia nie dostaje** - podłączenie dostawcy jest blokerem
    uruchomienia, wypisanym w [checklists/launch.md](../checklists/launch.md).
 4. Adres nadawcy jest na domenie zweryfikowanej u dostawcy; adres klienta idzie w `reply-to`.
    Wysyłka „w imieniu” klienta z naszej domeny łamie SPF/DKIM i ląduje w spamie.
@@ -31,9 +31,9 @@ domeny, a formularz musi być testowalny.
 ## Konsekwencje
 
 - Zero infrastruktury do utrzymania: brak bazy, brak migracji, brak kopii zapasowych.
-- Brak archiwum zgłoszeń po stronie strony — historia jest w skrzynce e-mail. Dla strony
+- Brak archiwum zgłoszeń po stronie strony - historia jest w skrzynce e-mail. Dla strony
   wizytówki to wystarcza; gdy przestanie, to jest osobna decyzja i osobny ADR.
-- Trzeba pilnować dostarczalności (SPF, DKIM, DMARC) — test „czy doszło i czy nie w spamie”
+- Trzeba pilnować dostarczalności (SPF, DKIM, DMARC) - test „czy doszło i czy nie w spamie”
   jest w checkliście uruchomienia.
 
 ## Rozważone alternatywy

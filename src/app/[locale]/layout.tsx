@@ -18,13 +18,13 @@ import '@/styles/globals.css'
  * Instrument Sans for everything read, IBM Plex Mono for the BUILD TRACE layer
  * (.agents/01-brand-and-design.md).
  *
- * `latin-ext` is not optional — Polish diacritics live there. next/font self-hosts the
+ * `latin-ext` is not optional - Polish diacritics live there. next/font self-hosts the
  * files, so there is no render-blocking third-party request and no layout shift from a
  * late swap.
  *
  * The variable names are the contract: `src/styles/base.css` maps `--font-*-family` onto
  * `--font-brand-*`, and the theme reads only those. Display and sans deliberately share
- * one instance — a second identical download to satisfy a naming convention would be
+ * one instance - a second identical download to satisfy a naming convention would be
  * waste (base.css points both roles at `--font-sans-family`).
  */
 const sans = Instrument_Sans({

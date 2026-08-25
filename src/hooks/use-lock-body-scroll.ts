@@ -9,7 +9,7 @@ import { useEffect } from 'react'
  *
  * **Only the vertical axis is touched.** An inline `overflow: hidden` would be the
  * shorthand, and it would quietly replace the `overflow-x: clip` that base.css relies on
- * to keep horizontal overflow off the document — turning the viewport into a
+ * to keep horizontal overflow off the document - turning the viewport into a
  * horizontally scrollable box for exactly as long as an overlay is open. Locking
  * `overflow-y` alone freezes scrolling just as effectively and leaves the net in place.
  */

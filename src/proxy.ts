@@ -8,7 +8,7 @@ import { defaultLocale, isLocale, locales } from '@/i18n/config'
  *
  * The locale is picked from `Accept-Language`, with the home market as the fallback: a
  * local business serves a specific place, so a visitor with no stated preference gets
- * the main language. No negotiation library — with a couple of locales a prefix scan is
+ * the main language. No negotiation library - with a couple of locales a prefix scan is
  * enough and keeps the proxy dependency-free (it may run at the edge, where shared
  * modules are a liability).
  */
@@ -51,6 +51,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   // Skip Next internals and anything with a file extension (images, robots.txt,
-  // sitemap.xml, the manifest) — those must not be locale-prefixed.
+  // sitemap.xml, the manifest) - those must not be locale-prefixed.
   matcher: ['/((?!_next|.*\\.).*)'],
 }

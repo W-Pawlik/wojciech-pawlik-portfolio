@@ -1,4 +1,4 @@
-# ADR-0001 — Stack technologiczny i podział odpowiedzialności animacji
+# ADR-0001 - Stack technologiczny i podział odpowiedzialności animacji
 
 - **Status:** Accepted
 - **Data:** 2026-01-01
@@ -11,7 +11,7 @@ tam trafia większość ruchu lokalnego. Każda dodatkowa biblioteka na ścieżc
 przeciw drugiemu wymaganiu.
 
 Osobny problem: „jedna biblioteka do wszystkiego” zawsze kończy się użyciem najcięższego
-narzędzia do najprostszego zadania — GSAP do hovera przycisku, biblioteka animacji do fade-in.
+narzędzia do najprostszego zadania - GSAP do hovera przycisku, biblioteka animacji do fade-in.
 
 ## Decyzja
 
@@ -22,10 +22,10 @@ GSAP + ScrollTrigger · Zod · Vitest + React Testing Library · clsx + tailwind
 
 Podział odpowiedzialności animacji:
 
-- **CSS** — reveal-e, wejście hero, hover, wszystkie przejścia „stan A → stan B”.
-- **Motion for React** — interakcje wymagające animacji wyjścia i stanu: modale, drawery, menu,
+- **CSS** - reveal-e, wejście hero, hover, wszystkie przejścia „stan A → stan B”.
+- **Motion for React** - interakcje wymagające animacji wyjścia i stanu: modale, drawery, menu,
   gesty, count-up, parallax. Ładowany leniwie.
-- **GSAP + ScrollTrigger** — sekwencje sterowane scrollem, jeden–dwa momenty na stronę.
+- **GSAP + ScrollTrigger** - sekwencje sterowane scrollem, jeden–dwa momenty na stronę.
   Ładowany leniwie.
 
 Nowa zależność wymaga nowego ADR i zgody właściciela repo. Dotyczy to również „małych” paczek:
@@ -34,7 +34,7 @@ i dodaje własne konwencje.
 
 ## Konsekwencje
 
-- Wybór narzędzia do animacji nie jest kwestią gustu — jest w tym dokumencie.
+- Wybór narzędzia do animacji nie jest kwestią gustu - jest w tym dokumencie.
 - Część rzeczy piszemy sami (slider, lightbox, accordion). To świadomy koszt: kilkadziesiąt linii
   zamiast paczki, której API i tak trzeba by opanować.
 - Brak globalnego store, brak biblioteki formularzy, brak CMS-a. Jeżeli projekt naprawdę ich

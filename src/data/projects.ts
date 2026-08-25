@@ -1,9 +1,9 @@
 /**
- * Selected work. Structure, slugs and metadata only — every word lives in the
+ * Selected work. Structure, slugs and metadata only - every word lives in the
  * dictionaries under `work.projects`, keyed by `key` (.agents/03-architecture.md).
  *
  * Two entries, both real builds. The brief asks for a third (a commercial client site);
- * it is deliberately absent rather than invented — an imaginary case study on a page
+ * it is deliberately absent rather than invented - an imaginary case study on a page
  * whose whole job is proving capability would be the worst possible lie.
  *
  * `status` drives what the card offers: a case-study page exists, or it says so. Nothing
@@ -13,7 +13,9 @@
 export const PROJECT_TAGS = [
   'webApp',
   'website',
-  'productDesign',
+  'branding',
+  'logoCreation',
+  'businessAnalysis',
   'fullStack',
   'internalSystem',
   'riskScoring',
@@ -29,7 +31,7 @@ export type Project = {
   tags: readonly ProjectTag[]
   /**
    * Displayed as mono metadata when known. A string, not a number: some builds span two
-   * years. TODO(brief): both years are unknown — an invented date on a case study is a
+   * years. TODO(brief): both years are unknown - an invented date on a case study is a
    * fabricated fact, so the metadata row simply omits it until confirmed.
    */
   year?: string
@@ -52,7 +54,7 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: 'maw-autoserwis',
     key: 'mawAuto',
-    tags: ['website', 'productDesign'],
+    tags: ['website', 'branding'],
     team: 'solo',
     showOnLanding: true,
     status: 'pending',
@@ -65,7 +67,7 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: 'agnieszka-luzarska-website',
     key: 'agnieszkaLuzarska',
-    tags: ['website', 'productDesign'],
+    tags: ['website', 'logoCreation'],
     team: 'solo',
     showOnLanding: true,
     liveUrl: 'https://agnieszka-luzarska-site.vercel.app/',
@@ -79,7 +81,7 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: 'vanta-detailing',
     key: 'vantaDetailing',
-    tags: ['website', 'productDesign'],
+    tags: ['website', 'branding'],
     team: 'solo',
     showOnLanding: true,
     liveUrl: 'https://vanta-website-pied.vercel.app/pl',
@@ -93,7 +95,7 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: 'planik',
     key: 'planik',
-    tags: ['webApp', 'productDesign', 'fullStack'],
+    tags: ['webApp', 'businessAnalysis', 'branding'],
     team: 'codebros',
     showOnLanding: true,
     status: 'pending',

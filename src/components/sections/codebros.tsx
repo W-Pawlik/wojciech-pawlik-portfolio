@@ -16,7 +16,7 @@ import { withLocale } from '@/i18n/config'
  *
  * Two components would fight over one background, so the transition and the CodeBros
  * content are one inverted section with two blocks: the statement first, the substance
- * after. This is the **CodeBros mode** from the design system — same grid, same type, same
+ * after. This is the **CodeBros mode** from the design system - same grid, same type, same
  * radii, inverted tone (.agents/01-brand-and-design.md#motyw).
  *
  * Phase 05 adds the GSAP moment here (line draw, background transition, headline reveal);

@@ -5,7 +5,7 @@ import { BUDGET_RANGES, CONTACT_LIMITS, PROJECT_STAGES, PROJECT_TYPES } from '@/
 /**
  * The lead form is the site's conversion goal, so its schema is shared: the client
  * validates for UX, the Server Action re-validates the whole payload. Never trust the
- * client half — see .agents/03-architecture.md.
+ * client half - see .agents/03-architecture.md.
  *
  * The schema is a **factory** rather than a module constant because the messages are
  * localised. The client builds it from its dictionary; the action rebuilds it from the
@@ -32,7 +32,7 @@ export type ContactMessages = {
 
 /**
  * Polish mobile or landline, optionally with the +48 prefix and any mix of spaces, dashes
- * or parentheses — nine significant digits. The field is optional here (email is the reply
+ * or parentheses - nine significant digits. The field is optional here (email is the reply
  * channel for a project enquiry), so the pattern only has to reject a typo, not a blank.
  */
 const PHONE_PATTERN = /^(?:\+?48)?[\s-]?(?:\d[\s\-()]?){9}$/
@@ -40,7 +40,7 @@ const PHONE_PATTERN = /^(?:\+?48)?[\s-]?(?:\d[\s\-()]?){9}$/
 /**
  * Honeypot. A field no human fills in, hidden from assistive technology and from the tab
  * order. Bots submit every input they find, so a non-empty value here is the cheapest spam
- * signal available — and it costs a real visitor nothing, unlike a captcha.
+ * signal available - and it costs a real visitor nothing, unlike a captcha.
  *
  * It occupies the name `company`, which is why the visible optional "company" field from
  * the brief is not implemented: two inputs with one name would break both. If that field
@@ -87,7 +87,7 @@ export function createContactSchema(messages: ContactMessages) {
 
 export type ContactSchema = ReturnType<typeof createContactSchema>
 
-/** Validated, normalised request — what the delivery layer receives. */
+/** Validated, normalised request - what the delivery layer receives. */
 export type ContactRequest = z.infer<ContactSchema>
 
 export type ContactFieldErrors = Partial<Record<keyof ContactRequest, string[]>>

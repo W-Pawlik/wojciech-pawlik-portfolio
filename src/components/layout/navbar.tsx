@@ -14,10 +14,10 @@ import { PrimaryNavigation } from './primary-navigation'
 
 /**
  * Sticky navigation. A Server Component: the bar, the links and the CTA are static, and
- * only the mobile menu needs state — see .agents/03-architecture.md.
+ * only the mobile menu needs state - see .agents/03-architecture.md.
  *
  * Full-width bar, not a floating pill: the pill is the SaaS signature this direction is
- * defined against. The brand is a plain wordmark plus a mono descriptor — no invented
+ * defined against. The brand is a plain wordmark plus a mono descriptor - no invented
  * logotype (.agents/01-brand-and-design.md#logo).
  *
  * The nav items are anchors on the home page, so they work as a table of contents while

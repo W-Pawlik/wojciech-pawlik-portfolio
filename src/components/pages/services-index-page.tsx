@@ -18,11 +18,7 @@ export async function ServicesIndexPage() {
 
   return (
     <>
-      <PageHeader
-        label={dict.services.label}
-        headlineLines={dict.services.pageHeadline}
-        intro={dict.services.pageIntro}
-      />
+      <PageHeader headlineLines={dict.services.pageHeadline} intro={dict.services.pageIntro} />
 
       <Section spacing="large" className="bg-canvas-subtle">
         <Container>

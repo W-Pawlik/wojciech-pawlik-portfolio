@@ -8,18 +8,14 @@ import { getDictionary, getLocale } from '@/i18n/server'
 import { withLocale } from '@/i18n/config'
 import { formatPrice, formatPriceFrom, formatPriceRange } from '@/lib/utils/format'
 
-/** A dedicated investment page with scope notes and after-launch options. */
+/** A dedicated pricing page with scope notes and after-launch options. */
 export async function PricingPage() {
   const dict = await getDictionary()
   const locale = await getLocale()
 
   return (
     <>
-      <PageHeader
-        label={dict.pricing.label}
-        headlineLines={dict.pricing.pageHeadline}
-        intro={dict.pricing.pageIntro}
-      />
+      <PageHeader headlineLines={dict.pricing.pageHeadline} intro={dict.pricing.pageIntro} />
       <Section spacing="large">
         <Container>
           <p className="mb-12 max-w-measure text-body-sm text-accent-strong">

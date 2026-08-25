@@ -8,7 +8,7 @@ import type { ContactRequest } from '@/lib/validation/contact'
  *
  * Until the provider variables are set, a request is logged server-side and treated as
  * delivered, so the form is fully testable without an account anywhere. **That also means
- * nobody receives it** — connecting a provider is a launch blocker, not a nice-to-have.
+ * nobody receives it** - connecting a provider is a launch blocker, not a nice-to-have.
  * See .agents/decisions/0007-contact-delivery.md.
  *
  * Swapping providers means changing this file and nothing else.
@@ -28,7 +28,7 @@ export async function deliverContactRequest(request: ContactRequest): Promise<vo
     // console.warn rather than console.log: the lint rule forbids log, and an
     // unconfigured provider genuinely is a warning.
     console.warn(
-      '[contact] No email provider configured — request logged only, nobody was notified.',
+      '[contact] No email provider configured - request logged only, nobody was notified.',
       redact(request),
     )
     return
@@ -46,7 +46,7 @@ export async function deliverContactRequest(request: ContactRequest): Promise<vo
       // The visitor's address goes in reply-to, never in `from`: sending on someone
       // else's behalf from our domain fails SPF/DKIM and lands in spam.
       ...(request.email && { reply_to: request.email }),
-      subject: `${siteConfig.name}: ${request.projectType} / ${request.budget} — ${request.name}`,
+      subject: `${siteConfig.name}: ${request.projectType} / ${request.budget} - ${request.name}`,
       text: asPlainText(request),
     }),
   })
@@ -83,6 +83,6 @@ function asPlainText(request: ContactRequest): string {
     '',
     `Imię i nazwisko: ${request.name}`,
     `E-mail: ${request.email}`,
-    `Telefon: ${request.phone ?? '—'}`,
+    `Telefon: ${request.phone ?? '-'}`,
   ].join('\n')
 }

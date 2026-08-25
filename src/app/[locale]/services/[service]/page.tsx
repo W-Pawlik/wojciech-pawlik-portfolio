@@ -56,7 +56,6 @@ export default async function ServiceDetailPage(props: {
   return (
     <>
       <PageHeader
-        label={dict.services.label}
         headlineLines={[copy.title]}
         intro={copy.intro}
         backHref={withLocale(ROUTES.services, locale)}

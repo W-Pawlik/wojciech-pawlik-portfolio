@@ -9,7 +9,7 @@ type SectionProps = {
   /** `invert` is the tonal interlude that breaks the page rhythm. One section, maybe two. */
   tone?: 'default' | 'invert'
   /**
-   * Vertical rhythm. Deliberately varied across the page rather than constant — see the
+   * Vertical rhythm. Deliberately varied across the page rather than constant - see the
    * spacing scale in .agents/02-design-system.md. Five identical sections in a row make a
    * page feel both longer and cheaper.
    */
@@ -47,7 +47,7 @@ export function Section({
       id={id}
       // `isolate` keeps a section's stacking context to itself, so a parallax or pinned
       // child can never paint over a neighbouring section. The consequence: overlays must
-      // portal out to the body — see components/ui/overlay.tsx.
+      // portal out to the body - see components/ui/overlay.tsx.
       className={cn('relative isolate', TONE_CLASS[tone], SPACING_CLASS[spacing], className)}
     >
       {children}

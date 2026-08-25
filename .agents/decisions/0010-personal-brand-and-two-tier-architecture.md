@@ -1,4 +1,4 @@
-# ADR-0010 — Marka osobista i dwupoziomowa architektura marki (Wojciech Pawlik + CodeBros)
+# ADR-0010 - Marka osobista i dwupoziomowa architektura marki (Wojciech Pawlik + CodeBros)
 
 - **Status:** Accepted
 - **Data:** 2026-08-21
@@ -12,17 +12,17 @@ miejscach szkieletu i dokumentów:
   obowiązkowe, a `hasPublishableContactDetails` wymaga **telefonu i ulicy**, żeby cokolwiek
   z bloku kontaktowego się wyrenderowało.
 - Etap 7 bootstrapu zakłada JSON-LD `LocalBusiness`, a `08-accessibility-and-performance.md`
-  — SEO lokalne.
+  - SEO lokalne.
 - `.agents/README.md` opisuje główną konwersję jako „zadzwonić, napisać albo przyjechać”.
 
 Ten projekt jest inny. Zgodnie ze [strategią marki](../10-brand-strategy.md):
 
-1. Marką jest **osoba** — Wojciech Pawlik, descriptor _Web & Product Engineer_ — a nie firma
+1. Marką jest **osoba** - Wojciech Pawlik, descriptor _Web & Product Engineer_ - a nie firma
    z lokalizacją. Nazwisko jest przewagą, bo klient kupuje osobistą odpowiedzialność i dostęp do
    osoby technicznej.
-2. Przy większych projektach do gry wchodzi **CodeBros** (Wojciech i Michał Pawlik) — nie jako
+2. Przy większych projektach do gry wchodzi **CodeBros** (Wojciech i Michał Pawlik) - nie jako
    konkurencyjna marka, tylko jako „drugi bieg” tej samej oferty.
-3. Usługa jest **projektowa i zdalna**. Klient nie przyjeżdża i nie dzwoni „z ulicy” — opisuje
+3. Usługa jest **projektowa i zdalna**. Klient nie przyjeżdża i nie dzwoni „z ulicy” - opisuje
    projekt, a potem umawia rozmowę. Konwersją jest formularz kwalifikacyjny.
 4. Strona sprzedaje w trzech filarach (Websites · Custom Systems · AI Automation) i musi sama
    być dowodem jakości, bo portfolio dopiero powstaje.
@@ -33,22 +33,22 @@ lokalnej firmy z adresem, godzinami i telefonem jako głównym CTA.
 ## Decyzja
 
 1. **Jedna marka główna: Wojciech Pawlik.** CodeBros jest marką rozszerzoną w tym samym systemie
-   wizualnym i w tym samym repozytorium — jedna strona, jeden system tokenów, jeden ton.
+   wizualnym i w tym samym repozytorium - jedna strona, jeden system tokenów, jeden ton.
    CodeBros nie dostaje osobnego serwisu ani osobnej stylistyki; dostaje sekcję, ewentualnie
    podstronę `/codebros`, i własny zestaw claimów z banku haseł.
 2. **Komunikacja w pierwszej osobie pojedynczej.** „My” występuje wyłącznie w kontekście
    CodeBros. Agencyjne „nasz zespół” jest błędem, nie stylem.
-3. **JSON-LD: `Person` (autor, marka) + `ProfessionalService`/`Service` dla oferty** — zamiast
+3. **JSON-LD: `Person` (autor, marka) + `ProfessionalService`/`Service` dla oferty** - zamiast
    `LocalBusiness`. `address` jest opcjonalne i wchodzi tylko, jeżeli właściciel repo zdecyduje
    się publikować adres zarejestrowanej działalności. `openingHours` **nie występuje**;
    odpowiednikiem jest deklarowany czas odpowiedzi na zgłoszenie.
 4. **NAP zastępuje tożsamość kontaktowa: e-mail jest kanałem podstawowym**, telefon opcjonalnym,
    adres opcjonalnym. Konsekwencja w kodzie: `hasPublishableContactDetails` w `src/data/site.ts`
-   musi być przedefiniowane na „jest e-mail **albo** telefon”, razem z testem — dzisiejszy warunek
+   musi być przedefiniowane na „jest e-mail **albo** telefon”, razem z testem - dzisiejszy warunek
    `phone && street` ukryłby cały blok kontaktowy w projekcie, który adresu może nigdy nie mieć.
 5. **Konwersja to formularz kwalifikacyjny**, nie klik w `tel:`. Formularz z templatki
    (imię / e-mail / telefon / wiadomość) zostaje rozszerzony o trzy pola wyboru: potrzeba, etap,
-   orientacyjny budżet — patrz [brief](../00-project-brief.md#formularz). Zmiana schematu Zod idzie
+   orientacyjny budżet - patrz [brief](../00-project-brief.md#formularz). Zmiana schematu Zod idzie
    razem ze specyfikacją sekcji i z testami walidacji.
 6. **SEO lokalne wypada z zakresu.** Zamiast fraz „usługa + miasto” celujemy we frazy brandowe
    (nazwisko, CodeBros) i frazy intencji usługowej. Miasto może pojawić się jako element
@@ -71,7 +71,7 @@ lokalnej firmy z adresem, godzinami i telefonem jako głównym CTA.
   Dlatego sekcja proof ma priorytet P0 i jest wprost zablokowana brakiem treści, a nie wypełniana
   ogólnikami.
 - Jeżeli CodeBros kiedyś urośnie do własnej marki z własną ofertą, ta decyzja zostaje zastąpiona
-  nowym ADR — nie edytujemy tego.
+  nowym ADR - nie edytujemy tego.
 
 ## Rozważone alternatywy
 
@@ -83,6 +83,6 @@ lokalnej firmy z adresem, godzinami i telefonem jako głównym CTA.
   decyzji, na czyją stronę trafił. CodeBros jest zakresem, nie inną firmą.
 - **Zostawić `LocalBusiness` i NAP „na wszelki wypadek”.** Odrzucone: znaczniki i sekcje
   powtarzające dane, których nie ma (godziny, adres, telefon), są markupem wprowadzającym
-  w błąd — a to reguła nadrzędna templatki.
+  w błąd - a to reguła nadrzędna templatki.
 - **Telefon jako główne CTA.** Odrzucone: usługa jest projektowa, a rozmowa bez kontekstu jest
   gorsza dla obu stron niż opis projektu przesłany wcześniej.

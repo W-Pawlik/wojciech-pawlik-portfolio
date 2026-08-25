@@ -1,7 +1,7 @@
-# Wejście 0 — Strategia marki (dokument źródłowy)
+# Wejście 0 - Strategia marki (dokument źródłowy)
 
 > **Archiwum wejścia.** Dokument dostarczony przez właściciela repo **2026-08-21**, w całości.
-> Nie edytujemy go — jeżeli strategia się zmienia, właściciel dostarcza nową wersję, a my
+> Nie edytujemy go - jeżeli strategia się zmienia, właściciel dostarcza nową wersję, a my
 > aktualizujemy [`../10-brand-strategy.md`](../10-brand-strategy.md).
 >
 > Źródłem prawdy dla projektu są [`../10-brand-strategy.md`](../10-brand-strategy.md)
@@ -10,11 +10,12 @@
 > Czego ten dokument **nie zawiera**: warstwy wizualnej (logo, paleta, typografia, kierunek
 > wizualny, fotografia) i faktów kontaktowych. Te pola są `BRAK` w
 > [`01-branding-input.md`](01-branding-input.md) i [`03-business-facts.md`](03-business-facts.md)
-> — i blokują etap 2 bootstrapu oraz publikację.
+>
+> - i blokują etap 2 bootstrapu oraz publikację.
 
 ---
 
-# BRAND STRATEGY — WOJCIECH PAWLIK / CODEBROS
+# BRAND STRATEGY - WOJCIECH PAWLIK / CODEBROS
 
 ## 0. Decyzja strategiczna
 
@@ -96,7 +97,7 @@ Nie:
 
 Tylko:
 
-> Projektujemy, budujemy i wdrażamy kompletne aplikacje webowe — od pierwszego problemu do
+> Projektujemy, budujemy i wdrażamy kompletne aplikacje webowe - od pierwszego problemu do
 > działającego systemu.
 
 ---
@@ -131,17 +132,17 @@ problem operacyjny.
 
 Marka powinna być odbierana jako:
 
-**kompetentna** — ale nie korporacyjna.
+**kompetentna** - ale nie korporacyjna.
 
-**techniczna** — ale zrozumiała dla właściciela firmy.
+**techniczna** - ale zrozumiała dla właściciela firmy.
 
-**kreatywna** — ale nie artystyczna dla samego efektu.
+**kreatywna** - ale nie artystyczna dla samego efektu.
 
-**premium** — ale bez udawania ekskluzywnego studia z 30-osobowym zespołem.
+**premium** - ale bez udawania ekskluzywnego studia z 30-osobowym zespołem.
 
-**osobista** — ale nie amatorska.
+**osobista** - ale nie amatorska.
 
-**nowoczesna** — ale nie oparta na trendach, które za rok będą wyglądać staro.
+**nowoczesna** - ale nie oparta na trendach, które za rok będą wyglądać staro.
 
 Najważniejsze połączenie:
 
@@ -181,7 +182,7 @@ To powinno stać się fundamentem komunikacji całego portfolio.
 
 # 5. GRUPA DOCELOWA
 
-## Segment A — małe i średnie biznesy
+## Segment A - małe i średnie biznesy
 
 Główna grupa. Firmy, które:
 
@@ -195,7 +196,7 @@ Główna grupa. Firmy, które:
 Przykłady: firmy usługowe, kancelarie, architekci, firmy budowlane, producenci, specjaliści B2B,
 firmy technologiczne, gabinety, restauracje i hospitality, lokalne marki premium.
 
-## Segment B — firmy potrzebujące customowego systemu
+## Segment B - firmy potrzebujące customowego systemu
 
 Firma ma już konkretny problem biznesowy. Na przykład:
 
@@ -212,7 +213,7 @@ Firma ma już konkretny problem biznesowy. Na przykład:
 
 Tutaj naturalnie pojawia się **CodeBros**.
 
-## Segment C — firmy chcące wykorzystać AI praktycznie
+## Segment C - firmy chcące wykorzystać AI praktycznie
 
 Nie firmy szukające „AI, bo wszyscy mają AI”. Tylko organizacje, w których można wskazać proces:
 
@@ -337,9 +338,9 @@ Do wykorzystania w różnych miejscach strony:
 
 **Technologia ma pasować do procesu firmy, nie odwrotnie.**
 
-**Dwie osoby. Pełny proces.** — dla CodeBros
+**Dwie osoby. Pełny proces.** - dla CodeBros
 
-**Od problemu do produkcji.** — dla CodeBros
+**Od problemu do produkcji.** - dla CodeBros
 
 **AI tam, gdzie faktycznie oszczędza pracę.**
 
@@ -357,7 +358,7 @@ i tłumaczył klientowi rozwiązanie.
 ### Dobre
 
 > Masz już stronę, ale przestała pasować do firmy, którą dziś jesteście? Zaprojektuję nową od
-> podstaw — pod ofertę, klientów i sposób, w jaki sprzedajecie.
+> podstaw - pod ofertę, klientów i sposób, w jaki sprzedajecie.
 
 ### Złe
 
@@ -382,7 +383,7 @@ argumentem sprzedażowym.
 
 Oferta ma trzy filary.
 
-# 01 — Websites
+# 01 - Websites
 
 ## Strony dla biznesu
 
@@ -405,7 +406,7 @@ Najważniejszy komunikat:
 > Nie zaczynam od gotowego motywu. Najpierw poznaję firmę, a dopiero później projektujemy jej
 > cyfrową reprezentację.
 
-# 02 — Custom Systems / CodeBros
+# 02 - Custom Systems / CodeBros
 
 ## Kiedy strona to za mało
 
@@ -427,7 +428,7 @@ projekt może być realizowany wspólnie z Michałem jako **CodeBros**.
 Przykładowe realizacje: aplikacje webowe, systemy wewnętrzne, platformy B2B, portale klienta,
 konfiguratory, dashboardy, MVP, systemy workflow.
 
-# 03 — AI Automation
+# 03 - AI Automation
 
 ## AI, które ma konkretną pracę do wykonania
 
@@ -458,7 +459,7 @@ Przykładowo:
 Nie tworzyłbym klasycznych pakietów Bronze / Silver / Gold. Byłoby to sprzeczne z komunikatem
 o customowym podejściu. Zamiast tego:
 
-# Typowy poziom inwestycji
+# Typowe widełki cenowe
 
 ## Strona biznesowa
 
@@ -509,7 +510,7 @@ dokładnej ceny. Mają odpowiedzieć klientowi na pytanie:
 
 Proces jest częścią produktu i jednym z najmocniejszych elementów Twojej marki.
 
-# 01 — Rozmowa
+# 01 - Rozmowa
 
 Najpierw poznajesz firmę. Nie pytasz:
 
@@ -524,34 +525,34 @@ Tylko:
 - gdzie obecnie tracicie klientów,
 - czego ma dokonać nowa strona lub system.
 
-# 02 — Project Brief
+# 02 - Project Brief
 
 Po rozmowie klient otrzymuje krótki zestaw pytań. Odpowiedzi stają się materiałem wejściowym do
 projektu.
 
-# 03 — Direction
+# 03 - Direction
 
 Na ich podstawie ustalasz: komunikację, strukturę, UX, kierunek wizualny, rozwiązania techniczne.
 
-# 04 — Build
+# 04 - Build
 
 Dopiero po ustaleniu kierunku zaczynasz development.
 
-# 05 — Review
+# 05 - Review
 
 Pokazujesz działającą wersję. Zbierasz feedback w uporządkowany sposób.
 
-# 06 — Refinement
+# 06 - Refinement
 
 Na końcu dopracowujesz: spacing, motion, content, mobile, detale UI, finalne interakcje.
 
-# 07 — Launch
+# 07 - Launch
 
 Testy, deployment, analytics i przekazanie projektu.
 
 ---
 
-# 15. PROJECT BRIEF — PYTANIA DLA KLIENTA
+# 15. PROJECT BRIEF - PYTANIA DLA KLIENTA
 
 Po pierwszej rozmowie klient może otrzymać formularz zawierający około 10–12 pytań.
 
@@ -618,7 +619,7 @@ Bardzo mocny proof point. Historia jest ciekawsza niż sam badge:
 
 > Jeszcze zanim pracowaliśmy w Univio, razem z Michałem wystartowaliśmy w organizowanym przez
 > firmę konkursie. Zbudowaliśmy system wspierający ocenę ryzyka przy udzielaniu kredytów
-> kupieckich — i wygraliśmy.
+> kupieckich - i wygraliśmy.
 
 To pokazuje jednocześnie: kompetencje, historię współpracy, ability to ship, realny problem
 biznesowy.
@@ -631,7 +632,7 @@ Powinien później otrzymać pełne case study. Nie przedstawiać go jako:
 
 Tylko pokazać skalę. Na przykład:
 
-> We dwóch zaprojektowaliśmy i zbudowaliśmy kompletną aplikację webową do planowania eventów —
+> We dwóch zaprojektowaliśmy i zbudowaliśmy kompletną aplikację webową do planowania eventów -
 > od modelu danych i backendu po interfejs i wdrożenie.
 
 Później warto dopisać dokładną funkcjonalność, stack, trudniejsze decyzje i rezultat.
@@ -762,55 +763,55 @@ To od razu filtruje leady i daje materiał do pierwszej rozmowy.
 
 # 21. GŁÓWNA ŚCIEŻKA UŻYTKOWNIKA
 
-## 01 — Recognition
+## 01 - Recognition
 
 Użytkownik w kilka sekund rozumie:
 
 > Ten człowiek tworzy profesjonalne strony i systemy dla firm.
 
-## 02 — Differentiation
+## 02 - Differentiation
 
 Dowiaduję się:
 
 > To nie jest kolejny freelancer składający strony z template'ów.
 
-## 03 — Fit
+## 03 - Fit
 
 Widzę dwa poziomy współpracy:
 
 **Potrzebuję dobrej strony.** lub: **Potrzebuję czegoś większego.**
 
-## 04 — Trust
+## 04 - Trust
 
 Poznaję: doświadczenie, realizacje, CodeBros, projekty, sposób pracy.
 
-## 05 — Proof
+## 05 - Proof
 
 Case studies pokazują realną jakość.
 
-## 06 — Offer
+## 06 - Offer
 
 Rozumiem: co mogę zamówić, jaki jest orientacyjny budżet, jak wygląda współpraca.
 
-## 07 — Low-risk conversion
+## 07 - Low-risk conversion
 
 Nie muszę od razu „zamawiać strony”. Mogę:
 
 > opowiedzieć o projekcie.
 
-## 08 — Qualification
+## 08 - Qualification
 
 Krótki formularz zbiera kontekst.
 
-## 09 — Conversation
+## 09 - Conversation
 
 Rozmowa.
 
-## 10 — Brief
+## 10 - Brief
 
 Klient odpowiada na dodatkowe pytania.
 
-## 11 — Direction
+## 11 - Direction
 
 Dostaje konkretną propozycję rozwiązania.
 
@@ -822,23 +823,23 @@ Dostaje konkretną propozycję rozwiązania.
 
 ### Websites
 
-**Custom websites for businesses** — główna, najbardziej dostępna oferta.
+**Custom websites for businesses** - główna, najbardziej dostępna oferta.
 
 ### AI Automation
 
-**Make repetitive work less repetitive** — specjalistyczna oferta dla firm z konkretnym
+**Make repetitive work less repetitive** - specjalistyczna oferta dla firm z konkretnym
 problemem procesowym.
 
 ## CODEBROS
 
 ### Custom Systems
 
-**Wojciech + Michał Pawlik** — większe aplikacje i rozwiązania wymagające pełnego developmentu
+**Wojciech + Michał Pawlik** - większe aplikacje i rozwiązania wymagające pełnego developmentu
 produktu.
 
 ---
 
-# CODEBROS — TOŻSAMOŚĆ
+# CODEBROS - TOŻSAMOŚĆ
 
 CodeBros nie powinno wyglądać jak osobna młodzieżowa marka programistyczna. Nazwa jest lekka,
 więc cała reszta komunikacji powinna dodawać jej dojrzałości.
@@ -889,7 +890,7 @@ Główna historia marki osobistej:
 > zbudowaliśmy między innymi aplikację Planik oraz system do oceny ryzyka kredytów kupieckich,
 > z którym wygraliśmy konkurs organizowany przez Univio jeszcze zanim zaczęliśmy tam pracować.
 >
-> Od prostej strony firmowej po dedykowany system — zasada pozostaje ta sama: technologia ma być
+> Od prostej strony firmowej po dedykowany system - zasada pozostaje ta sama: technologia ma być
 > dopasowana do problemu, który ma rozwiązać.
 
 ---
@@ -910,7 +911,7 @@ Główna historia marki osobistej:
 
 ## Marka rozszerzona
 
-**CodeBros — Wojciech & Michał Pawlik**
+**CodeBros - Wojciech & Michał Pawlik**
 
 ## Pozycjonowanie
 

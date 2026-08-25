@@ -1,9 +1,9 @@
 /**
- * Main-language copy. This file **defines the dictionary shape** — every other locale is
+ * Main-language copy. This file **defines the dictionary shape** - every other locale is
  * typed against it, so a key added here and forgotten elsewhere is a compile error.
  *
  * Source: the UX/wireframe brief (.agents/specs/01-home.md) and the approved phrase bank
- * (.agents/10-brand-strategy.md#bank-haseł). Nothing here is invented — no counts, no
+ * (.agents/10-brand-strategy.md#bank-haseł). Nothing here is invented - no counts, no
  * dates, no results, no client names (.agents/09-content-and-copy.md).
  *
  * Rules that survive any rewrite:
@@ -18,7 +18,7 @@
  */
 export const pl = {
   meta: {
-    title: 'Wojciech Pawlik — Web & Product Engineer',
+    title: 'Wojciech Pawlik - Web & Product Engineer',
     description:
       'Projektuję i buduję customowe strony, aplikacje webowe i automatyzacje AI dla firm, które potrzebują czegoś więcej niż gotowego szablonu.',
   },
@@ -91,16 +91,23 @@ export const pl = {
     tags: {
       webApp: 'Aplikacja webowa',
       website: 'Strona internetowa',
-      productDesign: 'Projektowanie produktu',
+      branding: 'Stworzenie brandingu',
+      logoCreation: 'Tworzenie logo',
+      businessAnalysis: 'Analiza biznesowa',
       fullStack: 'Frontend i backend',
       internalSystem: 'System wewnętrzny',
       riskScoring: 'Ocena ryzyka',
     },
     teamCodebros: 'CodeBros',
     teamSolo: 'Projekt indywidualny',
-    projectLabel: 'PROJEKT',
+    caseStudyLabel: 'Case study',
     caseStudyCta: 'Zobacz case study',
     liveCta: 'Wersja online',
+    caseStudyClosing: {
+      title: 'Podoba Ci się ta realizacja?',
+      body: 'Chcesz stworzyć coś podobnego dla swojej firmy? Porozmawiajmy o projekcie.',
+      cta: 'Skontaktuj się ze mną',
+    },
     allProjectsCta: 'Zobacz wszystkie realizacje',
     visualization: 'Widok realizacji',
     projects: {
@@ -129,19 +136,16 @@ export const pl = {
 
   caseStudies: {
     mawAuto: {
-      label: 'Case study / Maw Autoserwis',
       title: 'Maw Autoserwis',
-      categories: 'Strona internetowa / Projektowanie produktu',
+      categories: 'Strona internetowa / Stworzenie brandingu',
       statement:
         'Dla Maw Autoserwis stworzyłem branding i stronę, które pokazują doświadczenie warsztatu oraz szeroki zakres jego usług.',
       meta: {
-        role: { label: 'Rola', value: 'Projektowanie stron / frontend' },
-        team: { label: 'Zespół', value: 'Wojciech / projekt indywidualny' },
         status: { label: 'Status', value: 'Projekt zrealizowany' },
       },
       context: {
         title: 'Co zbudowałem?',
-        body: 'Stworzyłem cały branding firmy i przełożyłem go na stronę internetową. Kierunek marki wypracowaliśmy wspólnie z właścicielem podczas rozmów o przyszłości firmy i wartościach, na których ma opierać się jej wizerunek.',
+        body: 'Stworzyłem cały branding firmy i przełożyłem go na stronę internetową. Kierunek marki wypracowaliśmy wspólnie z właścicielem podczas rozmów o przyszłości firmy i wartościach, na których ma opierać się jej wizerunek. Zbudowałem również wizytówkę Google.',
       },
       problem: {
         title: 'Problem',
@@ -149,16 +153,20 @@ export const pl = {
       },
       solution: {
         title: 'Rozwiązanie',
-        body: 'Wydzieliłem dwie warstwy oferty: auta osobowe i auta dostawcze. Przedstawiłem usługi oraz cennik, stworzyłem prosty formularz kontaktowy i ułatwiłem klientom znalezienie właściwej drogi do warsztatu.',
+        body: 'Wydzieliłem dwie warstwy oferty: auta osobowe i auta dostawcze. Dodałem usługi i cennik, a formularz kontaktowy skrócił drogę od wyboru usługi do wysłania zapytania.',
       },
       challenge: {
         title: 'Wyzwanie techniczne',
         body: 'Najważniejsze było uporządkowanie wielu informacji bez przytłaczania użytkownika. Każda część strony ma wzmacniać wiarygodność firmy i prowadzić do kontaktu z warsztatem.',
       },
-      role: {
-        title: 'Moja rola',
-        body: 'Odpowiadałem za branding, kierunek wizualny, projekt strony i wdrożenie.',
-        items: ['Branding', 'Projektowanie stron', 'Frontend', 'Formularz kontaktowy'],
+      deliverables: {
+        title: 'Zakres prac',
+        items: [
+          { label: 'Branding', icon: 'branding' as const },
+          { label: 'Logo', icon: 'logo' as const },
+          { label: 'Strona internetowa', icon: 'website' as const },
+          { label: 'Wizytówka Google', icon: 'google' as const },
+        ],
       },
       result: {
         title: 'Rezultat',
@@ -166,22 +174,18 @@ export const pl = {
       },
       galleryLabel: 'Galeria strony',
       nextLabel: 'Następna realizacja',
-      contactCta: 'Porozmawiaj o podobnej stronie',
     },
     agnieszkaLuzarska: {
-      label: 'Case study / Agnieszka Luzarska',
       title: 'Agnieszka Luzarska',
-      categories: 'Strona internetowa / Projektowanie produktu',
+      categories: 'Strona internetowa / Tworzenie logo',
       statement:
         'Osobista strona Agnieszki Luzarskiej przedstawia nie tylko ofertę Mary Kay, ale przede wszystkim kobietę, która za nią stoi.',
       meta: {
-        role: { label: 'Rola', value: 'Projektowanie stron / frontend' },
-        team: { label: 'Zespół', value: 'Wojciech / projekt indywidualny' },
         status: { label: 'Status', value: 'Projekt zrealizowany' },
       },
       context: {
         title: 'Co zbudowałem?',
-        body: 'Stworzyłem stronę dla dyrektor i konsultantki Mary Kay. Jej celem było pokazanie Agnieszki jako osoby z własną historią, podejściem i zrozumieniem potrzeb innych kobiet.',
+        body: 'Stworzyłem stronę dla dyrektor i konsultantki Mary Kay. Jej celem było pokazanie Agnieszki jako osoby z własną historią, podejściem i zrozumieniem potrzeb innych kobiet. Stworzyłem również logo marki.',
       },
       problem: {
         title: 'Problem',
@@ -195,15 +199,11 @@ export const pl = {
         title: 'Wyzwanie techniczne',
         body: 'Drugim ważnym elementem była karta potrzeb skóry. Przeniosłem krótki formularz z papierowej wersji do internetu, dzięki czemu klientki mogą łatwiej opisać swoje potrzeby i skontaktować się z Agnieszką.',
       },
-      role: {
-        title: 'Moja rola',
-        body: 'Odpowiadałem za koncepcję, projekt, animacje i wdrożenie strony.',
+      deliverables: {
+        title: 'Zakres prac',
         items: [
-          'Storytelling',
-          'Projektowanie stron',
-          'Animacje',
-          'Frontend',
-          'Customowy formularz',
+          { label: 'Logo', icon: 'logo' as const },
+          { label: 'Strona internetowa', icon: 'website' as const },
         ],
       },
       result: {
@@ -212,17 +212,13 @@ export const pl = {
       },
       galleryLabel: 'Galeria strony',
       nextLabel: 'Następna realizacja',
-      contactCta: 'Porozmawiaj o podobnej stronie',
     },
     vantaDetailing: {
-      label: 'Case study / Vanta Detailing',
       title: 'Vanta Detailing',
-      categories: 'Strona internetowa / Projektowanie produktu',
+      categories: 'Strona internetowa / Stworzenie brandingu',
       statement:
         'Vanta Detailing to portfolio strony sprzedażowej dla studia detailingu samochodowego i demonstracja mojego warsztatu projektowego.',
       meta: {
-        role: { label: 'Rola', value: 'Projektowanie stron / frontend' },
-        team: { label: 'Zespół', value: 'Wojciech / projekt indywidualny' },
         status: { label: 'Status', value: 'Projekt portfolio' },
       },
       context: {
@@ -241,10 +237,13 @@ export const pl = {
         title: 'Wyzwanie techniczne',
         body: 'Zastosowałem nowoczesne animacje w wyważony sposób. Strona korzysta z aktualnego języka wizualnego, ale animacja nie konkuruje z ofertą i zdjęciami. Każdy element ma wspierać sprzedaż, a nie tylko wyglądać efektownie.',
       },
-      role: {
-        title: 'Moja rola',
-        body: 'Samodzielnie zaprojektowałem i wdrożyłem całą stronę portfolio.',
-        items: ['UX i UI', 'Projektowanie stron', 'Before / after', 'Animacje', 'Frontend'],
+      deliverables: {
+        title: 'Zakres prac',
+        items: [
+          { label: 'Strona internetowa', icon: 'website' as const },
+          { label: 'Logo', icon: 'logo' as const },
+          { label: 'Branding', icon: 'branding' as const },
+        ],
       },
       result: {
         title: 'Rezultat',
@@ -252,17 +251,13 @@ export const pl = {
       },
       galleryLabel: 'Galeria strony',
       nextLabel: 'Następna realizacja',
-      contactCta: 'Porozmawiaj o podobnej stronie',
     },
     planik: {
-      label: 'Case study / Planik',
       title: 'Planik',
-      categories: 'Aplikacja webowa / Projektowanie produktu / Frontend i backend',
+      categories: 'Aplikacja webowa / Analiza biznesowa / Branding',
       statement:
         'Planik to duża aplikacja webowa CodeBros do planowania wydarzeń, od pierwszego pomysłu po rezerwacje, budżet i współpracę grupy.',
       meta: {
-        role: { label: 'Rola', value: 'Projektowanie produktu / frontend i backend' },
-        team: { label: 'Zespół', value: 'Wojciech + Michał / CodeBros' },
         status: { label: 'Status', value: 'Projekt zrealizowany' },
       },
       context: {
@@ -281,16 +276,14 @@ export const pl = {
         title: 'Wyzwanie techniczne',
         body: 'Aplikacja obejmuje także moduł partnera z dostępem do tworzenia atrakcji i zarządzania nimi, system rezerwacji, monetyzację opartą na płatnościach za event i wyróżnienia ofert oraz panele administracyjne do zarządzania produktem i treścią. Największym wyzwaniem było połączenie tych obszarów w spójną całość.',
       },
-      role: {
-        title: 'Moja rola',
-        body: 'Projekt realizowany razem z Michałem Pawlikiem jako CodeBros.',
+      deliverables: {
+        title: 'Zakres prac',
         items: [
-          'Myślenie produktowe',
-          'UX i UI',
-          'Frontend',
-          'Backend',
-          'Model danych',
-          'Logika biznesowa',
+          { label: 'Analiza biznesowa', icon: 'analysis' as const },
+          { label: 'Branding', icon: 'branding' as const },
+          { label: 'UX i UI', icon: 'interface' as const },
+          { label: 'Model danych', icon: 'data' as const },
+          { label: 'Logika biznesowa', icon: 'logic' as const },
         ],
       },
       result: {
@@ -299,17 +292,13 @@ export const pl = {
       },
       galleryLabel: 'Galeria produktu',
       nextLabel: 'Następna realizacja',
-      contactCta: 'Porozmawiaj o podobnym projekcie',
     },
     creditRisk: {
-      label: 'Case study / Credit Risk System',
       title: 'Credit Risk System',
       categories: 'System wewnętrzny / Ocena ryzyka / Frontend i backend',
       statement:
         'Credit Risk System był projektem CodeBros na konkurs UGotIt organizowany przez Univio. To właśnie dzięki niemu powstało CodeBros.',
       meta: {
-        role: { label: 'Rola', value: 'Projektowanie produktu / frontend i backend' },
-        team: { label: 'Zespół', value: 'Wojciech + Michał / CodeBros' },
         status: { label: 'Status', value: 'Projekt konkursowy' },
       },
       context: {
@@ -328,16 +317,13 @@ export const pl = {
         title: 'Wyzwanie techniczne',
         body: 'Najtrudniejsze było połączenie skomplikowanych, konfigurowalnych reguł z prostym doświadczeniem użytkownika. System musiał być zrozumiały dla analityka pracującego na modelu ryzyka i dla handlowca, który korzystał z gotowych wniosków.',
       },
-      role: {
-        title: 'Moja rola',
-        body: 'Projekt realizowany razem z Michałem Pawlikiem jako CodeBros.',
+      deliverables: {
+        title: 'Zakres prac',
         items: [
-          'Myślenie produktowe',
-          'UX i UI',
-          'Frontend',
-          'Backend',
-          'Silnik ryzyka',
-          'Integracja AI',
+          { label: 'Analiza biznesowa', icon: 'analysis' as const },
+          { label: 'UX i UI', icon: 'interface' as const },
+          { label: 'Silnik ryzyka', icon: 'risk' as const },
+          { label: 'Integracja AI', icon: 'ai' as const },
         ],
       },
       result: {
@@ -346,7 +332,6 @@ export const pl = {
       },
       galleryLabel: 'Galeria systemu',
       nextLabel: 'Następna realizacja',
-      contactCta: 'Porozmawiaj o podobnym projekcie',
     },
   },
 
@@ -362,11 +347,11 @@ export const pl = {
       'Opisz mi sytuację firmy. Po krótkiej rozmowie wskażę sensowny zakres i kolejny krok.',
     closingCta: 'Opowiedz mi o projekcie',
     intro:
-      'Najpierw porządkuję problem i cel. Dopiero potem dobieram zakres i technologię, żeby zbudować rozwiązanie potrzebne firmie — bez dokładania funkcji na zapas.',
+      'Najpierw porządkuję problem i cel. Dopiero potem dobieram zakres i technologię, żeby zbudować rozwiązanie potrzebne firmie - bez dokładania funkcji na zapas.',
     items: {
       websites: {
         title: 'Strony internetowe',
-        body: 'Strony wizytówkowe, firmowe i landing page’e tworzone od podstaw w kodzie, bez WordPressa i gotowych builderów. W ten sam proces mogę włączyć branding firmy, logo i kierunek wizualny.',
+        body: 'Strony wizytówkowe, firmowe i landing page’e tworzone od podstaw w kodzie, bez WordPressa i gotowych builderów. W ten sam proces mogę włączyć branding firmy, logo, kierunek wizualny i stworzenie wizytówki Google.',
         cta: 'Poznaj zakres',
         includes: [
           'strony firmowe',
@@ -380,6 +365,7 @@ export const pl = {
           'analityka',
           'SEO techniczne',
           'wielojęzyczność',
+          'wizytówka Google',
         ],
       },
       systems: {
@@ -402,16 +388,17 @@ export const pl = {
       title: 'Strony internetowe',
       intro:
         'Projektuję strony, które porządkują ofertę, budują zaufanie i prowadzą właściwe osoby do kontaktu.',
-      mediaAlt: 'Widok strony internetowej Vanta Detailing',
+      mediaAlt: 'Widok strony biznesowej na laptopie',
       mediaLabel: 'Przykład interfejsu strony',
-      problemTitle: 'Dla jakiego problemu?',
+      problemTitle: 'Punkt wyjścia',
       problem:
-        'Gdy firma ma dobrą usługę, ale obecna strona nie pokazuje jej jakości albo utrudnia klientowi wykonanie następnego kroku.',
-      benefitsTitle: 'Co dobra strona zmienia w firmie',
+        'Masz dobrą usługę, ale obecna strona nie pokazuje jej wartości, nie buduje wystarczającego zaufania albo nie prowadzi klienta do kontaktu.',
+      benefitsTitle: 'Strona, która pracuje na wynik',
       benefits: [
-        'Klient szybciej rozumie, czym się zajmujesz i dla kogo pracujesz.',
-        'Oferta ma hierarchię, która prowadzi od pierwszego wrażenia do kontaktu.',
+        'Klient szybko rozumie, czym się zajmujesz, dla kogo pracujesz i dlaczego warto wybrać właśnie Ciebie.',
+        'Oferta ma czytelną hierarchię, która prowadzi od pierwszego wrażenia do konkretnego działania.',
         'Strona wygląda jak Twoja firma, a nie jak kolejna wersja tego samego szablonu.',
+        'Nie tylko dobrze wygląda, ale wspiera sprzedaż i zamienia zainteresowanie w zapytania.',
       ],
       scopeTitle: 'Co mogę dla ciebie zrobić',
       scope: [
@@ -423,6 +410,7 @@ export const pl = {
         'Branding firmy, logo i kierunek wizualny',
         'SEO techniczne i wielojęzyczność',
         'Domena, hosting, SSL, DNS i wdrożenie',
+        'Wizytówka Google',
       ],
       processTitle: 'Jak pracuję nad stroną',
       process: [
@@ -432,7 +420,7 @@ export const pl = {
       ],
       investmentTitle: 'Wycena po krótkiej rozmowie',
       investment:
-        'W cenniku pokazuję, od jakich kwot zaczynam wycenę. Po krótkiej rozmowie jestem w stanie przedstawić bardziej szczegółową wycenę. Branding, logo i SEO mogą wejść w ten sam zakres — uwzględniam je w procesie i cenie projektu.',
+        'W cenniku pokazuję, od jakich kwot zaczynam wycenę. Po krótkiej rozmowie jestem w stanie przedstawić bardziej szczegółową wycenę. Branding, logo i SEO mogą wejść w ten sam zakres - uwzględniam je w procesie i cenie projektu.',
       fitTitle: 'Kiedy warto porozmawiać',
       fit: 'Kiedy chcesz stronę dopasowaną do firmy, a nie firmę dopasowaną do gotowego motywu.',
       pricingCta: 'Zobacz orientacyjny cennik',
@@ -441,7 +429,7 @@ export const pl = {
     systems: {
       title: 'Custom Systems',
       intro:
-        'Projektuję i buduję dedykowane systemy webowe — zarówno do usprawniania działania firmy, jak i aplikacje tworzone na zlecenie, gdy firma ma konkretny pomysł albo potrzebę.',
+        'Projektuję i buduję dedykowane systemy webowe - zarówno do usprawniania działania firmy, jak i aplikacje tworzone na zlecenie, gdy firma ma konkretny pomysł albo potrzebę.',
       mediaAlt: 'Wojciech i Michał jako CodeBros podczas konkursu',
       mediaLabel: 'CodeBros / wspólna realizacja',
       problemTitle: 'Dla jakiego problemu?',
@@ -473,13 +461,13 @@ export const pl = {
         'Mogę zbudować system do użytku wewnętrznego, aplikację dla klientów albo produkt rozwijany na zlecenie firmy. Zakres i budżet ustalam na podstawie celu, użytkowników, danych, integracji i pierwszego etapu, który ma przynieść realną wartość.',
       fitTitle: 'Kiedy warto porozmawiać',
       fit: 'Kiedy proces jest ważny dla firmy, ale nie istnieje dla niego dobre gotowe rozwiązanie.',
-      pricingCta: 'Zobacz poziomy inwestycji',
+      pricingCta: 'Zobacz orientacyjny cennik',
       contactCta: 'Opowiedz o procesie',
     },
     ai: {
       title: 'Automatyzacja AI',
       intro:
-        'Szukam procesu, który zabiera zespołowi czas — dopiero potem sprawdzam, czy AI może go uprościć.',
+        'Szukam procesu, który zabiera zespołowi czas - dopiero potem sprawdzam, czy AI może go uprościć.',
       mediaAlt: 'Serwerownia jako wizualizacja infrastruktury AI',
       mediaLabel: 'Infrastruktura, która obsługuje automatyzację',
       problemTitle: 'Dla jakiego problemu?',
@@ -511,7 +499,7 @@ export const pl = {
         'Koszt zależy od danych, liczby wyjątków, poziomu kontroli i integracji z istniejącymi narzędziami. Najpierw można ocenić sam proces, a dopiero potem decydować o większym wdrożeniu.',
       fitTitle: 'Kiedy warto porozmawiać',
       fit: 'Kiedy masz proces, który powtarzasz codziennie i chcesz sprawdzić, czy da się go uprościć bez obietnic składanych na wyrost.',
-      pricingCta: 'Zobacz poziomy inwestycji',
+      pricingCta: 'Zobacz orientacyjny cennik',
       contactCta: 'Opowiedz o procesie',
     },
   },
@@ -537,7 +525,7 @@ export const pl = {
       },
       planik: {
         title: 'Planik',
-        body: 'Kompletną aplikację do planowania eventów zaprojektowaliśmy i zbudowaliśmy we dwóch — od modelu danych po interfejs.',
+        body: 'Kompletną aplikację do planowania eventów zaprojektowaliśmy i zbudowaliśmy we dwóch - od modelu danych po interfejs.',
       },
     },
     mediaAlt: 'Wojciech i Michał Pawlik podczas konkursu CodeBros',
@@ -672,7 +660,7 @@ export const pl = {
     headline: ['Zacznij od zakresu,', 'nie od dużego budżetu.'],
     pageHeadline: ['Najpierw zakres.', 'Potem wycena.'],
     pageIntro:
-      'Podaję orientacyjne poziomy inwestycji, żeby łatwiej było ocenić dopasowanie. Ostateczna wycena zależy od problemu, zakresu i potrzebnych integracji.',
+      'Podaję orientacyjne widełki cenowe, żeby łatwiej było ocenić dopasowanie. Ostateczna wycena zależy od problemu, zakresu i potrzebnych integracji.',
     minimumRateNote:
       'Podane kwoty są najniższą stawką, od której zaczynam wycenę. Aktualna promocja z okazji rozpoczęcia działalności: pierwszych 3 klientów może otrzymać landing page wyceniony od 900 zł zamiast standardowych 1 200 zł.',
     intro:
@@ -694,7 +682,7 @@ export const pl = {
     rows: {
       landing: {
         title: 'Landing page / prosta wizytówka',
-        body: 'Niewielka strona dopasowana do firmy. Termin może wynieść około 3 dni roboczych albo 1–2 tygodni — zależnie od zakresu.',
+        body: 'Niewielka strona dopasowana do firmy. Termin może wynieść około 3 dni roboczych albo 1–2 tygodni - zależnie od zakresu.',
       },
       websiteCms: {
         title: 'Strona + CMS',
@@ -713,7 +701,7 @@ export const pl = {
         body: 'Najpierw analiza procesu, potem prototyp lub wdrożenie. AI tylko wtedy, gdy rozwiązuje konkretny problem.',
       },
     },
-    cta: 'Mam projekt — określmy zakres',
+    cta: 'Mam projekt - określmy zakres',
   },
 
   about: {
@@ -723,16 +711,16 @@ export const pl = {
     pageIntro:
       'Projektuję i buduję osobiście. Przy większych systemach pracuję z moim bratem Michałem jako CodeBros.',
     paragraphs: [
-      'Jestem Wojciech Pawlik. Na co dzień pracuję przy systemach e-commerce w Univio. Po godzinach projektuję i buduję strony oraz produkty dla firm, które chcą czegoś bardziej dopasowanego niż gotowe rozwiązanie.',
-      'Wcześniej pracowałem również jako inżynier AI, między innymi dla klienta ASML — jednej z największych firm technologicznych w Europie.',
+      'Nazywam się Wojciech Pawlik. Na co dzień pracuję przy systemach e-commerce w Univio. Po godzinach projektuję i buduję strony oraz produkty dla firm, które chcą czegoś bardziej dopasowanego niż gotowe rozwiązanie.',
+      'Wcześniej pracowałem również jako inżynier AI, między innymi dla klienta ASML - jednej z największych firm technologicznych w Europie.',
       'Najbardziej interesuje mnie moment, w którym technologia, UX i realny problem firmy spotykają się w jednym produkcie.',
+      'Interesuję się nowoczesnym webdesignem, animacjami, przejściami i detalami, które sprawiają, że strona żyje. Jestem kreatywny i mam zapał do próbowania nowych rzeczy, dlatego nie ma dla mnie zlecenia, którego nie da się zrealizować.',
     ],
     trustTitle: 'Doświadczenie',
     trust: {
-      professional: { label: 'Doświadczenie', value: 'Systemy e-commerce' },
-      aiExperience: { label: 'Specjalizacja', value: 'Inżynieria AI' },
-      builds: { label: 'Realizacje', value: 'Strony i produkty' },
-      teamMode: { label: 'Praca zespołowa', value: 'CodeBros' },
+      experience: { label: 'Doświadczenie', value: 'E-commerce, AI' },
+      projects: { label: 'Realizacje', value: 'Strony, systemy rozproszone, systemy AI' },
+      hobbies: { label: 'Hobby', value: 'Przedsiębiorczość, webdesign, sport' },
     },
     pageFocusTitle: 'Bez pośredników i przekazywania projektu.',
     pageFocusBody:
@@ -740,6 +728,27 @@ export const pl = {
     mediaAlt: 'Portret Wojciecha Pawlika',
     mediaPending: 'Portret',
     cta: 'Poznaj mnie bliżej',
+    codebros: {
+      label: 'CodeBros / Wojciech i Michał Pawlik',
+      headline: ['Łączymy doświadczenie,', 'żeby budować większe systemy.'],
+      intro:
+        'CodeBros to nasze wspólne podejście do większych projektów. Łączymy projektowanie, frontend, backend i doświadczenie w systemach, dzięki czemu decyzje zapadają bezpośrednio między osobami, które budują produkt.',
+      personLabel: 'Michał Pawlik',
+      personTitle: 'Doświadczony programista',
+      personBody:
+        'Michał ma 10 lat doświadczenia w tworzeniu oprogramowania. Przez większość kariery współtworzył systemy bankowe, pracując w software house. Później zajmował się tworzeniem systemów AI. W końcu trafiliśmy razem do Univio, gdzie tworzymy rozproszone systemy e-commerce dla jednego z dużych marketów.',
+      benefitsTitle: 'Dlaczego pracujemy razem',
+      benefits: [
+        'Łączymy szerokie spojrzenie na produkt z doświadczeniem w tworzeniu złożonych systemów.',
+        'Możemy szybciej podejmować decyzje, bo pracujemy bezpośrednio nad tym samym problemem.',
+        'Dzielimy odpowiedzialność za architekturę, interfejs, implementację i wdrożenie.',
+      ],
+      mediaAlt: 'Michał Pawlik',
+      mediaPending: 'Portret Michała Pawlika',
+      teamMediaAlt: 'Wojciech i Michał Pawlik podczas konkursu CodeBros',
+      teamMediaPending: 'Wojciech i Michał',
+      projectsCta: 'Zobacz realizacje CodeBros',
+    },
   },
 
   finalCta: {
@@ -753,7 +762,7 @@ export const pl = {
     pageTitle: 'Porozmawiaj o projekcie',
     pageHeadline: ['Porozmawiaj', 'o projekcie.'],
     pageIntro:
-      'Opisz sytuację firmy, a wrócę z konkretnym kolejnym krokiem — nawet jeśli nie masz jeszcze gotowego zakresu.',
+      'Opisz sytuację firmy, a wrócę z konkretnym kolejnym krokiem - nawet jeśli nie masz jeszcze gotowego zakresu.',
     label: 'Kontakt',
     headline: ['Opowiedz mi', 'o projekcie.'],
     intro:
@@ -766,7 +775,7 @@ export const pl = {
     errorTitle: 'Nie udało się wysłać.',
     errorBody: 'Spróbuj ponownie albo napisz do mnie bezpośrednio.',
     /**
-     * TODO(brief): treść do weryfikacji prawnej przed publikacją — razem z polityką
+     * TODO(brief): treść do weryfikacji prawnej przed publikacją - razem z polityką
      * prywatności i wskazaniem administratora danych (checklists/launch.md).
      */
     consent:
@@ -801,10 +810,10 @@ export const pl = {
     },
     /** Keys match BUDGET_RANGES. */
     budgets: {
-      '5-10k': '5–10k PLN',
-      '10-20k': '10–20k PLN',
-      '20-40k': '20–40k PLN',
-      '40k+': '40k+ PLN',
+      '900-2000': '900–2 000 zł',
+      '2000-5000': '2 000–5 000 zł',
+      '5000-10000': '5 000–10 000 zł',
+      '10000+': '10 000+ zł',
       unknown: 'Jeszcze nie wiem',
     },
   },
@@ -813,7 +822,7 @@ export const pl = {
     navTitle: 'Strona',
     contactTitle: 'Kontakt',
     codebrosTitle: 'Większe projekty',
-    codebrosLabel: 'CodeBros — Wojciech & Michał Pawlik',
+    codebrosLabel: 'CodeBros - Wojciech & Michał Pawlik',
     note: 'Designed & built by Wojciech Pawlik.',
     rights: 'Wszelkie prawa zastrzeżone.',
   },
@@ -828,7 +837,7 @@ export const pl = {
   errorPage: {
     label: 'Błąd',
     headline: 'Coś się nie wczytało.',
-    body: 'Spróbuj ponownie. Jeżeli to nie pomoże, napisz do mnie — odpowiem.',
+    body: 'Spróbuj ponownie. Jeżeli to nie pomoże, napisz do mnie - odpowiem.',
     cta: 'Spróbuj ponownie',
   },
 
@@ -838,7 +847,7 @@ export const pl = {
     phone: 'Podaj numer telefonu (9 cyfr) albo zostaw to pole puste.',
     projectType: 'Wybierz, czego potrzebujesz.',
     stage: 'Wybierz etap projektu.',
-    budget: 'Wybierz orientacyjny budżet — „jeszcze nie wiem” też jest odpowiedzią.',
+    budget: 'Wybierz orientacyjny budżet - „jeszcze nie wiem” też jest odpowiedzią.',
     message: 'Napisz kilka zdań o projekcie.',
     consent: 'Zgoda jest potrzebna, żebym mógł odpowiedzieć.',
     maxLength: 'Maksymalnie {max} znaków.',

@@ -1,4 +1,4 @@
-# 05 — System animacji
+# 05 - System animacji
 
 ## Zasada nadrzędna
 
@@ -8,14 +8,14 @@ Trzy narzędzia, trzy jasno rozdzielone zakresy. Wybór narzędzia nie jest kwes
 
 ## Podział odpowiedzialności
 
-### CSS — reveal-e, wejście hero, hover
+### CSS - reveal-e, wejście hero, hover
 
 Wszystko, co da się opisać jako „stan A → stan B” albo „pojawia się, gdy wejdzie w viewport”,
 robimy w CSS ([ADR-0009](decisions/0009-css-reveals.md)).
 
 - Reveal to keyframe z `utilities.css` przełączany klasą plus jeden `IntersectionObserver`
   (`src/hooks/use-in-view.ts`).
-- **Hero nie ma JavaScriptu w ogóle** — sekwencja wejścia to opóźnienia keyframe'ów, więc
+- **Hero nie ma JavaScriptu w ogóle** - sekwencja wejścia to opóźnienia keyframe'ów, więc
   pierwszy ekran maluje się razem z dokumentem.
 - Hover buttona i wiersza listy to zwykłe `transition`.
 
@@ -23,7 +23,7 @@ Powód jest zmierzony, nie stylistyczny: biblioteka animacji na ścieżce krytyc
 startującą od `opacity: 0`, która pojawia się dopiero po jej sparsowaniu. To jest większość tego,
 co użytkownik nazywa „strona wolno się wczytuje”.
 
-### Motion for React — interakcje
+### Motion for React - interakcje
 
 Import **zawsze** z `motion/react` (`framer-motion` jest zablokowany lintem).
 
@@ -32,7 +32,7 @@ animacje layoutu, gesty, count-up, delikatny parallax.
 
 Motion jest ładowany **leniwie** i nie wchodzi do bundla początkowego stron publicznych.
 
-### GSAP + ScrollTrigger — sekwencje scroll-driven
+### GSAP + ScrollTrigger - sekwencje scroll-driven
 
 Zakres: jeden, maksymalnie dwa charakterystyczne momenty scrollowe na całą stronę.
 
@@ -40,18 +40,18 @@ Zakres: jeden, maksymalnie dwa charakterystyczne momenty scrollowe na całą str
 
 Reguły:
 
-- **GSAP ładujemy leniwie**, przez `loadGsap()` z `@/lib/motion/gsap` — nigdy importem z paczki
+- **GSAP ładujemy leniwie**, przez `loadGsap()` z `@/lib/motion/gsap` - nigdy importem z paczki
   w module scope. Import statyczny wciąga ~128 KB gzip na ścieżkę krytyczną każdej wizyty
   ([ADR-0005](decisions/0005-lazy-gsap.md)). Lint pilnuje tego przez `no-restricted-imports`;
   jedyny plik z wyjątkiem to sam loader.
-- **Nie używamy `useGSAP()`** i nie mamy zależności `@gsap/react` — ten hook importuje GSAP
+- **Nie używamy `useGSAP()`** i nie mamy zależności `@gsap/react` - ten hook importuje GSAP
   statycznie, więc omijałby leniwe ładowanie.
 - Cleanup przez `gsap.context()` w `useEffect`: `context.revert()` w funkcji czyszczącej.
   Każdy `ScrollTrigger` musi zostać zabity przy unmount.
-- Efekt musi obsłużyć unmount w trakcie pobierania biblioteki — wzorzec z flagą `cancelled`.
+- Efekt musi obsłużyć unmount w trakcie pobierania biblioteki - wzorzec z flagą `cancelled`.
 - Przy `prefers-reduced-motion` nie wołamy `loadGsap()` wcale. Nie ma animacji, nie ma pobierania.
 
-### Scroll — natywny, bez biblioteki
+### Scroll - natywny, bez biblioteki
 
 **Nie używamy Lenis ani żadnego innego smooth-scrolla** ([ADR-0004](decisions/0004-native-scroll.md)).
 
@@ -72,7 +72,7 @@ W `src/components/motion/`. Sekcja **komponuje** te elementy, nie pisze własnyc
 | `TextReveal`                 | Nagłówek wjeżdżający liniami z maski. Linie podajemy jawnie.                  | CSS + IO     |
 
 Powyżej jest minimum z templatki. Kolejne primitives (count-up, parallax, overlay z animacją
-wyjścia, custom scroll story) dochodzą wtedy, gdy specyfikacja sekcji ich wymaga — i wtedy, gdy
+wyjścia, custom scroll story) dochodzą wtedy, gdy specyfikacja sekcji ich wymaga - i wtedy, gdy
 mają **drugie** użycie. Efekt żyjący w jednej sekcji zostaje w tej sekcji.
 
 `prefers-reduced-motion` dla animacji CSS żyje w jednym bloku `utilities.css`. Komponenty nie
@@ -83,7 +83,7 @@ przekazują flagi propsami tam, gdzie animacja jest w CSS.
 `src/lib/motion/tokens.ts` (JS) ↔ `src/styles/theme.css` + `base.css` (CSS).
 Nic nie wymyśla własnej krzywej ani własnego czasu. `tokens.test.ts` pilnuje zgodności obu stron.
 
-### Intensywność — nie rozkładamy jej równomiernie
+### Intensywność - nie rozkładamy jej równomiernie
 
 Jeżeli każda sekcja dostanie text reveal + parallax + fade, efekt premium znika.
 Motion jest zasobem, który się wydaje, nie warstwą nakładaną na wszystko.
@@ -122,7 +122,7 @@ Użytkownik nie może czekać, aż strona pozwoli mu się skontaktować.
 
 ### Jeden moment scrollowy na stronę główną
 
-Dopuszczamy **maksymalnie jeden** charakterystyczny moment scroll-driven — ma opowiadać markę,
+Dopuszczamy **maksymalnie jeden** charakterystyczny moment scroll-driven - ma opowiadać markę,
 nie demonstrować bibliotekę. Kandydat wskazuje specyfikacja sekcji, nie improwizacja.
 
 ### Easing
@@ -134,7 +134,7 @@ Dostępne: `outExpo`, `outQuint`, `outQuart`, `inOutQuart`. Więcej niż te czte
 
 `STAGGER.tight` 0,06 s · `STAGGER.base` 0,09 s · `STAGGER.loose` 0,14 s.
 
-## Reduced motion — wymóg, nie dodatek
+## Reduced motion - wymóg, nie dodatek
 
 Kontrakt jest dwuczęściowy:
 
@@ -142,7 +142,7 @@ Kontrakt jest dwuczęściowy:
 który gasi reveal-e i wejście hero (te animacje startują od `opacity: 0`, więc trzeba im
 jawnie powiedzieć, żeby pominęły stan początkowy).
 
-**JS** (`useReducedMotion()` z `@/hooks/use-reduced-motion`) — jedno źródło prawdy dla Motion,
+**JS** (`useReducedMotion()` z `@/hooks/use-reduced-motion`) - jedno źródło prawdy dla Motion,
 GSAP i własnego kodu.
 
 Gdy zwraca `true`:
@@ -166,7 +166,7 @@ skomplikowane timeline'y.
 Zostaje: reveal tekstu, fade/slide, formularz, subtelny parallax, animacja menu.
 
 Bramkujemy przez `useIsDesktop()` i `useHasFinePointer()` z `@/hooks/use-media-query`.
-**Hover nigdy nie jest jedyną drogą do informacji** — na mobile ta sama treść musi być widoczna
+**Hover nigdy nie jest jedyną drogą do informacji** - na mobile ta sama treść musi być widoczna
 bez interakcji.
 
 ## Wydajność
@@ -174,7 +174,7 @@ bez interakcji.
 - Animujemy **tylko `transform` i `opacity`**. Nigdy `width`, `height`, `top`, `left`, `margin`,
   `padding`, `box-shadow` w pętli klatek.
 - Nie uruchamiamy animacji dla elementów poza viewportem.
-- Reveal **nigdy** nie odtwarza się ponownie przy scrollu w górę — powtarzająca się animacja
+- Reveal **nigdy** nie odtwarza się ponownie przy scrollu w górę - powtarzająca się animacja
   czyta się jak błąd. Observer jest rozłączany po pierwszym trafieniu.
 - `will-change` tylko przy zmierzonym problemie i tylko na czas animacji.
 

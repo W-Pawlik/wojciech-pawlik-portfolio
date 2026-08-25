@@ -11,16 +11,16 @@ import { getDictionary, getLocale } from '@/i18n/server'
 import { withLocale } from '@/i18n/config'
 
 /**
- * The face behind the brand — the whole advantage of a personal brand is that the client
+ * The face behind the brand - the whole advantage of a personal brand is that the client
  * knows exactly who is responsible for their project. Three paragraphs, not an
  * autobiography.
  *
- * Trust arrives as four mono rows rather than a paragraph of self-praise: each one is
+ * Trust arrives as three mono rows rather than a paragraph of self-praise: each one is
  * backed by a fact from the brief, and none of them is a number nobody can verify
  * (.agents/10-brand-strategy.md#zakazane-fakty).
  *
  * TODO(brief): confirmation that naming the employer on a sales
- * page is fine are both open — the copy names Univio because the brief does.
+ * page is fine are both open - the copy names Univio because the brief does.
  */
 export async function AboutSection({ headlineAs = 'h2' }: { headlineAs?: 'h1' | 'h2' }) {
   const dict = await getDictionary()

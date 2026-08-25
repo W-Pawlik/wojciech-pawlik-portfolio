@@ -9,10 +9,10 @@ afterEach(cleanup)
  * jsdom implements neither `matchMedia` nor the observer APIs that Motion and our
  * scroll-driven components rely on. Stubs live here so no individual test has to
  * remember them. Tests that assert on media queries override `window.matchMedia`
- * themselves — see `src/hooks/use-media-query.test.ts`.
+ * themselves - see `src/hooks/use-media-query.test.ts`.
  *
  * Vitest runs with `globals: false`, so Testing Library's automatic cleanup never
- * registers itself — the manual `afterEach(cleanup)` above is required, not redundant.
+ * registers itself - the manual `afterEach(cleanup)` above is required, not redundant.
  */
 if (!window.matchMedia) {
   window.matchMedia = vi.fn().mockImplementation((query: string) => ({

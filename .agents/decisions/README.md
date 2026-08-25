@@ -9,13 +9,13 @@ Jeden plik = jedna decyzja. Nazwa: `NNNN-krotki-tytul.md`.
 - Zmiana podziału odpowiedzialności między bibliotekami animacyjnymi.
 - Wybór dostawcy zewnętrznego (e-mail, hosting, analytics, mapy).
 - Zmiana modelu routingu albo i18n.
-- Zatwierdzenie warstwy wizualnej (paleta, typografia) — to zamyka dyskusję o wyglądzie.
+- Zatwierdzenie warstwy wizualnej (paleta, typografia) - to zamyka dyskusję o wyglądzie.
 - Świadome złamanie zasady zapisanej w `.agents/`.
 
 ## Czego nie zapisujemy
 
 Zwykłych decyzji implementacyjnych. Nazwa zmiennej, kolejność propsów, wybór między dwoma
-równoważnymi zapisami tego samego — to należy do przeglądu kodu, nie do ADR.
+równoważnymi zapisami tego samego - to należy do przeglądu kodu, nie do ADR.
 
 ## Zmiana decyzji
 
@@ -25,7 +25,7 @@ i w starym zmieniamy status na `Superseded by NNNN`.
 ## Szablon
 
 ```markdown
-# ADR-NNNN — Tytuł
+# ADR-NNNN - Tytuł
 
 - **Status:** Accepted | Superseded by NNNN
 - **Data:** RRRR-MM-DD
@@ -40,7 +40,7 @@ Co konkretnie ustalono. W trybie orzekającym.
 
 ## Konsekwencje
 
-Co z tego wynika — również to, co staje się trudniejsze.
+Co z tego wynika - również to, co staje się trudniejsze.
 
 ## Rozważone alternatywy
 
@@ -50,7 +50,7 @@ Co odrzucono i dlaczego.
 ## Spis
 
 ADR-y 0001–0009 są **bazą templatki**: opisują decyzje, które obowiązują w każdym projekcie
-wizytówkowym budowanym na tym szkielecie. Kolejne numery należą już do konkretnego projektu —
+wizytówkowym budowanym na tym szkielecie. Kolejne numery należą już do konkretnego projektu -
 pierwszym z nich jest zwykle „Wartości brandowe w tokenach” (etap 2 bootstrapu).
 
 | ADR                                                      | Tytuł                                                                         | Status   |

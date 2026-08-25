@@ -8,13 +8,13 @@ import { withLocale } from '@/i18n/config'
 import { getDictionary, getLocale } from '@/i18n/server'
 
 /**
- * Site footer, in the inverted tone — it is the second half of the CodeBros mode: the page
+ * Site footer, in the inverted tone - it is the second half of the CodeBros mode: the page
  * ends dark, where the engineering side of the brand lives
  * (.agents/01-brand-and-design.md#motyw).
  *
  * Every contact route is gated on real data in `src/data/site.ts`. An unfinished footer
  * shows a visible `TODO(brief)` to whoever is building the site rather than an empty line
- * where an email should be — and nobody is tempted to type a plausible-looking address in
+ * where an email should be - and nobody is tempted to type a plausible-looking address in
  * to fill it (.agents/09-content-and-copy.md).
  */
 export async function Footer() {

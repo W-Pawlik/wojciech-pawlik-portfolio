@@ -41,7 +41,7 @@ describe('interpolate', () => {
 /**
  * Key parity between data and copy. TypeScript cannot catch this: the keys in the data
  * modules are plain strings as far as the dictionary type is concerned, so an option added
- * to the data with no label would render an empty row — and a label left behind after a
+ * to the data with no label would render an empty row - and a label left behind after a
  * key was removed would sit in the dictionary forever.
  *
  * Every list rendered from `src/data` is checked here. That is the whole point of keeping

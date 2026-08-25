@@ -8,7 +8,7 @@
  *
  * The production build **fails** on a missing or non-HTTPS value rather than falling
  * back. Pages are prerendered as static HTML, so the origin is baked into canonical
- * and hreflang at build time — a wrong value cannot be corrected at runtime, and a
+ * and hreflang at build time - a wrong value cannot be corrected at runtime, and a
  * silent localhost fallback ships a canonical pointing at an unreachable host.
  */
 
@@ -32,7 +32,7 @@ export function resolveSiteUrl(rawUrl: string | undefined, isProduction: boolean
 
   // Parsed before the protocol is checked, so a value without a scheme reports the
   // missing scheme instead of being mislabelled as the wrong one. The raw value is
-  // quoted in both messages — the trailing-slash strip above would otherwise show a
+  // quoted in both messages - the trailing-slash strip above would otherwise show a
   // mangled fragment.
   let parsed: URL
   try {

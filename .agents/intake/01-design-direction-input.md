@@ -1,7 +1,7 @@
-# Wejście 1b — Design system / art direction (dokument źródłowy)
+# Wejście 1b - Design system / art direction (dokument źródłowy)
 
 > **Archiwum wejścia.** Dokument dostarczony przez właściciela repo **2026-08-21**.
-> Nie edytujemy go — nowa wersja kierunku = nowy dokument + aktualizacja
+> Nie edytujemy go - nowa wersja kierunku = nowy dokument + aktualizacja
 > [`../01-brand-and-design.md`](../01-brand-and-design.md).
 >
 > Źródłem prawdy dla projektu jest [`../01-brand-and-design.md`](../01-brand-and-design.md)
@@ -14,7 +14,7 @@
 
 ---
 
-# DESIGN SYSTEM / ART DIRECTION — WOJCIECH PAWLIK / CODEBROS
+# DESIGN SYSTEM / ART DIRECTION - WOJCIECH PAWLIK / CODEBROS
 
 ## 1. GŁÓWNY KIERUNEK
 
@@ -50,10 +50,10 @@ Design ma więc sam być **pierwszym case study Wojciecha**.
 
 Cały system wizualny opiera się na kontraście dwóch światów:
 
-**HUMAN / CREATIVE** — duża typografia, editorial layout, fotografie, asymetria,
+**HUMAN / CREATIVE** - duża typografia, editorial layout, fotografie, asymetria,
 przestrzeń, charakter.
 
-**ENGINEERING / SYSTEM** — grid, linie konstrukcyjne, numeracja, metadata, monospace,
+**ENGINEERING / SYSTEM** - grid, linie konstrukcyjne, numeracja, metadata, monospace,
 precyzyjne alignmenty, oznaczenia sekcji, logiczna struktura.
 
 Nie rozdzielamy ich na dwie różne stylistyki. One współistnieją. To dokładnie odpowiada
@@ -63,12 +63,12 @@ pozycjonowaniu:
 
 ## 3. CHARAKTER WIZUALNY
 
-**mature** — nie młodzieżowy „developer aesthetic”.
-**precise** — każdy alignment wygląda na zamierzony.
-**editorial** — typografia i kompozycja ważniejsze niż dekoracyjne UI.
-**tactile** — fotografie, lekkie tekstury i ciepłe tło nadają stronie fizyczność.
-**technical** — techniczność w detalach, nie przez fake terminale i matrixowe animacje.
-**confident** — duże elementy, niewiele ozdobników.
+**mature** - nie młodzieżowy „developer aesthetic”.
+**precise** - każdy alignment wygląda na zamierzony.
+**editorial** - typografia i kompozycja ważniejsze niż dekoracyjne UI.
+**tactile** - fotografie, lekkie tekstury i ciepłe tło nadają stronie fizyczność.
+**technical** - techniczność w detalach, nie przez fake terminale i matrixowe animacje.
+**confident** - duże elementy, niewiele ozdobników.
 
 ## 4. EMOCJE
 
@@ -104,17 +104,17 @@ kontrast tła. Cards stosować tylko wtedy, kiedy rzeczywiście coś grupują.
 
 ## COLOR SYSTEM
 
-**MAIN BACKGROUND** `#F3F0E9` — ciepła złamana biel, domyślne tło strony. Nie używać
+**MAIN BACKGROUND** `#F3F0E9` - ciepła złamana biel, domyślne tło strony. Nie używać
 czystego `#FFFFFF` jako głównej powierzchni: czysta biel nadaje projektowi produktowy /
 SaaS charakter, ciepłe tło daje editorial i premium feeling.
 
-**SECONDARY BACKGROUND** `#E9E5DC` — subtelne oddzielanie obszarów, panele, formularze,
+**SECONDARY BACKGROUND** `#E9E5DC` - subtelne oddzielanie obszarów, panele, formularze,
 wybrane fragmenty case studies. Nie może pokrywać co drugiej sekcji.
 
-**PRIMARY DARK** `#11120F` — tekst, CodeBros section, footer, wybrane pełnoekranowe
+**PRIMARY DARK** `#11120F` - tekst, CodeBros section, footer, wybrane pełnoekranowe
 sekcje, mocne elementy kontrastowe. To nie jest `#000000`.
 
-**DARK SURFACE** `#1A1B18` — surface na ciemnym tle, bardzo oszczędnie.
+**DARK SURFACE** `#1A1B18` - surface na ciemnym tle, bardzo oszczędnie.
 
 **PRIMARY TEXT** (na jasnym) `#11120F` · **SECONDARY TEXT** `#696A64` ·
 **TERTIARY TEXT** `#93938C` (metadata i mniej istotne informacje)
@@ -123,7 +123,7 @@ sekcje, mocne elementy kontrastowe. To nie jest `#000000`.
 
 **BORDER LIGHT** `#D5D1C7` · **BORDER DARK** `#30312D`
 
-**ACCENT — SIGNAL ORANGE** `#FF5A36` — jedyny główny kolor akcentowy. Charakter:
+**ACCENT - SIGNAL ORANGE** `#FF5A36` - jedyny główny kolor akcentowy. Charakter:
 technologiczny, energiczny, fizyczny, lekko industrialny. Nie przypomina typowego
 niebieskiego SaaS ani neonowej zieleni AI. Używać dla: aktywnych stanów, niewielkich
 oznaczeń, hover, selected state, małych fragmentów typografii, primary CTA, markerów
@@ -131,18 +131,18 @@ BUILD TRACE. Accent nie może dominować: **5–8% powierzchni wizualnej maksimu
 
 **ACCENT HOVER** `#E94C2C`
 
-**WAŻNA ZASADA KOLORU** — nie używać gradientów, neonowych poświat, gradient borders,
+**WAŻNA ZASADA KOLORU** - nie używać gradientów, neonowych poświat, gradient borders,
 glow, tęczowych efektów, wielokolorowych sekcji. Design ma działać nawet po całkowitym
 usunięciu accent color. Jeżeli bez pomarańczowego projekt wygląda źle, kompozycja jest za
 słaba.
 
 ## TYPOGRAPHY
 
-**PRIMARY TYPEFACE: Instrument Sans** — display, headings, body, navigation, buttons. Ma
+**PRIMARY TYPEFACE: Instrument Sans** - display, headings, body, navigation, buttons. Ma
 nowoczesny charakter, ale nie wygląda przesadnie „tech”; nadaje się i do bardzo dużych
 tytułów, i do UI.
 
-**TECHNICAL TYPEFACE: IBM Plex Mono** — wyłącznie metadata, numeracja, technical labels,
+**TECHNICAL TYPEFACE: IBM Plex Mono** - wyłącznie metadata, numeracja, technical labels,
 section markers, daty, małe descriptory. Nie używać monospace do długich akapitów.
 
 ### Desktop
@@ -153,13 +153,13 @@ section markers, daty, małe descriptory. Nie używać monospace do długich aka
 | H1         | `clamp(60px, 6vw, 96px)`     | 0.94        | 500    | -0.045em |
 | H2         | `clamp(44px, 4.2vw, 68px)`   | 1.00        | 500    | -0.038em |
 | H3         | `32–40px`                    | 1.05        | 500    | -0.025em |
-| BODY LARGE | `22–26px` (max width ~720px) | 1.4         | 400    | —        |
-| BODY       | `17–18px`                    | 1.55–1.65   | 400    | —        |
-| SMALL      | `14–15px`                    | 1.5         | —      | —        |
-| METADATA   | mono `11–12px`               | 1.4         | —      | 0.04em   |
-| BUTTON     | `15px`                       | —           | 500    | -0.01em  |
+| BODY LARGE | `22–26px` (max width ~720px) | 1.4         | 400    | -        |
+| BODY       | `17–18px`                    | 1.55–1.65   | 400    | -        |
+| SMALL      | `14–15px`                    | 1.5         | -      | -        |
+| METADATA   | mono `11–12px`               | 1.4         | -      | 0.04em   |
+| BUTTON     | `15px`                       | -           | 500    | -0.01em  |
 
-DISPLAY XL używać bardzo rzadko — hero lub jeden kluczowy komunikat. Uppercase stosować
+DISPLAY XL używać bardzo rzadko - hero lub jeden kluczowy komunikat. Uppercase stosować
 tylko w krótkich labelach.
 
 ### Mobile
@@ -193,7 +193,7 @@ przypadkowych wartości typu `37px`, `73px`, `91px` bez konkretnego powodu.
 ## SECTION SPACING
 
 Desktop: minimum `128px`, standard `160px`, duże przejście `200px`. Hero może mieć
-indywidualny rytm. Mobile `88–112px` — nie zmniejszać wszystkich przestrzeni mobilnych do
+indywidualny rytm. Mobile `88–112px` - nie zmniejszać wszystkich przestrzeni mobilnych do
 40–60px, strona nadal ma oddychać.
 
 ## BORDER SYSTEM
@@ -212,14 +212,14 @@ odróżnia projekt od typowego AI/SaaS designu.
 
 ### BUTTONS
 
-**PRIMARY** — tło `#11120F`, tekst `#F3F0E9`, radius `8px`, height `48px`, padding
+**PRIMARY** - tło `#11120F`, tekst `#F3F0E9`, radius `8px`, height `48px`, padding
 `0 20px`, opcjonalny mały arrow po prawej. Hover: tło przechodzi na Signal Orange
 `#FF5A36`, tekst pozostaje ciemny lub jasny zależnie od kontrastu. Animacja `180–220ms`.
 
-**SECONDARY** — transparent, border `1px solid #B9B6AD`, hover: subtelne ciemne tło. Nie
+**SECONDARY** - transparent, border `1px solid #B9B6AD`, hover: subtelne ciemne tło. Nie
 tworzyć wszędzie dwóch dużych przycisków obok siebie.
 
-**TEXT LINK** — preferowana forma CTA w wielu miejscach: `View project ↗` / `Zobacz
+**TEXT LINK** - preferowana forma CTA w wielu miejscach: `View project ↗` / `Zobacz
 projekt →`. Underline lub cienka linia może animować się podczas hover.
 
 ### NAVBAR
@@ -251,9 +251,9 @@ trzech identycznych kart z ikonami.
 
 Inputy: height `52–56px`, background transparent lub secondary, border głównie bottom albo
 pełny subtelny 1px, radius `6px`, focus: border / marker Signal Orange. Nie używać wielkich
-floating labels — labels zawsze widoczne.
+floating labels - labels zawsze widoczne.
 
-**SELECTED / CHOICE STATES** — duży tekst, border, zmiana tła, mały signal-orange
+**SELECTED / CHOICE STATES** - duży tekst, border, zmiana tła, mały signal-orange
 indicator. Bez checkboxów wyglądających jak dashboard SaaS.
 
 ### BADGES
@@ -309,7 +309,7 @@ screenshotów. Marka ma mieć człowieka.
 Nie: klasyczny corporate headshot, ręce skrzyżowane, studio z jednolitym tłem, laptop
 i sztuczny uśmiech.
 
-Preferowane: naturalny dokumentalny portret — Wojciech siedzący lub stojący przy stanowisku
+Preferowane: naturalny dokumentalny portret - Wojciech siedzący lub stojący przy stanowisku
 pracy, nie patrzy bezpośrednio do aparatu albo robi to tylko na części zdjęć. Światło:
 mocne naturalne boczne. Cienie widoczne. Grading neutralny / lekko ciepły. Saturacja
 minimalnie zmniejszona. Kontrast średnio wysoki. Grain bardzo subtelny.
@@ -326,12 +326,12 @@ desaturowane.
 | #   | Ujęcie         | Subject                                       | Aspect          | Usage             |
 | --- | -------------- | --------------------------------------------- | --------------- | ----------------- |
 | 01  | HERO PORTRAIT  | Wojciech, waist-up lub 3/4, window side-light | `4:5`           | home hero / about |
-| 02  | ENVIRONMENT    | Wojciech przy stanowisku, nie patrzy w kamerę | `3:2`           | —                 |
-| 03  | DETAIL         | dłonie / notebook / monitor / fragment        | `4:3`           | —                 |
-| 04  | PORTRAIT CLOSE | bardziej osobisty kadr                        | `1:1` lub `4:5` | —                 |
-| 05  | CODEBROS       | Wojciech + Michał, szeroki kadr               | `16:9`          | —                 |
-| 06  | CODEBROS WORK  | naturalny moment pracy                        | `3:2`           | —                 |
-| 07  | DETAIL / CODE  | monitor lub fragment produktu                 | —               | —                 |
+| 02  | ENVIRONMENT    | Wojciech przy stanowisku, nie patrzy w kamerę | `3:2`           | -                 |
+| 03  | DETAIL         | dłonie / notebook / monitor / fragment        | `4:3`           | -                 |
+| 04  | PORTRAIT CLOSE | bardziej osobisty kadr                        | `1:1` lub `4:5` | -                 |
+| 05  | CODEBROS       | Wojciech + Michał, szeroki kadr               | `16:9`          | -                 |
+| 06  | CODEBROS WORK  | naturalny moment pracy                        | `3:2`           | -                 |
+| 07  | DETAIL / CODE  | monitor lub fragment produktu                 | -               | -                 |
 
 Przy 07: nie pokazywać ogromnego czytelnego bloku kodu jako dekoracji. Kod może być
 niewyraźnym elementem środowiska.
@@ -359,7 +359,7 @@ shapes.
 
 Ikony nie są głównym językiem marki. Preferować tekst, arrow, numer, typografię. Jeżeli
 ikona jest potrzebna: outline, stroke `1.5px`, size `18–20px`. Nie pakować każdej usługi
-w osobną ikonę — arrow jest najczęściej wystarczający.
+w osobną ikonę - arrow jest najczęściej wystarczający.
 
 ## MOTION SYSTEM
 
@@ -374,7 +374,7 @@ transitions, microinteractions.
 **GSAP + ScrollTrigger** tylko dla kilku dużych momentów: 1. Hero, 2. Selected Work, 3. Transition do CodeBros, 4. jeden storytelling moment w case study. Nie używać
 ScrollTrigger w każdej sekcji.
 
-**Lenis** opcjonalny — tylko jeżeli scroll-driven storytelling faktycznie korzysta
+**Lenis** opcjonalny - tylko jeżeli scroll-driven storytelling faktycznie korzysta
 z płynniejszego scrollu. Nie dodawać tylko dlatego, że jest popularny.
 
 **EASING** primary `cubic-bezier(0.22, 1, 0.36, 1)` · secondary
@@ -383,44 +383,44 @@ z płynniejszego scrollu. Nie dodawać tylko dlatego, że jest popularny.
 **DURATIONS** hover `160–220ms` · UI `240–320ms` · reveal `550–800ms` · large transition
 `800–1200ms`
 
-**TEXT REVEAL** — nie animować każdego słowa każdego nagłówka. Hero może mieć clip reveal
+**TEXT REVEAL** - nie animować każdego słowa każdego nagłówka. Hero może mieć clip reveal
 line-by-line: transform `translateY(105%) → 0`, duration `800ms`, stagger `80–120ms`.
 
-**NORMAL SECTION REVEAL** — nie opacity 0 → 1 dla wszystkiego. Preferować
+**NORMAL SECTION REVEAL** - nie opacity 0 → 1 dla wszystkiego. Preferować
 `translateY(20–32px)` * opacity, duration `550–700ms`, stagger `60–100ms`.
 
-**IMAGE REVEAL** — container overflow hidden, image start `scale(1.04)`, mask / clip od
+**IMAGE REVEAL** - container overflow hidden, image start `scale(1.04)`, mask / clip od
 dołu lub lewej, duration `900–1100ms`, final `scale(1)`. Bardzo subtelnie.
 
-**PROJECT HOVER** (desktop) — image `scale(1 → 1.015)`, duration `500–700ms`, arrow
+**PROJECT HOVER** (desktop) - image `scale(1 → 1.015)`, duration `500–700ms`, arrow
 translate `0 → 4px`, opcjonalnie metadata zmienia kolor na accent. Nie robić scale 1.1.
 
-**PARALLAX** — bardzo delikatny, maksymalny zakres `20–40px` na dużych obrazach. Nie
+**PARALLAX** - bardzo delikatny, maksymalny zakres `20–40px` na dużych obrazach. Nie
 stosować na mobile.
 
-**CODEBROS TRANSITION** — jeden z najmocniejszych momentów strony. Jasne tło ustępuje dark
+**CODEBROS TRANSITION** - jeden z najmocniejszych momentów strony. Jasne tło ustępuje dark
 section, BUILD TRACE może animować linię `width: 0 → 100%`, następnie pojawia się
 `CODEBROS / SYSTEM MODE`. Nie robić glitch effect, terminal animation ani matrix
 characters.
 
-**PAGE TRANSITIONS** — opcjonalnie bardzo krótki transition (np. cienka ciemna powierzchnia
-przechodzi przez ekran), całość `450–600ms`. Jeżeli pogarsza perceived performance —
+**PAGE TRANSITIONS** - opcjonalnie bardzo krótki transition (np. cienka ciemna powierzchnia
+przechodzi przez ekran), całość `450–600ms`. Jeżeli pogarsza perceived performance -
 usunąć.
 
-**DRAWER** — translate `100% → 0`, duration `420ms`, ease `cubic-bezier(0.22,1,0.36,1)`,
+**DRAWER** - translate `100% → 0`, duration `420ms`, ease `cubic-bezier(0.22,1,0.36,1)`,
 backdrop opacity max około `0.25`.
 
-**FORM MICROINTERACTION** — selected option: subtelny background transition, border, signal
+**FORM MICROINTERACTION** - selected option: subtelny background transition, border, signal
 indicator. Submit: button może zmienić copy `Send project` → `Sent ✓`. Bez confetti.
 
-**PREFERS REDUCED MOTION** — wyłączyć parallax, scroll scrub, image scale, page
+**PREFERS REDUCED MOTION** - wyłączyć parallax, scroll scrub, image scale, page
 transitions, smooth scroll. Pozostawić natychmiastowe opacity i krótkie UI feedback.
 
 ## WHITESPACE
 
 Whitespace jest jednym z głównych elementów stylistycznych. Nie próbować „wykorzystać
 pustej przestrzeni”. Pusta przestrzeń oddziela myśli, buduje hierarchię, zwiększa poczucie
-jakości. Jednocześnie: nie tworzyć pustych ekranów wyłącznie dla efektu premium — każde
+jakości. Jednocześnie: nie tworzyć pustych ekranów wyłącznie dla efektu premium - każde
 duże odstępy muszą wynikać z kompozycji.
 
 ## CONTRAST
@@ -448,7 +448,7 @@ zachować, primary CTA zawsze łatwo dostępne, case studies nadal duże.
 
 **mobile retains character, not complexity.**
 
-## DESIGN RULES — ALWAYS
+## DESIGN RULES - ALWAYS
 
 1. Kompozycję budujemy przez grid, typography i imagery.
 2. Accent color stosujemy oszczędnie.
@@ -464,7 +464,7 @@ zachować, primary CTA zawsze łatwo dostępne, case studies nadal duże.
 12. Na stronie zawsze jest więcej neutralnego koloru niż accentu.
 13. Primary CTA jest łatwe do znalezienia.
 
-## DESIGN RULES — NEVER
+## DESIGN RULES - NEVER
 
 Gradient blobs, glassmorphism, glow, neon, ogromne rounded cards, pill everywhere, icon
 cards, 3-column SaaS feature grid, logo cloud zaraz pod hero, orbit animation, marquee bez
@@ -508,7 +508,7 @@ Przed dodaniem dowolnego elementu: 1. Czy pomaga użytkownikowi zrozumieć ofert
 wzmacnia charakter Wojciecha / CodeBros? 3. Czy nadal dodałbym ten element, gdyby nie był
 aktualnie modny?
 
-Jeśli na wszystkie trzy odpowiedź brzmi **nie** — element należy usunąć.
+Jeśli na wszystkie trzy odpowiedź brzmi **nie** - element należy usunąć.
 
 # SYSTEM MANTRA
 

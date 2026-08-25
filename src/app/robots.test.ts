@@ -15,7 +15,7 @@ describe('robots.txt', () => {
   /**
    * Guard for a mistake that is easy to make and hard to notice: blocking a page here
    * *and* marking it noindex means the crawler never reads the noindex. Exclusion from
-   * the index is done with metadata only — see .agents/08.
+   * the index is done with metadata only - see .agents/08.
    */
   it('does not disallow anything', () => {
     expect(JSON.stringify(robots())).not.toContain('disallow')

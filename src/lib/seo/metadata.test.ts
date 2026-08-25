@@ -21,7 +21,7 @@ describe('buildMetadata', () => {
 
   /**
    * Guard: the hreflang set here has to match the one in sitemap.ts, and `x-default`
-   * has to point at the unprefixed path — that is the URL the proxy negotiates.
+   * has to point at the unprefixed path - that is the URL the proxy negotiates.
    */
   it('emits every locale plus x-default in the alternates', () => {
     const languages = buildMetadata({ locale: 'pl', path: '/kontakt' }).alternates?.languages ?? {}

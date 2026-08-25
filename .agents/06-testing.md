@@ -1,4 +1,4 @@
-# 06 — Testy jednostkowe
+# 06 - Testy jednostkowe
 
 ## Narzędzia
 
@@ -11,7 +11,7 @@ pnpm test:coverage   # z pokryciem i progami
 ```
 
 Konfiguracja: `vitest.config.mts`, setup: `vitest.setup.ts`.
-Vitest działa z `globals: false` — API testowe **importujemy jawnie** z `vitest`.
+Vitest działa z `globals: false` - API testowe **importujemy jawnie** z `vitest`.
 To dlatego `vitest.setup.ts` ma ręczne `afterEach(cleanup)`: automatyczny cleanup RTL rejestruje się
 tylko przy globalach.
 
@@ -21,7 +21,7 @@ tylko przy globalach.
 > Nie testujemy tego, że React renderuje diva.
 
 Test ma odpowiadać na pytanie: **co się zepsuje, jeśli ktoś to zmieni?**
-Jeżeli odpowiedź brzmi „nic” — test nie jest potrzebny.
+Jeżeli odpowiedź brzmi „nic” - test nie jest potrzebny.
 
 ## Co testujemy obowiązkowo
 
@@ -35,15 +35,15 @@ Jeżeli odpowiedź brzmi „nic” — test nie jest potrzebny.
 | `components/ui/`       | Rola dostępnościowa, obsługa zdarzeń, nadpisywanie klas                        | `button.test.tsx`                    |
 | `components/sections/` | Logika interakcji, nie wygląd                                                  | krok formularza, drag separatora     |
 | `i18n/`                | Parzystość kluczy między słownikami i danymi (TS tego nie złapie)              | `dictionaries.test.ts`               |
-| pliki konwencji Next   | `robots`, `sitemap`, `proxy` — reguły SEO, które nie mogą się po cichu zmienić | `sitemap.test.ts`                    |
+| pliki konwencji Next   | `robots`, `sitemap`, `proxy` - reguły SEO, które nie mogą się po cichu zmienić | `sitemap.test.ts`                    |
 
 ## Czego nie testujemy
 
-- Wartości tokenów („czy accent to `#XYZ`”) — to test tautologiczny.
+- Wartości tokenów („czy accent to `#XYZ`”) - to test tautologiczny.
 - Snapshotów całych sekcji. Snapshot łamie się przy każdej zmianie stylu i nic nie mówi.
 - Że Motion animuje. To jest zadanie biblioteki, a w jsdom animacje i tak nie liczą klatek.
 - Wyglądu. Do tego jest `/system` i przegląd w przeglądarce, nie assert na klasie CSS.
-- Server Components `async`. Vitest ich nie obsługuje — logikę wyciągamy do funkcji i testujemy funkcję.
+- Server Components `async`. Vitest ich nie obsługuje - logikę wyciągamy do funkcji i testujemy funkcję.
 
 ## Jak piszemy testy
 
@@ -58,13 +58,13 @@ Jeżeli odpowiedź brzmi „nic” — test nie jest potrzebny.
 - Interakcje przez `userEvent`, nie `fireEvent`.
 - Jeden assert na koncepcję. Kilka `expect` w jednym `it` jest OK, jeżeli opisują to samo zachowanie.
 - Test zawsze deterministyczny. Bez `Date.now()`, bez `Math.random()`, bez `setTimeout`
-  w oczekiwaniu na coś — używamy `await waitFor` / `findBy*`.
+  w oczekiwaniu na coś - używamy `await waitFor` / `findBy*`.
 - Regresja: naprawiasz błąd → dodajesz test, który go łapie, z komentarzem, na co jest strażnikiem.
 
 ## Stuby środowiska
 
 `vitest.setup.ts` dostarcza to, czego jsdom nie ma: `matchMedia`, `IntersectionObserver`,
-`ResizeObserver`. Stub `matchMedia` zakłada się **tylko gdy nie istnieje** — test, który sprawdza
+`ResizeObserver`. Stub `matchMedia` zakłada się **tylko gdy nie istnieje** - test, który sprawdza
 media queries, podstawia własną implementację (patrz `use-media-query.test.ts`).
 
 Nie dodawaj stubów do pojedynczych plików testowych, jeżeli dotyczą całego środowiska.
@@ -80,7 +80,7 @@ lines 90% · functions 90% · statements 90% · branches 85%
 ```
 
 Powód: tam mieszka logika, którą da się sensownie zmierzyć. Sekcje prezentacyjne są sprawdzane
-testami komponentowymi tam, gdzie mają zachowanie — bez sztywnego progu, który zmuszałby do
+testami komponentowymi tam, gdzie mają zachowanie - bez sztywnego progu, który zmuszałby do
 pisania testów bez wartości tylko po to, żeby podbić liczbę.
 
 **Pokrycie nie jest celem.** Test bez asercji o zachowaniu podbija liczbę i nic nie chroni.

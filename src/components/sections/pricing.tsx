@@ -11,7 +11,7 @@ import { formatPrice, formatPriceFrom, formatPriceRange } from '@/lib/utils/form
 
 /**
  * Indicative brackets, set editorially: name on the left, price on the right, a hairline
- * between. Never three pricing cards — packages would contradict the promise that every
+ * between. Never three pricing cards - packages would contradict the promise that every
  * project is scoped individually (.agents/00-project-brief.md#co-sprzedajemy-i-za-ile).
  *
  * Its real job is filtering: a visitor who is not in this budget category finds out here

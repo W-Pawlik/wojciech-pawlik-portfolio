@@ -8,7 +8,7 @@ import { dictionaryFor, interpolate, type Dictionary } from './dictionaries'
  * Reads the locale from the route's root parameter, so any Server Component can get
  * its copy without prop drilling.
  *
- * Server Components only — `next/root-params` is unavailable in Client Components,
+ * Server Components only - `next/root-params` is unavailable in Client Components,
  * Server Actions and Route Handlers. Keeping it in its own module means importing the
  * dictionaries from a Client Component does not pull this in. Importing *this* module
  * from a Client Component fails the build even if the function is never called.

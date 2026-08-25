@@ -5,7 +5,7 @@ const NBSP = ' '
 
 /**
  * Intl tags per app locale. TODO(brief): confirm the currency and the tags with the
- * project brief — a price in the wrong convention reads as a foreign site.
+ * project brief - a price in the wrong convention reads as a foreign site.
  */
 const NUMBER_LOCALE: Record<Locale, string> = {
   pl: 'pl-PL',
@@ -19,7 +19,7 @@ const CURRENCY_SUFFIX = 'zł'
 /**
  * `useGrouping: 'always'` is deliberate: some CLDR locales set minimumGroupingDigits
  * to 2, so a four-digit price would render without a separator while a five-digit one
- * gets one — the same column showing two conventions.
+ * gets one - the same column showing two conventions.
  */
 function priceFormatter(locale: Locale): Intl.NumberFormat {
   return new Intl.NumberFormat(NUMBER_LOCALE[locale], {
@@ -30,7 +30,7 @@ function priceFormatter(locale: Locale): Intl.NumberFormat {
 
 /**
  * `1600` -> `1 600 zł`, with non-breaking spaces so a price never wraps across two
- * lines. Groupings that Intl renders as a thin/narrow space are normalised — an
+ * lines. Groupings that Intl renders as a thin/narrow space are normalised - an
  * invisible difference in the source is a real difference in a diff.
  */
 export function formatPrice(amount: number, locale: Locale): string {
@@ -40,7 +40,7 @@ export function formatPrice(amount: number, locale: Locale): string {
 
 /**
  * `od 1 600 zł`. The prefix is passed in rather than hardcoded, because it is copy
- * and copy lives in the dictionaries — see .agents/09-content-and-copy.md.
+ * and copy lives in the dictionaries - see .agents/09-content-and-copy.md.
  */
 export function formatPriceFrom(amount: number, locale: Locale, prefix: string): string {
   return `${prefix}${NBSP}${formatPrice(amount, locale)}`
@@ -50,7 +50,7 @@ export function formatPriceFrom(amount: number, locale: Locale, prefix: string):
  * `5000, 8000` -> `5 000–8 000 zł`. One currency suffix, not two: the bracket is one
  * value, and repeating the unit reads like a table of prices rather than a range.
  *
- * The separator and the optional `+` come from the dictionaries — both are copy.
+ * The separator and the optional `+` come from the dictionaries - both are copy.
  */
 export function formatPriceRange(
   from: number,

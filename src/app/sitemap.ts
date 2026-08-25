@@ -9,7 +9,7 @@ import { locales, withLocale } from '@/i18n/config'
  * `alternates.languages`, so search engines treat them as translations rather than
  * duplicates.
  *
- * The alternates mirror `buildMetadata()` on purpose — including `x-default` for the
+ * The alternates mirror `buildMetadata()` on purpose - including `x-default` for the
  * unprefixed path, which negotiates the locale in the proxy. hreflang stated in the
  * sitemap and in the page must agree; disagreeing sets make both untrustworthy.
  *

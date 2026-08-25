@@ -1,10 +1,10 @@
-# Checklist — przegląd kodu
+# Checklist - przegląd kodu
 
 Kolejność jest celowa: najpierw rzeczy, które trudno naprawić później.
 
 ## 1. Zakres i architektura
 
-- [ ] Zmiana robi to, co miała zrobić — i nic więcej. Refaktor nie jest wmieszany w funkcję.
+- [ ] Zmiana robi to, co miała zrobić - i nic więcej. Refaktor nie jest wmieszany w funkcję.
 - [ ] Granica serwer/klient jest poprawna. `'use client'` jest w najmniejszym możliwym zakresie.
 - [ ] Nie doszła nowa zależność bez ADR.
 - [ ] Nowa trasa ma wpis w `src/data/routes.ts` i powód w briefie.
@@ -44,7 +44,7 @@ Kolejność jest celowa: najpierw rzeczy, które trudno naprawić później.
 
 ## 6. Treść i dostępność
 
-- [ ] Zero tekstu widocznego dla użytkownika w komponencie — wszystko w słownikach.
+- [ ] Zero tekstu widocznego dla użytkownika w komponencie - wszystko w słownikach.
 - [ ] Wszystkie języki projektu uzupełnione; tłumaczenie nie jest kalką.
 - [ ] Żaden fakt o firmie nie został wymyślony (adres, cena, termin, opinia, certyfikat).
 - [ ] Semantyczny HTML, poprawna hierarchia nagłówków.
@@ -58,7 +58,7 @@ Kolejność jest celowa: najpierw rzeczy, które trudno naprawić później.
 - [ ] Nowa logika ma test opisujący **zachowanie**, nie implementację.
 - [ ] Poprawiony błąd ma test-strażnika z komentarzem.
 - [ ] Brak snapshotów całych sekcji, brak testów tautologicznych.
-- [ ] Testy deterministyczne — bez czasu rzeczywistego i losowości.
+- [ ] Testy deterministyczne - bez czasu rzeczywistego i losowości.
 
 ## 8. Higiena
 
@@ -68,7 +68,7 @@ Kolejność jest celowa: najpierw rzeczy, które trudno naprawić później.
 - [ ] Commit atomowy, wiadomość w Conventional Commits.
 - [ ] `pnpm check` i `pnpm build` przechodzą.
 
-## Czerwone flagi — odrzucamy zmianę
+## Czerwone flagi - odrzucamy zmianę
 
 - `eslint-disable` na cały plik.
 - `@ts-ignore` / `@ts-expect-error` bez wyjaśnienia.

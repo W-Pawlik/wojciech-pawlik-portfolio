@@ -5,7 +5,7 @@ import { useMediaQuery } from './use-media-query'
 
 /**
  * The global stub in vitest.setup.ts always answers `false`. This file needs a stub it
- * can drive, so it installs its own and restores the original afterwards — the setup
+ * can drive, so it installs its own and restores the original afterwards - the setup
  * stub is deliberately conditional so this override survives.
  */
 const original = window.matchMedia

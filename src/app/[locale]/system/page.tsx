@@ -17,7 +17,7 @@ import { contrastLevel, contrastRatio } from '@/lib/utils/contrast'
  * labels in the dictionaries would mean translating copy nobody reads
  * (.agents/02-design-system.md).
  *
- * Excluded from the index by metadata only — a `Disallow` in robots.txt would stop the
+ * Excluded from the index by metadata only - a `Disallow` in robots.txt would stop the
  * crawler from ever reading the `noindex` (.agents/08).
  */
 export const metadata: Metadata = {
@@ -31,9 +31,9 @@ const ACCENTS = ['accent', 'accent-hover', 'accent-strong', 'accent-subtle', 'da
 const LINES = ['line', 'line-strong', 'line-control', 'line-invert', 'line-invert-strong'] as const
 const TEXT_STEPS = [
   { token: 'content', use: 'headings, critical copy' },
-  { token: 'content-secondary', use: 'body copy — the default for prose' },
-  { token: 'content-tertiary', use: 'metadata and labels — on canvas and surface only' },
-  { token: 'content-ghost', use: 'decoration and graphical trace — below AA on purpose' },
+  { token: 'content-secondary', use: 'body copy - the default for prose' },
+  { token: 'content-tertiary', use: 'metadata and labels - on canvas and surface only' },
+  { token: 'content-ghost', use: 'decoration and graphical trace - below AA on purpose' },
   { token: 'content-dim', use: 'resting state of animated text' },
 ] as const
 
@@ -48,17 +48,17 @@ const CONTRAST_PAIRS = [
   { fg: 'content-secondary', bg: 'canvas-deep', note: 'body copy on the third surface' },
   { fg: 'content-tertiary', bg: 'canvas', note: 'labels and metadata' },
   { fg: 'content-tertiary', bg: 'surface', note: 'labels on a panel' },
-  { fg: 'content-ghost', bg: 'canvas', note: 'decorative only — AA not required' },
+  { fg: 'content-ghost', bg: 'canvas', note: 'decorative only - AA not required' },
   {
     fg: 'accent',
     bg: 'canvas',
     note: 'brand orange on light: fills and markers only, never small text',
   },
   { fg: 'accent-strong', bg: 'canvas', note: 'accent as text and links on light' },
-  { fg: 'accent-hover', bg: 'canvas', note: 'focus ring on light — 3:1 is enough' },
+  { fg: 'accent-hover', bg: 'canvas', note: 'focus ring on light - 3:1 is enough' },
   { fg: 'accent-hover', bg: 'canvas-invert', note: 'the same focus ring on dark' },
   { fg: 'accent-contrast', bg: 'accent', note: 'text on the accent' },
-  { fg: 'line-control', bg: 'canvas', note: 'form field border — 3:1 (WCAG 1.4.11)' },
+  { fg: 'line-control', bg: 'canvas', note: 'form field border - 3:1 (WCAG 1.4.11)' },
   { fg: 'content-invert', bg: 'canvas-invert', note: 'the tonal interlude / CodeBros mode' },
   { fg: 'content-invert-secondary', bg: 'canvas-invert', note: 'body copy on dark' },
   { fg: 'content-invert-tertiary', bg: 'canvas-invert', note: 'metadata on dark' },
@@ -69,7 +69,7 @@ const CONTRAST_PAIRS = [
 /**
  * The class names are written out in full rather than built from the token name.
  * Tailwind scans the source as text, so `text-${token}` would produce a class that is
- * never generated — and the sample would silently render at the inherited size.
+ * never generated - and the sample would silently render at the inherited size.
  */
 const TYPE_STEPS = [
   { token: 'display-statement', className: 'text-display-statement' },
@@ -125,7 +125,7 @@ export default function SystemPage() {
           </div>
 
           <h2 className="mt-12 font-mono text-label text-content-tertiary uppercase">
-            Inverted surfaces — the CodeBros mode
+            Inverted surfaces - the CodeBros mode
           </h2>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-5">
             {SURFACES_INVERT.map((name) => (
@@ -165,7 +165,7 @@ export default function SystemPage() {
           </div>
 
           <h2 className="mt-12 font-mono text-label text-content-tertiary uppercase">
-            Hairlines — the load-bearing separator
+            Hairlines - the load-bearing separator
           </h2>
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-5">
             {LINES.map((name) => (
@@ -185,7 +185,7 @@ export default function SystemPage() {
       <Section spacing="tight">
         <Container>
           <h2 className="font-mono text-label text-content-tertiary uppercase">
-            BUILD TRACE — the signature element
+            BUILD TRACE - the signature element
           </h2>
           <p className="mt-3 max-w-measure text-body-sm text-content-secondary">
             Section numbers, coordinate-like labels and construction hairlines. A label that carries
@@ -227,7 +227,7 @@ export default function SystemPage() {
       <Section spacing="tight">
         <Container>
           <h2 className="font-mono text-label text-content-tertiary uppercase">
-            Contrast — computed, not declared
+            Contrast - computed, not declared
           </h2>
           <p className="mt-3 max-w-measure text-body-sm text-content-secondary">
             Ratios are computed from the tokens themselves, so editing a colour changes this table.
@@ -284,7 +284,7 @@ export default function SystemPage() {
             ))}
             <div className="border-b border-line pb-4">
               <p className="font-mono text-meta text-content-tertiary uppercase">label / meta</p>
-              <p className="mt-1 font-mono text-label uppercase">Label — 01 / section</p>
+              <p className="mt-1 font-mono text-label uppercase">Label - 01 / section</p>
               <p className="font-mono text-meta text-content-tertiary uppercase">Meta</p>
             </div>
           </div>
@@ -343,7 +343,7 @@ export default function SystemPage() {
             Inverted tone
           </h2>
           <p className="mt-4 max-w-measure text-body text-content-invert-secondary">
-            The tonal interlude. One or two sections per page, plus the footer — a dark shell for
+            The tonal interlude. One or two sections per page, plus the footer - a dark shell for
             the whole site is a different brand decision.
           </p>
           <div className="mt-6">
@@ -363,7 +363,7 @@ export default function SystemPage() {
               <dt className="font-mono text-meta text-content-tertiary uppercase">duration</dt>
               {Object.entries(DURATION).map(([token, seconds]) => (
                 <dd key={token} className="font-mono text-meta">
-                  {token} — {seconds}s
+                  {token} - {seconds}s
                 </dd>
               ))}
             </dl>
@@ -379,7 +379,7 @@ export default function SystemPage() {
               <dt className="font-mono text-meta text-content-tertiary uppercase">stagger</dt>
               {Object.entries(STAGGER).map(([token, seconds]) => (
                 <dd key={token} className="font-mono text-meta">
-                  {token} — {seconds}s
+                  {token} - {seconds}s
                 </dd>
               ))}
             </dl>

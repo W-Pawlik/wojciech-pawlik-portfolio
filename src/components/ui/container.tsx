@@ -5,8 +5,8 @@ import { cn } from '@/lib/utils/cn'
 type ContainerProps = {
   children: ReactNode
   /**
-   * `shell` — the page's wide content column.
-   * `measure` — a narrow column capped at a comfortable reading length.
+   * `shell` - the page's wide content column.
+   * `measure` - a narrow column capped at a comfortable reading length.
    */
   width?: 'shell' | 'measure'
   className?: string
@@ -25,7 +25,7 @@ const SHELL_CLASS =
 
 /**
  * The horizontal frame for content. Full-bleed media deliberately sits *outside* a
- * Container (or uses the `bleed` utility) — see .agents/02-design-system.md.
+ * Container (or uses the `bleed` utility) - see .agents/02-design-system.md.
  */
 export function Container({ children, width = 'shell', className }: ContainerProps) {
   return (

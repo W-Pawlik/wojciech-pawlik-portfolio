@@ -4,7 +4,7 @@
  *
  * Kept deliberately small: it takes the same hex strings that live in
  * src/styles/theme.css, so a token edit shows up as a new ratio on /system.
- * Alpha is not supported — a translucent token has no single ratio, so those pairs
+ * Alpha is not supported - a translucent token has no single ratio, so those pairs
  * have to be checked against their composited value instead.
  */
 

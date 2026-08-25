@@ -4,7 +4,7 @@ import { extendTailwindMerge } from 'tailwind-merge'
 /**
  * tailwind-merge has to be told about our custom theme scales, otherwise it
  * classifies `text-display-section` and `text-accent` into the same group and
- * silently drops one of them. Keep these lists in sync with src/styles/theme.css —
+ * silently drops one of them. Keep these lists in sync with src/styles/theme.css -
  * `cn.test.ts` covers the trap for both groups.
  */
 const FONT_SIZES = [

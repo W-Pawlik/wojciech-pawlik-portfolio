@@ -1,4 +1,4 @@
-# ADR-0008 — sharp do przygotowania zdjęć
+# ADR-0008 - sharp do przygotowania zdjęć
 
 - **Status:** Accepted
 - **Data:** 2026-01-01
@@ -19,7 +19,7 @@ w czasie żądania, ale:
    - przekodowuje każde zdjęcie w `public/images/` do **docelowej szerokości wyprowadzonej
      z layoutu** (najszerszy boks CSS podwojony dla ekranów o dużej gęstości, potem ścięty tam,
      gdzie detal przestaje być widoczny); progi są w `TARGETS`,
-   - generuje `src/lib/images/blur.ts` — podgląd 16 px w base64 dla każdego pliku.
+   - generuje `src/lib/images/blur.ts` - podgląd 16 px w base64 dla każdego pliku.
 2. Każdy `next/image` na statycznej ścieżce dostaje placeholder przez `blurProps(src)`.
 3. Skrypt **nie wchodzi do CI**. Jest lossy i jednorazowy: uruchomiony dwa razy kompresuje już
    skompresowane pliki. Odmawia zapisu, gdy wynik nie jest istotnie mniejszy.
@@ -29,7 +29,7 @@ w czasie żądania, ale:
 ## Konsekwencje
 
 - Dodanie zdjęcia to dwa kroki: wpis w `TARGETS` i uruchomienie skryptu. Plik bez wpisu jest
-  pomijany — renderuje się, ale w oryginalnym rozmiarze i bez placeholdera.
+  pomijany - renderuje się, ale w oryginalnym rozmiarze i bez placeholdera.
 - Repozytorium zostaje lekkie, a LCP przewidywalne.
 - Rozmiar docelowy trzeba zaktualizować, jeżeli layout sekcji zmieni szerokość kadru.
 

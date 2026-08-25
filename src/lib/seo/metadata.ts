@@ -17,7 +17,7 @@ type BuildMetadataOptions = {
 
 /**
  * TODO(brand): 1200 x 630, then set this to '/images/og-default.jpg'. Do not point at a
- * file that does not exist — a broken OG image is worse than none, because the crawler
+ * file that does not exist - a broken OG image is worse than none, because the crawler
  * caches the miss.
  */
 const DEFAULT_OG_IMAGE: string | undefined = undefined
@@ -32,7 +32,7 @@ const DEFAULT_OG_IMAGE: string | undefined = undefined
  *
  * `alternates.languages` is emitted for every locale, which is what tells search
  * engines the pages are translations rather than duplicates. The set here and the one
- * in `sitemap.ts` must agree — two disagreeing sets make both untrustworthy.
+ * in `sitemap.ts` must agree - two disagreeing sets make both untrustworthy.
  */
 export function buildMetadata({
   locale,

@@ -18,6 +18,7 @@ describe('MobileMenu', () => {
 
     const opener = screen.getByRole('button', { name: 'Menu' })
     expect(opener).toHaveAttribute('aria-expanded', 'false')
+    expect(opener).toHaveClass('touch-manipulation')
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
 
     await user.click(opener)

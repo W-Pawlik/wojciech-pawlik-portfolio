@@ -1,21 +1,21 @@
-# .agents — system instrukcji dla AI
+# .agents - system instrukcji dla AI
 
 Ten katalog jest kontraktem między człowiekiem a agentem AI pracującym w tym repozytorium.
 Opisuje **czym jest projekt**, **jak ma wyglądać**, **jak ma być zbudowany** i **kiedy zadanie
 jest skończone**.
 
-Jeżeli kod i te dokumenty się rozjeżdżają, to jest błąd — napraw jedno albo drugie w tym samym
+Jeżeli kod i te dokumenty się rozjeżdżają, to jest błąd - napraw jedno albo drugie w tym samym
 zadaniu.
 
 ## Stan: etapy 1–3 bootstrapu, strona główna statycznie gotowa
 
-Projekt: **Wojciech Pawlik — Web & Product Engineer** (marka osobista, marka rozszerzona
+Projekt: **Wojciech Pawlik - Web & Product Engineer** (marka osobista, marka rozszerzona
 CodeBros). Kierunek wizualny: **Editorial Engineering**.
 
 Gotowe:
 
 - [00-project-brief.md](00-project-brief.md) i [10-brand-strategy.md](10-brand-strategy.md)
-  ze [strategii marki](intake/00-brand-strategy-input.md) — **do akceptacji właściciela repo**.
+  ze [strategii marki](intake/00-brand-strategy-input.md) - **do akceptacji właściciela repo**.
 - [01-brand-and-design.md](01-brand-and-design.md) i **tokeny w `src/styles/theme.css`**
   z [kierunku wizualnego](intake/01-design-direction-input.md): paleta, typografia
   (Instrument Sans + IBM Plex Mono przez `next/font`), siatka, rytm, promienie, motion,
@@ -31,7 +31,7 @@ sesji nie było) oraz **faktów kontaktowych i treści dowodowych**
 [„Czego brakuje”](00-project-brief.md#czego-brakuje--pytania-do-właściciela).
 
 Strona główna jest zaimplementowana statycznie według briefu UX
-([specs/01-home.md](specs/01-home.md)) — 11 sekcji, warstwa danych, copy w słownikach,
+([specs/01-home.md](specs/01-home.md)) - 11 sekcji, warstwa danych, copy w słownikach,
 formularz kwalifikacyjny. Kolejne kroki z briefu: responsive pass, interakcje (navbar po
 scrollu, drawer usług, prefill formularza), motion (GSAP: hero + przejście CodeBros),
 visual QA. **Nowa sekcja nadal nie wchodzi do kodu bez wpisu w [specs/](specs/README.md).**
@@ -46,7 +46,7 @@ liczby efektów.
 
 Druga zasada, obowiązująca w każdym projekcie z tej templatki: **to strona prawdziwej firmy.**
 Klient ma po niej napisać. W tym projekcie znaczy to: **wysłać formularz „Opowiedz mi
-o projekcie”** — usługa jest projektowa i zdalna, więc telefon i adres są opcjonalne, a godzin
+o projekcie”** - usługa jest projektowa i zdalna, więc telefon i adres są opcjonalne, a godzin
 otwarcia nie ma ([ADR-0010](decisions/0010-personal-brand-and-two-tier-architecture.md)).
 Dane kontaktowe, ceny i zakres usług muszą być prawdziwe i łatwe do znalezienia. Efekt wizualny
 nigdy nie może utrudniać kontaktu.
@@ -74,13 +74,13 @@ detal jest argumentem przeciw ofercie.
 
 Dodatkowo:
 
-- [intake/](intake/README.md) — szablony dokumentów wejściowych od klienta (branding, wireframe,
+- [intake/](intake/README.md) - szablony dokumentów wejściowych od klienta (branding, wireframe,
   fakty o firmie). To **wejście** procesu, nie dokumentacja projektu.
-- [checklists/](checklists/) — listy kontrolne do odhaczenia przed zakończeniem zadania
+- [checklists/](checklists/) - listy kontrolne do odhaczenia przed zakończeniem zadania
   i przed publikacją.
-- [decisions/](decisions/README.md) — decyzje architektoniczne (ADR). Zmieniasz decyzję →
+- [decisions/](decisions/README.md) - decyzje architektoniczne (ADR). Zmieniasz decyzję →
   dopisujesz ADR, nie edytujesz starego.
-- [specs/](specs/README.md) — specyfikacje pojedynczych sekcji i podstron, tworzone przed
+- [specs/](specs/README.md) - specyfikacje pojedynczych sekcji i podstron, tworzone przed
   implementacją.
 
 ## Reguły pracy agenta
@@ -106,7 +106,7 @@ Dodatkowo:
    ([ADR-0006](decisions/0006-landing-plus-detail-pages.md)), ale każda trasa musi mieć powód
    sprzedażowy albo SEO i wpis w `src/data/routes.ts`.
 9. **Nie zmieniaj reguły w tych dokumentach po cichu.** Zmiana zasady = zmiana dokumentu w tym
-   samym zadaniu, a przy decyzji architektonicznej — nowy ADR.
+   samym zadaniu, a przy decyzji architektonicznej - nowy ADR.
 10. **Nie przekraczaj budżetu akcentu.** Signal Orange to 5–8% powierzchni i jeden mocny
     element na widok. Akcent jako tekst na jasnym tle to `accent-strong`, nigdy `accent`
     ([ADR-0011](decisions/0011-brand-values-in-tokens.md)).

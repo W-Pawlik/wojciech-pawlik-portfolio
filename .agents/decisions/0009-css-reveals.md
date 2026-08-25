@@ -1,4 +1,4 @@
-# ADR-0009 — Reveal-e w CSS, Motion tylko do interakcji
+# ADR-0009 - Reveal-e w CSS, Motion tylko do interakcji
 
 - **Status:** Accepted
 - **Data:** 2026-01-01
@@ -25,7 +25,7 @@ opóźniony LCP przy poprawnym TTFB.
 4. Motion zostaje do tego, czego CSS nie potrafi: animacja wyjścia, gesty, animacje layoutu,
    count-up, parallax. Ładowany leniwie, poza ścieżką krytyczną.
 5. `prefers-reduced-motion` dla animacji CSS żyje w **jednym** bloku w `utilities.css`. Animacje
-   startujące od `opacity: 0` muszą tam jawnie dostać stan końcowy — samo skrócenie czasu trwania
+   startujące od `opacity: 0` muszą tam jawnie dostać stan końcowy - samo skrócenie czasu trwania
    zostawiłoby treść niewidoczną.
 
 ## Konsekwencje
@@ -35,7 +35,7 @@ opóźniony LCP przy poprawnym TTFB.
 - Stagger realizujemy opóźnieniem animacji per element (`RevealGroup` plus `RevealItem`), nie
   wariantami biblioteki.
 - Bardziej złożone sekwencje, reagujące na pozycję scrolla w sposób ciągły, wymagają Motion albo
-  GSAP — i to jest właściwy moment, żeby ich użyć.
+  GSAP - i to jest właściwy moment, żeby ich użyć.
 
 ## Rozważone alternatywy
 

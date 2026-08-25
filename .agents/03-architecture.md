@@ -1,13 +1,13 @@
-# 03 — Architektura kodu
+# 03 - Architektura kodu
 
 ## Stack
 
 Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · Motion for React ·
 GSAP + ScrollTrigger · Zod · Vitest
 
-Scroll jest natywny — bez biblioteki smooth-scroll ([ADR-0004](decisions/0004-native-scroll.md)).
+Scroll jest natywny - bez biblioteki smooth-scroll ([ADR-0004](decisions/0004-native-scroll.md)).
 
-Stack jest **zamknięty** — patrz [ADR-0001](decisions/0001-stack-and-animation-split.md).
+Stack jest **zamknięty** - patrz [ADR-0001](decisions/0001-stack-and-animation-split.md).
 Nowa zależność wymaga nowego ADR i zgody właściciela repo.
 
 ## Struktura katalogów
@@ -19,7 +19,7 @@ src/
     icon.svg
     [locale]/             każdy route żyje pod segmentem locale
       layout.tsx          root layout: fonty, CSS, skip link, <main>
-      page.tsx            strona główna — płaska lista sekcji
+      page.tsx            strona główna - płaska lista sekcji
       system/page.tsx     wewnętrzna referencja design systemu
       error.tsx           route error boundary
       not-found.tsx
@@ -38,8 +38,8 @@ src/
     styles/               odczyt tokenów koloru dla strony /system
     utils/                cn, formatowanie, kontrast
     validation/           schematy Zod (współdzielone klient ↔ serwer)
-    images/               blur.ts — GENEROWANY przez scripts/prepare-images.mjs
-  data/                   liczby, slugi, ścieżki do zdjęć, trasy — BEZ tekstów
+    images/               blur.ts - GENEROWANY przez scripts/prepare-images.mjs
+  data/                   liczby, slugi, ścieżki do zdjęć, trasy - BEZ tekstów
   i18n/                   config, słowniki, dostęp serwerowy
   server/
     contact/              Server Action formularza + warstwa dostarczania
@@ -47,7 +47,7 @@ src/
   proxy.ts                przekierowanie na prefiks języka
 ```
 
-Katalog `sections/` w świeżej templatce jest pusty — wypełnia go etap 4
+Katalog `sections/` w świeżej templatce jest pusty - wypełnia go etap 4
 [bootstrapu](11-bootstrap.md), sekcja po sekcji, każda ze specyfikacją.
 
 ## Reguły struktury
@@ -111,7 +111,7 @@ Pełna decyzja: [ADR-0006](decisions/0006-landing-plus-detail-pages.md). Minimum
 - **Podstrona istnieje dla szczegółu i dla frazy w wyszukiwarce**, nie dla porządku w menu.
   Jedna usługa = jedna intencja wyszukiwania = jedna trasa.
 - **Każda trasa ma wpis w `src/data/routes.ts`.** To jest źródło prawdy dla nawigacji, sitemapy
-  i breadcrumbów. Trasa bez wpisu nie trafi do sitemapy — i to jest jedyny mechanizm, który
+  i breadcrumbów. Trasa bez wpisu nie trafi do sitemapy - i to jest jedyny mechanizm, który
   o tym pilnuje.
 - Sekcja na landingu, która ma odpowiednik-podstronę, kończy się linkiem do niej. Nie duplikujemy
   treści: landing mówi „co i od ile”, podstrona mówi „jak dokładnie i dlaczego”.
@@ -121,15 +121,15 @@ Pełna decyzja: [ADR-0006](decisions/0006-landing-plus-detail-pages.md). Minimum
 Pełna decyzja: [ADR-0003](decisions/0003-i18n-routing-and-dictionaries.md). Minimum:
 
 - Każdy route żyje pod `src/app/[locale]/`. Wszystkie locale są prerenderowane statycznie.
-- **Server Component bierze treść przez `getDictionary()` z `@/i18n/server`** — bez przekazywania
+- **Server Component bierze treść przez `getDictionary()` z `@/i18n/server`** - bez przekazywania
   `locale` przez propsy.
 - **Komponent kliencki dostaje teksty jako propsy.** `next/root-params` w nim nie działa.
 - `@/i18n/dictionaries` jest wolny od importów z Next i może być użyty na kliencie.
-  `@/i18n/server` importuje `next/root-params` — import tego modułu z komponentu klienckiego
+  `@/i18n/server` importuje `next/root-params` - import tego modułu z komponentu klienckiego
   **wysadza build**, nawet jeśli funkcja nie zostanie wywołana.
 - Słownik języka głównego definiuje kształt (`type Dictionary = typeof pl`), pozostałe są nim
   typowane. Brakujący klucz to błąd kompilacji.
-- Projekt jednojęzyczny zostaje przy tej samej strukturze z jednym locale — to nie jest koszt,
+- Projekt jednojęzyczny zostaje przy tej samej strukturze z jednym locale - to nie jest koszt,
   a dodanie drugiego języka później jest wtedy zmianą danych, nie architektury.
 
 ## Dane
@@ -137,10 +137,10 @@ Pełna decyzja: [ADR-0003](decisions/0003-i18n-routing-and-dictionaries.md). Min
 `src/data/` trzyma **tylko to, co jest niezależne od języka**: ceny, ścieżki do zdjęć, slugi,
 proporcje kadrów, zakresy parallaxu, kolejność, trasy. Wszystkie słowa są w słownikach.
 
-- `site.ts` — fakty o firmie: nazwa, adres, telefon, godziny, social. Jedno źródło prawdy dla
+- `site.ts` - fakty o firmie: nazwa, adres, telefon, godziny, social. Jedno źródło prawdy dla
   stopki, sekcji kontaktu, metadanych i JSON-LD.
-- `navigation.ts` — kotwice sekcji (`SECTION_IDS`) i kolejność menu.
-- `routes.ts` — trasy strony. Podstawa nawigacji i sitemapy.
+- `navigation.ts` - kotwice sekcji (`SECTION_IDS`) i kolejność menu.
+- `routes.ts` - trasy strony. Podstawa nawigacji i sitemapy.
 
 Zasady:
 
@@ -151,7 +151,7 @@ Zasady:
 - Klucze łączące dane ze słownikiem (np. slug usługi → jej opis) muszą mieć **test parzystości**
   w obie strony. TypeScript sam tego nie złapie, jeżeli klucz jest zwykłym stringiem.
 
-## Formularz — przepływ
+## Formularz - przepływ
 
 ```
 ContactForm (client)
@@ -187,6 +187,6 @@ Zasady bezpieczeństwa:
 | Typ / union     | `PascalCase`              | `ContactFormState`, `ButtonVariant` |
 | Test            | `*.test.ts(x)` obok pliku | `button.test.tsx`                   |
 
-Kod, identyfikatory i komentarze — **po angielsku**.
-Treść widoczna dla użytkownika — w słownikach, nigdy w komponencie
+Kod, identyfikatory i komentarze - **po angielsku**.
+Treść widoczna dla użytkownika - w słownikach, nigdy w komponencie
 (patrz [09-content-and-copy.md](09-content-and-copy.md)).

@@ -12,7 +12,7 @@ import { formatOrdinal } from '@/lib/utils/format'
 
 /**
  * The three offer pillars as full-width records: number, name, description, CTA, separated
- * by hairlines. Explicitly **not** three cards with icons — that shape is the SaaS feature
+ * by hairlines. Explicitly **not** three cards with icons - that shape is the SaaS feature
  * grid the direction is defined against (.agents/01-brand-and-design.md).
  *
  * Phase 04 turns each row into a drawer with scope, budget and examples. Until then the

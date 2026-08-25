@@ -21,14 +21,14 @@ const schema = createContactSchema(messages)
 const valid = {
   projectType: 'website',
   stage: 'idea',
-  budget: '10-20k',
+  budget: '2000-5000',
   message: 'Potrzebujemy nowej strony dla biura architektonicznego.',
   name: 'Anna Kowalska',
   email: 'anna@example.com',
   consent: true,
 }
 
-describe('contact schema — happy path', () => {
+describe('contact schema - happy path', () => {
   it('accepts a complete submission', () => {
     expect(schema.safeParse(valid).success).toBe(true)
   })
@@ -37,7 +37,7 @@ describe('contact schema — happy path', () => {
     expect(schema.parse({ ...valid, name: '  Anna  ' }).name).toBe('Anna')
   })
 
-  /** The phone is optional here — email is the reply channel (ADR-0010). */
+  /** The phone is optional here - email is the reply channel (ADR-0010). */
   it('accepts a submission without a phone', () => {
     expect(schema.safeParse({ ...valid, phone: undefined }).success).toBe(true)
   })
@@ -48,7 +48,7 @@ describe('contact schema — happy path', () => {
   })
 })
 
-describe('contact schema — phone', () => {
+describe('contact schema - phone', () => {
   it.each(['601234567', '+48601234567', '48 601-234-567', '601 234 567'])('accepts %s', (phone) => {
     expect(schema.safeParse({ ...valid, phone }).success).toBe(true)
   })
@@ -58,7 +58,7 @@ describe('contact schema — phone', () => {
   })
 })
 
-describe('contact schema — the three qualifying answers', () => {
+describe('contact schema - the three qualifying answers', () => {
   /**
    * The whole point of the form is that these three are answered. An unanswered choice
    * has to produce our own message, not Zod's default enum complaint.
@@ -84,7 +84,7 @@ describe('contact schema — the three qualifying answers', () => {
   })
 })
 
-describe('contact schema — required fields', () => {
+describe('contact schema - required fields', () => {
   it('requires an email', () => {
     expect(schema.safeParse({ ...valid, email: '' }).success).toBe(false)
   })

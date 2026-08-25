@@ -6,7 +6,7 @@ import { join } from 'node:path'
  *
  * Server-only, and used by one page: /system renders the palette and computes every
  * contrast ratio from *these* values. Parsing the stylesheet instead of restating the
- * hexes in TypeScript is the whole point — a second copy of the palette would drift,
+ * hexes in TypeScript is the whole point - a second copy of the palette would drift,
  * and the contrast table would then certify colours nobody ships.
  *
  * The read happens when /system is prerendered, so it costs nothing at runtime.

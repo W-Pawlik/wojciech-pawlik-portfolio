@@ -1,6 +1,6 @@
 /**
- * Indicative investment brackets. Numbers here, formatting in `formatPrice*`, words in
- * the dictionaries under `pricing.rows` — a price written into copy cannot be formatted
+ * Indicative price brackets. Numbers here, formatting in `formatPrice*`, words in
+ * the dictionaries under `pricing.rows` - a price written into copy cannot be formatted
  * per locale, and a price written into a component cannot be audited.
  *
  * These are **orientation**, not a quote: their whole job is answering "are we in the

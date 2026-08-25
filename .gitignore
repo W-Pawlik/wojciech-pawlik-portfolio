@@ -25,7 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files — real values never, the template always
+# env files - real values never, the template always
 .env*
 !.env.example
 

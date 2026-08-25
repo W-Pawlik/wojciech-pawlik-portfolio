@@ -54,9 +54,6 @@ export async function SelectedWorkSection({
               >
                 <div className="col-span-12 flex items-baseline justify-between lg:col-span-1 lg:block lg:self-stretch">
                   <span className="font-display text-numeric text-content-ghost">{number}</span>
-                  <span className="font-mono text-meta text-content-tertiary lg:mt-4 lg:block">
-                    {dict.work.projectLabel}
-                  </span>
                 </div>
 
                 <div
@@ -69,7 +66,7 @@ export async function SelectedWorkSection({
                     id={project.media.id}
                     ratio={project.media.ratio}
                     src={project.media.src}
-                    alt={`${copy.title} — ${dict.work.visualization}`}
+                    alt={`${copy.title} - ${dict.work.visualization}`}
                     label={dict.work.visualization}
                     fit="contain"
                     zoomable
@@ -93,10 +90,7 @@ export async function SelectedWorkSection({
                   </p>
 
                   <div className="mt-4">
-                    <p className="font-mono text-meta text-content-tertiary uppercase">
-                      {dict.work.projectLabel} {number} / {copy.title}
-                    </p>
-                    <h3 className="mt-3 font-display text-display-project">{copy.title}</h3>
+                    <h3 className="font-display text-display-project">{copy.title}</h3>
                     <p className="mt-4 max-w-[26rem] text-body text-content-secondary">
                       {copy.description}
                     </p>

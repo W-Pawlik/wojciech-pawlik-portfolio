@@ -4,10 +4,10 @@ import { DURATION, EASE, REVEAL_DISTANCE, STAGGER } from './tokens'
 
 /**
  * Reusable Motion variants for the cases CSS cannot cover: exit animations, layout,
- * multi-step flows. Base reveals are in CSS — see ADR-0009 before reaching for these.
+ * multi-step flows. Base reveals are in CSS - see ADR-0009 before reaching for these.
  *
  * Every factory takes a `reduceMotion` flag: when true it returns an opacity-only
- * variant, never a transform. Components pass the value from useReducedMotion() —
+ * variant, never a transform. Components pass the value from useReducedMotion() -
  * see .agents/05-animation-system.md.
  */
 

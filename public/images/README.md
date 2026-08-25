@@ -13,6 +13,6 @@ Zasady:
 - Oryginały (pełna rozdzielczość z sesji) trzymamy **poza repo**. Skrypt jest lossy.
 - Prawa do zdjęć: jeżeli którekolwiek zdjęcie pochodzi ze źródła wymagającego atrybucji,
   dopisz je do `CREDITS.json` w tym katalogu.
-- `og-default.jpg` — 1200 × 630, obraz Open Graph. Bez niego metadane nie deklarują obrazu
+- `og-default.jpg` - 1200 × 630, obraz Open Graph. Bez niego metadane nie deklarują obrazu
   (lepiej brak niż zepsuty link, który crawler zapamięta).
 

@@ -14,14 +14,11 @@ import { withLocale } from '@/i18n/config'
 export async function AboutPage() {
   const dict = await getDictionary()
   const locale = await getLocale()
+  const codebros = dict.about.codebros
 
   return (
     <>
-      <PageHeader
-        label={dict.about.label}
-        headlineLines={dict.about.pageHeadline}
-        intro={dict.about.pageIntro}
-      />
+      <PageHeader headlineLines={dict.about.pageHeadline} intro={dict.about.pageIntro} />
 
       <Section spacing="large">
         <Container>
@@ -61,58 +58,74 @@ export async function AboutPage() {
       <Section spacing="large" tone="invert">
         <Container>
           <div className="grid grid-cols-12 gap-grid">
-            <div className="col-span-12 lg:col-span-7">
+            <div className="col-span-12 lg:col-span-5">
               <SectionLabel tone="invert" className="mb-7">
-                {dict.codebros.label}
+                {codebros.label}
               </SectionLabel>
-              <Headline lines={dict.codebros.headline} className="text-content-invert" />
+              <Headline lines={codebros.headline} className="text-content-invert" />
             </div>
             <div className="col-span-12 self-end lg:col-span-5 lg:col-start-8">
-              <p className="text-body text-content-invert-secondary">{dict.codebros.body}</p>
-              <p className="mt-6 font-mono text-label text-accent uppercase">
-                {dict.codebros.claim}
-              </p>
+              <p className="text-body text-content-invert-secondary">{codebros.intro}</p>
             </div>
           </div>
 
           <div className="mt-20 grid grid-cols-12 gap-grid">
-            <div className="col-span-12 lg:col-span-7">
+            <div className="col-span-12 lg:col-span-2">
+              <MediaSlot
+                id="IMG-04"
+                ratio="5 / 6"
+                src="/images/Michal_Pawlik.jfif"
+                alt={codebros.mediaAlt}
+                label={codebros.mediaPending}
+                tone="invert"
+              />
+            </div>
+            <div className="col-span-12 mt-10 lg:col-span-6 lg:col-start-4 lg:mt-0">
+              <p className="font-mono text-meta text-content-invert-tertiary uppercase">
+                {codebros.personLabel}
+              </p>
+              <h2 className="mt-4 font-display text-display-card text-content-invert">
+                {codebros.personTitle}
+              </h2>
+              <p className="mt-4 text-body-sm text-content-invert-secondary">
+                {codebros.personBody}
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-24 grid grid-cols-12 gap-grid">
+            <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:row-start-1">
               <MediaSlot
                 id="IMG-03"
                 ratio="16 / 9"
                 src="/images/zdjecie_CodeBros_konkurs.jpg"
-                alt={dict.codebros.mediaAlt}
-                label={dict.codebros.mediaPending}
+                alt={codebros.teamMediaAlt}
+                label={codebros.teamMediaPending}
                 tone="invert"
               />
             </div>
-            <div className="col-span-12 mt-10 lg:col-span-4 lg:col-start-9 lg:mt-0">
-              <p className="font-mono text-meta text-content-invert-tertiary uppercase">
-                {dict.codebros.proofTitle}
-              </p>
-              <ul className="mt-6">
-                {(['planik', 'creditRisk'] as const).map((key) => (
-                  <li key={key} className="border-t border-line-invert py-6 last:pb-0">
-                    <h3 className="font-display text-display-card text-content-invert">
-                      {dict.codebros.proofs[key].title}
-                    </h3>
-                    <p className="mt-3 text-body-sm text-content-invert-secondary">
-                      {dict.codebros.proofs[key].body}
-                    </p>
-                    <TextLink
-                      href={withLocale(
-                        `${ROUTES.work}/${key === 'creditRisk' ? 'credit-risk-system' : key}`,
-                        locale,
-                      )}
-                      tone="invert"
-                      accent
-                      className="mt-5"
-                    >
-                      {dict.work.caseStudyCta}
-                    </TextLink>
+            <div className="col-span-12 mt-10 lg:col-span-4 lg:col-start-1 lg:row-start-1 lg:mt-0">
+              <h2 className="font-display text-display-project text-content-invert">
+                {codebros.benefitsTitle}
+              </h2>
+              <ul className="mt-5">
+                {codebros.benefits.map((benefit) => (
+                  <li
+                    key={benefit}
+                    className="border-b border-line-invert py-4 text-body-sm text-content-invert-secondary first:border-t"
+                  >
+                    {benefit}
                   </li>
                 ))}
               </ul>
+              <TextLink
+                href={withLocale(ROUTES.work, locale)}
+                tone="invert"
+                accent
+                className="mt-8"
+              >
+                {codebros.projectsCta}
+              </TextLink>
             </div>
           </div>
         </Container>

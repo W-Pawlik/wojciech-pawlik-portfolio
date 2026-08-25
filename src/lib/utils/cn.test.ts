@@ -28,7 +28,7 @@ describe('cn', () => {
     expect(cn('text-content', 'text-content-secondary')).toBe('text-content-secondary')
   })
 
-  /** `accent-strong` is the AA-on-light variant of the accent — a colour, not a size. */
+  /** `accent-strong` is the AA-on-light variant of the accent - a colour, not a size. */
   it('treats accent-strong as a text colour, not a font size', () => {
     expect(cn('text-body-sm', 'text-accent-strong')).toBe('text-body-sm text-accent-strong')
     expect(cn('text-accent', 'text-accent-strong')).toBe('text-accent-strong')

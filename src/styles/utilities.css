@@ -1,5 +1,5 @@
 /**
- * Custom utilities — only for things Tailwind cannot already express.
+ * Custom utilities - only for things Tailwind cannot already express.
  * Before adding one, check that a composition of existing utilities or a UI
  * primitive in src/components/ui would not be the better home.
  */
@@ -21,7 +21,7 @@
 }
 
 /**
- * BUILD TRACE — the signature element. A hairline that draws itself once the section
+ * BUILD TRACE - the signature element. A hairline that draws itself once the section
  * comes into view: the construction line of a technical drawing, not a decoration.
  * Toggled by the same IntersectionObserver as the reveals (ADR-0009).
  */
@@ -93,7 +93,7 @@
 
 /**
  * Hero entrance. Pure CSS and no JavaScript at all, so the first screen paints with
- * the page instead of waiting for hydration — the hero is the one place where that
+ * the page instead of waiting for hydration - the hero is the one place where that
  * delay is unmissable. Stagger comes from delay steps, not from a timeline.
  *
  * `both` fill mode keeps the from-state before the delay elapses, so nothing flashes.
@@ -214,7 +214,7 @@
 /**
  * Reduced motion: everything above collapses to "already there". The global block in
  * base.css shortens durations, but an animation that starts from `opacity: 0` still has
- * to be told to skip its from-state — otherwise the content never appears.
+ * to be told to skip its from-state - otherwise the content never appears.
  */
 @media (prefers-reduced-motion: reduce) {
   .reveal-hidden,

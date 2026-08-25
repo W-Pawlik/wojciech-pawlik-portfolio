@@ -12,11 +12,7 @@ export async function ContactPage() {
 
   return (
     <>
-      <PageHeader
-        label={dict.contact.label}
-        headlineLines={dict.contact.pageHeadline}
-        intro={dict.contact.pageIntro}
-      />
+      <PageHeader headlineLines={dict.contact.pageHeadline} intro={dict.contact.pageIntro} />
       <Section spacing="large" className="bg-canvas-subtle">
         <Container>
           <div className="grid grid-cols-12 gap-grid">

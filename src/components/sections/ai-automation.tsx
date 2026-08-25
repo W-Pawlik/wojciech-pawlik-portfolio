@@ -6,7 +6,7 @@ import { getDictionary } from '@/i18n/server'
 
 /**
  * AI as a service with a job to do, not as a trend. The section leads with the process,
- * not with the technology — the opening question is "what eats your team's time?".
+ * not with the technology - the opening question is "what eats your team's time?".
  *
  * The flow is five mono labels separated by arrows: a diagram made of type. No brain, no
  * robot, no gradient (.agents/01-brand-and-design.md#zakazane-typy-zdjęć).

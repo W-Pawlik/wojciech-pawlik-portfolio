@@ -1,4 +1,4 @@
-# ADR-0004 — Scroll natywny, bez biblioteki smooth-scroll
+# ADR-0004 - Scroll natywny, bez biblioteki smooth-scroll
 
 - **Status:** Accepted
 - **Data:** 2026-01-01
@@ -13,7 +13,7 @@ Konsekwencje są znane: rozjazd z natywnym scrollem na trackpadzie i na telefoni
 `scrollerProxy` dla ScrollTriggera, problemy z `position: sticky`, z kotwicami, z focusem
 klawiatury i z przywracaniem pozycji przy powrocie „wstecz”.
 
-Osobno: `scroll-behavior: smooth` w CSS jest darmowe, ale nie daje kontroli nad czasem — skok
+Osobno: `scroll-behavior: smooth` w CSS jest darmowe, ale nie daje kontroli nad czasem - skok
 z hero na dół strony animuje się ponad sekundę i czyta się jak zawieszenie.
 
 ## Decyzja

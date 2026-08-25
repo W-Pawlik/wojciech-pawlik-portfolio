@@ -11,7 +11,7 @@ const eslintConfig = defineConfig([
   {
     name: 'site/rules',
     rules: {
-      // Unused code is a review smell, not a runtime problem — keep it out of the tree.
+      // Unused code is a review smell, not a runtime problem - keep it out of the tree.
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
@@ -37,11 +37,11 @@ const eslintConfig = defineConfig([
           paths: [
             {
               name: 'framer-motion',
-              message: "Use 'motion/react' — see .agents/05-animation-system.md.",
+              message: "Use 'motion/react' - see .agents/05-animation-system.md.",
             },
             {
               name: 'gsap',
-              message: 'Load GSAP through loadGsap() from @/lib/motion/gsap — see ADR-0005.',
+              message: 'Load GSAP through loadGsap() from @/lib/motion/gsap - see ADR-0005.',
             },
           ],
           patterns: [

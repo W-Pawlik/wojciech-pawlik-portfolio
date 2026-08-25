@@ -17,7 +17,7 @@ export const MEDIA_QUERY = {
 /**
  * SSR-safe media query subscription. Server render and first client render both
  * report `false`, so a query must never be the only thing that makes content
- * appear — treat it as progressive enhancement.
+ * appear - treat it as progressive enhancement.
  */
 export function useMediaQuery(query: string): boolean {
   const subscribe = useCallback(
@@ -34,12 +34,12 @@ export function useMediaQuery(query: string): boolean {
   return useSyncExternalStore(subscribe, getSnapshot, () => false)
 }
 
-/** Desktop viewport — the only place heavier scroll choreography is enabled. */
+/** Desktop viewport - the only place heavier scroll choreography is enabled. */
 export function useIsDesktop(): boolean {
   return useMediaQuery(MEDIA_QUERY.DESKTOP)
 }
 
-/** Real pointer available — required before wiring any hover-only interaction. */
+/** Real pointer available - required before wiring any hover-only interaction. */
 export function useHasFinePointer(): boolean {
   return useMediaQuery(MEDIA_QUERY.FINE_POINTER)
 }

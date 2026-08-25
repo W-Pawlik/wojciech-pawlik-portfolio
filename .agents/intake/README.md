@@ -1,4 +1,4 @@
-# intake — dokumenty wejściowe
+# intake - dokumenty wejściowe
 
 To **wejście** procesu, nie dokumentacja projektu. Trzy formularze do wypełnienia przez właściciela
 repo (albo przez klienta z jego pomocą) **przed** etapem 1 [bootstrapu](../11-bootstrap.md).
@@ -15,14 +15,14 @@ repo (albo przez klienta z jego pomocą) **przed** etapem 1 [bootstrapu](../11-b
 2. Pole, którego klient nie zna, zostaw **puste** i oznacz `BRAK`. Puste pole to informacja;
    wypełnione domysłem to cicha awaria.
 3. Agent AI przenosi treść do dokumentów projektu (`00`, `01`, `10`) i do `src/data/site.ts`.
-   Dokumenty projektu są od tej chwili źródłem prawdy — te formularze zostają jako archiwum.
+   Dokumenty projektu są od tej chwili źródłem prawdy - te formularze zostają jako archiwum.
 4. Każde `BRAK` musi trafić na listę „Czego brakuje” w
    [00-project-brief.md](../00-project-brief.md#czego-brakuje--pytania-do-właściciela)
    i zablokować konkretną sekcję.
 
 ## Czego te formularze nie zastąpią
 
-- Rozmowy. Formularz zbiera fakty, nie intencje — jedno pytanie „dlaczego tak?” bywa ważniejsze
+- Rozmowy. Formularz zbiera fakty, nie intencje - jedno pytanie „dlaczego tak?” bywa ważniejsze
   niż cała tabela.
 - Sesji zdjęciowej. Fotografia to zwykle połowa efektu wizualnego i nie da się jej wypełnić
   tekstem.

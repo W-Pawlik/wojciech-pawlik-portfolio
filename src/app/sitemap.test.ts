@@ -33,7 +33,7 @@ describe('sitemap', () => {
 
   /**
    * The internal design-system page is excluded from the index by metadata. It must not
-   * be advertised here — a sitemap entry is an invitation to crawl.
+   * be advertised here - a sitemap entry is an invitation to crawl.
    */
   it('never advertises the internal system page', () => {
     const internalPaths = locales.map((locale) => withLocale(ROUTES.system, locale))

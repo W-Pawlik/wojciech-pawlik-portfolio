@@ -22,7 +22,7 @@ type ContactFormProps = {
   locale: Locale
   /** Copy is passed in: a client component cannot call getDictionary(). */
   copy: Dictionary['contact']
-  /** `common.optional` — the form is the only place that needs it. */
+  /** `common.optional` - the form is the only place that needs it. */
   optionalLabel: string
   /**
    * Preselected project type, for a visitor who arrived from a service row. Wiring the
@@ -36,7 +36,7 @@ type ContactFormProps = {
  *
  * It submits through a Server Action with `useActionState`, so it works before hydration
  * (a plain form POST) and re-validates everything on the server regardless of what the
- * browser checked — see .agents/03-architecture.md.
+ * browser checked - see .agents/03-architecture.md.
  *
  * The order of the questions is the point: three quick choices, then the description, then
  * the contact details. Asking for a name first is what makes a contact form feel like
@@ -161,7 +161,7 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
       </div>
 
       {/* Honeypot: no human fills this in. Hidden from assistive technology and from the
-          tab order, so it costs a real visitor nothing — unlike a captcha (ADR-0007).
+          tab order, so it costs a real visitor nothing - unlike a captcha (ADR-0007).
           `sr-only` would still expose it to a screen reader, hence the inline offset. */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor={HONEYPOT_FIELD}>Company</label>
@@ -181,7 +181,7 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
       </p>
 
       {/* Delivery failed rather than validation: nothing is wrong with what the visitor
-          typed, so no field is highlighted — they get a retry and another route instead. */}
+          typed, so no field is highlighted - they get a retry and another route instead. */}
       {state.status === 'error' && !fieldErrors && (
         <p role="alert" className="mb-4 text-body-sm text-danger">
           {copy.errorTitle} {copy.errorBody}

@@ -19,7 +19,7 @@ type TextLinkProps = ComponentPropsWithoutRef<typeof Link> & {
  * asks for one primary button per view, not five.
  *
  * The underline is a pseudo-element on the label rather than `text-decoration`, so it
- * animates from the left instead of appearing all at once — and the arrow moves with the
+ * animates from the left instead of appearing all at once - and the arrow moves with the
  * same hover, so it reads as one gesture.
  */
 export function TextLink({

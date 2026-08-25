@@ -8,7 +8,7 @@ import { pl } from './dictionaries/pl'
  * build rather than shipping an untranslated string.
  *
  * This module is deliberately free of Next.js imports so Client Components can use it.
- * The locale-aware helpers live in `./server`, which is server-only — a module-level
+ * The locale-aware helpers live in `./server`, which is server-only - a module-level
  * `next/root-params` import here would poison every client bundle that touches copy.
  */
 export type Dictionary = typeof pl

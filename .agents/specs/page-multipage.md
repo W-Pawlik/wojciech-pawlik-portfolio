@@ -1,4 +1,4 @@
-# Podstrony — wspólny system multipage
+# Podstrony - wspólny system multipage
 
 - **Funkcja w lejku:** szczegół i kwalifikacja po wejściu z landingu lub wyszukiwarki
 - **Funkcja sprzedażowa:** każda trasa wyjaśnia jedną intencję bez kopiowania sekcji strony głównej

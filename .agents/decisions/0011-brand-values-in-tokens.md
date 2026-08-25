@@ -1,4 +1,4 @@
-# ADR-0011 — Wartości brandowe w tokenach (Editorial Engineering)
+# ADR-0011 - Wartości brandowe w tokenach (Editorial Engineering)
 
 - **Status:** Accepted
 - **Data:** 2026-08-21
@@ -10,14 +10,15 @@ bootstrapu wymaga wpisania realnych wartości i zamknięcia dyskusji o wyglądzi
 zapisem.
 
 Wejściem jest [`intake/01-design-direction-input.md`](../intake/01-design-direction-input.md)
-— kierunek **Editorial Engineering** z pełną paletą, skalą typograficzną, siatką, systemem
-promieni, regułami UI, fotografii i motion.
+
+- kierunek **Editorial Engineering** z pełną paletą, skalą typograficzną, siatką, systemem
+  promieni, regułami UI, fotografii i motion.
 
 Dokument wejściowy jest precyzyjny, ale powstał jako art direction, nie jako zestaw tokenów
 przechodzących WCAG. Trzy jego wartości nie mają wymaganego kontrastu na zadeklarowanych
 powierzchniach, a jedna reguła (granica pola formularza) jest poniżej progu dla elementów
 UI. Templatka wymaga AA dla wszystkiego, co jest czytane, i liczy to na `/system` z samych
-tokenów — więc rozjazd trzeba było rozstrzygnąć, nie przemilczeć.
+tokenów - więc rozjazd trzeba było rozstrzygnąć, nie przemilczeć.
 
 ## Decyzja
 
@@ -34,7 +35,7 @@ tokenów — więc rozjazd trzeba było rozstrzygnąć, nie przemilczeć.
    - `content-secondary` = `#616259` zamiast `#696A64`. Wartość z dokumentu daje 4,34:1 na
      `canvas-subtle`, czyli proza na drugiej powierzchni byłaby poniżej AA.
    - `content-tertiary` = `#6a6b64`, a `#93938C` z dokumentu przesunięte do
-     `content-ghost`. `#93938C` ma 2,72:1 na canvasie — to nie jest kolor, którym można
+     `content-ghost`. `#93938C` ma 2,72:1 na canvasie - to nie jest kolor, którym można
      ustawić 11-pikselową metadaną. Konsekwencja dla BUILD TRACE: **etykieta, która coś
      znaczy, jest `content-tertiary`; wyłącznie graficzny marker może być
      `content-ghost`.** Palety nie da się rozciągnąć na trzy czytelne stopnie na jasnym
@@ -46,22 +47,22 @@ tokenów — więc rozjazd trzeba było rozstrzygnąć, nie przemilczeć.
      została rozdzielona: `accent` to wypełnienia, markery i tekst **na ciemnym**
      (6,06:1), `accent-strong` to akcent jako tekst/link/podkreślenie na jasnym (5,45:1).
      Z tego samego powodu `accent-contrast` jest **ciemny** (`#11120f`, 6,06:1 na
-     akcencie) — jasny tekst na Signal Orange daje 2,73:1.
+     akcencie) - jasny tekst na Signal Orange daje 2,73:1.
    - **Nowy token `line-control` = `#85827a`.** Border pola formularza jest jedyną
      informacją o tym, że to kontrolka, więc musi mieć 3:1 (WCAG 1.4.11); brandowa
      hairline ma 1,34:1 i zostaje przy roli dekoracyjnej. Border secondary buttona
-     pozostaje `line-strong` (`#b9b6ad`) — tam identyfikację nosi etykieta tekstowa.
+     pozostaje `line-strong` (`#b9b6ad`) - tam identyfikację nosi etykieta tekstowa.
 5. **Focus ring = `accent-hover`.** To jedyna wartość z rodziny akcentu, która ma ≥3:1
    jednocześnie na ciepłym canvasie (3,33:1) i w trybie ciemnym (4,95:1), a ring musi być
    widoczny również w sekcji CodeBros.
 6. **`danger` = `#8e1f2f`** (ciemne wino), świadomie poza paletą marki: przy pomarańczowym
    akcencie czerwony komunikat błędu czytałby się jak CTA.
 7. **Trzy tokeny wyprowadzone**, bo dokument definiuje mniej stopni niż wymaga struktura
-   templatki: `canvas-deep` `#e5e1d7` (trzecia powierzchnia — na tyle jasna, że proza
+   templatki: `canvas-deep` `#e5e1d7` (trzecia powierzchnia - na tyle jasna, że proza
    nadal ma AA), `line-invert-strong` `#45463f`, `content-invert-tertiary` `#8a8b83`.
    Powierzchnie `surface` / `surface-raised` to ciepłe off-white (`#f8f6f1` / `#fdfcfa`),
    nigdy czysta biel.
-8. **Tokeny odwrotnego tonu zapisujemy jako hex, nie `rgba()`** — tabela kontrastu na
+8. **Tokeny odwrotnego tonu zapisujemy jako hex, nie `rgba()`** - tabela kontrastu na
    `/system` potrafi policzyć tylko kolor, który widzi.
 9. **Nowy promień `radius-marker` (6 px)** dla małych funkcjonalnych elementów (badge,
    chip, rzadka karta): dokument dopuszcza karty maksymalnie z tym promieniem, a rola
@@ -73,7 +74,7 @@ tokenów — więc rozjazd trzeba było rozstrzygnąć, nie przemilczeć.
 11. **BUILD TRACE wchodzi jako utility**, nie jako komponent: `trace-rule`
     i `trace-rule-shown` w `utilities.css` (linia rysuje się `scaleX(0 → 1)`, raz),
     z gałęzią `prefers-reduced-motion`.
-12. **Primary button jest ciemny, nie pomarańczowy** — akcent pojawia się na hover. Cały
+12. **Primary button jest ciemny, nie pomarańczowy** - akcent pojawia się na hover. Cały
     przycisk w Signal Orange zużyłby budżet akcentu (5–8% powierzchni) w jednym miejscu.
 13. **Favicon rysuje przecięcie BUILD TRACE**, nie monogram. Logo pozostaje `TODO(brand)`;
     do tego czasu obowiązuje lockup typograficzny opisany w
@@ -90,10 +91,10 @@ tokenów — więc rozjazd trzeba było rozstrzygnąć, nie przemilczeć.
   akcent jako tekst (`accent-strong`) i akcent jako plama (`accent`). To cena wybranego
   koloru.
 - Paleta ma tylko dwa czytelne stopnie szarości na jasnym tle. Hierarchia musi więc
-  wynikać ze **skali i przestrzeni**, nie z kolejnych odcieni tekstu — co zresztą zgadza
+  wynikać ze **skali i przestrzeni**, nie z kolejnych odcieni tekstu - co zresztą zgadza
   się z kierunkiem.
 - Zmiana bazowego koloru tła wymaga zmiany w czterech miejscach naraz (`--color-canvas`,
-  `viewport.themeColor`, `manifest`, `--navbar-scrolled-surface`) — jest to zapisane
+  `viewport.themeColor`, `manifest`, `--navbar-scrolled-surface`) - jest to zapisane
   w komentarzach obu plików.
 - Fotografia pozostaje najsłabszym ogniwem: system jest gotowy, zdjęć nie ma. Sekcje
   zależne od zdjęć są zablokowane w briefie, a nie wypełniane stockiem.
@@ -109,7 +110,7 @@ tokenów — więc rozjazd trzeba było rozstrzygnąć, nie przemilczeć.
 - **Zmienić akcent na ciemniejszy pomarańcz w całym systemie.** Odrzucone: „Signal Orange”
   ma być energiczny; przyciemnienie tylko wariantu tekstowego zachowuje charakter tam, gdzie
   akcent działa jako plama.
-- **Dodać bibliotekę ikon.** Odrzucone — językiem marki jest typografia i strzałka, a stack
+- **Dodać bibliotekę ikon.** Odrzucone - językiem marki jest typografia i strzałka, a stack
   jest zamknięty (ADR-0001).
 - **Lenis / smooth scroll do storytellingu.** Odrzucone na tym etapie (ADR-0004); wejdzie
   tylko z osobnym ADR, jeżeli konkretny scroll-driven moment naprawdę tego wymaga.

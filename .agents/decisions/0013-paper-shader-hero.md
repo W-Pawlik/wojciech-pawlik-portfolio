@@ -1,4 +1,4 @@
-# ADR-0013 — Paper Shaders jako tło hero
+# ADR-0013 - Paper Shaders jako tło hero
 
 - **Status:** Accepted
 - **Data:** 2026-08-24
@@ -17,7 +17,7 @@ Shader działa jako dwie subtelnie złożone warstwy czarno-białego mesh gradie
 a przy ograniczeniu ruchu zatrzymuje animację przez `speed={0}`.
 
 Nie instalujemy `framer-motion`, `lucide-react`, `@radix-ui/react-slot` ani drugiej
-implementacji Buttona, ponieważ należą do nieużywanej, przykładowej treści hero — projekt
+implementacji Buttona, ponieważ należą do nieużywanej, przykładowej treści hero - projekt
 ma już własny Button i własną bibliotekę Motion.
 
 ## Konsekwencje
