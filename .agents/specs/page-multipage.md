@@ -27,7 +27,7 @@ Trasa `/pricing` używa pełnej hierarchii informacji:
 5. **Po wdrożeniu** - własność projektu i opcjonalne utrzymanie są pokazane dopiero pod
    główną ofertą.
 
-Promocja z okazji rozpoczęcia działalności na Ceneo jest osobnym komunikatem nad ofertą.
+Promocja z okazji rozpoczęcia działalności na Oferteo jest osobnym komunikatem nad ofertą.
 Obejmuje 3 pierwszych klientów, zaczyna wycenę od 900 zł i pokazuje licznik wykorzystanych
 miejsc. Licznik jest aktualizowany w `src/data/pricing.ts`.
 

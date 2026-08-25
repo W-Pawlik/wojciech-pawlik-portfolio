@@ -1,30 +1,13 @@
 /**
- * The seven steps of working together, and the three principles behind them.
+ * The four customer-facing stages of working together, and the three principles behind them.
  *
  * Keys only - copy is in the dictionaries under `process.steps` and `approach.principles`.
- * Both lists are rendered as editorial rows separated by hairlines, never as a row of
- * cards or a seven-card timeline (.agents/01-brand-and-design.md).
+ * The process is rendered as a connected editorial sequence, never as a row of cards.
  */
 
-export const PROCESS_STEPS = [
-  'understand',
-  'define',
-  'design',
-  'build',
-  'review',
-  'refine',
-  'launch',
-] as const
+export const PROCESS_STEPS = ['understand', 'design', 'build', 'launch'] as const
 
 export type ProcessStep = (typeof PROCESS_STEPS)[number]
-
-export const PROCESS_PHASES = [
-  { key: 'direction', steps: ['understand', 'define', 'design'] },
-  { key: 'production', steps: ['build', 'review'] },
-  { key: 'release', steps: ['refine', 'launch'] },
-] as const
-
-export type ProcessPhase = (typeof PROCESS_PHASES)[number]
 
 /** What differentiates the offer, in three lines. Shown right after the hero. */
 export const PRINCIPLES = ['businessFirst', 'customByDefault', 'builtToShip'] as const

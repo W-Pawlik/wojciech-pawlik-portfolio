@@ -594,67 +594,33 @@ export const pl = {
   },
 
   process: {
-    label: 'Proces',
-    headline: ['Najpierw decyzje.', 'Potem kod.'],
-    intro:
-      'Każdy etap kończy się konkretnym rezultatem. Dzięki temu zanim zacznę budowę, wiem już co buduję, dla kogo i dlaczego.',
-    locked: 'Decyzje zamknięte → zaczynam budowę',
-    phases: {
-      direction: {
-        label: 'Kierunek',
-        title: 'Od problemu do konkretnego kierunku.',
-        statement: 'Poznaję kontekst, wybieram priorytety i zamieniam pomysł w plan produktu.',
-        outputLabel: 'Rezultat',
-        output: 'Kierunek projektu',
-        outputDetail: 'UX / struktura / kierunek wizualny',
-      },
-      production: {
-        label: 'Budowa',
-        title: 'Kierunek zamieniam w działający produkt.',
-        statement:
-          'Zatwierdzone decyzje przechodzą w implementację, którą można realnie sprawdzić.',
-        outputLabel: 'Rezultat',
-        output: 'Działający produkt',
-        outputDetail: 'Działająca wersja do wspólnego przeglądu',
-      },
-      release: {
-        label: 'Wdrożenie',
-        title: 'Nie kończę na „już działa”.',
-        statement:
-          'Dopracowuję doświadczenie, sprawdzam szczegóły i przygotowuję produkt do wdrożenia.',
-        outputLabel: 'Rezultat',
-        output: 'Gotowe do wdrożenia',
-        outputDetail: 'Responsywność / interakcje / testy / wdrożenie',
-      },
-    },
+    label: 'Jak pracuję',
+    headline: ['Od pierwszej rozmowy', 'do wdrożenia.'],
+    intro: 'Po każdym etapie wiesz, co jest ustalone, co powstaje i jaki jest następny krok.',
     steps: {
       understand: {
-        title: 'Poznaję',
-        body: 'Poznaję biznes, klientów, ofertę i problem.',
-      },
-      define: {
-        title: 'Ustalam',
-        body: 'Ustalam zakres, cele i najważniejsze decyzje.',
+        title: 'Poznaję firmę i cel',
+        body: 'Rozmawiamy o firmie, ofercie, klientach i problemie, który projekt ma rozwiązać.',
+        outputLabel: 'Na końcu',
+        output: 'Cel i zakres projektu',
       },
       design: {
-        title: 'Projektuję',
-        body: 'Powstaje struktura, UX i kierunek wizualny.',
+        title: 'Projektuję rozwiązanie',
+        body: 'Porządkuję strukturę, ofertę, UX i kierunek wizualny. Wybieramy to, co naprawdę potrzebne.',
+        outputLabel: 'Na końcu',
+        output: 'Plan strony i kierunek projektu',
       },
       build: {
-        title: 'Buduję',
-        body: 'Dopiero wtedy rozpoczyna się implementacja.',
-      },
-      review: {
-        title: 'Sprawdzam',
-        body: 'Oglądam działający produkt i zbieram informacje zwrotne.',
-      },
-      refine: {
-        title: 'Dopracowuję',
-        body: 'Dopracowuję detale, responsywność i interakcje.',
+        title: 'Buduję i konsultuję',
+        body: 'Wdrażam projekt i pokazuję działającą wersję, żeby można było ją wspólnie sprawdzić.',
+        outputLabel: 'Na końcu',
+        output: 'Działająca wersja do przeglądu',
       },
       launch: {
-        title: 'Wdrażam',
-        body: 'Testy, wdrożenie i przekazanie projektu.',
+        title: 'Dopracowuję i wdrażam',
+        body: 'Sprawdzam responsywność, szczegóły i przygotowuję projekt do publikacji.',
+        outputLabel: 'Na końcu',
+        output: 'Gotowa strona online',
       },
     },
   },

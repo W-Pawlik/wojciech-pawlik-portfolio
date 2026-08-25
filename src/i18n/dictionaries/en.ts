@@ -585,66 +585,33 @@ export const en: Dictionary = {
   },
 
   process: {
-    label: 'Process',
-    headline: ['Decisions first.', 'Then code.'],
-    intro:
-      'Every phase ends with a concrete result. So before development starts, I know what I am building, for whom and why.',
-    locked: 'Decisions locked → build starts',
-    phases: {
-      direction: {
-        label: 'Direction',
-        title: 'From the problem to a clear direction.',
-        statement:
-          'I understand the context, choose priorities and turn the idea into a product plan.',
-        outputLabel: 'Output',
-        output: 'Project direction',
-        outputDetail: 'UX / structure / visual direction',
-      },
-      production: {
-        label: 'Production',
-        title: 'I turn the direction into a working product.',
-        statement: 'Approved decisions become an implementation that can be tested in real use.',
-        outputLabel: 'Output',
-        output: 'Working product',
-        outputDetail: 'A working version for a shared review',
-      },
-      release: {
-        label: 'Release',
-        title: 'I do not stop at “it works”.',
-        statement: 'I refine the experience, check the details and prepare the product for launch.',
-        outputLabel: 'Output',
-        output: 'Production ready',
-        outputDetail: 'Responsive / interactions / testing / deployment',
-      },
-    },
+    label: 'How I work',
+    headline: ['From the first conversation', 'to launch.'],
+    intro: 'After each stage, you know what is decided, what is being built and what comes next.',
     steps: {
       understand: {
-        title: 'Understand',
-        body: 'I get to know the business, its clients, the offer and the problem.',
-      },
-      define: {
-        title: 'Define',
-        body: 'I agree on scope, goals and the decisions that matter.',
+        title: 'I understand the business and goal',
+        body: 'We talk about the company, its offer, clients and the problem the project should solve.',
+        outputLabel: 'At the end',
+        output: 'Project goal and scope',
       },
       design: {
-        title: 'Design',
-        body: 'The structure, the UX and the visual direction take shape.',
+        title: 'I design the solution',
+        body: 'I organise the structure, offer, UX and visual direction. We choose what the project really needs.',
+        outputLabel: 'At the end',
+        output: 'Website plan and project direction',
       },
       build: {
-        title: 'Build',
-        body: 'Only then does implementation start.',
-      },
-      review: {
-        title: 'Review',
-        body: 'I look at a working product and collect feedback.',
-      },
-      refine: {
-        title: 'Refine',
-        body: 'I polish the details, the responsive layer and the interactions.',
+        title: 'I build and consult',
+        body: 'I implement the project and show a working version so we can review it together.',
+        outputLabel: 'At the end',
+        output: 'Working version for review',
       },
       launch: {
-        title: 'Launch',
-        body: 'Testing, deployment and handover.',
+        title: 'I refine and launch',
+        body: 'I check responsiveness and details, then prepare the project for publication.',
+        outputLabel: 'At the end',
+        output: 'Website ready to go live',
       },
     },
   },
