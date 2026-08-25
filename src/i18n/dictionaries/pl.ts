@@ -351,11 +351,12 @@ export const pl = {
     items: {
       websites: {
         title: 'Strony internetowe',
-        body: 'Strony wizytówkowe, firmowe i landing page’e tworzone od podstaw w kodzie, bez WordPressa i gotowych builderów. W ten sam proces mogę włączyć branding firmy, logo, kierunek wizualny i stworzenie wizytówki Google.',
+        body: 'Jednostronicowe strony dla jednej oferty lub proste wizytówki firmy, strony firmowe i rozbudowane serwisy tworzone od podstaw w kodzie, bez WordPressa i gotowych builderów. W ten sam proces mogę włączyć branding firmy, logo, kierunek wizualny i Profil Firmy w Google.',
         cta: 'Poznaj zakres',
         includes: [
+          'jednostronicowe strony',
           'strony firmowe',
-          'landing page',
+          'rozbudowane serwisy',
           'CMS',
           'integracje',
           'dedykowany interfejs',
@@ -402,15 +403,18 @@ export const pl = {
       ],
       scopeTitle: 'Co mogę dla ciebie zrobić',
       scope: [
+        'Jednostronicowa strona',
         'Strona firmowa',
-        'Landing page',
-        'Strona bez CMS albo z CMS-em',
+        'Rozbudowana strona firmowa',
+        'CMS i integracje',
         'Formularze, integracje i analityka',
         'Responsywność, animacje i interakcje',
         'Branding firmy, logo i kierunek wizualny',
         'SEO techniczne i wielojęzyczność',
         'Domena, hosting, SSL, DNS i wdrożenie',
-        'Wizytówka Google',
+        'Profil Firmy w Google',
+        'Treści na stronę - opcjonalnie, dodatkowo płatne',
+        'Zdjęcia klienta, AI lub darmowy stock',
       ],
       processTitle: 'Jak pracuję nad stroną',
       process: [
@@ -660,45 +664,110 @@ export const pl = {
     headline: ['Zacznij od zakresu,', 'nie od dużego budżetu.'],
     pageHeadline: ['Najpierw zakres.', 'Potem wycena.'],
     pageIntro:
-      'Podaję orientacyjne widełki cenowe, żeby łatwiej było ocenić dopasowanie. Ostateczna wycena zależy od problemu, zakresu i potrzebnych integracji.',
+      'Pokazuję punkty wyjścia, żeby łatwiej było ocenić dopasowanie. Nie sprzedaję gotowych pakietów - ostateczna wycena zależy od zakresu projektu.',
     minimumRateNote:
-      'Podane kwoty są najniższą stawką, od której zaczynam wycenę. Aktualna promocja z okazji rozpoczęcia działalności: pierwszych 3 klientów może otrzymać landing page wyceniony od 900 zł zamiast standardowych 1 200 zł.',
-    intro:
-      'Nie sprzedaję największego możliwego rozwiązania. Zakres, termin i cena zależą od problemu, treści, liczby podstron, integracji i potrzebnej logiki. Przy konkretnym terminie mogę zaproponować tryb priorytetowy za dodatkową opłatą, jeśli data jest realna.',
+      'Kwoty pokazują najniższą stawkę, od której zaczynam wycenę. Zakres, treść i integracje mogą ją zmienić.',
+    intro: 'Nie musisz znać właściwego wariantu. Opisz mi cel projektu - pomogę dobrać zakres.',
+    landing: {
+      label: 'Orientacyjny budżet',
+      headline: ['Od czego zaczyna się', 'strona dla firmy?'],
+      intro:
+        'Nie pokazuję gotowych pakietów. Pokazuję trzy poziomy projektu, żeby łatwiej było ocenić, od czego możemy zacząć.',
+      largerLabel: 'Większe projekty',
+      largerBody:
+        'Potrzebujesz systemu webowego, panelu dla klientów albo automatyzacji procesu? Takie projekty wyceniam indywidualnie.',
+      fullPricingCta: 'Zobacz pełny cennik',
+      contactCta: 'Opowiedz mi o projekcie',
+      rows: {
+        landing: {
+          need: 'Masz jedną usługę lub ofertę do pokazania?',
+          solution: 'Landing page albo prosta wizytówka firmy - jedna strona i jeden główny cel.',
+        },
+        businessWebsite: {
+          need: 'Chcesz jasno pokazać firmę, usługi i realizacje?',
+          solution: 'Kilka podstron, uporządkowana oferta i czytelna droga do kontaktu.',
+        },
+        extendedWebsite: {
+          need: 'Potrzebujesz większej struktury, CMS-u lub integracji?',
+          solution: 'Rozbudowana strona firmowa z większą ilością treści, funkcji i logiki.',
+        },
+      },
+    },
     /** Marks a bracket whose upper bound is soft: `15 000–30 000+ zł`. */
     plusSuffix: '+',
     quote: 'Wycena indywidualna',
+    promotion: {
+      label: 'Promocja',
+      body: 'Z okazji rozpoczęcia działalności na Oferteo dla {limit} pierwszych klientów wycena zaczyna się od {price}.',
+      counter: 'Skorzystało: {claimed} z {limit} miejsc',
+    },
+    groups: {
+      websites: {
+        label: 'Strony internetowe',
+        intro: 'Od jednej strony do rozbudowanego serwisu firmowego.',
+      },
+      largerProjects: {
+        label: 'Większe projekty',
+        intro: 'Gdy potrzebujesz narzędzia dla procesu firmy, a nie tylko strony.',
+      },
+    },
+    extensionsLabel: 'Możliwe rozszerzenia projektu',
+    extensions: [
+      'Branding i logo',
+      'Profil Firmy w Google',
+      'CMS i integracje',
+      'Analityka, SEO techniczne i wielojęzyczność',
+    ],
+    materials: {
+      label: 'Materiały do projektu',
+      contentTitle: 'Treści na stronę',
+      contentBody:
+        'Treści i fakty do strony dostarcza klient. Jeśli chcesz, mogę przygotować teksty za dodatkową opłatą ujętą w wycenie - po ustaleniu odpowiednich faktów z klientem.',
+      imagesTitle: 'Zdjęcia',
+      imagesBody:
+        'Klient dostarcza zdjęcia albo uzgadniamy wykorzystanie zdjęć wygenerowanych przez AI lub darmowych zdjęć stockowych. Nie świadczę usługi fotograficznej i nie pobieram za to dodatkowej opłaty. Jeśli wspólnie wybierzemy płatne zdjęcie stockowe, koszt jego zakupu pokrywa klient.',
+    },
     aftercareLabel: 'Po wdrożeniu',
-    aftercareTitle: 'Produkt jest Twój.',
+    aftercareTitle: 'Projekt jest Twój.',
     aftercareBody:
-      'Po zakończeniu i rozliczeniu projektu otrzymujesz stworzoną stronę, aplikację, system lub logikę. Możesz utrzymywać je samodzielnie, przekazać innej osobie albo zlecić mi dalszy rozwój.',
+      'Możesz rozwijać go samodzielnie albo zlecić mi dalsze utrzymanie i drobne aktualizacje.',
     maintenanceLabel: 'Opcjonalne utrzymanie',
-    maintenanceLimit: 'do',
+    maintenancePrefix: 'od',
     maintenancePeriod: 'miesięcznie',
     maintenanceBody:
-      'Domena, hosting, monitoring, drobne naprawy i reakcja na problemy. Maksymalny koszt to 150 zł miesięcznie.',
+      'Standardowo dla prostej strony jest to 150 zł miesięcznie. Kwota może się zmienić przy stronach wymagających większej ilości mojej pracy lub zasobów.',
+    updatesLabel: 'Opcjonalne zmiany i większe aktualizacje',
+    updatesTitle: 'Nowe sekcje i większe zmiany',
+    updatesBody:
+      'Tworzenie nowych sekcji, projektowanie sekcji od zera, większe aktualizacje i ich wdrożenie rozliczam godzinowo. Nawet mała sekcja obejmuje projekt, design, konsultację i wdrożenie, dlatego obowiązuje minimum {hours} godzina pracy.',
+    hourSuffix: 'godz.',
     aftercareNote:
-      'W cenie projektu są 3 miesiące bezpłatnych drobnych poprawek. Nie obejmują nowych podstron, funkcji, integracji, większej przebudowy ani regularnej wymiany treści. Aktualizacje treści mogę wykonywać za 70 zł za godzinę, minimum 50 zł za zlecenie.',
+      'W cenie projektu są 3 miesiące bezpłatnych drobnych poprawek. Nowe podstrony, funkcje, integracje i większe przebudowy są wyceniane osobno. Proste aktualizacje treści: 70 zł/h, minimum 50 zł za zlecenie.',
     rows: {
       landing: {
-        title: 'Landing page / prosta wizytówka',
-        body: 'Niewielka strona dopasowana do firmy. Termin może wynieść około 3 dni roboczych albo 1–2 tygodni - zależnie od zakresu.',
+        title: 'Jednostronicowa strona',
+        body: 'Landing page dla jednej oferty albo prosta wizytówka firmy. Jedna strona, jeden główny cel, formularz lub kontakt.',
+        details: ['Jedna strona', 'Jeden główny cel', 'Formularz lub kontakt'],
       },
-      websiteCms: {
-        title: 'Strona + CMS',
-        body: 'CMS headless albo dedykowany panel, gdy trzeba regularnie zarządzać treścią lub procesem firmy.',
+      businessWebsite: {
+        title: 'Strona firmowa',
+        body: 'Kilka podstron dla firmy, która chce jasno pokazać ofertę, usługi, realizacje i sposób kontaktu.',
+        details: ['Kilka podstron', 'Uporządkowana oferta', 'Kontakt i SEO techniczne'],
       },
-      advanced: {
-        title: 'Customowa strona internetowa',
-        body: 'Strona firmowa lub usługowa projektowana od podstaw. Może obejmować branding, logo, SEO, konfiguratory, rozbudowaną logikę, integracje i dodatkowe wymagania biznesowe.',
+      extendedWebsite: {
+        title: 'Rozbudowana strona firmowa',
+        body: 'Więcej treści, częste aktualizacje, CMS, integracje albo niestandardowe funkcje.',
+        details: ['CMS lub częste aktualizacje', 'Integracje', 'Dodatkowa logika'],
       },
       system: {
-        title: 'Dedykowany system / CodeBros',
-        body: 'Panel klienta, portal B2B, obieg pracy, panel operacyjny, aplikacja lub system wewnętrzny. Termin i cena indywidualnie.',
+        title: 'System webowy / CodeBros',
+        body: 'Panel klienta, portal B2B, dashboard lub system wewnętrzny. Gdy rozwiązanie ma obsługiwać proces, dane i użytkowników.',
+        details: ['Logowanie i role', 'Dane i procesy', 'Panel lub aplikacja'],
       },
       ai: {
-        title: 'Prototyp AI',
-        body: 'Najpierw analiza procesu, potem prototyp lub wdrożenie. AI tylko wtedy, gdy rozwiązuje konkretny problem.',
+        title: 'Automatyzacja procesu',
+        body: 'Analiza powtarzalnej pracy i sprawdzenie, czy można ją uprościć albo wesprzeć AI.',
+        details: ['Analiza procesu', 'Prototyp lub wdrożenie', 'AI tylko z konkretnym celem'],
       },
     },
     cta: 'Mam projekt - określmy zakres',

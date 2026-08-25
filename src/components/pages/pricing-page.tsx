@@ -1,12 +1,14 @@
 import { PageHeader } from '@/components/pages/page-header'
+import { PricingRows } from '@/components/sections/pricing-rows'
 import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
-import { AFTERCARE_OFFER, PRICING_ROWS } from '@/data/pricing'
+import { AFTERCARE_OFFER } from '@/data/pricing'
 import { ROUTES } from '@/data/routes'
 import { getDictionary, getLocale } from '@/i18n/server'
+import { interpolate } from '@/i18n/dictionaries'
 import { withLocale } from '@/i18n/config'
-import { formatPrice, formatPriceFrom, formatPriceRange } from '@/lib/utils/format'
+import { formatPrice } from '@/lib/utils/format'
 
 /** A dedicated pricing page with scope notes and after-launch options. */
 export async function PricingPage() {
@@ -21,7 +23,9 @@ export async function PricingPage() {
           <p className="mb-12 max-w-measure text-body-sm text-accent-strong">
             {dict.pricing.minimumRateNote}
           </p>
-          <div className="grid grid-cols-12 gap-grid border-y border-line py-8">
+          <PricingRows common={dict.common} copy={dict.pricing} locale={locale} />
+
+          <div className="mt-16 grid grid-cols-12 gap-grid border-y border-line py-8">
             <div className="col-span-12 lg:col-span-6">
               <p className="font-mono text-meta text-accent uppercase">
                 {dict.pricing.aftercareLabel}
@@ -38,7 +42,8 @@ export async function PricingPage() {
                 {dict.pricing.maintenanceLabel}
               </p>
               <p className="mt-2 font-display text-display-project text-accent">
-                {dict.pricing.maintenanceLimit} {formatPrice(AFTERCARE_OFFER.maintenance, locale)} /{' '}
+                {dict.pricing.maintenancePrefix}{' '}
+                {formatPrice(AFTERCARE_OFFER.maintenanceFrom, locale)} /{' '}
                 {dict.pricing.maintenancePeriod}
               </p>
               <p className="mt-3 text-body-sm text-content-secondary">
@@ -46,43 +51,25 @@ export async function PricingPage() {
               </p>
             </div>
           </div>
+          <div className="grid grid-cols-12 gap-grid border-b border-line py-6">
+            <div className="col-span-12 lg:col-span-6">
+              <p className="font-mono text-meta text-content-tertiary uppercase">
+                {dict.pricing.updatesLabel}
+              </p>
+              <h2 className="mt-3 font-display text-display-card">{dict.pricing.updatesTitle}</h2>
+              <p className="mt-3 max-w-[34rem] text-body-sm text-content-secondary">
+                {interpolate(dict.pricing.updatesBody, {
+                  hours: AFTERCARE_OFFER.updatesMinimumHours,
+                })}
+              </p>
+            </div>
+            <p className="col-span-12 mt-5 font-display text-display-project text-accent lg:col-span-5 lg:col-start-8 lg:mt-0 lg:text-right">
+              {formatPrice(AFTERCARE_OFFER.updatesHourly, locale)} / {dict.pricing.hourSuffix}
+            </p>
+          </div>
           <p className="mt-5 max-w-measure text-body-sm text-content-tertiary">
             {dict.pricing.aftercareNote}
           </p>
-
-          <ul className="mt-16 border-t border-line">
-            {PRICING_ROWS.map((row) => {
-              const copy = dict.pricing.rows[row.key]
-              const price = row.quote
-                ? dict.pricing.quote
-                : row.to === undefined
-                  ? formatPriceFrom(row.from, locale, dict.common.from)
-                  : formatPriceRange(
-                      row.from,
-                      row.to,
-                      locale,
-                      dict.common.to,
-                      row.plus ? dict.pricing.plusSuffix : '',
-                    )
-
-              return (
-                <li
-                  key={row.key}
-                  className="grid grid-cols-12 items-baseline gap-grid border-b border-line py-8"
-                >
-                  <h2 className="col-span-12 font-display text-display-card lg:col-span-5">
-                    {copy.title}
-                  </h2>
-                  <p className="col-span-12 mt-2 text-body text-content-secondary lg:col-span-4 lg:mt-0">
-                    {copy.body}
-                  </p>
-                  <p className="col-span-12 mt-3 font-display text-display-project lg:col-span-3 lg:mt-0 lg:text-right">
-                    {price}
-                  </p>
-                </li>
-              )
-            })}
-          </ul>
 
           <TextLink href={withLocale(ROUTES.contact, locale)} className="mt-12">
             {dict.pricing.cta}

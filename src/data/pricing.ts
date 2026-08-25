@@ -10,7 +10,8 @@
  */
 
 export type PricingRow = {
-  key: 'landing' | 'websiteCms' | 'advanced' | 'system' | 'ai'
+  key: 'landing' | 'businessWebsite' | 'extendedWebsite' | 'system' | 'ai'
+  group: 'websites' | 'largerProjects'
   from: number
   to?: number
   plus?: boolean
@@ -18,13 +19,23 @@ export type PricingRow = {
 }
 
 export const PRICING_ROWS: readonly PricingRow[] = [
-  { key: 'landing', from: 1200 },
-  { key: 'advanced', from: 1400 },
-  { key: 'websiteCms', from: 1400 },
-  { key: 'system', from: 0, quote: true },
-  { key: 'ai', from: 0, quote: true },
+  { key: 'landing', group: 'websites', from: 1200 },
+  { key: 'businessWebsite', group: 'websites', from: 1400 },
+  { key: 'extendedWebsite', group: 'websites', from: 1800 },
+  { key: 'system', group: 'largerProjects', from: 0, quote: true },
+  { key: 'ai', group: 'largerProjects', from: 0, quote: true },
 ]
 
+export const LANDING_PRICING_KEYS = ['landing', 'businessWebsite', 'extendedWebsite'] as const
+
 export const AFTERCARE_OFFER = {
-  maintenance: 150,
+  maintenanceFrom: 150,
+  updatesHourly: 100,
+  updatesMinimumHours: 1,
+} as const
+
+export const PROMOTION_OFFER = {
+  claimed: 0,
+  limit: 3,
+  from: 900,
 } as const

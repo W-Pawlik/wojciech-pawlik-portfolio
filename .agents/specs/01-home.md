@@ -37,18 +37,18 @@ Pusty komponent czekający na dane byłby martwym kodem.
 
 ## Layout - siatka 12 kolumn (desktop)
 
-| Sekcja        | Rozkład                                                                     |
-| ------------- | --------------------------------------------------------------------------- |
-| Hero          | H1 `1–10`, supporting + CTA `8–12`, metadata na dole pełna szerokość        |
-| Approach      | label `1–2`, H2 `3–9`, body `9–12`; principles jako pełnoszerokościowe rows |
-| Selected Work | media naprzemiennie `1–9` / `4–12`, metadata i tytuł poza osią obrazu       |
-| Services      | numer `1`, nazwa `2–5`, opis `6–10`, CTA `11–12`, border-top na każdym row  |
-| CodeBros      | H2 `1–8`, body `8–12`, proof rows pełna szerokość                           |
-| AI            | H2 `1–7`, body `8–12`, mini flow pełna szerokość, use cases jako rows       |
-| Process       | numer `1`, tytuł `2–5`, opis `6–11`                                         |
-| Pricing       | nazwa `1–6`, opis `7–9`, cena `10–12` wyrównana do prawej                   |
-| About         | obraz `1–6`, tekst `8–12`, trust metadata pod tekstem                       |
-| Final CTA     | `display-statement` - jedyne użycie tego stopnia na stronie                 |
+| Sekcja        | Rozkład                                                                                                          |
+| ------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Hero          | H1 `1–10`, supporting + CTA `8–12`, metadata na dole pełna szerokość                                             |
+| Approach      | label `1–2`, H2 `3–9`, body `9–12`; principles jako pełnoszerokościowe rows                                      |
+| Selected Work | media naprzemiennie `1–9` / `4–12`, metadata i tytuł poza osią obrazu                                            |
+| Services      | numer `1`, nazwa `2–5`, opis `6–10`, CTA `11–12`, border-top na każdym row                                       |
+| CodeBros      | H2 `1–8`, body `8–12`, proof rows pełna szerokość                                                                |
+| AI            | H2 `1–7`, body `8–12`, mini flow pełna szerokość, use cases jako rows                                            |
+| Process       | numer `1`, tytuł `2–5`, opis `6–11`                                                                              |
+| Pricing       | kompaktowe preview: promocja, potrzeba `1–2`, rozwiązanie `3–9`, cena `10–12`; CTA do kontaktu i pełnego cennika |
+| About         | obraz `1–6`, tekst `8–12`, trust metadata pod tekstem                                                            |
+| Final CTA     | `display-statement` - jedyne użycie tego stopnia na stronie                                                      |
 
 Mobile: każda sekcja komponowana od nowa (nie skalowany desktop). Rows pionowo, media
 pełna szerokość, dekoracyjne adnotacje trace znikają.

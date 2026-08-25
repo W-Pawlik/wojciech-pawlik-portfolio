@@ -342,11 +342,12 @@ export const en: Dictionary = {
     items: {
       websites: {
         title: 'Websites',
-        body: 'Brochure sites, company websites and landing pages built from scratch in code, without WordPress or ready-made builders. I can include company branding, a logo, visual direction and a Google Business Profile in the same process.',
+        body: 'One-page websites for one offer or a simple company brochure, company websites and extended sites built from scratch in code, without WordPress or ready-made builders. I can include company branding, a logo, visual direction and a Google Business Profile in the same process.',
         cta: 'See the scope',
         includes: [
+          'one-page websites',
           'company websites',
-          'landing pages',
+          'extended sites',
           'CMS',
           'integrations',
           'custom UI',
@@ -393,15 +394,18 @@ export const en: Dictionary = {
       ],
       scopeTitle: 'What I can build for you',
       scope: [
+        'One-page website',
         'Company website',
-        'Landing page',
-        'Site without CMS or with CMS',
+        'Extended company website',
+        'CMS and integrations',
         'Forms, integrations and analytics',
         'Responsive, animation and interaction',
         'Company branding, logo and visual direction',
         'Technical SEO and multiple languages',
         'Domain, hosting, SSL, DNS and deployment',
         'Google Business Profile',
+        'Website copy - optional, billed separately',
+        'Client images, AI or free stock',
       ],
       processTitle: 'How I work on a website',
       process: [
@@ -650,44 +654,109 @@ export const en: Dictionary = {
     headline: ['Start with the scope,', 'not a large budget.'],
     pageHeadline: ['Scope first.', 'Then the estimate.'],
     pageIntro:
-      'Indicative price ranges make it easier to assess fit. The final estimate depends on the problem, scope and integrations the project needs.',
+      'I show starting points so you can assess the fit. I do not sell fixed packages - the final estimate follows the project scope.',
     minimumRateNote:
-      'The amounts below are the minimum starting points for an estimate. Current opening offer: the first 3 clients can get a landing page estimated from 900 PLN instead of the standard starting point of 1,200 PLN.',
+      'These amounts are the minimum starting points I use for estimates. Scope, content and integrations can change them.',
     intro:
-      'I do not sell the largest possible solution. Scope, timing and price depend on the problem, content, number of pages, integrations and required logic. If you have a deadline, I can offer priority delivery for an additional fee when the date is realistic.',
+      'You do not need to know the right variant. Tell me what you want to achieve and I will help define the scope.',
+    landing: {
+      label: 'Indicative budget',
+      headline: ['Where does a', 'company website start?'],
+      intro:
+        'I do not show fixed packages. I show three project levels so you can see where a sensible starting point might be.',
+      largerLabel: 'Larger projects',
+      largerBody:
+        'Need a web system, a client portal or process automation? These projects are scoped individually.',
+      fullPricingCta: 'See the full pricing',
+      contactCta: 'Tell me about your project',
+      rows: {
+        landing: {
+          need: 'Do you have one offer or service to present?',
+          solution: 'A landing page or simple company brochure - one page and one main goal.',
+        },
+        businessWebsite: {
+          need: 'Do you want to clearly present your company, services and work?',
+          solution: 'Several pages, a clear offer structure and a simple path to contact.',
+        },
+        extendedWebsite: {
+          need: 'Do you need a larger structure, CMS or integrations?',
+          solution: 'An extended company website with more content, functionality and logic.',
+        },
+      },
+    },
     plusSuffix: '+',
     quote: 'Individually scoped',
+    promotion: {
+      label: 'Promotion',
+      body: 'To mark the start of my work on Oferteo, estimates start from {price} for the first {limit} clients.',
+      counter: 'Used: {claimed} of {limit} places',
+    },
+    groups: {
+      websites: {
+        label: 'Websites',
+        intro: 'From one focused page to a larger company website.',
+      },
+      largerProjects: {
+        label: 'Larger projects',
+        intro: 'When you need a tool for a business process, not just a website.',
+      },
+    },
+    extensionsLabel: 'Possible project extensions',
+    extensions: [
+      'Branding and logo',
+      'Google Business Profile',
+      'CMS and integrations',
+      'Analytics, technical SEO and multiple languages',
+    ],
+    materials: {
+      label: 'Project materials',
+      contentTitle: 'Website copy',
+      contentBody:
+        'The client provides the content and facts for the website. If you want, I can prepare the copy as an additional scope included in the estimate, after agreeing the relevant facts with you.',
+      imagesTitle: 'Images',
+      imagesBody:
+        'The client provides images, or we agree to use AI-generated images or free stock images. I do not provide photography as a service and do not charge an additional fee for this. If we agree to buy a paid stock image, the client covers its purchase cost.',
+    },
     aftercareLabel: 'After launch',
-    aftercareTitle: 'The product is yours.',
-    aftercareBody:
-      'After the project is completed and settled, you receive the website, application, system or logic created for you. You can maintain it yourself, hand it to someone else or commission further development from me.',
+    aftercareTitle: 'The project is yours.',
+    aftercareBody: 'You can develop it yourself or ask me to handle maintenance and small updates.',
     maintenanceLabel: 'Optional maintenance',
-    maintenanceLimit: 'up to',
+    maintenancePrefix: 'from',
     maintenancePeriod: 'per month',
     maintenanceBody:
-      'Domain, hosting, monitoring, small fixes and response to problems. The maximum cost is 150 PLN per month.',
+      'The standard rate for a simple website is 150 PLN per month. It can change for websites that require more of my work or resources.',
+    updatesLabel: 'Optional changes and larger updates',
+    updatesTitle: 'New sections and larger changes',
+    updatesBody:
+      'New sections, designing sections from scratch, larger updates and their implementation are billed hourly. Even a small section includes planning, design, consultation and implementation, so the minimum is {hours} hour of work.',
+    hourSuffix: 'hour',
     aftercareNote:
-      'The project includes 3 months of free small adjustments. This does not cover new pages, features, integrations, major redesigns or regular content updates. I can handle content updates for 70 PLN per hour, with a minimum order value of 50 PLN.',
+      'The project includes 3 months of free small fixes. New pages, features, integrations and larger changes are estimated separately. Simple content updates: 70 PLN/hour, 50 PLN minimum per request.',
     rows: {
       landing: {
-        title: 'Landing page / simple brochure site',
-        body: 'A small website shaped around the company. It can take around 3 working days or 1–2 weeks, depending on scope.',
+        title: 'One-page website',
+        body: 'A landing page for one offer or a simple company brochure site. One page, one main goal, form or contact.',
+        details: ['One page', 'One main goal', 'Form or contact'],
       },
-      websiteCms: {
-        title: 'Website + CMS',
-        body: 'A headless CMS or dedicated panel when content or a company process needs regular management.',
+      businessWebsite: {
+        title: 'Company website',
+        body: 'Several pages for a company that needs to clearly present its offer, services, work and contact path.',
+        details: ['Several pages', 'Clear offer structure', 'Contact and technical SEO'],
       },
-      advanced: {
-        title: 'Custom business website',
-        body: 'A company or service website designed from scratch. It can include branding, a logo, SEO, configurators, extended logic, integrations and additional business requirements.',
+      extendedWebsite: {
+        title: 'Extended company website',
+        body: 'More content, frequent updates, a CMS, integrations or custom functionality.',
+        details: ['CMS or frequent updates', 'Integrations', 'Additional logic'],
       },
       system: {
-        title: 'Custom system / CodeBros',
-        body: 'A client portal, B2B portal, workflow, dashboard, application or internal system. Timing and price are individual.',
+        title: 'Web system / CodeBros',
+        body: 'A client portal, B2B portal, dashboard or internal system. When the solution needs to handle processes, data and users.',
+        details: ['Login and roles', 'Data and processes', 'Dashboard or application'],
       },
       ai: {
-        title: 'AI prototype',
-        body: 'Process analysis first, then a prototype or deployment. AI only when it solves a concrete problem.',
+        title: 'Process automation',
+        body: 'An analysis of repetitive work and a check whether it can be simplified or supported by AI.',
+        details: ['Process analysis', 'Prototype or implementation', 'AI with a concrete goal'],
       },
     },
     cta: 'I have a project - define the scope with me',
