@@ -30,17 +30,20 @@ function priceFor(
 export function PricingRows({ common, copy, locale }: PricingRowsProps) {
   return (
     <>
-      <div className="mb-16 grid grid-cols-12 gap-grid border-y border-accent py-6">
+      <div className="mb-16 grid grid-cols-12 gap-grid border-y border-accent bg-accent-subtle px-5 py-6 lg:px-6">
         <div className="col-span-12 lg:col-span-8">
-          <p className="font-mono text-meta text-accent uppercase">{copy.promotion.label}</p>
-          <p className="text-content-primary mt-3 max-w-measure text-body">
-            {interpolate(copy.promotion.body, {
+          <p className="font-mono text-meta text-accent-strong uppercase">{copy.promotion.label}</p>
+          <p className="mt-3 max-w-measure font-display text-display-project text-content">
+            {interpolate(copy.promotion.headline, {
               limit: PROMOTION_OFFER.limit,
               price: formatPrice(PROMOTION_OFFER.from, locale),
             })}
           </p>
+          <p className="mt-2 max-w-measure text-body-sm text-content-secondary">
+            {copy.promotion.body}
+          </p>
         </div>
-        <p className="col-span-12 mt-5 font-mono text-meta text-content-secondary lg:col-span-4 lg:mt-0 lg:text-right">
+        <p className="col-span-12 mt-5 font-mono text-meta text-accent-strong lg:col-span-4 lg:mt-0 lg:text-right">
           {interpolate(copy.promotion.counter, {
             claimed: PROMOTION_OFFER.claimed,
             limit: PROMOTION_OFFER.limit,
@@ -93,7 +96,7 @@ export function PricingRows({ common, copy, locale }: PricingRowsProps) {
                         ))}
                       </ul>
                     </div>
-                    <p className="col-span-12 mt-6 font-display text-numeric text-accent lg:col-span-4 lg:mt-0 lg:text-right">
+                    <p className="col-span-12 mt-6 font-display text-display-project text-accent lg:col-span-4 lg:mt-0 lg:text-right">
                       {priceFor(row, common, copy, locale)}
                     </p>
                   </li>

@@ -62,7 +62,7 @@ export async function CodeBrosSection() {
         {/* Substance. */}
         <div className="mt-40 grid grid-cols-12 gap-grid lg:mt-56">
           <div className="col-span-12 lg:col-span-7">
-            <SectionLabel index={4} tone="invert" className="mb-7">
+            <SectionLabel index={5} tone="invert" className="mb-7">
               {copy.label}
             </SectionLabel>
             <Headline lines={copy.headline} className="text-content-invert" />
@@ -79,7 +79,7 @@ export async function CodeBrosSection() {
             <MediaSlot
               id="IMG-03"
               ratio="16 / 9"
-              src="/images/zdjecie_CodeBros_konkurs.jpg"
+              src="/images/codebros/competition.jpg"
               alt={copy.mediaAlt}
               label={copy.mediaPending}
               tone="invert"

@@ -22,7 +22,7 @@ export async function PricingSection({ headlineAs = 'h2' }: { headlineAs?: 'h1' 
     <Section id={SECTION_IDS.pricing} spacing="large">
       <Container>
         <SectionHeader
-          index={7}
+          index={8}
           label={dict.pricing.landing.label}
           headlineLines={dict.pricing.landing.headline}
           headlineAs={headlineAs}

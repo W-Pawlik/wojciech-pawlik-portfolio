@@ -21,7 +21,7 @@ export async function ContactSection({ headlineAs = 'h2' }: { headlineAs?: 'h1' 
     <Section id={SECTION_IDS.contact} spacing="xl" className="bg-canvas-subtle">
       <Container>
         <SectionHeader
-          index={9}
+          index={10}
           label={dict.contact.label}
           headlineLines={dict.contact.headline}
           headlineAs={headlineAs}

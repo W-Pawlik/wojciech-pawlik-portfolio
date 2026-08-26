@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest'
 import { AIProcessExplorer } from './ai-process-explorer'
 
 const copy = {
+  sectionNumber: '06',
   label: 'AI automation',
   headline: ['Process first.', 'Then AI.'],
   body: 'A process comes first.',

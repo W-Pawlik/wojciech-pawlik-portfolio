@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { BrandLogo } from '@/components/ui/brand-logo'
 import { Container } from '@/components/ui/container'
 import { NAV_ITEM_KEYS, NAV_ITEM_ROUTES } from '@/data/navigation'
 import { ROUTES } from '@/data/routes'
@@ -28,9 +29,9 @@ export async function Footer() {
       <Container>
         <div className="grid grid-cols-12 gap-x-grid gap-y-12">
           <div className="col-span-12 lg:col-span-5">
-            <p className="font-display text-display-project">{siteConfig.name}</p>
+            <BrandLogo name={siteConfig.name} size="md" />
             <p className="mt-3 font-mono text-meta text-content-invert-tertiary uppercase">
-              {siteConfig.tagline}
+              {dict.nav.descriptor}
             </p>
           </div>
 

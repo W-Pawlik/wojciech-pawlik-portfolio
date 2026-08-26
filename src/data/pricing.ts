@@ -31,7 +31,6 @@ export const LANDING_PRICING_KEYS = ['landing', 'businessWebsite', 'extendedWebs
 export const AFTERCARE_OFFER = {
   maintenanceFrom: 150,
   updatesHourly: 100,
-  updatesMinimumHours: 1,
 } as const
 
 export const PROMOTION_OFFER = {

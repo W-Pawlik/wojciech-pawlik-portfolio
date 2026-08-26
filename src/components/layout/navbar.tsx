@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { ButtonLink } from '@/components/ui/button'
+import { BrandLogo } from '@/components/ui/brand-logo'
 import { Container } from '@/components/ui/container'
 import { NAV_ITEM_KEYS, NAV_ITEM_ROUTES } from '@/data/navigation'
 import { ROUTES } from '@/data/routes'
@@ -17,8 +18,7 @@ import { PrimaryNavigation } from './primary-navigation'
  * only the mobile menu needs state - see .agents/03-architecture.md.
  *
  * Full-width bar, not a floating pill: the pill is the SaaS signature this direction is
- * defined against. The brand is a plain wordmark plus a mono descriptor - no invented
- * logotype (.agents/01-brand-and-design.md#logo).
+ * defined against. The brand is a typographic wordmark with a small technical Web accent.
  *
  * The nav items are anchors on the home page, so they work as a table of contents while
  * `/work`, `/services` and `/about` do not exist yet (.agents/specs/01-home.md).
@@ -41,9 +41,9 @@ export async function Navbar() {
       <Container>
         <div className="flex h-[var(--navbar-height)] items-center justify-between gap-6">
           <Link href={`${home}#top`} className="group flex items-baseline gap-3">
-            <span className="font-display text-display-card tracking-tight">{siteConfig.name}</span>
+            <BrandLogo name={siteConfig.name} />
             <span className="hidden font-mono text-meta text-content-tertiary uppercase transition-colors duration-[var(--duration-fast)] group-hover:text-accent-strong md:inline">
-              {siteConfig.tagline}
+              {dict.nav.descriptor}
             </span>
           </Link>
 

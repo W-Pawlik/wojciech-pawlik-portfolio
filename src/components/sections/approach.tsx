@@ -23,7 +23,7 @@ export async function ApproachSection() {
     <Section id={SECTION_IDS.approach} spacing="large">
       <Container>
         <div className="grid grid-cols-12 gap-grid">
-          <SectionLabel index={1} className="col-span-12 lg:col-span-2">
+          <SectionLabel index={2} className="col-span-12 lg:col-span-2">
             {dict.approach.label}
           </SectionLabel>
 

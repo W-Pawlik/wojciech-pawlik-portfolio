@@ -27,7 +27,7 @@ export async function AboutPage() {
               <MediaSlot
                 id="IMG-01"
                 ratio="5 / 6"
-                src="/images/IMG_20250915_143621326_BURST000_COVER.jpg"
+                src="/images/about/wojciech-pawlik-portrait.jpg"
                 alt={dict.about.mediaAlt}
                 label={dict.about.mediaPending}
               />
@@ -74,7 +74,7 @@ export async function AboutPage() {
               <MediaSlot
                 id="IMG-04"
                 ratio="5 / 6"
-                src="/images/Michal_Pawlik.jfif"
+                src="/images/about/michal-pawlik.jpg"
                 alt={codebros.mediaAlt}
                 label={codebros.mediaPending}
                 tone="invert"
@@ -98,7 +98,7 @@ export async function AboutPage() {
               <MediaSlot
                 id="IMG-03"
                 ratio="16 / 9"
-                src="/images/zdjecie_CodeBros_konkurs.jpg"
+                src="/images/codebros/competition.jpg"
                 alt={codebros.teamMediaAlt}
                 label={codebros.teamMediaPending}
                 tone="invert"
@@ -142,7 +142,7 @@ export async function AboutPage() {
             </p>
           </div>
           <TextLink href={withLocale(ROUTES.contact, locale)} className="mt-12">
-            {dict.about.cta}
+            {dict.about.pageCta}
           </TextLink>
         </Container>
       </Section>

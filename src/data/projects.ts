@@ -48,6 +48,10 @@ export type Project = {
   status: 'published' | 'pending'
   /** Shot-list id and crop, until the screenshots exist (01-brand-and-design.md). */
   media: { id: string; ratio: string; src: string }
+  /** Project logo used in the landing-page filmstrip and project archive. */
+  logoSrc: string
+  /** The supplied logo artwork may be designed for a dark or light surface. */
+  logoSurface?: 'light' | 'dark'
 }
 
 export const PROJECTS: readonly Project[] = [
@@ -61,8 +65,9 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-08',
       ratio: '16 / 10',
-      src: '/images/maw_autoserwis_realizacja.PNG',
+      src: '/images/projects/maw-autoserwis/realization.png',
     },
+    logoSrc: '/images/projects/maw-autoserwis/logo.png',
   },
   {
     slug: 'agnieszka-luzarska-website',
@@ -75,8 +80,9 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-09',
       ratio: '16 / 10',
-      src: '/images/Agnieszka_Luzarska_realizacja.PNG',
+      src: '/images/projects/agnieszka-luzarska/realization.png',
     },
+    logoSrc: '/images/projects/agnieszka-luzarska/logo.svg',
   },
   {
     slug: 'vanta-detailing',
@@ -89,8 +95,10 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-10',
       ratio: '16 / 10',
-      src: '/images/Vanta_realizacja.PNG',
+      src: '/images/projects/vanta-detailing/realization.png',
     },
+    logoSrc: '/images/projects/vanta-detailing/logo.svg',
+    logoSurface: 'dark',
   },
   {
     slug: 'planik',
@@ -102,8 +110,9 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-05',
       ratio: '16 / 10',
-      src: '/images/planik_realizacja.PNG',
+      src: '/images/projects/planik/realization.png',
     },
+    logoSrc: '/images/projects/planik/logo.svg',
   },
   {
     slug: 'credit-risk-system',
@@ -115,7 +124,8 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-07',
       ratio: '16 / 10',
-      src: '/images/risk_system_realizacja.PNG',
+      src: '/images/projects/credit-risk-system/realization.png',
     },
+    logoSrc: '/images/projects/credit-risk-system/logo.svg',
   },
 ]

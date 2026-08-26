@@ -11,25 +11,25 @@
 
 ## Flow
 
-`RECOGNITION → DIFFERENTIATION → PROOF → SCALE → OFFER → PROCESS → CONVERSION`
+`RECOGNITION → DIFFERENTIATION → OFFER → PROOF → SCALE → PROCESS → CONVERSION`
 
 ## Sekcje - stan implementacji
 
-| #   | Sekcja              | Funkcja w lejku | Anchor          | Stan            | Blokada                                    |
-| --- | ------------------- | --------------- | --------------- | --------------- | ------------------------------------------ |
-| 01  | Hero                | RECOGNITION     | -               | ✅ statycznie   | zdjęcie opcjonalne (wariant typograficzny) |
-| 02  | Approach            | DIFFERENTIATION | `approach`      | ✅ statycznie   | -                                          |
-| 03  | Selected Work       | PROOF           | `work`          | 🟡 statycznie   | screenshoty, treść case studies            |
-| 04  | Services            | OFFER           | `services`      | ✅ statycznie   | drawer (Phase 04)                          |
-| 05  | CodeBros transition | SCALE           | `codebros`      | 🟡 statycznie   | zdjęcie CodeBros, GSAP (Phase 05)          |
-| 06  | CodeBros            | SCALE           | -               | 🟡 statycznie   | zdjęcie, treść case study konkursowego     |
-| 07  | AI Automation       | OFFER           | `ai-automation` | ✅ statycznie   | -                                          |
-| 08  | Process             | PROCESS         | `process`       | ✅ statycznie   | -                                          |
-| 09  | Pricing             | OFFER           | `pricing`       | ✅ statycznie   | czasy realizacji                           |
-| 10  | About               | PROOF           | `about`         | 🟡 statycznie   | portret, zgoda na nazwę pracodawcy         |
-| 11  | Testimonials        | PROOF           | -               | ⛔ nie w kodzie | brak prawdziwych opinii                    |
-| 12  | Final CTA           | CONVERSION      | -               | ✅ statycznie   | e-mail (secondary CTA ukryte, dopóki brak) |
-| 13  | Lead form           | CONVERSION      | `contact`       | ✅              | dostawca e-mail, klauzula RODO             |
+| #   | Sekcja              | Funkcja w lejku | Anchor          | Stan             | Blokada                                    |
+| --- | ------------------- | --------------- | --------------- | ---------------- | ------------------------------------------ |
+| 01  | Hero                | RECOGNITION     | -               | ✅ statycznie    | zdjęcie opcjonalne (wariant typograficzny) |
+| 02  | Approach            | DIFFERENTIATION | `approach`      | ✅ statycznie    | -                                          |
+| 03  | Services            | OFFER           | `services`      | ✅ statycznie    | drawer (Phase 04)                          |
+| 04  | Selected Work       | PROOF           | `work`          | 🟡 interaktywnie | screenshoty, treść case studies            |
+| 05  | CodeBros transition | SCALE           | `codebros`      | 🟡 statycznie    | zdjęcie CodeBros, GSAP (Phase 05)          |
+| 06  | CodeBros            | SCALE           | -               | 🟡 statycznie    | zdjęcie, treść case study konkursowego     |
+| 07  | AI Automation       | OFFER           | `ai-automation` | ✅ statycznie    | -                                          |
+| 08  | Process             | PROCESS         | `process`       | ✅ statycznie    | -                                          |
+| 09  | Pricing             | OFFER           | `pricing`       | ✅ statycznie    | czasy realizacji                           |
+| 10  | About               | PROOF           | `about`         | 🟡 statycznie    | portret, zgoda na nazwę pracodawcy         |
+| 11  | Testimonials        | PROOF           | -               | ⛔ nie w kodzie  | brak prawdziwych opinii                    |
+| 12  | Final CTA           | CONVERSION      | -               | ✅ statycznie    | e-mail (secondary CTA ukryte, dopóki brak) |
+| 13  | Lead form           | CONVERSION      | `contact`       | ✅               | dostawca e-mail, klauzula RODO             |
 
 **Testimonials nie wchodzi do kodu**, dopóki nie ma minimum jednej prawdziwej opinii -
 brief mówi to samo („sekcję pokazać tylko wtedy, kiedy istnieją prawdziwe dobre opinie”).
@@ -37,18 +37,18 @@ Pusty komponent czekający na dane byłby martwym kodem.
 
 ## Layout - siatka 12 kolumn (desktop)
 
-| Sekcja        | Rozkład                                                                                                          |
-| ------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Hero          | H1 `1–10`, supporting + CTA `8–12`, metadata na dole pełna szerokość                                             |
-| Approach      | label `1–2`, H2 `3–9`, body `9–12`; principles jako pełnoszerokościowe rows                                      |
-| Selected Work | media naprzemiennie `1–9` / `4–12`, metadata i tytuł poza osią obrazu                                            |
-| Services      | numer `1`, nazwa `2–5`, opis `6–10`, CTA `11–12`, border-top na każdym row                                       |
-| CodeBros      | H2 `1–8`, body `8–12`, proof rows pełna szerokość                                                                |
-| AI            | H2 `1–7`, body `8–12`, mini flow pełna szerokość, use cases jako rows                                            |
-| Process       | cztery połączone wiersze: numer `1–2`, opis `4–8`, rezultat `10–12`                                              |
-| Pricing       | kompaktowe preview: promocja, potrzeba `1–2`, rozwiązanie `3–9`, cena `10–12`; CTA do kontaktu i pełnego cennika |
-| About         | obraz `1–6`, tekst `8–12`, trust metadata pod tekstem                                                            |
-| Final CTA     | `display-statement` - jedyne użycie tego stopnia na stronie                                                      |
+| Sekcja        | Rozkład                                                                                                                                                      |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Hero          | H1 `1–10`, supporting + CTA `8–12`, metadata na dole pełna szerokość                                                                                         |
+| Approach      | label `1–2`, H2 `3–9`, body `9–12`; principles jako pełnoszerokościowe rows                                                                                  |
+| Selected Work | pełnoekranowy ciemny stage; numer i etykieta sekcji pod górną krawędzią, aktywne media jako tło, logo-realizacje w filmstripie, opis i CTA w dolnym overlayu |
+| Services      | numer `1`, nazwa `2–5`, opis `6–10`, CTA `11–12`, border-top na każdym row                                                                                   |
+| CodeBros      | H2 `1–8`, body `8–12`, proof rows pełna szerokość                                                                                                            |
+| AI            | H2 `1–7`, body `8–12`, mini flow pełna szerokość, use cases jako rows                                                                                        |
+| Process       | cztery połączone wiersze: numer `1–2`, opis `4–8`, rezultat `10–12`                                                                                          |
+| Pricing       | kompaktowe preview: promocja, potrzeba `1–2`, rozwiązanie `3–9`, cena `10–12`; CTA do kontaktu i pełnego cennika                                             |
+| About         | obraz `1–6`, tekst `8–12`, trust metadata pod tekstem                                                                                                        |
+| Final CTA     | `display-statement` - jedyne użycie tego stopnia na stronie                                                                                                  |
 
 Mobile: każda sekcja komponowana od nowa (nie skalowany desktop). Rows pionowo, media
 pełna szerokość, dekoracyjne adnotacje trace znikają.
@@ -66,7 +66,12 @@ Tylko **Hero** i **CodeBros transition** mają prawo wyglądać jak „momenty�
 Reszta: reveal-e z `Reveal` / CSS, hover, drawer. Mapa z briefu jest w
 [01-brand-and-design.md](../01-brand-and-design.md#motion).
 
-Obecnie: hero używa CSS `hero-in` z templatki (paint bez hydracji), reszta jest statyczna.
+Obecnie: hero używa CSS `hero-in` z templatki (paint bez hydracji), a Selected Work ma
+pełnoekranowy, kontrolowany wybór projektu bez autoplay. Stage wyrównuje się do viewportu,
+zanim przejmie scroll; dopiero wtedy zmiana projektu podmienia tło, logo, opis i linki.
+Interakcja działa przez scroll wheel, przeciąganie, przyciski i klawiaturę. Przejście tła i
+rozsuwanie filmstripu korzysta z `motion/react`, z wyłączoną animacją przy
+`prefers-reduced-motion`.
 
 ## Czego ta specyfikacja świadomie nie robi
 
@@ -76,8 +81,9 @@ Obecnie: hero używa CSS `hero-in` z templatki (paint bez hydracji), reszta jest
 - **Drawer usług** (Phase 04) - landing prowadzi do dedykowanych stron usług.
 - **Prefill formularza z kontekstu** (`?type=website`) - Phase 04.
 - **Zdjęcia** - portret Wojciecha i zdjęcie CodeBros są podłączone do odpowiednich sekcji.
-  Selected Work używa tymczasowych zdjęć zewnętrznych jako wizualizacji layoutu, wyraźnie
-  oznaczonych do późniejszej wymiany na prawdziwe screenshoty.
+  Selected Work korzysta z lokalnych screenshotów realizacji. Filmstrip używa tymczasowych
+  wordmarków SVG, które można później wymienić na właściwe logotypy bez zmiany layoutu ani
+  interakcji.
 
 ### Ambient hero background
 

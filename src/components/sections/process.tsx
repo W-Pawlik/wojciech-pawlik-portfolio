@@ -13,7 +13,7 @@ export async function ProcessSection() {
     <Section id={SECTION_IDS.process} spacing="large">
       <Container>
         <SectionHeader
-          index={6}
+          index={7}
           label={dict.process.label}
           headlineLines={dict.process.headline}
           aside={<p>{dict.process.intro}</p>}

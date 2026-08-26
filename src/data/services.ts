@@ -28,16 +28,16 @@ export const SERVICE_MEDIA = {
   websites: {
     id: 'IMG-07',
     ratio: '16 / 10',
-    src: '/images/homepage-seen-laptop-screen.jpg',
+    src: '/images/services/website-preview.jpg',
   },
   systems: {
     id: 'IMG-08',
     ratio: '16 / 9',
-    src: '/images/uslugi_custom_systems.jpg',
+    src: '/images/services/custom-systems.jpg',
   },
   ai: {
     id: 'IMG-09',
     ratio: '16 / 9',
-    src: '/images/uslugi_ai.jpg',
+    src: '/images/services/ai-automation.jpg',
   },
 } as const

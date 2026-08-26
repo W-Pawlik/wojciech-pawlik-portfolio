@@ -50,6 +50,7 @@ export function buildMetadata({
 
   return {
     metadataBase: new URL(siteUrl),
+    applicationName: siteConfig.name,
     title: resolvedTitle,
     description: resolvedDescription,
     alternates: {
@@ -67,7 +68,7 @@ export function buildMetadata({
     openGraph: {
       type: 'website',
       locale: openGraphLocale[locale],
-      siteName: siteConfig.legalName,
+      siteName: siteConfig.name,
       url: localePath,
       title: resolvedTitle,
       description: resolvedDescription,

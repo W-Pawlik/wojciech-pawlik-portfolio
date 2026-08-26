@@ -16,7 +16,7 @@ import { ServicesSection } from '@/components/sections/services'
  * readable as a table of contents (.agents/03-architecture.md).
  *
  * The order is the funnel, not a ranking of what matters to the brand:
- * `RECOGNITION → DIFFERENTIATION → PROOF → SCALE → OFFER → PROCESS → CONVERSION`
+ * `RECOGNITION → DIFFERENTIATION → OFFER → PROOF → SCALE → PROCESS → CONVERSION`
  * (.agents/specs/01-home.md).
  *
  * Testimonials sit between About and the final CTA in the brief and are deliberately
@@ -28,8 +28,8 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ApproachSection />
-      <SelectedWorkSection />
       <ServicesSection />
+      <SelectedWorkSection />
       <CodeBrosSection />
       <AIAutomationSection />
       <ProcessSection />

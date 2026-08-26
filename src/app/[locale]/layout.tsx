@@ -9,6 +9,7 @@ import { ReturnScrollPosition } from '@/components/motion/return-scroll-position
 import { isLocale, locales, localeMeta } from '@/i18n/config'
 import { getDictionary } from '@/i18n/server'
 import { buildMetadata } from '@/lib/seo/metadata'
+import { buildStructuredData } from '@/lib/seo/structured-data'
 import { cn } from '@/lib/utils/cn'
 
 import '@/styles/globals.css'
@@ -83,6 +84,15 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
       className={cn('antialiased', sans.variable, mono.variable, signature.variable)}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(buildStructuredData(locale, dict.meta.description)).replace(
+              /</g,
+              '\\u003c',
+            ),
+          }}
+        />
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-control focus:bg-accent focus:px-4 focus:py-2 focus:text-body-sm focus:text-accent-contrast"

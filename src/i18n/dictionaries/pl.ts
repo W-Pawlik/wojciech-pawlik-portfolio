@@ -18,9 +18,9 @@
  */
 export const pl = {
   meta: {
-    title: 'Wojciech Pawlik - Web & Product Engineer',
+    title: 'Tworzenie stron internetowych dla firm | PawlikWeb',
     description:
-      'Projektuję i buduję customowe strony, aplikacje webowe i automatyzacje AI dla firm, które potrzebują czegoś więcej niż gotowego szablonu.',
+      'Tworzenie stron internetowych dla firm: projektuję i buduję strony, systemy webowe i automatyzacje AI dopasowane do Twojego biznesu.',
   },
 
   common: {
@@ -47,12 +47,13 @@ export const pl = {
       about: 'O mnie',
     },
     cta: 'Opowiedz mi o projekcie',
+    descriptor: 'Strony i systemy dla firm',
     /** Shorter, because the mobile drawer CTA sits on its own line. */
     ctaMobile: 'Opowiedz mi o projekcie',
   },
 
   hero: {
-    headline: ['Strony i systemy', 'dopasowane do biznesu.', 'Nie do szablonu.'],
+    headline: ['Tworzę strony internetowe', 'dopasowane do biznesu.', 'Nie do szablonu.'],
     body: 'Projektuję i buduję dedykowane strony, aplikacje webowe i rozwiązania AI dla firm, które potrzebują czegoś więcej niż gotowego szablonu.',
     ctaPrimary: 'Opowiedz mi o projekcie',
     ctaSecondary: 'Zobacz realizacje',
@@ -106,10 +107,11 @@ export const pl = {
     caseStudyClosing: {
       title: 'Podoba Ci się ta realizacja?',
       body: 'Chcesz stworzyć coś podobnego dla swojej firmy? Porozmawiajmy o projekcie.',
-      cta: 'Skontaktuj się ze mną',
+      cta: 'Opowiedz mi o projekcie',
     },
     allProjectsCta: 'Zobacz wszystkie realizacje',
     visualization: 'Widok realizacji',
+    selectorLabel: 'Wybierz realizację',
     projects: {
       mawAuto: {
         title: 'Maw Autoserwis',
@@ -509,7 +511,7 @@ export const pl = {
   },
 
   codebrosTransition: {
-    trace: 'Tryb systemowy / 04',
+    trace: 'Tryb systemowy / 05',
     intro: 'Kiedy projekt staje się większy niż typowa strona, nie przekazuję go dalej.',
     headline: ['Wchodzimy we dwóch.'],
     brand: 'CodeBros',
@@ -537,6 +539,7 @@ export const pl = {
   },
 
   ai: {
+    sectionNumber: '06',
     label: 'Automatyzacja AI',
     headline: ['Najpierw proces.', 'Potem AI.'],
     body: 'AI jest narzędziem. Punktem wyjścia jest proces, który zabiera zespołowi czas, wymaga powtarzalnych decyzji albo przerzucania informacji między systemami.',
@@ -663,8 +666,9 @@ export const pl = {
     plusSuffix: '+',
     quote: 'Wycena indywidualna',
     promotion: {
-      label: 'Promocja',
-      body: 'Z okazji rozpoczęcia działalności na Oferteo dla {limit} pierwszych klientów wycena zaczyna się od {price}.',
+      label: 'Oferta na start',
+      headline: 'Pierwsze {limit} realizacje od {price}',
+      body: 'Z okazji rozpoczęcia działalności na Oferteo przygotowałem promocyjne warunki dla pierwszych klientów.',
       counter: 'Skorzystało: {claimed} z {limit} miejsc',
     },
     groups: {
@@ -698,17 +702,25 @@ export const pl = {
     aftercareBody:
       'Możesz rozwijać go samodzielnie albo zlecić mi dalsze utrzymanie i drobne aktualizacje.',
     maintenanceLabel: 'Opcjonalne utrzymanie',
-    maintenancePrefix: 'od',
+    maintenancePrefix: 'standardowo',
     maintenancePeriod: 'miesięcznie',
     maintenanceBody:
-      'Standardowo dla prostej strony jest to 150 zł miesięcznie. Kwota może się zmienić przy stronach wymagających większej ilości mojej pracy lub zasobów.',
+      'Dla prostej strony utrzymanie kosztuje standardowo 150 zł miesięcznie. Przy większych stronach kwota może zależeć od zakresu mojej pracy i potrzebnych zasobów.',
+    maintenanceIncludesLabel: 'W ramach utrzymania',
+    maintenanceIncludes: [
+      'Domena - kupuję ją ja albo firma',
+      'Hosting - zajmuję się jego konfiguracją i obsługą',
+      'Stałe monitorowanie strony',
+      'Podstawowe statystyki, np. liczba wejść na stronę',
+      'Naprawa błędów w razie ich wystąpienia',
+    ],
     updatesLabel: 'Opcjonalne zmiany i większe aktualizacje',
     updatesTitle: 'Nowe sekcje i większe zmiany',
     updatesBody:
-      'Tworzenie nowych sekcji, projektowanie sekcji od zera, większe aktualizacje i ich wdrożenie rozliczam godzinowo. Nawet mała sekcja obejmuje projekt, design, konsultację i wdrożenie, dlatego obowiązuje minimum {hours} godzina pracy.',
+      'Nową sekcję, zmianę istniejącej sekcji albo większą aktualizację rozliczam stawką 100 zł za godzinę pracy. Nie rozliczam pojedynczych minut - minimalna wartość zlecenia to 100 zł, nawet jeśli praca zajmie mniej niż godzinę. Jeśli zajmie 1,25 godziny, zapłacisz 125 zł, a jeśli 1,5 godziny - 150 zł.',
     hourSuffix: 'godz.',
     aftercareNote:
-      'W cenie projektu są 3 miesiące bezpłatnych drobnych poprawek. Nowe podstrony, funkcje, integracje i większe przebudowy są wyceniane osobno. Proste aktualizacje treści: 70 zł/h, minimum 50 zł za zlecenie.',
+      'W cenie projektu są 3 miesiące bezpłatnych drobnych poprawek. Nowe podstrony, sekcje, funkcje, integracje i większe przebudowy są wyceniane osobno według powyższej stawki.',
     rows: {
       landing: {
         title: 'Jednostronicowa strona',
@@ -749,7 +761,7 @@ export const pl = {
       'Nazywam się Wojciech Pawlik. Na co dzień pracuję przy systemach e-commerce w Univio. Po godzinach projektuję i buduję strony oraz produkty dla firm, które chcą czegoś bardziej dopasowanego niż gotowe rozwiązanie.',
       'Wcześniej pracowałem również jako inżynier AI, między innymi dla klienta ASML - jednej z największych firm technologicznych w Europie.',
       'Najbardziej interesuje mnie moment, w którym technologia, UX i realny problem firmy spotykają się w jednym produkcie.',
-      'Interesuję się nowoczesnym webdesignem, animacjami, przejściami i detalami, które sprawiają, że strona żyje. Jestem kreatywny i mam zapał do próbowania nowych rzeczy, dlatego nie ma dla mnie zlecenia, którego nie da się zrealizować.',
+      'Interesuję się nowoczesnym webdesignem, animacjami, przejściami i detalami, które sprawiają, że strona żyje. Jestem kreatywny i mam zapał do próbowania nowych rzeczy, dlatego nie ma dla mnie zlecenia, którego się nie podejmę.',
     ],
     trustTitle: 'Doświadczenie',
     trust: {
@@ -763,6 +775,7 @@ export const pl = {
     mediaAlt: 'Portret Wojciecha Pawlika',
     mediaPending: 'Portret',
     cta: 'Poznaj mnie bliżej',
+    pageCta: 'Opowiedz mi o projekcie',
     codebros: {
       label: 'CodeBros / Wojciech i Michał Pawlik',
       headline: ['Łączymy doświadczenie,', 'żeby budować większe systemy.'],
@@ -771,7 +784,7 @@ export const pl = {
       personLabel: 'Michał Pawlik',
       personTitle: 'Doświadczony programista',
       personBody:
-        'Michał ma 10 lat doświadczenia w tworzeniu oprogramowania. Przez większość kariery współtworzył systemy bankowe, pracując w software house. Później zajmował się tworzeniem systemów AI. W końcu trafiliśmy razem do Univio, gdzie tworzymy rozproszone systemy e-commerce dla jednego z dużych marketów.',
+        'Michał ma 10 lat doświadczenia w tworzeniu oprogramowania. Przez większość kariery rozwijał systemy bankowe w software house, a następnie pracował przy rozwiązaniach wykorzystujących AI. Obecnie, razem w Univio, tworzymy rozproszone systemy e-commerce dla jednego z dużych marketów.',
       benefitsTitle: 'Dlaczego pracujemy razem',
       benefits: [
         'Łączymy szerokie spojrzenie na produkt z doświadczeniem w tworzeniu złożonych systemów.',

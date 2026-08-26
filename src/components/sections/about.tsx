@@ -34,14 +34,14 @@ export async function AboutSection({ headlineAs = 'h2' }: { headlineAs?: 'h1' | 
             <MediaSlot
               id="IMG-01"
               ratio="5 / 6"
-              src="/images/zdjeice_Wojciech_Pawlik.jpg"
+              src="/images/about/wojciech-pawlik-detail.jpg"
               alt={dict.about.mediaAlt}
               label={dict.about.mediaPending}
             />
           </div>
 
           <div className="col-span-12 mt-10 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:self-center">
-            <SectionLabel index={8} className="mb-7">
+            <SectionLabel index={9} className="mb-7">
               {dict.about.label}
             </SectionLabel>
 

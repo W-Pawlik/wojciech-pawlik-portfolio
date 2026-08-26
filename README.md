@@ -1,4 +1,4 @@
-# Wojciech Pawlik - Web & Product Engineer
+# PawlikWeb - Wojciech Pawlik / Web & Product Engineer
 
 Strona marki osobistej: projektowanie i budowa stron, systemów webowych i automatyzacji AI dla
 małych i średnich firm. Przy większych produktach - razem z bratem Michałem jako **CodeBros**.

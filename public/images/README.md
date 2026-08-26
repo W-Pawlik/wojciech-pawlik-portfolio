@@ -2,6 +2,15 @@
 
 Zdjęcia i grafiki wchodzące do bundla statycznego.
 
+Podfoldery porządkują pliki tematycznie:
+
+- `about/` - portrety Wojciecha i Michała,
+- `brand/` - logo i ikona strony,
+- `codebros/` - materiały CodeBros,
+- `editorial/` - dodatkowe obrazy redakcyjne,
+- `projects/<slug>/` - zrzuty realizacji i ich logotypy,
+- `services/` - obrazy sekcji usług.
+
 Zasady:
 
 - Nazwy plików `kebab-case`, opisowe: `hero-<co-jest-na-zdjeciu>.jpg`, `service-<slug>.jpg`.
@@ -15,4 +24,3 @@ Zasady:
   dopisz je do `CREDITS.json` w tym katalogu.
 - `og-default.jpg` - 1200 × 630, obraz Open Graph. Bez niego metadane nie deklarują obrazu
   (lepiej brak niż zepsuty link, który crawler zapamięta).
-

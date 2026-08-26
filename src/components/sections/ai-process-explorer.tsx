@@ -7,6 +7,7 @@ import { AI_USE_CASES, type AiUseCase } from '@/data/ai-automation'
 import { SECTION_IDS } from '@/data/navigation'
 
 type ExplorerCopy = {
+  sectionNumber: string
   label: string
   headline: readonly string[]
   body: string
@@ -32,7 +33,9 @@ export function AIProcessExplorer({ copy }: { copy: ExplorerCopy }) {
     <>
       <div className="grid grid-cols-12 gap-grid">
         <div className="col-span-12 lg:col-span-7">
-          <p className="font-mono text-meta text-content-tertiary uppercase">05 / {copy.label}</p>
+          <p className="font-mono text-meta text-content-tertiary uppercase">
+            {copy.sectionNumber} / {copy.label}
+          </p>
           <h2 className="mt-7 font-display text-display-section">
             {copy.headline.map((line) => (
               <span key={line} className="block">

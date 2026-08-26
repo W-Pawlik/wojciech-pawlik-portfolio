@@ -27,7 +27,6 @@ type SiteConfig = {
   legalName: string
   /** Formal name - company details, footer, anything that has to match public records. */
   fullLegalName: string
-  tagline: string
   description: string
   /** 0 while unknown. Feeds "in business since" copy and the planned JSON-LD. */
   foundedYear: number
@@ -40,11 +39,10 @@ type SiteConfig = {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'Wojciech Pawlik',
+  name: 'PawlikWeb',
   legalName: 'Wojciech Pawlik',
   /** TODO(brief): legal form of the business is not settled yet (sole trader or unregistered). */
   fullLegalName: 'TODO(brief)',
-  tagline: 'Web & Product Engineer',
   description:
     'Projektuję i buduję strony, systemy webowe i automatyzacje AI dopasowane do tego, jak firma naprawdę działa. Przy większych produktach pracuję z bratem jako CodeBros.',
   /** TODO(brief): first year of client projects - no number on the site until confirmed. */

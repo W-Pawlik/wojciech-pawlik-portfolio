@@ -1,5 +1,5 @@
 import { readFile, readdir, writeFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { basename, join, relative, sep } from 'node:path'
 
 import sharp from 'sharp'
 
@@ -61,12 +61,26 @@ const MIN_SAVING = 0.1
 const TARGETS = {
   // These widths preserve a 2x source for the widest desktop boxes and Retina displays.
   // next/image creates the smaller device variants at request time.
-  zdjeice_Wojciech_Pawlik: { width: 1400, quality: 82 },
-  zdjecie_CodeBros_konkurs: { width: 1800, quality: 82 },
+  'wojciech-pawlik-detail': { width: 1400, quality: 82 },
+  'michal-pawlik': { width: 900, quality: 82 },
+  competition: { width: 1800, quality: 82 },
   'ai-datacenter': { width: 1400, quality: 82 },
-  IMG_20250915_143621326_BURST000_COVER: { width: 1400, quality: 82 },
-  uslugi_custom_systems: { width: 1400, quality: 82 },
-  uslugi_ai: { width: 1400, quality: 82 },
+  'wojciech-pawlik-portrait': { width: 1400, quality: 82 },
+  'custom-systems': { width: 1400, quality: 82 },
+  'ai-automation': { width: 1400, quality: 82 },
+  'website-preview': { width: 1400, quality: 82 },
+}
+
+async function imageFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true })
+  const files = await Promise.all(
+    entries.map((entry) => {
+      const path = join(directory, entry.name)
+      return entry.isDirectory() ? imageFiles(path) : /\.jpe?g$/i.test(entry.name) ? [path] : []
+    }),
+  )
+
+  return files.flat().sort()
 }
 
 const kb = (bytes) => `${Math.round(bytes / 1024)}kB`
@@ -94,7 +108,7 @@ async function blurDataUrl(inputPath) {
 }
 
 async function main() {
-  const files = (await readdir(IMAGES_DIR)).filter((file) => /\.jpe?g$/i.test(file)).sort()
+  const files = await imageFiles(IMAGES_DIR)
 
   if (files.length === 0) {
     console.warn(`No JPEGs in ${IMAGES_DIR} - nothing to do.`)
@@ -105,9 +119,9 @@ async function main() {
   let before = 0
   let after = 0
 
-  for (const file of files) {
-    const path = join(IMAGES_DIR, file)
-    const name = file.replace(/\.jpe?g$/i, '')
+  for (const path of files) {
+    const file = relative(IMAGES_DIR, path).split(sep).join('/')
+    const name = basename(path).replace(/\.jpe?g$/i, '')
     const target = TARGETS[name]
 
     if (!target) {

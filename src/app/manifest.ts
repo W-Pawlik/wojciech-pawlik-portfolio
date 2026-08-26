@@ -13,7 +13,7 @@ import { defaultLocale } from '@/i18n/config'
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: siteConfig.legalName,
+    name: siteConfig.name,
     short_name: siteConfig.name,
     description: siteConfig.description,
     lang: defaultLocale,

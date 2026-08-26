@@ -12,9 +12,9 @@ import type { Dictionary } from '../dictionaries'
  */
 export const en: Dictionary = {
   meta: {
-    title: 'Wojciech Pawlik - Web & Product Engineer',
+    title: 'Websites and web systems for companies | PawlikWeb',
     description:
-      'I design and build custom websites, web applications and AI automation for companies that need more than an off-the-shelf template.',
+      'I design and build websites, web systems and AI automation for companies that need a solution tailored to how their business works.',
   },
 
   common: {
@@ -40,6 +40,7 @@ export const en: Dictionary = {
       about: 'About',
     },
     cta: 'Tell me about your project',
+    descriptor: 'Websites and systems for companies',
     ctaMobile: 'Start a project',
   },
 
@@ -100,6 +101,7 @@ export const en: Dictionary = {
     },
     allProjectsCta: 'View all projects',
     visualization: 'Project view',
+    selectorLabel: 'Choose a project',
     projects: {
       mawAuto: {
         title: 'Maw Autoserwis',
@@ -500,7 +502,7 @@ export const en: Dictionary = {
   },
 
   codebrosTransition: {
-    trace: 'System mode / 04',
+    trace: 'System mode / 05',
     intro: 'When a project grows beyond a typical website, I do not hand it off.',
     headline: ['Then there are two of us.'],
     brand: 'CodeBros',
@@ -528,6 +530,7 @@ export const en: Dictionary = {
   },
 
   ai: {
+    sectionNumber: '06',
     label: 'AI automation',
     headline: ['Process first.', 'Then AI.'],
     body: 'AI is a tool. The starting point is a process that takes your team’s time, requires repetitive decisions or moves information between systems.',
@@ -654,8 +657,9 @@ export const en: Dictionary = {
     plusSuffix: '+',
     quote: 'Individually scoped',
     promotion: {
-      label: 'Promotion',
-      body: 'To mark the start of my work on Oferteo, estimates start from {price} for the first {limit} clients.',
+      label: 'Launch offer',
+      headline: 'First {limit} projects from {price}',
+      body: 'To mark the start of my work on Oferteo, I am offering promotional terms to the first clients.',
       counter: 'Used: {claimed} of {limit} places',
     },
     groups: {
@@ -688,17 +692,25 @@ export const en: Dictionary = {
     aftercareTitle: 'The project is yours.',
     aftercareBody: 'You can develop it yourself or ask me to handle maintenance and small updates.',
     maintenanceLabel: 'Optional maintenance',
-    maintenancePrefix: 'from',
+    maintenancePrefix: 'typically',
     maintenancePeriod: 'per month',
     maintenanceBody:
-      'The standard rate for a simple website is 150 PLN per month. It can change for websites that require more of my work or resources.',
+      'For a simple website, maintenance typically costs 150 PLN per month. For larger websites, the amount may depend on the work and resources they require.',
+    maintenanceIncludesLabel: 'Maintenance includes',
+    maintenanceIncludes: [
+      'Domain - I buy it or the company does',
+      'Hosting - I handle its setup and operation',
+      'Continuous website monitoring',
+      'Basic statistics, such as the number of visits',
+      'Fixing errors if they occur',
+    ],
     updatesLabel: 'Optional changes and larger updates',
     updatesTitle: 'New sections and larger changes',
     updatesBody:
-      'New sections, designing sections from scratch, larger updates and their implementation are billed hourly. Even a small section includes planning, design, consultation and implementation, so the minimum is {hours} hour of work.',
+      'A new section, a change to an existing section or a larger update is billed at 100 PLN per hour. I do not bill individual minutes - the minimum value of a request is 100 PLN, even if the work takes less than an hour. If it takes 1.25 hours, you pay 125 PLN; if it takes 1.5 hours, you pay 150 PLN.',
     hourSuffix: 'hour',
     aftercareNote:
-      'The project includes 3 months of free small fixes. New pages, features, integrations and larger changes are estimated separately. Simple content updates: 70 PLN/hour, 50 PLN minimum per request.',
+      'The project includes 3 months of free small fixes. New pages, sections, features, integrations and larger changes are estimated separately at the rate above.',
     rows: {
       landing: {
         title: 'One-page website',
@@ -739,7 +751,7 @@ export const en: Dictionary = {
       'My name is Wojciech Pawlik. By day I work on e-commerce systems at Univio. After hours I design and build websites and products for companies that want something more tailored than an off-the-shelf solution.',
       'Earlier I also worked as an AI Engineer, including work for ASML - one of Europe’s largest technology companies.',
       'What interests me most is the moment where technology, UX and a real business problem meet in one product.',
-      'I am interested in modern web design, animation, transitions and the details that make a website feel alive. I am creative and eager to try new things, so I do not see a project as impossible just because it does not fit a ready-made pattern.',
+      'I am interested in modern web design, animation, transitions and the details that make a website feel alive. I am creative and eager to try new things, so there is no project I would not take on.',
     ],
     trustTitle: 'Experience',
     trust: {
@@ -753,6 +765,7 @@ export const en: Dictionary = {
     mediaAlt: 'Portrait of Wojciech Pawlik',
     mediaPending: 'Portrait',
     cta: 'Get to know me',
+    pageCta: 'Tell me about your project',
     codebros: {
       label: 'CodeBros / Wojciech and Michał Pawlik',
       headline: ['We combine experience', 'to build larger systems.'],
@@ -761,7 +774,7 @@ export const en: Dictionary = {
       personLabel: 'Michał Pawlik',
       personTitle: 'Experienced software engineer',
       personBody:
-        'Michał has 10 years of experience in software development. For most of his career he co-created banking systems at a software house. He later worked on AI systems. We eventually joined Univio together, where we build distributed e-commerce systems for one of the major retailers.',
+        'Michał has 10 years of experience in software development. For most of his career he developed banking systems at a software house, followed by work on AI-powered solutions. We now work together at Univio, building distributed e-commerce systems for one of the major retailers.',
       benefitsTitle: 'Why we work together',
       benefits: [
         'We combine a broad product perspective with experience building complex systems.',
