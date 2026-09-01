@@ -4,11 +4,10 @@ import { PageHeader } from '@/components/pages/page-header'
 import { ButtonLink, CtaArrow } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
-import { ROUTES } from '@/data/routes'
-import { SERVICES } from '@/data/services'
+import { localizedHref, ROUTES, switchLocalePath } from '@/data/routes'
 import { SERVICE_ROUTES } from '@/data/routes'
+import { SERVICES } from '@/data/services'
 import { getDictionary, getLocale } from '@/i18n/server'
-import { withLocale } from '@/i18n/config'
 import { formatOrdinal } from '@/lib/utils/format'
 
 /** A service directory with enough context to choose a path before opening a detail page. */
@@ -26,7 +25,7 @@ export async function ServicesIndexPage() {
             {SERVICES.map((service, index) => {
               const summary = dict.services.items[service.key]
               const detail = dict.servicePages[service.key]
-              const href = withLocale(SERVICE_ROUTES[service.key], locale)
+              const href = switchLocalePath(SERVICE_ROUTES[service.key], locale)
 
               return (
                 <li key={service.key} className="border-b border-line">
@@ -74,7 +73,7 @@ export async function ServicesIndexPage() {
               <p className="text-body-lg text-content-invert-secondary">
                 {dict.services.closingBody}
               </p>
-              <ButtonLink href={withLocale(ROUTES.contact, locale)} size="lg" className="mt-8">
+              <ButtonLink href={localizedHref(ROUTES.contact, locale)} size="lg" className="mt-8">
                 {dict.services.closingCta}
                 <CtaArrow />
               </ButtonLink>

@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
-
-import { WorkIndexPage as WorkRouteContent } from '@/components/pages/work-index-page'
+import EnglishWorkPage from '@/app/[locale]/work/page'
 import { ROUTE_PATHS } from '@/data/routes'
+import { dictionaryFor } from '@/i18n/dictionaries'
 import { buildMetadata } from '@/lib/seo/metadata'
-import { getLocale, getDictionary } from '@/i18n/server'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getLocale()
-  const dict = await getDictionary()
+  const locale = 'pl' as const
+  const dict = dictionaryFor(locale)
   return buildMetadata({
     locale,
     path: ROUTE_PATHS.work[locale],
@@ -18,9 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }]
+  return [{ locale: 'pl' }]
 }
 
-export default async function WorkPage() {
-  return <WorkRouteContent />
+export default async function PolishWorkPage() {
+  return <EnglishWorkPage />
 }

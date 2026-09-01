@@ -4,9 +4,8 @@ import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
 import { AFTERCARE_OFFER } from '@/data/pricing'
-import { ROUTES } from '@/data/routes'
+import { localizedHref, ROUTES } from '@/data/routes'
 import { getDictionary, getLocale } from '@/i18n/server'
-import { withLocale } from '@/i18n/config'
 import { formatPrice } from '@/lib/utils/format'
 
 /** A dedicated pricing page with scope notes and after-launch options. */
@@ -81,7 +80,7 @@ export async function PricingPage() {
             {dict.pricing.aftercareNote}
           </p>
 
-          <TextLink href={withLocale(ROUTES.contact, locale)} className="mt-12">
+          <TextLink href={localizedHref(ROUTES.contact, locale)} className="mt-12">
             {dict.pricing.cta}
           </TextLink>
         </Container>

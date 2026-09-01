@@ -5,9 +5,8 @@ import { Section } from '@/components/ui/section'
 import { SectionHeader } from '@/components/ui/section-header'
 import { TextLink } from '@/components/ui/text-link'
 import { SECTION_IDS } from '@/data/navigation'
-import { ROUTES } from '@/data/routes'
+import { localizedHref, ROUTES } from '@/data/routes'
 import { getDictionary, getLocale } from '@/i18n/server'
-import { withLocale } from '@/i18n/config'
 
 /**
  * A compact budget preview for the landing page. The full pricing page carries the detailed
@@ -41,11 +40,11 @@ export async function PricingSection({ headlineAs = 'h2' }: { headlineAs?: 'h1' 
         </div>
 
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-          <ButtonLink href={withLocale(ROUTES.contact, locale)}>
+          <ButtonLink href={localizedHref(ROUTES.contact, locale)}>
             {dict.pricing.landing.contactCta}
             <CtaArrow />
           </ButtonLink>
-          <TextLink href={withLocale(ROUTES.pricing, locale)}>
+          <TextLink href={localizedHref(ROUTES.pricing, locale)}>
             {dict.pricing.landing.fullPricingCta}
           </TextLink>
         </div>

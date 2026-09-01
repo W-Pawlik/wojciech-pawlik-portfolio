@@ -1,13 +1,14 @@
+import { ButtonLink, CtaArrow } from '@/components/ui/button'
 import { Container } from '@/components/ui/container'
 import { Section } from '@/components/ui/section'
 import { SectionHeader } from '@/components/ui/section-header'
+import { TextLink } from '@/components/ui/text-link'
 import Link from 'next/link'
 import { SECTION_IDS } from '@/data/navigation'
+import { localizedHref, ROUTES, SERVICE_ROUTES, switchLocalePath } from '@/data/routes'
 import { SERVICES } from '@/data/services'
-import { SERVICE_ROUTES } from '@/data/routes'
 import { getDictionary } from '@/i18n/server'
 import { getLocale } from '@/i18n/server'
-import { withLocale } from '@/i18n/config'
 import { formatOrdinal } from '@/lib/utils/format'
 
 /**
@@ -37,7 +38,7 @@ export async function ServicesSection({ headlineAs = 'h2' }: { headlineAs?: 'h1'
         <ul className="mt-20 border-t border-line">
           {SERVICES.map((service, index) => {
             const copy = dict.services.items[service.key]
-            const href = withLocale(SERVICE_ROUTES[service.key], locale)
+            const href = switchLocalePath(SERVICE_ROUTES[service.key], locale)
 
             return (
               <li key={service.key} className="group border-b border-line">
@@ -84,6 +85,16 @@ export async function ServicesSection({ headlineAs = 'h2' }: { headlineAs?: 'h1'
             )
           })}
         </ul>
+
+        <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <ButtonLink href={localizedHref(ROUTES.contact, locale)}>
+            {dict.services.contactCta}
+            <CtaArrow />
+          </ButtonLink>
+          <TextLink href={localizedHref(ROUTES.pricing, locale)}>
+            {dict.services.pricingCta}
+          </TextLink>
+        </div>
       </Container>
     </Section>
   )

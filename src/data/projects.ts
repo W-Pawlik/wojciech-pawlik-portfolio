@@ -23,9 +23,14 @@ export const PROJECT_TAGS = [
 
 export type ProjectTag = (typeof PROJECT_TAGS)[number]
 
+import type { Locale } from '@/i18n/config'
+import { routePath } from './routes'
+
 export type Project = {
-  /** Shared across locales, indexed once `/work/[slug]` exists (ADR-0003). */
+  /** Polish slug retained as the stable data identifier. */
   slug: string
+  /** Search-friendly case-study slugs for every published language. */
+  slugs: Record<Locale, string>
   /** Dictionary key under `work.projects`. */
   key: 'planik' | 'creditRisk' | 'mawAuto' | 'agnieszkaLuzarska' | 'vantaDetailing'
   tags: readonly ProjectTag[]
@@ -46,8 +51,8 @@ export type Project = {
    * label instead of a link (.agents/specs/01-home.md).
    */
   status: 'published' | 'pending'
-  /** Shot-list id and crop, until the screenshots exist (01-brand-and-design.md). */
-  media: { id: string; ratio: string; src: string }
+  /** Shot-list id and crop, with an optional project-specific gallery. */
+  media: { id: string; ratio: string; src: string; gallery?: readonly string[] }
   /** Project logo used in the landing-page filmstrip and project archive. */
   logoSrc: string
   /** The supplied logo artwork may be designed for a dark or light surface. */
@@ -57,6 +62,7 @@ export type Project = {
 export const PROJECTS: readonly Project[] = [
   {
     slug: 'maw-autoserwis',
+    slugs: { pl: 'maw-autoserwis', en: 'maw-autoservice' },
     key: 'mawAuto',
     tags: ['website', 'branding'],
     team: 'solo',
@@ -65,12 +71,24 @@ export const PROJECTS: readonly Project[] = [
     media: {
       id: 'IMG-08',
       ratio: '16 / 10',
-      src: '/images/projects/maw-autoserwis/realization.png',
+      src: '/images/projects/maw-autoserwis/hero-section.png',
+      gallery: [
+        '/images/projects/maw-autoserwis/full-size-landingpage.png',
+        '/images/projects/maw-autoserwis/hero-section.png',
+        '/images/projects/maw-autoserwis/commercial-vehicles.png',
+        '/images/projects/maw-autoserwis/pricing.png',
+        '/images/projects/maw-autoserwis/mobile-2.png',
+        '/images/projects/maw-autoserwis/mobile-hero.png',
+        '/images/projects/maw-autoserwis/our-approach.png',
+        '/images/projects/maw-autoserwis/auto-electrics.png',
+        '/images/projects/maw-autoserwis/scope.png',
+      ],
     },
     logoSrc: '/images/projects/maw-autoserwis/logo.png',
   },
   {
     slug: 'agnieszka-luzarska-website',
+    slugs: { pl: 'agnieszka-luzarska-strona', en: 'agnieszka-luzarska-website' },
     key: 'agnieszkaLuzarska',
     tags: ['website', 'logoCreation'],
     team: 'solo',
@@ -86,6 +104,7 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     slug: 'vanta-detailing',
+    slugs: { pl: 'vanta-detailing', en: 'vanta-detailing' },
     key: 'vantaDetailing',
     tags: ['website', 'branding'],
     team: 'solo',
@@ -102,6 +121,7 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     slug: 'planik',
+    slugs: { pl: 'planik', en: 'planik' },
     key: 'planik',
     tags: ['webApp', 'businessAnalysis', 'branding'],
     team: 'codebros',
@@ -116,6 +136,7 @@ export const PROJECTS: readonly Project[] = [
   },
   {
     slug: 'credit-risk-system',
+    slugs: { pl: 'system-oceny-ryzyka-kredytowego', en: 'credit-risk-system' },
     key: 'creditRisk',
     tags: ['internalSystem', 'riskScoring', 'fullStack'],
     team: 'codebros',
@@ -129,3 +150,21 @@ export const PROJECTS: readonly Project[] = [
     logoSrc: '/images/projects/credit-risk-system/logo.svg',
   },
 ]
+
+export function projectSlug(project: Project, locale: Locale): string {
+  return project.slugs[locale]
+}
+
+export function projectRoute(project: Project, locale: Locale): string {
+  return `${routePath('work', locale)}/${projectSlug(project, locale)}`
+}
+
+export function projectBySlug(slug: string, locale?: Locale): Project | undefined {
+  return PROJECTS.find(
+    (project) =>
+      project.slug === slug ||
+      project.slugs.pl === slug ||
+      project.slugs.en === slug ||
+      (locale !== undefined && project.slugs[locale] === slug),
+  )
+}

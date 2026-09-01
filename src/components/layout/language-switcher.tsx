@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { locales, localeMeta, withLocale, type Locale } from '@/i18n/config'
+import { locales, localeMeta, type Locale } from '@/i18n/config'
+import { switchLocalePath } from '@/data/routes'
 import { cn } from '@/lib/utils/cn'
 
 type LanguageSwitcherProps = {
@@ -35,7 +36,7 @@ export function LanguageSwitcher({ label, className }: LanguageSwitcherProps) {
       {locales.map((locale: Locale) => (
         <Link
           key={locale}
-          href={withLocale(pathname, locale)}
+          href={switchLocalePath(pathname, locale)}
           hrefLang={locale}
           aria-current={locale === current ? 'true' : undefined}
           className={cn(

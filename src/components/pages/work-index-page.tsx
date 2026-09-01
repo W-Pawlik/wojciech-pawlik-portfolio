@@ -4,8 +4,8 @@ import { Container } from '@/components/ui/container'
 import { MediaSlot } from '@/components/ui/media-slot'
 import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
-import { PROJECTS } from '@/data/projects'
-import { ROUTES } from '@/data/routes'
+import { PROJECTS, projectRoute } from '@/data/projects'
+import { localizedHref, ROUTES } from '@/data/routes'
 import { getDictionary, getLocale } from '@/i18n/server'
 import { withLocale } from '@/i18n/config'
 
@@ -52,7 +52,7 @@ export async function WorkIndexPage() {
                     <p className="mt-4 text-body text-content-secondary">{copy.description}</p>
                     <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
                       <TextLink
-                        href={withLocale(`${ROUTES.work}/${project.slug}`, locale)}
+                        href={withLocale(projectRoute(project, locale), locale)}
                         data-return-scroll
                       >
                         {dict.work.caseStudyCta}
@@ -91,7 +91,7 @@ export async function WorkIndexPage() {
               <p className="text-body-lg text-content-invert-secondary">
                 {dict.services.closingBody}
               </p>
-              <ButtonLink href={withLocale(ROUTES.contact, locale)} size="lg" className="mt-8">
+              <ButtonLink href={localizedHref(ROUTES.contact, locale)} size="lg" className="mt-8">
                 {dict.services.closingCta}
                 <CtaArrow />
               </ButtonLink>

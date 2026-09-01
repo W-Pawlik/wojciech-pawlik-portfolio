@@ -5,10 +5,9 @@ import { Section } from '@/components/ui/section'
 import { SectionLabel } from '@/components/ui/section-label'
 import { TextLink } from '@/components/ui/text-link'
 import { SECTION_IDS } from '@/data/navigation'
-import { ROUTES } from '@/data/routes'
+import { localizedHref, ROUTES } from '@/data/routes'
 import { TRUST_ROWS } from '@/data/process'
 import { getDictionary, getLocale } from '@/i18n/server'
-import { withLocale } from '@/i18n/config'
 
 /**
  * The face behind the brand - the whole advantage of a personal brand is that the client
@@ -69,7 +68,7 @@ export async function AboutSection({ headlineAs = 'h2' }: { headlineAs?: 'h1' | 
               ))}
             </dl>
 
-            <TextLink href={withLocale(ROUTES.about, locale)} className="mt-8">
+            <TextLink href={localizedHref(ROUTES.about, locale)} className="mt-8">
               {dict.about.cta}
             </TextLink>
           </div>

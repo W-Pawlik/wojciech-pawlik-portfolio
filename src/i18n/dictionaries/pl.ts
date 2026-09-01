@@ -61,7 +61,7 @@ export const pl = {
 
   approach: {
     label: 'Podejście',
-    headline: ['Nie zaczynam', 'od technologii.'],
+    headline: ['Najpierw Twój biznes.', 'Potem rozwiązanie.'],
     body: 'Najpierw poznaję firmę, jej klientów i problem, który projekt ma rozwiązać. Dopiero później wybieram strukturę, projekt i technologię.',
     principles: {
       businessFirst: {
@@ -348,6 +348,8 @@ export const pl = {
     closingBody:
       'Opisz mi sytuację firmy. Po krótkiej rozmowie wskażę sensowny zakres i kolejny krok.',
     closingCta: 'Opowiedz mi o projekcie',
+    pricingCta: 'Zobacz orientacyjny cennik',
+    contactCta: 'Opowiedz mi o projekcie',
     intro:
       'Najpierw porządkuję problem i cel. Dopiero potem dobieram zakres i technologię, żeby zbudować rozwiązanie potrzebne firmie - bez dokładania funkcji na zapas.',
     items: {
@@ -373,7 +375,7 @@ export const pl = {
       },
       systems: {
         title: 'Custom Systems',
-        body: 'Dedykowane aplikacje, panele, portale i systemy wewnętrzne dopasowane do procesu firmy. Przy większych projektach pracuję z moim bratem Michałem jako CodeBros.',
+        body: 'Dedykowane aplikacje, panele, portale i systemy wewnętrzne dopasowane do procesu firmy. Przy większych projektach pracuję z moim bratem, inżynierem Michałem Pawlikiem, jako CodeBros.',
         cta: 'Zobacz CodeBros',
         includes: [],
       },
@@ -756,7 +758,7 @@ export const pl = {
     headline: ['Piszę kod zawodowo.', 'Tworzę rzeczy z pasji.'],
     pageHeadline: ['Jedna osoba', 'po drugiej stronie projektu.'],
     pageIntro:
-      'Projektuję i buduję osobiście. Przy większych systemach pracuję z moim bratem Michałem jako CodeBros.',
+      'Projektuję i buduję osobiście. Przy większych systemach pracuję z moim bratem, inżynierem Michałem Pawlikiem, jako CodeBros.',
     paragraphs: [
       'Nazywam się Wojciech Pawlik. Na co dzień pracuję przy systemach e-commerce w Univio. Po godzinach projektuję i buduję strony oraz produkty dla firm, które chcą czegoś bardziej dopasowanego niż gotowe rozwiązanie.',
       'Wcześniej pracowałem również jako inżynier AI, między innymi dla klienta ASML - jednej z największych firm technologicznych w Europie.',

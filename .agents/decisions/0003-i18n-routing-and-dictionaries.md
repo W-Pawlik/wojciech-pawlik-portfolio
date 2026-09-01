@@ -1,6 +1,6 @@
 # ADR-0003 - Routing per locale i słowniki
 
-- **Status:** Accepted
+- **Status:** Superseded by 0014
 - **Data:** 2026-01-01
 
 ## Kontekst

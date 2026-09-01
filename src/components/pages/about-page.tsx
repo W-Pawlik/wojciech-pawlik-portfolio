@@ -6,9 +6,8 @@ import { Section } from '@/components/ui/section'
 import { SectionLabel } from '@/components/ui/section-label'
 import { TextLink } from '@/components/ui/text-link'
 import { TRUST_ROWS } from '@/data/process'
-import { ROUTES } from '@/data/routes'
+import { localizedHref, ROUTES } from '@/data/routes'
 import { getDictionary, getLocale } from '@/i18n/server'
-import { withLocale } from '@/i18n/config'
 
 /** The about route gives the person and the working relationship more room than the landing. */
 export async function AboutPage() {
@@ -119,7 +118,7 @@ export async function AboutPage() {
                 ))}
               </ul>
               <TextLink
-                href={withLocale(ROUTES.work, locale)}
+                href={localizedHref(ROUTES.work, locale)}
                 tone="invert"
                 accent
                 className="mt-8"
@@ -141,7 +140,7 @@ export async function AboutPage() {
               {dict.about.pageFocusBody}
             </p>
           </div>
-          <TextLink href={withLocale(ROUTES.contact, locale)} className="mt-12">
+          <TextLink href={localizedHref(ROUTES.contact, locale)} className="mt-12">
             {dict.about.pageCta}
           </TextLink>
         </Container>

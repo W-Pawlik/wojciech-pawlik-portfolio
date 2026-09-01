@@ -5,8 +5,8 @@ import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
 import { DeliverableIcon, type DeliverableIconName } from '@/components/ui/deliverable-icon'
 import type { Project } from '@/data/projects'
-import { ROUTES } from '@/data/routes'
-import { withLocale, type Locale } from '@/i18n/config'
+import { localizedHref, ROUTES } from '@/data/routes'
+import { type Locale } from '@/i18n/config'
 
 type CaseStudyCopy = {
   title: string
@@ -36,7 +36,7 @@ type CaseStudyPageProps = {
   liveCta: string
   locale: Locale
   project: Project
-  nextProject?: { slug: string; title: string }
+  nextProject?: { href: string; title: string }
 }
 
 const CONTENT_SECTIONS = ['context', 'problem', 'solution', 'challenge'] as const
@@ -52,11 +52,13 @@ export function CaseStudyPage({
   project,
   nextProject,
 }: CaseStudyPageProps) {
+  const gallerySources = project.media.gallery ?? [project.media.src]
+
   return (
     <>
       <Section spacing="xl">
         <Container>
-          <BackLink href={withLocale(ROUTES.work, locale)}>{caseStudyLabel}</BackLink>
+          <BackLink href={localizedHref(ROUTES.work, locale)}>{caseStudyLabel}</BackLink>
 
           <div className="mt-16 grid grid-cols-12 gap-grid">
             <div className="col-span-12 lg:col-span-8">
@@ -178,13 +180,13 @@ export function CaseStudyPage({
               <p className="font-mono text-meta text-content-tertiary uppercase">
                 07 / {copy.galleryLabel}
               </p>
-              <div className="mt-6 grid grid-cols-2 gap-grid">
-                {[0, 1].map((index) => (
+              <div className="mt-6 grid grid-cols-1 gap-grid sm:grid-cols-2">
+                {gallerySources.map((src, index) => (
                   <MediaSlot
-                    key={index}
+                    key={src}
                     id={`${project.media.id}-${index + 1}`}
                     ratio={project.media.ratio}
-                    src={project.media.src}
+                    src={src}
                     alt={copy.title}
                     label={copy.galleryLabel}
                     fit="contain"
@@ -220,14 +222,14 @@ export function CaseStudyPage({
                 {caseStudyClosing.body}
               </p>
               <div className="mt-8">
-                <TextLink href={withLocale(ROUTES.contact, locale)}>
+                <TextLink href={localizedHref(ROUTES.contact, locale)}>
                   {caseStudyClosing.cta}
                 </TextLink>
               </div>
             </div>
             <div className="col-span-12 flex flex-wrap items-end gap-x-6 gap-y-3 lg:col-span-3 lg:col-start-10 lg:justify-end">
               {nextProject ? (
-                <TextLink href={withLocale(`${ROUTES.work}/${nextProject.slug}`, locale)}>
+                <TextLink href={nextProject.href}>
                   {copy.nextLabel} / {nextProject.title}
                 </TextLink>
               ) : null}

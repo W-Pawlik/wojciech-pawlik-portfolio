@@ -3,9 +3,8 @@ import Link from 'next/link'
 import { BrandLogo } from '@/components/ui/brand-logo'
 import { Container } from '@/components/ui/container'
 import { NAV_ITEM_KEYS, NAV_ITEM_ROUTES } from '@/data/navigation'
-import { ROUTES } from '@/data/routes'
+import { localizedHref, ROUTES, switchLocalePath } from '@/data/routes'
 import { siteConfig } from '@/data/site'
-import { withLocale } from '@/i18n/config'
 import { getDictionary, getLocale } from '@/i18n/server'
 
 /**
@@ -43,7 +42,7 @@ export async function Footer() {
               {NAV_ITEM_KEYS.map((key) => (
                 <li key={key}>
                   <Link
-                    href={withLocale(NAV_ITEM_ROUTES[key], locale)}
+                    href={switchLocalePath(NAV_ITEM_ROUTES[key], locale)}
                     className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-content-invert"
                   >
                     {dict.nav.items[key]}
@@ -52,7 +51,7 @@ export async function Footer() {
               ))}
               <li>
                 <Link
-                  href={withLocale(ROUTES.contact, locale)}
+                  href={localizedHref(ROUTES.contact, locale)}
                   className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-content-invert"
                 >
                   {dict.footer.contactTitle}

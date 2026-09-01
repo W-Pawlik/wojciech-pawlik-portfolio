@@ -10,8 +10,8 @@ import { locales, withLocale } from '@/i18n/config'
  * duplicates.
  *
  * The alternates mirror `buildMetadata()` on purpose - including `x-default` for the
- * unprefixed path, which negotiates the locale in the proxy. hreflang stated in the
- * sitemap and in the page must agree; disagreeing sets make both untrustworthy.
+ * the Polish fallback path. The unprefixed path redirects there. hreflang stated in
+ * the sitemap and in the page must agree; disagreeing sets make both untrustworthy.
  *
  * No `lastModified`: it would have to come from the build clock, which would claim the
  * content changed on every deploy. It belongs here once there is real per-page content
@@ -24,13 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return INDEXABLE_ROUTES.flatMap((route) => {
     const languages = {
       ...Object.fromEntries(
-        locales.map((locale) => [locale, `${siteUrl}${withLocale(route.path, locale)}`]),
+        locales.map((locale) => [locale, `${siteUrl}${withLocale(route.paths[locale], locale)}`]),
       ),
-      'x-default': `${siteUrl}${route.path === '/' ? '' : route.path}`,
+      'x-default': `${siteUrl}${withLocale(route.paths.pl, 'pl')}`,
     }
 
     return locales.map((locale) => ({
-      url: `${siteUrl}${withLocale(route.path, locale)}`,
+      url: `${siteUrl}${withLocale(route.paths[locale], locale)}`,
       alternates: { languages },
       ...(route.priority !== undefined && { priority: route.priority }),
     }))

@@ -21,7 +21,7 @@ describe('buildMetadata', () => {
 
   /**
    * Guard: the hreflang set here has to match the one in sitemap.ts, and `x-default`
-   * has to point at the unprefixed path - that is the URL the proxy negotiates.
+   * has to point at the canonical Polish fallback.
    */
   it('emits every locale plus x-default in the alternates', () => {
     const languages = buildMetadata({ locale: 'pl', path: '/kontakt' }).alternates?.languages ?? {}
@@ -29,7 +29,7 @@ describe('buildMetadata', () => {
     for (const locale of locales) {
       expect(languages[locale]).toBe(`/${locale}/kontakt`)
     }
-    expect(languages['x-default']).toBe('/kontakt')
+    expect(languages['x-default']).toBe('/pl/kontakt')
   })
 
   it('keeps Open Graph and Twitter consistent', () => {

@@ -8,7 +8,8 @@ import { ButtonLink, CtaArrow } from '@/components/ui/button'
 import { SectionLabel } from '@/components/ui/section-label'
 import { TextLink } from '@/components/ui/text-link'
 import type { Project } from '@/data/projects'
-import { ROUTES } from '@/data/routes'
+import { localizedHref, ROUTES } from '@/data/routes'
+import { projectRoute } from '@/data/projects'
 import { useReducedMotion } from '@/hooks/use-reduced-motion'
 import { type Locale, withLocale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
@@ -244,7 +245,12 @@ export function SelectedWorkStage({ projects, copy, locale }: SelectedWorkStageP
             </SectionLabel>
             <p className="mt-4 max-w-lg text-body text-content-invert-secondary">{copy.intro}</p>
           </div>
-          <TextLink href={withLocale(ROUTES.work, locale)} tone="invert" accent className="ml-auto">
+          <TextLink
+            href={localizedHref(ROUTES.work, locale)}
+            tone="invert"
+            accent
+            className="ml-auto"
+          >
             {copy.allProjectsCta}
           </TextLink>
         </div>
@@ -343,7 +349,7 @@ export function SelectedWorkStage({ projects, copy, locale }: SelectedWorkStageP
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
             <ButtonLink
               data-return-scroll
-              href={withLocale(`${ROUTES.work}/${activeProject.slug}`, locale)}
+              href={withLocale(projectRoute(activeProject, locale), locale)}
               variant="invert"
               size="md"
               className="border-accent"

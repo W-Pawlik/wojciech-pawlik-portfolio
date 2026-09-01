@@ -4,7 +4,7 @@ import { ButtonLink } from '@/components/ui/button'
 import { BrandLogo } from '@/components/ui/brand-logo'
 import { Container } from '@/components/ui/container'
 import { NAV_ITEM_KEYS, NAV_ITEM_ROUTES } from '@/data/navigation'
-import { ROUTES } from '@/data/routes'
+import { localizedHref, ROUTES, switchLocalePath } from '@/data/routes'
 import { siteConfig } from '@/data/site'
 import { withLocale } from '@/i18n/config'
 import { getDictionary, getLocale } from '@/i18n/server'
@@ -32,7 +32,7 @@ export async function Navbar() {
 
   const home = withLocale(ROUTES.home, locale)
   const items = NAV_ITEM_KEYS.map((key) => ({
-    href: withLocale(NAV_ITEM_ROUTES[key], locale),
+    href: switchLocalePath(NAV_ITEM_ROUTES[key], locale),
     label: dict.nav.items[key],
   }))
 
@@ -50,7 +50,10 @@ export async function Navbar() {
           <PrimaryNavigation items={items} label={dict.footer.navTitle} />
 
           <div className="flex items-center gap-2">
-            <ButtonLink href={withLocale(ROUTES.contact, locale)} className="hidden lg:inline-flex">
+            <ButtonLink
+              href={localizedHref(ROUTES.contact, locale)}
+              className="hidden lg:inline-flex"
+            >
               {dict.nav.cta}
             </ButtonLink>
             <LanguageSwitcher label={dict.common.languageSwitcher} />
@@ -58,7 +61,7 @@ export async function Navbar() {
               openLabel={dict.nav.openMenu}
               closeLabel={dict.nav.closeMenu}
               items={items}
-              cta={{ href: withLocale(ROUTES.contact, locale), label: dict.nav.ctaMobile }}
+              cta={{ href: localizedHref(ROUTES.contact, locale), label: dict.nav.ctaMobile }}
             />
           </div>
         </div>

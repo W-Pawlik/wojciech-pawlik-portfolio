@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { siteConfig, siteUrl } from '@/data/site'
-import { locales, openGraphLocale, type Locale } from '@/i18n/config'
+import { defaultLocale, locales, openGraphLocale, type Locale } from '@/i18n/config'
 import { dictionaryFor } from '@/i18n/dictionaries'
 
 type BuildMetadataOptions = {
@@ -11,6 +11,8 @@ type BuildMetadataOptions = {
   description?: string
   /** Route path **without** the locale prefix, always leading-slash. */
   path?: string
+  /** Localized route paths, when the PL and EN slugs differ. */
+  localizedPaths?: Record<Locale, string>
   /** Path to an OG image under /public, or an absolute URL. */
   image?: string
 }
@@ -39,13 +41,15 @@ export function buildMetadata({
   title,
   description,
   path = '/',
+  localizedPaths,
   image = DEFAULT_OG_IMAGE,
 }: BuildMetadataOptions): Metadata {
   const dict = dictionaryFor(locale)
   const resolvedTitle = title ? `${title} | ${siteConfig.name}` : dict.meta.title
   const resolvedDescription = description ?? dict.meta.description
 
-  const localePath = path === '/' ? `/${locale}` : `/${locale}${path}`
+  const pathFor = (entry: Locale) => localizedPaths?.[entry] ?? path
+  const localePath = pathFor(locale) === '/' ? `/${locale}` : `/${locale}${pathFor(locale)}`
   const imageUrl = image && !image.startsWith('http') ? `${siteUrl}${image}` : image
 
   return {
@@ -57,12 +61,17 @@ export function buildMetadata({
       canonical: localePath,
       languages: {
         ...Object.fromEntries(
-          locales.map((entry) => [entry, path === '/' ? `/${entry}` : `/${entry}${path}`]),
+          locales.map((entry) => {
+            const entryPath = pathFor(entry)
+            return [entry, entryPath === '/' ? `/${entry}` : `/${entry}${entryPath}`]
+          }),
         ),
-        // The unprefixed path negotiates the locale from Accept-Language in the proxy,
-        // which is exactly what x-default describes: the URL aimed at no single
-        // language. Without it there is no signal for visitors outside our locales.
-        'x-default': path,
+        // The unprefixed path redirects to Polish, so x-default uses the canonical
+        // Polish URL rather than a non-canonical redirect.
+        'x-default':
+          pathFor(defaultLocale) === '/'
+            ? `/${defaultLocale}`
+            : `/${defaultLocale}${pathFor(defaultLocale)}`,
       },
     },
     openGraph: {

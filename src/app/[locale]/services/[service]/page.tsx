@@ -8,21 +8,24 @@ import { MediaSlot } from '@/components/ui/media-slot'
 import { Section } from '@/components/ui/section'
 import { TextLink } from '@/components/ui/text-link'
 import { SERVICE_MEDIA } from '@/data/services'
-import { ROUTES, SERVICE_ROUTES } from '@/data/routes'
+import { localizedHref, ROUTE_PATHS, SERVICE_ROUTE_PATHS } from '@/data/routes'
 import { dictionaryFor } from '@/i18n/dictionaries'
-import { isLocale, withLocale } from '@/i18n/config'
+import { isLocale, type Locale } from '@/i18n/config'
 import { buildMetadata } from '@/lib/seo/metadata'
 import { formatOrdinal } from '@/lib/utils/format'
 
 const SERVICE_KEYS = ['websites', 'systems', 'ai'] as const
 type ServiceKey = (typeof SERVICE_KEYS)[number]
 
-function getServiceKey(value: string): ServiceKey | undefined {
-  return SERVICE_KEYS.includes(value as ServiceKey) ? (value as ServiceKey) : undefined
+function getServiceKey(value: string, locale: Locale): ServiceKey | undefined {
+  return SERVICE_KEYS.find((key) => SERVICE_ROUTE_PATHS[key][locale].endsWith(`/${value}`))
 }
 
 export function generateStaticParams() {
-  return SERVICE_KEYS.map((service) => ({ service }))
+  return SERVICE_KEYS.map((service) => ({
+    locale: 'en',
+    service: SERVICE_ROUTE_PATHS[service].en.split('/').pop()!,
+  }))
 }
 
 export async function generateMetadata(props: {
@@ -30,13 +33,14 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const { locale, service } = await props.params
   if (!isLocale(locale)) notFound()
-  const key = getServiceKey(service)
+  const key = getServiceKey(service, locale)
   if (!key) notFound()
   const copy = dictionaryFor(locale).servicePages[key]
 
   return buildMetadata({
     locale,
-    path: SERVICE_ROUTES[key],
+    path: SERVICE_ROUTE_PATHS[key][locale],
+    localizedPaths: SERVICE_ROUTE_PATHS[key],
     title: copy.title,
     description: copy.intro,
   })
@@ -47,7 +51,7 @@ export default async function ServiceDetailPage(props: {
 }) {
   const { locale, service } = await props.params
   if (!isLocale(locale)) notFound()
-  const key = getServiceKey(service)
+  const key = getServiceKey(service, locale)
   if (!key) notFound()
   const dict = dictionaryFor(locale)
   const copy = dict.servicePages[key]
@@ -58,7 +62,7 @@ export default async function ServiceDetailPage(props: {
       <PageHeader
         headlineLines={[copy.title]}
         intro={copy.intro}
-        backHref={withLocale(ROUTES.services, locale)}
+        backHref={localizedHref(ROUTE_PATHS.services[locale], locale)}
         backLabel={dict.services.label}
       />
 
@@ -142,8 +146,10 @@ export default async function ServiceDetailPage(props: {
               <p className="mt-8 max-w-measure text-body text-content-secondary">{copy.fit}</p>
             </div>
             <div className="col-span-12 mt-10 flex flex-wrap items-center gap-x-8 gap-y-5 lg:col-span-4 lg:col-start-9 lg:mt-0 lg:self-end">
-              <TextLink href={withLocale(ROUTES.pricing, locale)}>{copy.pricingCta}</TextLink>
-              <ButtonLink href={withLocale(ROUTES.contact, locale)} size="lg">
+              <TextLink href={localizedHref(ROUTE_PATHS.pricing[locale], locale)}>
+                {copy.pricingCta}
+              </TextLink>
+              <ButtonLink href={localizedHref(ROUTE_PATHS.contact[locale], locale)} size="lg">
                 {copy.contactCta}
                 <CtaArrow />
               </ButtonLink>

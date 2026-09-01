@@ -1,65 +1,130 @@
 /**
  * Every route of the site, in one place.
  *
- * This is the source of truth for the sitemap - and the only mechanism that keeps a new
- * page from being invisible to search engines. A route that is not listed here still
- * works when typed by hand, and nothing else will ever tell you it is missing.
- * See ADR-0006 and .agents/checklists/new-route.md.
- *
- * Paths are written **without** the locale prefix; `withLocale()` adds it. Slugs follow
- * the main language (they are indexed) and are shared between locales (ADR-0003).
- *
- * TODO(brief): add the pages from the brief. Every route needs a reason - a search
- * intent or a sales purpose - not a slot in the menu.
+ * Polish and English paths are explicit so links, metadata and the sitemap all describe
+ * the actual URL that belongs to each language.
  */
 
-type Route = {
-  /** Path without the locale prefix, always leading-slash. */
-  path: string
-  /**
-   * Relative priority for the sitemap. The home page is the entry point; detail pages
-   * sit below it. Left undefined means "let the crawler decide", which is fine.
-   */
-  priority?: number
-}
+import type { Locale } from '@/i18n/config'
 
 export const ROUTES = {
   home: '/',
-  work: '/work',
-  services: '/services',
-  pricing: '/pricing',
-  about: '/about',
-  contact: '/contact',
-  planik: '/work/planik',
-  creditRisk: '/work/credit-risk-system',
-  /** Internal design-system reference. Deliberately absent from `INDEXABLE_ROUTES`. */
+  work: '/realizacje',
+  services: '/uslugi',
+  pricing: '/cennik',
+  about: '/o-mnie',
+  contact: '/kontakt',
+  planik: '/realizacje/planik',
+  creditRisk: '/realizacje/system-oceny-ryzyka-kredytowego',
+  /** Internal design-system reference. Deliberately absent from INDEXABLE_ROUTES. */
   system: '/system',
-} as const
-
-export const SERVICE_ROUTES = {
-  websites: `${ROUTES.services}/websites`,
-  systems: `${ROUTES.services}/systems`,
-  ai: `${ROUTES.services}/ai`,
 } as const
 
 export type RouteKey = keyof typeof ROUTES
 
+export const ROUTE_PATHS: Record<RouteKey, Record<Locale, string>> = {
+  home: { pl: '/', en: '/' },
+  work: { pl: '/realizacje', en: '/work' },
+  services: { pl: '/uslugi', en: '/services' },
+  pricing: { pl: '/cennik', en: '/pricing' },
+  about: { pl: '/o-mnie', en: '/about' },
+  contact: { pl: '/kontakt', en: '/contact' },
+  planik: { pl: '/realizacje/planik', en: '/work/planik' },
+  creditRisk: {
+    pl: '/realizacje/system-oceny-ryzyka-kredytowego',
+    en: '/work/credit-risk-system',
+  },
+  system: { pl: '/system', en: '/system' },
+}
+
+export function routePath(key: RouteKey, locale: Locale): string {
+  return ROUTE_PATHS[key][locale]
+}
+
+export function routeHrefPath(key: RouteKey, locale: Locale): string {
+  const path = routePath(key, locale)
+  return path === '/' ? `/${locale}` : `/${locale}${path}`
+}
+
+export const SERVICE_ROUTE_PATHS = {
+  websites: { pl: '/uslugi/strony-internetowe', en: '/services/websites' },
+  systems: { pl: '/uslugi/systemy-dla-firm', en: '/services/systems' },
+  ai: { pl: '/uslugi/automatyzacje-ai', en: '/services/ai-automation' },
+} as const
+
+/** Polish paths retained as the default-language data surface. */
+export const SERVICE_ROUTES = {
+  websites: SERVICE_ROUTE_PATHS.websites.pl,
+  systems: SERVICE_ROUTE_PATHS.systems.pl,
+  ai: SERVICE_ROUTE_PATHS.ai.pl,
+} as const
+
+export const PROJECT_ROUTE_PATHS: Record<string, Record<Locale, string>> = {
+  mawAuto: { pl: '/realizacje/maw-autoserwis', en: '/work/maw-autoservice' },
+  agnieszkaLuzarska: {
+    pl: '/realizacje/agnieszka-luzarska-strona',
+    en: '/work/agnieszka-luzarska-website',
+  },
+  vantaDetailing: { pl: '/realizacje/vanta-detailing', en: '/work/vanta-detailing' },
+  planik: { pl: '/realizacje/planik', en: '/work/planik' },
+  creditRisk: {
+    pl: '/realizacje/system-oceny-ryzyka-kredytowego',
+    en: '/work/credit-risk-system',
+  },
+}
+
+export type LocalizedRoute = {
+  path: string
+  paths: Record<Locale, string>
+  priority?: number
+}
+
 /**
  * Routes that belong in the sitemap and in hreflang sets.
  *
- * `/system` never appears here: it is excluded from the index by metadata, not by
- * robots.txt - those two mechanisms are mutually exclusive (.agents/08).
+ * /system never appears here: it is excluded from the index by metadata, not by robots.txt.
  */
-export const INDEXABLE_ROUTES: readonly Route[] = [
-  { path: ROUTES.home, priority: 1 },
-  { path: ROUTES.work, priority: 0.8 },
-  { path: ROUTES.services, priority: 0.8 },
-  { path: ROUTES.pricing, priority: 0.7 },
-  { path: ROUTES.about, priority: 0.7 },
-  { path: ROUTES.planik, priority: 0.7 },
-  { path: ROUTES.creditRisk, priority: 0.7 },
-  { path: ROUTES.contact, priority: 0.6 },
-  { path: SERVICE_ROUTES.websites, priority: 0.65 },
-  { path: SERVICE_ROUTES.systems, priority: 0.65 },
-  { path: SERVICE_ROUTES.ai, priority: 0.65 },
+export const INDEXABLE_ROUTES: readonly LocalizedRoute[] = [
+  { path: ROUTES.home, paths: ROUTE_PATHS.home, priority: 1 },
+  { path: ROUTES.work, paths: ROUTE_PATHS.work, priority: 0.8 },
+  { path: ROUTES.services, paths: ROUTE_PATHS.services, priority: 0.8 },
+  { path: ROUTES.pricing, paths: ROUTE_PATHS.pricing, priority: 0.7 },
+  { path: ROUTES.about, paths: ROUTE_PATHS.about, priority: 0.7 },
+  { path: ROUTES.planik, paths: ROUTE_PATHS.planik, priority: 0.7 },
+  { path: ROUTES.creditRisk, paths: ROUTE_PATHS.creditRisk, priority: 0.7 },
+  { path: ROUTES.contact, paths: ROUTE_PATHS.contact, priority: 0.6 },
+  ...Object.entries(SERVICE_ROUTE_PATHS).map(([key, paths]) => ({
+    path: paths.pl,
+    paths,
+    priority: key === 'ai' ? 0.65 : 0.65,
+  })),
 ]
+
+export function localizedPathFor(pathname: string, locale: Locale): string | undefined {
+  const bare = pathname.replace(/^\/(?:pl|en)(?=\/|$)/, '') || '/'
+  const allPaths = [
+    ...Object.values(ROUTE_PATHS),
+    ...Object.values(SERVICE_ROUTE_PATHS),
+    ...Object.values(PROJECT_ROUTE_PATHS),
+  ]
+
+  for (const paths of allPaths) {
+    if (paths.pl === bare || paths.en === bare) return paths[locale]
+  }
+
+  return undefined
+}
+
+export function switchLocalePath(pathname: string, locale: Locale): string {
+  const target = localizedPathFor(pathname, locale)
+  if (target !== undefined) return target === '/' ? `/${locale}` : `/${locale}${target}`
+
+  const bare = pathname.replace(/^\/(?:pl|en)(?=\/|$)/, '') || '/'
+  return bare === '/' ? `/${locale}` : `/${locale}${bare}`
+}
+
+/** Adds the locale prefix after resolving a known PL/EN path to its local equivalent. */
+export function localizedHref(pathname: string, locale: Locale): string {
+  const target = localizedPathFor(pathname, locale) ?? pathname
+  return target === '/' ? `/${locale}` : `/${locale}${target}`
+}

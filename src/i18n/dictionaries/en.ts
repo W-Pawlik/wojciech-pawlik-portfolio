@@ -53,7 +53,7 @@ export const en: Dictionary = {
 
   approach: {
     label: 'Approach',
-    headline: ['I do not start', 'with technology.'],
+    headline: ['Your business first.', 'Then the solution.'],
     body: 'First I get to know the company, its clients and the problem the project has to solve. Only then do I choose the structure, the design and the technology.',
     principles: {
       businessFirst: {
@@ -339,6 +339,8 @@ export const en: Dictionary = {
     closingBody:
       'Tell me what is happening in the company. After a short conversation, I will suggest a sensible scope and next step.',
     closingCta: 'Tell me about your project',
+    pricingCta: 'See indicative pricing',
+    contactCta: 'Tell me about your project',
     intro:
       'I start by clarifying the problem and the goal. Then I define the scope and choose the technology needed to build the right solution - without adding features just because I can.',
     items: {
@@ -364,7 +366,7 @@ export const en: Dictionary = {
       },
       systems: {
         title: 'Custom Systems',
-        body: 'Dedicated applications, portals and internal systems shaped around the company’s process. For larger projects I work with my brother Michał as CodeBros.',
+        body: 'Dedicated applications, portals and internal systems shaped around the company’s process. For larger projects I work with my brother and fellow engineer Michał Pawlik as CodeBros.',
         cta: 'Meet CodeBros',
         includes: [],
       },
@@ -746,7 +748,7 @@ export const en: Dictionary = {
     headline: ['I write code for a living.', 'I build things because I like it.'],
     pageHeadline: ['One person', 'on the other side of the project.'],
     pageIntro:
-      'I design and build the work personally. For larger systems I work with my brother Michał as CodeBros.',
+      'I design and build the work personally. For larger systems I work with my brother and fellow engineer Michał Pawlik as CodeBros.',
     paragraphs: [
       'My name is Wojciech Pawlik. By day I work on e-commerce systems at Univio. After hours I design and build websites and products for companies that want something more tailored than an off-the-shelf solution.',
       'Earlier I also worked as an AI Engineer, including work for ASML - one of Europe’s largest technology companies.',

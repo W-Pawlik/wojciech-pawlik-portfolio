@@ -5,7 +5,7 @@ import { Section } from '@/components/ui/section'
 import { SectionLabel } from '@/components/ui/section-label'
 import { TextLink } from '@/components/ui/text-link'
 import { SECTION_IDS } from '@/data/navigation'
-import { ROUTES } from '@/data/routes'
+import { projectRoute, PROJECTS } from '@/data/projects'
 import { getDictionary } from '@/i18n/server'
 import { getLocale } from '@/i18n/server'
 import { withLocale } from '@/i18n/config'
@@ -92,28 +92,30 @@ export async function CodeBrosSection() {
             </p>
 
             <ul className="mt-6">
-              {(['planik', 'creditRisk'] as const).map((key) => (
-                <li key={key} className="border-t border-line-invert py-6 last:pb-0">
-                  <h3 className="font-display text-display-card text-content-invert">
-                    {copy.proofs[key].title}
-                  </h3>
-                  <p className="mt-3 text-body-sm text-content-invert-secondary">
-                    {copy.proofs[key].body}
-                  </p>
-                  <TextLink
-                    href={withLocale(
-                      `${ROUTES.work}/${key === 'creditRisk' ? 'credit-risk-system' : key}`,
-                      locale,
-                    )}
-                    data-return-scroll
-                    tone="invert"
-                    accent
-                    className="mt-5"
-                  >
-                    {dict.work.caseStudyCta}
-                  </TextLink>
-                </li>
-              ))}
+              {(['planik', 'creditRisk'] as const).map((key) => {
+                const project = PROJECTS.find((entry) => entry.key === key)
+                if (!project) return null
+
+                return (
+                  <li key={key} className="border-t border-line-invert py-6 last:pb-0">
+                    <h3 className="font-display text-display-card text-content-invert">
+                      {copy.proofs[key].title}
+                    </h3>
+                    <p className="mt-3 text-body-sm text-content-invert-secondary">
+                      {copy.proofs[key].body}
+                    </p>
+                    <TextLink
+                      href={withLocale(projectRoute(project, locale), locale)}
+                      data-return-scroll
+                      tone="invert"
+                      accent
+                      className="mt-5"
+                    >
+                      {dict.work.caseStudyCta}
+                    </TextLink>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>

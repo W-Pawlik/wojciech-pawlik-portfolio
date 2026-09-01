@@ -39,7 +39,7 @@ export function stripLocale(pathname: string): string {
   return pathname
 }
 
-/** `('/kontakt', 'en')` -> `/en/kontakt`. Slugs are shared between locales (ADR-0003). */
+/** `('/kontakt', 'en')` -> `/en/kontakt`; route-specific translated slugs live in `data/routes`. */
 export function withLocale(pathname: string, locale: Locale): string {
   const bare = stripLocale(pathname)
   return bare === '/' ? `/${locale}` : `/${locale}${bare}`
