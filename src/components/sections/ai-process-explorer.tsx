@@ -77,7 +77,7 @@ export function AIProcessExplorer({ copy }: { copy: ExplorerCopy }) {
                   aria-pressed={selected}
                   onClick={() => setActive(key)}
                   onTouchStart={() => setActive(key)}
-                  className={`relative z-10 min-h-36 cursor-pointer touch-manipulation border-r border-b border-line p-5 text-left transition-colors duration-[var(--duration-fast)] select-none ${selected ? 'bg-accent text-accent-contrast' : 'text-content hover:bg-canvas-subtle'}`}
+                  className={`relative z-10 min-h-36 cursor-pointer touch-manipulation border-r border-b border-line p-5 text-left transition-colors duration-fast select-none ${selected ? 'bg-accent text-accent-contrast' : 'text-content hover:bg-canvas-subtle'}`}
                 >
                   <span
                     className={`font-mono text-meta ${selected ? 'text-accent-contrast/70' : 'text-accent'}`}

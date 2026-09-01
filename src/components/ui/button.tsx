@@ -13,7 +13,7 @@ export type ButtonSize = 'md' | 'lg'
  */
 const BASE_CLASS =
   'group inline-flex shrink-0 items-center justify-center gap-2 rounded-control text-button ' +
-  'transition-[color,background-color,border-color,transform] duration-[var(--duration-fast)] ease-out-quart ' +
+  'transition-[color,background-color,border-color,transform] duration-fast ease-out-quart ' +
   'hover:-translate-y-px disabled:pointer-events-none disabled:opacity-40 disabled:hover:translate-y-0'
 
 const VARIANT_CLASS: Record<ButtonVariant, string> = {
@@ -83,7 +83,7 @@ export function CtaArrow({ direction = 'right' }: { direction?: 'up-right' | 'ri
   return (
     <span
       aria-hidden="true"
-      className="inline-block transition-transform duration-[var(--duration-fast)] ease-out-quart group-hover:translate-x-1"
+      className="inline-block transition-transform duration-fast ease-out-quart group-hover:translate-x-1"
     >
       {direction === 'up-right' ? '↗' : '→'}
     </span>

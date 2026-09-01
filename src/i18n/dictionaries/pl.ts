@@ -117,6 +117,11 @@ export const pl = {
         title: 'Maw Autoserwis',
         description: 'Branding i strona internetowa dla wszechstronnego warsztatu samochodowego.',
       },
+      dzendzera: {
+        title: 'Dżendżera',
+        description:
+          'Strona fotografa łącząca sport, motorsport i wildlife w jeden spójny język wizualny.',
+      },
       agnieszkaLuzarska: {
         title: 'Agnieszka Luzarska',
         description: 'Osobista strona dyrektor i konsultantki Mary Kay, oparta na storytellingu.',
@@ -173,6 +178,45 @@ export const pl = {
       result: {
         title: 'Rezultat',
         body: 'Powstała strona, która buduje zaufanie przez konkretne informacje o firmie i konsekwentnie zachęca do kontaktu.',
+      },
+      galleryLabel: 'Galeria strony',
+      nextLabel: 'Następna realizacja',
+    },
+    dzendzera: {
+      title: 'Dżendżera',
+      categories: 'Strona internetowa / Stworzenie brandingu',
+      statement:
+        'Dla Macieja Dżendżery stworzyłem stronę fotograficzną, która łączy sport, motorsport i wildlife w jeden spójny kierunek marki.',
+      meta: {
+        status: { label: 'Status', value: 'Projekt zrealizowany' },
+      },
+      context: {
+        title: 'Co zbudowałem?',
+        body: 'Stworzyłem stronę dla fotografa, który pracuje w dwóch rytmach: dynamicznym świecie sportu i motorsportu oraz wymagającym cierpliwości świecie wildlife. Serwis porządkuje te obszary i prowadzi użytkownika od pierwszego kadru do kontaktu.',
+      },
+      problem: {
+        title: 'Problem',
+        body: 'Strona musiała pokazać różne rodzaje fotografii bez rozbijania marki na kilka niezależnych historii. Jednocześnie powinna szybko wyjaśnić, dla kogo jest oferta i jaki materiał może powstać ze współpracy.',
+      },
+      solution: {
+        title: 'Rozwiązanie',
+        body: 'Zbudowałem narrację wokół dwóch rytmów pracy fotografa. Sekcje performance i wildlife mają własny charakter, ale łączy je spójna typografia, rytm oraz sposób prezentowania zdjęć. Oferta, historie i formularz kontaktowy domykają drogę od inspiracji do zapytania.',
+      },
+      challenge: {
+        title: 'Wyzwanie techniczne',
+        body: 'Największym wyzwaniem było połączenie dużej liczby zdjęć, animacji i długich sekwencji w stronę, która pozostaje lekka w odbiorze. Ruch ma budować napięcie i prowadzić przez historię, a nie przykrywać fotografii ani najważniejszych informacji.',
+      },
+      deliverables: {
+        title: 'Zakres prac',
+        items: [
+          { label: 'Stworzenie brandingu', icon: 'branding' as const },
+          { label: 'Strona internetowa', icon: 'website' as const },
+          { label: 'UX i UI', icon: 'interface' as const },
+        ],
+      },
+      result: {
+        title: 'Rezultat',
+        body: 'Powstała wizualna strona fotografa, która pokazuje zarówno energię wydarzeń, jak i skupienie potrzebne w pracy z naturą. Serwis porządkuje ofertę, buduje markę autora i ułatwia rozpoczęcie współpracy.',
       },
       galleryLabel: 'Galeria strony',
       nextLabel: 'Następna realizacja',

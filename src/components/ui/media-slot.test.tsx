@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest'
 import { MediaSlot } from './media-slot'
 
 describe('MediaSlot', () => {
-  it('opens a zoomable image in an accessible overlay', async () => {
+  it('opens a normal preview first and zooms on the second click', async () => {
     const user = userEvent.setup()
     render(
       <MediaSlot
@@ -23,9 +23,17 @@ describe('MediaSlot', () => {
     await user.click(screen.getByRole('button', { name: 'Project screen' }))
 
     expect(screen.getByRole('dialog', { name: 'Project screen' })).toBeInTheDocument()
+    expect(document.documentElement.style.overflowY).toBe('hidden')
+    expect(document.body.style.overflowY).toBe('hidden')
+
+    const previewButton = screen.getByRole('button', { name: 'Project screen', pressed: false })
+    await user.click(previewButton)
+    expect(previewButton).toHaveAttribute('aria-pressed', 'true')
 
     await user.click(screen.getByRole('button', { name: 'Close' }))
 
     expect(screen.queryByRole('dialog', { name: 'Project screen' })).not.toBeInTheDocument()
+    expect(document.documentElement.style.overflowY).toBe('')
+    expect(document.body.style.overflowY).toBe('')
   })
 })

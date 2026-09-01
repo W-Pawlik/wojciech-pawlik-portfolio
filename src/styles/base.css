@@ -25,7 +25,7 @@
   --font-brand-signature: var(--font-signature-family, cursive);
 
   /* Duration scale. Not a Tailwind theme namespace, so consume it as
-   * `duration-[var(--duration-base)]` in CSS transitions.
+   * `duration-base` in CSS transitions.
    * Mirrored in src/lib/motion/tokens.ts for JS-driven animation.
    *
    * Mapped onto the art direction: `fast` is hover (160–220ms), `base` is UI

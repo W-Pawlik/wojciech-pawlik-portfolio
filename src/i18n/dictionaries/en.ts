@@ -107,6 +107,11 @@ export const en: Dictionary = {
         title: 'Maw Autoserwis',
         description: 'Branding and website for a versatile automotive workshop.',
       },
+      dzendzera: {
+        title: 'Dzendzera',
+        description:
+          'A photographer’s website bringing sport, motorsport and wildlife into one visual language.',
+      },
       agnieszkaLuzarska: {
         title: 'Agnieszka Luzarska',
         description:
@@ -164,6 +169,45 @@ export const en: Dictionary = {
       result: {
         title: 'Result',
         body: 'The result is a website that builds trust through concrete information about the company and consistently encourages visitors to get in touch.',
+      },
+      galleryLabel: 'Website gallery',
+      nextLabel: 'Next project',
+    },
+    dzendzera: {
+      title: 'Dzendzera',
+      categories: 'Website / Brand creation',
+      statement:
+        'For Maciej Dżendżera, I created a photographer’s website that brings sport, motorsport and wildlife into one coherent brand direction.',
+      meta: {
+        status: { label: 'Status', value: 'Completed project' },
+      },
+      context: {
+        title: 'What I built',
+        body: 'I created a website for a photographer working in two rhythms: the dynamic world of sport and motorsport, and the patient world of wildlife. The site organises both areas and leads visitors from the first frame towards an enquiry.',
+      },
+      problem: {
+        title: 'Problem',
+        body: 'The website had to present different kinds of photography without splitting the brand into separate stories. It also needed to quickly explain who the offer is for and what kind of material a collaboration can produce.',
+      },
+      solution: {
+        title: 'Solution',
+        body: 'I built the narrative around two working rhythms. The performance and wildlife sections have their own character, but share typography, pacing and an editorial way of presenting images. The offer, stories and contact form complete the route from inspiration to enquiry.',
+      },
+      challenge: {
+        title: 'Technical challenge',
+        body: 'The main challenge was combining a large number of images, animations and long sequences in a site that still feels light to use. Motion creates tension and guides the story without covering the photography or the essential information.',
+      },
+      deliverables: {
+        title: 'Scope',
+        items: [
+          { label: 'Brand creation', icon: 'branding' as const },
+          { label: 'Website', icon: 'website' as const },
+          { label: 'UX and UI', icon: 'interface' as const },
+        ],
+      },
+      result: {
+        title: 'Result',
+        body: 'The result is a photographer’s website that shows both the energy of events and the focus required when working with nature. It organises the offer, builds the author’s brand and makes it easier to start a conversation.',
       },
       galleryLabel: 'Website gallery',
       nextLabel: 'Next project',

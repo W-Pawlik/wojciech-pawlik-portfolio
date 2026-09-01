@@ -40,7 +40,7 @@ export function LanguageSwitcher({ label, className }: LanguageSwitcherProps) {
           hrefLang={locale}
           aria-current={locale === current ? 'true' : undefined}
           className={cn(
-            'px-2 py-1 font-mono text-label uppercase transition-colors duration-[var(--duration-fast)]',
+            'px-2 py-1 font-mono text-label uppercase transition-colors duration-fast',
             locale === current ? 'text-content' : 'text-content-tertiary hover:text-content',
           )}
         >

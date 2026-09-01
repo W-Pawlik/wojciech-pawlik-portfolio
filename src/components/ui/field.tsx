@@ -69,5 +69,5 @@ export function Field({ label, hint, error, required, className, children }: Fie
  */
 export const CONTROL_CLASS =
   'w-full rounded-control border border-line-control bg-surface px-4 py-3.5 text-body text-content ' +
-  'transition-colors duration-[var(--duration-fast)] placeholder:text-content-ghost ' +
+  'transition-colors duration-fast placeholder:text-content-ghost ' +
   'hover:border-content-tertiary focus:border-accent aria-invalid:border-danger'

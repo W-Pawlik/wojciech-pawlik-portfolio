@@ -43,7 +43,7 @@ export async function Footer() {
                 <li key={key}>
                   <Link
                     href={switchLocalePath(NAV_ITEM_ROUTES[key], locale)}
-                    className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-content-invert"
+                    className="text-body-sm text-content-invert-secondary transition-colors duration-fast hover:text-content-invert"
                   >
                     {dict.nav.items[key]}
                   </Link>
@@ -52,7 +52,7 @@ export async function Footer() {
               <li>
                 <Link
                   href={localizedHref(ROUTES.contact, locale)}
-                  className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-content-invert"
+                  className="text-body-sm text-content-invert-secondary transition-colors duration-fast hover:text-content-invert"
                 >
                   {dict.footer.contactTitle}
                 </Link>
@@ -78,7 +78,7 @@ export async function Footer() {
                 {email && (
                   <a
                     href={`mailto:${email}`}
-                    className="block text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-accent"
+                    className="block text-body-sm text-content-invert-secondary transition-colors duration-fast hover:text-accent"
                   >
                     {email}
                   </a>
@@ -86,7 +86,7 @@ export async function Footer() {
                 {phone && (
                   <a
                     href={phoneHref}
-                    className="mt-2 block text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-accent"
+                    className="mt-2 block text-body-sm text-content-invert-secondary transition-colors duration-fast hover:text-accent"
                   >
                     {phone}
                   </a>
@@ -108,7 +108,7 @@ export async function Footer() {
                       href={profile.href}
                       rel="me noreferrer"
                       target="_blank"
-                      className="text-body-sm text-content-invert-secondary transition-colors duration-[var(--duration-fast)] hover:text-accent"
+                      className="text-body-sm text-content-invert-secondary transition-colors duration-fast hover:text-accent"
                     >
                       {profile.label}
                     </a>

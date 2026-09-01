@@ -7,6 +7,8 @@ import { DeliverableIcon, type DeliverableIconName } from '@/components/ui/deliv
 import type { Project } from '@/data/projects'
 import { localizedHref, ROUTES } from '@/data/routes'
 import { type Locale } from '@/i18n/config'
+import { cn } from '@/lib/utils/cn'
+import Image from 'next/image'
 
 type CaseStudyCopy = {
   title: string
@@ -52,13 +54,46 @@ export function CaseStudyPage({
   project,
   nextProject,
 }: CaseStudyPageProps) {
-  const gallerySources = project.media.gallery ?? [project.media.src]
+  const gallerySources = [
+    project.media.src,
+    ...(project.media.gallery ?? []).filter((src) => src !== project.media.src),
+  ]
+  const hasHeroBackground = Boolean(project.media.src)
 
   return (
     <>
-      <Section spacing="xl">
-        <Container>
-          <BackLink href={localizedHref(ROUTES.work, locale)}>{caseStudyLabel}</BackLink>
+      <Section
+        spacing="xl"
+        className={hasHeroBackground ? 'overflow-hidden bg-canvas-invert text-content-invert' : ''}
+      >
+        {hasHeroBackground ? (
+          <>
+            <div className="absolute inset-0">
+              <Image
+                src={project.media.src}
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-cover opacity-65"
+              />
+            </div>
+            {/* Keep the same full-bleed layering as the landing reel, with a stronger
+                uniform veil so the case-study copy stays readable across the image. */}
+            <div className="absolute inset-0 bg-canvas-invert/85" aria-hidden="true" />
+            <div
+              className="absolute inset-0 bg-gradient-to-b from-canvas-invert/80 via-transparent to-canvas-invert/95"
+              aria-hidden="true"
+            />
+          </>
+        ) : null}
+
+        <Container className="relative z-10">
+          <BackLink
+            href={localizedHref(ROUTES.work, locale)}
+            tone={hasHeroBackground ? 'invert' : 'default'}
+          >
+            {caseStudyLabel}
+          </BackLink>
 
           <div className="mt-16 grid grid-cols-12 gap-grid">
             <div className="col-span-12 lg:col-span-8">
@@ -73,22 +108,47 @@ export function CaseStudyPage({
                     arrow="up-right"
                     target="_blank"
                     rel="noreferrer"
+                    tone={hasHeroBackground ? 'invert' : 'default'}
+                    accent={hasHeroBackground}
                   >
                     {liveCta}
                   </TextLink>
                 </div>
               ) : null}
-              <p className="mt-10 max-w-measure text-body-lg text-content-secondary">
+              <p
+                className={cn(
+                  'mt-10 max-w-measure text-body-lg',
+                  hasHeroBackground ? 'text-content-invert-secondary' : 'text-content-secondary',
+                )}
+              >
                 {copy.statement}
               </p>
             </div>
 
             <div className="col-span-12 mt-10 lg:col-span-3 lg:col-start-10 lg:mt-0">
               {copy.meta ? (
-                <dl className="border-t border-line">
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-line py-4 font-mono text-meta uppercase">
-                    <dt className="text-content-tertiary">{copy.meta.status.label}</dt>
-                    <dd className="text-content">{copy.meta.status.value}</dd>
+                <dl
+                  className={cn(
+                    'border-t',
+                    hasHeroBackground ? 'border-line-invert' : 'border-line',
+                  )}
+                >
+                  <div
+                    className={cn(
+                      'flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b py-4 font-mono text-meta uppercase',
+                      hasHeroBackground ? 'border-line-invert' : 'border-line',
+                    )}
+                  >
+                    <dt
+                      className={
+                        hasHeroBackground ? 'text-content-invert-tertiary' : 'text-content-tertiary'
+                      }
+                    >
+                      {copy.meta.status.label}
+                    </dt>
+                    <dd className={hasHeroBackground ? 'text-content-invert' : 'text-content'}>
+                      {copy.meta.status.value}
+                    </dd>
                   </div>
                 </dl>
               ) : null}
@@ -98,19 +158,6 @@ export function CaseStudyPage({
                 </p>
               ) : null}
             </div>
-          </div>
-
-          <div className="mt-20">
-            <MediaSlot
-              id={project.media.id}
-              ratio={project.media.ratio}
-              src={project.media.src}
-              alt={copy.title}
-              label={copy.galleryLabel}
-              fit="contain"
-              zoomable
-              closeLabel={closeLabel}
-            />
           </div>
         </Container>
       </Section>
@@ -174,30 +221,26 @@ export function CaseStudyPage({
       </Section>
 
       <Section spacing="large" className="bg-canvas-subtle">
-        <Container>
-          <div className="grid grid-cols-12 gap-grid">
-            <div className="col-span-12 lg:col-span-8">
-              <p className="font-mono text-meta text-content-tertiary uppercase">
-                07 / {copy.galleryLabel}
-              </p>
-              <div className="mt-6 grid grid-cols-1 gap-grid sm:grid-cols-2">
-                {gallerySources.map((src, index) => (
-                  <MediaSlot
-                    key={src}
-                    id={`${project.media.id}-${index + 1}`}
-                    ratio={project.media.ratio}
-                    src={src}
-                    alt={copy.title}
-                    label={copy.galleryLabel}
-                    fit="contain"
-                    zoomable
-                    closeLabel={closeLabel}
-                  />
-                ))}
-              </div>
-            </div>
+        <div className="w-full px-gutter">
+          <p className="font-mono text-meta text-content-tertiary uppercase">
+            07 / {copy.galleryLabel}
+          </p>
+          <div className="mt-6 grid grid-cols-1 gap-grid sm:grid-cols-2 lg:grid-cols-3">
+            {gallerySources.map((src, index) => (
+              <MediaSlot
+                key={src}
+                id={`${project.media.id}-${index + 1}`}
+                ratio={project.media.ratio}
+                src={src}
+                alt={copy.title}
+                label={copy.galleryLabel}
+                fit="contain"
+                zoomable
+                closeLabel={closeLabel}
+              />
+            ))}
           </div>
-        </Container>
+        </div>
       </Section>
 
       {copy.testimonial ? (

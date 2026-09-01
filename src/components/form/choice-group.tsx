@@ -53,7 +53,7 @@ export function ChoiceGroup<Value extends string>({
             <span
               className={cn(
                 'flex items-center gap-3 rounded-control border border-line-control px-5 py-3.5 text-body text-content-secondary',
-                'transition-colors duration-[var(--duration-fast)]',
+                'transition-colors duration-fast',
                 'hover:border-content-tertiary hover:text-content',
                 'peer-checked:border-accent peer-checked:bg-accent-subtle peer-checked:text-content',
                 // The dot is a descendant, not a sibling of the radio, so `peer-checked:`
@@ -66,7 +66,7 @@ export function ChoiceGroup<Value extends string>({
             >
               <span
                 aria-hidden="true"
-                className="size-1.5 rounded-full bg-line-strong transition-colors duration-[var(--duration-fast)]"
+                className="size-1.5 rounded-full bg-line-strong transition-colors duration-fast"
               />
               {labels[option]}
             </span>

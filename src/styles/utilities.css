@@ -10,6 +10,44 @@
   margin-inline: calc(50% - 50vw);
 }
 
+/* Avoid nested CSS variables inside Tailwind arbitrary values: Turbopack's dev CSS
+ * parser can misread the generated selector even though the CSS value is valid. */
+@utility min-h-viewport-minus-nav {
+  min-height: calc(100svh - var(--navbar-height));
+}
+
+@utility h-viewport-minus-nav {
+  height: calc(100svh - var(--navbar-height));
+}
+
+@utility h-navbar {
+  height: var(--navbar-height);
+}
+
+@utility scroll-mt-navbar {
+  scroll-margin-top: var(--navbar-height);
+}
+
+@utility duration-fast {
+  transition-duration: var(--duration-fast);
+}
+
+@utility duration-base {
+  transition-duration: var(--duration-base);
+}
+
+@utility accent-brand {
+  accent-color: var(--color-accent);
+}
+
+@utility max-w-shell-gutter {
+  max-width: calc(var(--container-shell) + 2 * var(--spacing-gutter));
+}
+
+@utility max-w-wide-gutter {
+  max-width: calc(var(--container-wide) + 2 * var(--spacing-gutter));
+}
+
 /**
  * Sticky navbar surface: the warm canvas at 92% behind a 12px blur, per the art
  * direction. A utility rather than Tailwind classes because `bg-canvas/92` would snap to

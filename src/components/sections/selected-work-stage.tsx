@@ -203,7 +203,7 @@ export function SelectedWorkStage({ projects, copy, locale }: SelectedWorkStageP
         event.preventDefault()
         go(keys[event.key] ?? index)
       }}
-      className="relative h-[calc(100svh-var(--navbar-height))] w-full touch-pan-y scroll-mt-[var(--navbar-height)] overflow-hidden bg-canvas-invert text-content-invert outline-none select-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-inset"
+      className="relative h-viewport-minus-nav w-full touch-pan-y scroll-mt-navbar overflow-hidden bg-canvas-invert text-content-invert outline-none select-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-inset"
     >
       <AnimatePresence initial={false}>
         <motion.div
@@ -290,29 +290,25 @@ export function SelectedWorkStage({ projects, copy, locale }: SelectedWorkStageP
                 aria-current={selected}
                 aria-pressed={selected}
                 onClick={() => go(projectIndex)}
-                className="relative shrink-0 overflow-hidden rounded-image border border-line-invert-strong bg-canvas-invert-surface focus-visible:outline-1 focus-visible:outline-accent"
+                className="relative shrink-0 overflow-hidden rounded-image border border-line-invert-strong bg-white focus-visible:outline-1 focus-visible:outline-accent"
                 style={{ width: cardWidth }}
                 animate={{ height: selected ? cardHeight : cardHeight / 2 }}
                 transition={spring}
               >
-                <span
-                  className={cn(
-                    'absolute inset-0 isolate overflow-hidden',
-                    project.logoSurface === 'dark' ? 'bg-canvas-invert' : 'bg-surface',
-                  )}
-                >
+                <span className={cn('absolute inset-0 isolate overflow-hidden', 'bg-white')}>
                   <Image
                     src={project.logoSrc}
                     alt=""
                     fill
                     sizes="(min-width: 64rem) 20rem, 45vw"
+                    unoptimized={project.logoSrc.endsWith('.svg')}
                     className="object-contain p-5 sm:p-8"
                   />
                 </span>
                 <span
                   aria-hidden="true"
                   className={cn(
-                    'absolute inset-0 bg-canvas-invert transition-opacity duration-[var(--duration-fast)]',
+                    'absolute inset-0 bg-canvas-invert transition-opacity duration-fast',
                     selected ? 'opacity-0' : 'opacity-15',
                   )}
                 />

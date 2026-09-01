@@ -169,11 +169,7 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
       </div>
 
       <label className="mt-8 flex max-w-measure items-start gap-3 text-body-sm text-content-secondary">
-        <input
-          type="checkbox"
-          name="consent"
-          className="mt-1 size-4 shrink-0 accent-[var(--color-accent)]"
-        />
+        <input type="checkbox" name="consent" className="mt-1 size-4 shrink-0 accent-brand" />
         <span>{copy.consent}</span>
       </label>
       <p aria-live="polite" className="min-h-5 text-body-sm text-danger">

@@ -39,10 +39,10 @@ export async function Navbar() {
   return (
     <header className="sticky top-0 z-40 navbar-in border-b border-line navbar-surface">
       <Container>
-        <div className="flex h-[var(--navbar-height)] items-center justify-between gap-6">
+        <div className="flex h-navbar items-center justify-between gap-6">
           <Link href={`${home}#top`} className="group flex items-baseline gap-3">
             <BrandLogo name={siteConfig.name} />
-            <span className="hidden font-mono text-meta text-content-tertiary uppercase transition-colors duration-[var(--duration-fast)] group-hover:text-accent-strong md:inline">
+            <span className="hidden font-mono text-meta text-content-tertiary uppercase transition-colors duration-fast group-hover:text-accent-strong md:inline">
               {dict.nav.descriptor}
             </span>
           </Link>

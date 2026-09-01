@@ -48,8 +48,19 @@ export function MediaSlot({
   showAnnotation = false,
   className,
 }: MediaSlotProps) {
+  const [isOpen, setIsOpen] = useState(false)
   const [isZoomed, setIsZoomed] = useState(false)
   const imageClassName = fit === 'contain' ? 'object-contain' : 'object-cover'
+
+  function openPreview() {
+    setIsOpen(true)
+    setIsZoomed(false)
+  }
+
+  function closePreview() {
+    setIsOpen(false)
+    setIsZoomed(false)
+  }
 
   return (
     <>
@@ -67,8 +78,8 @@ export function MediaSlot({
           <button
             type="button"
             aria-label={alt ?? label}
-            className="absolute inset-0 z-0 block h-full w-full cursor-zoom-in border-0 bg-transparent p-0 text-left"
-            onClick={() => setIsZoomed(true)}
+            className="absolute inset-0 z-0 block h-full w-full cursor-pointer border-0 bg-transparent p-0 text-left"
+            onClick={openPreview}
           >
             <Image
               src={src}
@@ -118,8 +129,8 @@ export function MediaSlot({
 
       {src && zoomable && closeLabel ? (
         <Overlay
-          open={isZoomed}
-          onClose={() => setIsZoomed(false)}
+          open={isOpen}
+          onClose={closePreview}
           label={alt ?? label}
           className="!inset-0 !w-full !bg-canvas-invert"
         >
@@ -128,12 +139,36 @@ export function MediaSlot({
               type="button"
               aria-label={closeLabel}
               className="absolute top-0 right-0 z-10 inline-flex h-12 w-12 items-center justify-center border border-line-invert-strong bg-canvas-invert text-body-lg text-content-invert transition-colors hover:border-content-invert hover:bg-canvas-invert-surface"
-              onClick={() => setIsZoomed(false)}
+              onClick={closePreview}
             >
               <span aria-hidden="true">×</span>
             </button>
-            <div className="relative h-full w-full">
-              <Image src={src} alt={alt ?? label} fill sizes="100vw" className="object-contain" />
+            <div
+              className={cn(
+                'relative h-full w-full',
+                isZoomed ? 'overflow-auto' : 'overflow-hidden',
+              )}
+            >
+              <button
+                type="button"
+                aria-label={alt ?? label}
+                aria-pressed={isZoomed}
+                className={cn(
+                  'relative block min-h-full w-full border-0 bg-transparent p-0',
+                  isZoomed ? 'cursor-zoom-out' : 'h-full cursor-zoom-in',
+                )}
+                onClick={() => setIsZoomed((current) => !current)}
+              >
+                <Image
+                  src={src}
+                  alt={alt ?? label}
+                  fill
+                  sizes="100vw"
+                  className={cn(
+                    isZoomed ? '!static !h-auto !w-full object-contain' : 'object-contain',
+                  )}
+                />
+              </button>
             </div>
           </div>
         </Overlay>

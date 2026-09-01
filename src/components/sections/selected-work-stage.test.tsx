@@ -6,6 +6,10 @@ import { pl } from '@/i18n/dictionaries/pl'
 
 import { SelectedWorkStage } from './selected-work-stage'
 
+const landingProjects = PROJECTS.filter((project) => project.showOnLanding)
+const nextProject = landingProjects[1]!
+const nextProjectTitle = pl.work.projects[nextProject.key].title
+
 describe('SelectedWorkStage', () => {
   it('changes the active project with a button interaction', () => {
     render(
@@ -44,7 +48,7 @@ describe('SelectedWorkStage', () => {
 
     fireEvent.wheel(stage, { deltaY: 100, timeStamp: 1000 })
 
-    expect(screen.getByRole('heading', { name: 'Agnieszka Luzarska' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: nextProjectTitle })).toBeInTheDocument()
   })
 
   it('keeps the wheel cooldown while the active project rerenders', () => {
@@ -66,7 +70,7 @@ describe('SelectedWorkStage', () => {
     fireEvent.wheel(stage, { deltaY: 100, timeStamp: 1000 })
     fireEvent.wheel(stage, { deltaY: 100, timeStamp: 1100 })
 
-    expect(screen.getByRole('heading', { name: 'Agnieszka Luzarska' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: nextProjectTitle })).toBeInTheDocument()
   })
 
   it('catches a wheel gesture even when the pointer is outside the stage', () => {
@@ -87,6 +91,6 @@ describe('SelectedWorkStage', () => {
 
     fireEvent.wheel(window, { deltaY: 100, timeStamp: 1000 })
 
-    expect(screen.getByRole('heading', { name: 'Agnieszka Luzarska' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: nextProjectTitle })).toBeInTheDocument()
   })
 })

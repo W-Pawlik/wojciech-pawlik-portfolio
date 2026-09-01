@@ -19,7 +19,7 @@ export function PrimaryNavigation({ items, label }: { items: NavigationItem[]; l
             key={item.href}
             href={item.href}
             aria-current={active ? 'page' : undefined}
-            className={`relative text-body-sm transition-colors duration-[var(--duration-fast)] hover:text-content ${
+            className={`relative text-body-sm transition-colors duration-fast hover:text-content ${
               active
                 ? 'text-content after:absolute after:inset-x-0 after:-bottom-2 after:h-px after:bg-accent'
                 : 'text-content-secondary'

@@ -19,9 +19,7 @@ type ContainerProps = {
  * on a wide screen the content would be narrower than the token describes and start
  * further from the edge.
  */
-const SHELL_CLASS =
-  'max-w-[calc(var(--container-shell)+2*var(--spacing-gutter))] px-gutter ' +
-  '3xl:max-w-[calc(var(--container-wide)+2*var(--spacing-gutter))]'
+const SHELL_CLASS = 'max-w-shell-gutter px-gutter 3xl:max-w-wide-gutter'
 
 /**
  * The horizontal frame for content. Full-bleed media deliberately sits *outside* a

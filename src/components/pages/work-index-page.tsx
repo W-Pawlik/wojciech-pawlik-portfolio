@@ -8,6 +8,7 @@ import { PROJECTS, projectRoute } from '@/data/projects'
 import { localizedHref, ROUTES } from '@/data/routes'
 import { getDictionary, getLocale } from '@/i18n/server'
 import { withLocale } from '@/i18n/config'
+import Link from 'next/link'
 
 /** The work index is an editorial archive, not the landing page's selected-work section. */
 export async function WorkIndexPage() {
@@ -44,30 +45,40 @@ export async function WorkIndexPage() {
                       closeLabel={dict.nav.closeMenu}
                     />
                   </div>
-                  <div className="col-span-12 mt-8 lg:col-span-4 lg:col-start-9 lg:mt-0">
-                    <p className="font-mono text-meta text-content-tertiary uppercase">
-                      {project.tags.map((tag) => dict.work.tags[tag]).join(' · ')}
-                    </p>
-                    <h2 className="mt-4 font-display text-display-project">{copy.title}</h2>
-                    <p className="mt-4 text-body text-content-secondary">{copy.description}</p>
-                    <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
-                      <TextLink
-                        href={withLocale(projectRoute(project, locale), locale)}
-                        data-return-scroll
-                      >
-                        {dict.work.caseStudyCta}
-                      </TextLink>
-                      {project.liveUrl ? (
-                        <TextLink
-                          href={project.liveUrl}
-                          arrow="up-right"
-                          target="_blank"
-                          rel="noreferrer"
+                  <div className="group col-span-12 mt-8 lg:col-span-4 lg:col-start-9 lg:mt-0">
+                    <Link
+                      href={withLocale(projectRoute(project, locale), locale)}
+                      data-return-scroll
+                      className="block rounded-image focus-visible:outline-1 focus-visible:outline-accent"
+                    >
+                      <p className="font-mono text-meta text-content-tertiary uppercase">
+                        {project.tags.map((tag) => dict.work.tags[tag]).join(' · ')}
+                      </p>
+                      <h2 className="mt-4 font-display text-display-project">{copy.title}</h2>
+                      <p className="mt-4 text-body text-content-secondary">{copy.description}</p>
+                      <span className="mt-7 inline-flex items-center gap-2 text-body text-content">
+                        <span className="relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-base after:ease-out-quint group-hover:after:scale-x-100">
+                          {dict.work.caseStudyCta}
+                        </span>
+                        <span
+                          aria-hidden="true"
+                          className="inline-block transition-transform duration-fast ease-out-quart group-hover:translate-x-1"
                         >
-                          {dict.work.liveCta}
-                        </TextLink>
-                      ) : null}
-                    </div>
+                          →
+                        </span>
+                      </span>
+                    </Link>
+                    {project.liveUrl ? (
+                      <TextLink
+                        href={project.liveUrl}
+                        arrow="up-right"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-3"
+                      >
+                        {dict.work.liveCta}
+                      </TextLink>
+                    ) : null}
                   </div>
                 </article>
               )

@@ -47,7 +47,7 @@ export async function ServicesSection({ headlineAs = 'h2' }: { headlineAs?: 'h1'
                 <Link
                   href={href}
                   data-return-scroll
-                  className="block grid grid-cols-12 items-baseline gap-grid py-9 transition-colors duration-[var(--duration-base)] group-hover:bg-canvas-subtle"
+                  className="block grid grid-cols-12 items-baseline gap-grid py-9 transition-colors duration-base group-hover:bg-canvas-subtle"
                 >
                   <span className="col-span-2 font-mono text-meta text-accent uppercase lg:col-span-1">
                     {formatOrdinal(index + 1)}
@@ -69,12 +69,12 @@ export async function ServicesSection({ headlineAs = 'h2' }: { headlineAs?: 'h1'
 
                   <div className="col-span-12 mt-6 lg:col-span-2 lg:mt-0 lg:justify-self-end">
                     <span className="inline-flex items-baseline gap-2 text-body text-content">
-                      <span className="relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-[var(--duration-base)] after:ease-out-quint group-hover:after:scale-x-100">
+                      <span className="relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-base group-hover:after:scale-x-100">
                         {copy.cta}
                       </span>
                       <span
                         aria-hidden="true"
-                        className="transition-transform duration-[var(--duration-fast)] ease-out-quart group-hover:translate-x-1"
+                        className="transition-transform duration-fast ease-out-quart group-hover:translate-x-1"
                       >
                         →
                       </span>

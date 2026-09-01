@@ -36,7 +36,7 @@ export function TextLink({
         className={cn(
           'relative',
           'after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0',
-          'after:transition-transform after:duration-[var(--duration-base)] after:ease-out-quint',
+          'after:transition-transform after:duration-base after:ease-out-quint',
           'group-hover:after:scale-x-100 group-focus-visible:after:scale-x-100',
           tone === 'invert'
             ? accent
@@ -51,7 +51,7 @@ export function TextLink({
         <span
           aria-hidden="true"
           className={cn(
-            'inline-block transition-transform duration-[var(--duration-fast)] ease-out-quart group-hover:translate-x-1',
+            'inline-block transition-transform duration-fast ease-out-quart group-hover:translate-x-1',
             tone === 'invert' ? (accent ? 'text-accent' : 'text-content-invert') : 'text-content',
           )}
         >

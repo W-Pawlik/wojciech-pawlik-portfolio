@@ -32,7 +32,7 @@ export async function ServicesIndexPage() {
                   <Link
                     href={href}
                     data-return-scroll
-                    className="group grid grid-cols-12 gap-grid py-10 transition-colors duration-[var(--duration-base)] hover:bg-canvas"
+                    className="group grid grid-cols-12 gap-grid py-10 transition-colors duration-base hover:bg-canvas"
                   >
                     <span className="col-span-2 font-mono text-meta text-accent lg:col-span-1">
                       {formatOrdinal(index + 1)}
@@ -44,7 +44,7 @@ export async function ServicesIndexPage() {
                       <p className="text-body-lg text-content-secondary">{detail.intro}</p>
                       <p className="mt-5 text-body text-content-secondary">{summary.body}</p>
                       <span className="mt-7 inline-flex items-baseline gap-2 text-body">
-                        <span className="relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-[var(--duration-base)] after:ease-out-quint group-hover:after:scale-x-100 group-focus-visible:after:scale-x-100">
+                        <span className="relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-base after:ease-out-quint group-hover:after:scale-x-100 group-focus-visible:after:scale-x-100">
                           {summary.cta}
                         </span>
                         <span aria-hidden="true">→</span>

@@ -60,6 +60,7 @@ export const SERVICE_ROUTES = {
 } as const
 
 export const PROJECT_ROUTE_PATHS: Record<string, Record<Locale, string>> = {
+  dzendzera: { pl: '/realizacje/dzendzera', en: '/work/dzendzera-photography' },
   mawAuto: { pl: '/realizacje/maw-autoserwis', en: '/work/maw-autoservice' },
   agnieszkaLuzarska: {
     pl: '/realizacje/agnieszka-luzarska-strona',
@@ -90,9 +91,12 @@ export const INDEXABLE_ROUTES: readonly LocalizedRoute[] = [
   { path: ROUTES.services, paths: ROUTE_PATHS.services, priority: 0.8 },
   { path: ROUTES.pricing, paths: ROUTE_PATHS.pricing, priority: 0.7 },
   { path: ROUTES.about, paths: ROUTE_PATHS.about, priority: 0.7 },
-  { path: ROUTES.planik, paths: ROUTE_PATHS.planik, priority: 0.7 },
-  { path: ROUTES.creditRisk, paths: ROUTE_PATHS.creditRisk, priority: 0.7 },
   { path: ROUTES.contact, paths: ROUTE_PATHS.contact, priority: 0.6 },
+  ...Object.entries(PROJECT_ROUTE_PATHS).map(([key, paths]) => ({
+    path: paths.pl,
+    paths,
+    priority: key === 'creditRisk' ? 0.6 : 0.7,
+  })),
   ...Object.entries(SERVICE_ROUTE_PATHS).map(([key, paths]) => ({
     path: paths.pl,
     paths,

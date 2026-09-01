@@ -39,7 +39,7 @@ export async function FinalCtaSection() {
             {siteConfig.contact.email && (
               <a
                 href={`mailto:${siteConfig.contact.email}`}
-                className="font-mono text-label text-content-secondary uppercase transition-colors duration-[var(--duration-fast)] hover:text-accent-strong"
+                className="font-mono text-label text-content-secondary uppercase transition-colors duration-fast hover:text-accent-strong"
               >
                 {siteConfig.contact.email}
               </a>

@@ -26,7 +26,7 @@ export async function HeroSection() {
     <Section
       spacing="none"
       tone="invert"
-      className="relative isolate flex min-h-[calc(100svh-var(--navbar-height))] flex-col justify-center overflow-hidden py-section-sm"
+      className="relative isolate flex min-h-viewport-minus-nav flex-col justify-center overflow-hidden py-section-sm"
     >
       <AmbientBackground className="absolute inset-0 z-0 overflow-hidden" />
 
