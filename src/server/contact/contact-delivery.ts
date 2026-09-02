@@ -6,32 +6,27 @@ import type { ContactRequest } from '@/lib/validation/contact'
 /**
  * The only boundary between this site and the outside world.
  *
- * Until the provider variables are set, a request is logged server-side and treated as
- * delivered, so the form is fully testable without an account anywhere. **That also means
- * nobody receives it** - connecting a provider is a launch blocker, not a nice-to-have.
+ * The provider is configured with server-only environment variables. If one is missing,
+ * the action fails instead of showing a success message for a request nobody received.
  * See .agents/decisions/0007-contact-delivery.md.
  *
  * Swapping providers means changing this file and nothing else.
  *
- * TODO(brief): the endpoint and payload below follow a typical transactional-email API.
- * Confirm the provider, then adjust the endpoint and the body shape.
  */
 
 const EMAIL_ENDPOINT = 'https://api.resend.com/emails'
 
 export async function deliverContactRequest(request: ContactRequest): Promise<void> {
   const apiKey = process.env.CONTACT_EMAIL_API_KEY
-  const recipient = process.env.CONTACT_NOTIFICATION_EMAIL
+  const recipient = process.env.CONTACT_NOTIFICATION_EMAIL || siteConfig.contact.email
   const sender = process.env.CONTACT_FROM_EMAIL
 
   if (!apiKey || !recipient || !sender) {
-    // console.warn rather than console.log: the lint rule forbids log, and an
-    // unconfigured provider genuinely is a warning.
     console.warn(
-      '[contact] No email provider configured - request logged only, nobody was notified.',
+      '[contact] Email provider is not configured - request was not delivered.',
       redact(request),
     )
-    return
+    throw new Error('Email provider is not configured')
   }
 
   const response = await fetch(EMAIL_ENDPOINT, {
@@ -39,6 +34,7 @@ export async function deliverContactRequest(request: ContactRequest): Promise<vo
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
+      'User-Agent': 'PawlikWeb contact form',
     },
     body: JSON.stringify({
       from: sender,

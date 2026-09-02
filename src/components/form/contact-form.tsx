@@ -1,6 +1,7 @@
 'use client'
 
-import { useActionState } from 'react'
+import Link from 'next/link'
+import { useActionState, useState } from 'react'
 
 import { ChoiceGroup } from '@/components/form/choice-group'
 import { Button } from '@/components/ui/button'
@@ -10,10 +11,13 @@ import {
   CONTACT_LIMITS,
   PROJECT_STAGES,
   PROJECT_TYPES,
+  type BudgetRange,
   type ProjectType,
+  type ProjectStage,
 } from '@/data/contact'
 import type { Locale } from '@/i18n/config'
 import type { Dictionary } from '@/i18n/dictionaries'
+import { localizedHref, ROUTES } from '@/data/routes'
 import { HONEYPOT_FIELD } from '@/lib/validation/contact'
 import { submitContact } from '@/server/contact/submit-contact'
 import { initialContactFormState } from '@/server/contact/contact-form-state'
@@ -31,6 +35,17 @@ type ContactFormProps = {
   defaultType?: ProjectType
 }
 
+type ContactFormValues = {
+  projectType: ProjectType | ''
+  stage: ProjectStage | ''
+  budget: BudgetRange | ''
+  message: string
+  name: string
+  email: string
+  phone: string
+  consent: boolean
+}
+
 /**
  * The conversion point of the site, and the only interactive island in its section.
  *
@@ -44,6 +59,23 @@ type ContactFormProps = {
  */
 export function ContactForm({ locale, copy, optionalLabel, defaultType }: ContactFormProps) {
   const [state, formAction, pending] = useActionState(submitContact, initialContactFormState)
+  const [values, setValues] = useState<ContactFormValues>(() => ({
+    projectType: defaultType ?? '',
+    stage: '',
+    budget: '',
+    message: '',
+    name: '',
+    email: '',
+    phone: '',
+    consent: false,
+  }))
+
+  function updateValue<Key extends keyof ContactFormValues>(
+    key: Key,
+    value: ContactFormValues[Key],
+  ) {
+    setValues((current) => ({ ...current, [key]: value }))
+  }
 
   if (state.status === 'success') {
     return (
@@ -69,7 +101,8 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
           options={PROJECT_TYPES}
           labels={copy.types}
           error={fieldErrors?.projectType?.[0]}
-          defaultValue={defaultType}
+          value={values.projectType || undefined}
+          onChange={(value) => updateValue('projectType', value)}
         />
 
         <ChoiceGroup
@@ -78,6 +111,8 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
           options={PROJECT_STAGES}
           labels={copy.stages}
           error={fieldErrors?.stage?.[0]}
+          value={values.stage || undefined}
+          onChange={(value) => updateValue('stage', value)}
         />
 
         <ChoiceGroup
@@ -86,6 +121,8 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
           options={BUDGET_RANGES}
           labels={copy.budgets}
           error={fieldErrors?.budget?.[0]}
+          value={values.budget || undefined}
+          onChange={(value) => updateValue('budget', value)}
         />
 
         <div className="max-w-measure">
@@ -94,6 +131,8 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
               <textarea
                 id={id}
                 name="message"
+                value={values.message}
+                onChange={(event) => updateValue('message', event.target.value)}
                 rows={5}
                 placeholder={copy.messagePlaceholder}
                 maxLength={CONTACT_LIMITS.message}
@@ -116,6 +155,8 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
                 <input
                   id={id}
                   name="name"
+                  value={values.name}
+                  onChange={(event) => updateValue('name', event.target.value)}
                   autoComplete="name"
                   maxLength={CONTACT_LIMITS.name}
                   aria-describedby={describedBy}
@@ -130,6 +171,8 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
                 <input
                   id={id}
                   name="email"
+                  value={values.email}
+                  onChange={(event) => updateValue('email', event.target.value)}
                   type="email"
                   inputMode="email"
                   autoComplete="email"
@@ -147,6 +190,8 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
                 <input
                   id={id}
                   name="phone"
+                  value={values.phone}
+                  onChange={(event) => updateValue('phone', event.target.value)}
                   type="tel"
                   inputMode="tel"
                   autoComplete="tel"
@@ -169,8 +214,23 @@ export function ContactForm({ locale, copy, optionalLabel, defaultType }: Contac
       </div>
 
       <label className="mt-8 flex max-w-measure items-start gap-3 text-body-sm text-content-secondary">
-        <input type="checkbox" name="consent" className="mt-1 size-4 shrink-0 accent-brand" />
-        <span>{copy.consent}</span>
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          checked={values.consent}
+          onChange={(event) => updateValue('consent', event.target.checked)}
+          className="mt-1 size-4 shrink-0 accent-brand"
+        />
+        <span>
+          {copy.consent}{' '}
+          <Link
+            href={localizedHref(ROUTES.privacy, locale)}
+            className="underline decoration-line-strong underline-offset-4 transition-colors hover:text-content"
+          >
+            {copy.consentPrivacy}
+          </Link>
+        </span>
       </label>
       <p aria-live="polite" className="min-h-5 text-body-sm text-danger">
         {fieldErrors?.consent?.[0]}

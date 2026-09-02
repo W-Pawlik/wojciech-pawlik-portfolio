@@ -72,7 +72,10 @@ export function createContactSchema(messages: ContactMessages) {
 
     // Email is the required channel here, not the phone: this is a project enquiry that
     // gets a written answer, not a local business call (ADR-0010).
-    email: z.email({ error: messages.email }),
+    email: z
+      .string()
+      .trim()
+      .pipe(z.email({ error: messages.email })),
 
     phone: z
       .union([z.literal(''), z.string().trim().regex(PHONE_PATTERN, { error: messages.phone })])

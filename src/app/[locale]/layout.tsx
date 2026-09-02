@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Allura, IBM_Plex_Mono, Instrument_Sans } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { Analytics } from '@vercel/analytics/next'
 
 import { Footer } from '@/components/layout/footer'
 import { Navbar } from '@/components/layout/navbar'
@@ -107,6 +108,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<'/[
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )

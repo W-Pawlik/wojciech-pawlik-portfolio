@@ -30,7 +30,7 @@ export const pl = {
     to: '–',
     email: 'E-mail',
     phone: 'Telefon',
-    address: 'Adres',
+    address: 'Adres do korespondencji',
     openingHours: 'Godziny otwarcia',
     languageSwitcher: 'Zmień język',
     optional: 'opcjonalnie',
@@ -874,6 +874,7 @@ export const pl = {
      */
     consent:
       'Zgadzam się na przetwarzanie moich danych w celu odpowiedzi na to zgłoszenie i kontaktu w sprawie projektu.',
+    consentPrivacy: 'Polityka prywatności',
     steps: {
       type: 'Czego potrzebujesz?',
       stage: 'Na jakim etapie jesteś?',
@@ -913,12 +914,92 @@ export const pl = {
   },
 
   footer: {
+    privacy: 'Polityka prywatności',
+    terms: 'Regulamin',
     navTitle: 'Strona',
     contactTitle: 'Kontakt',
     codebrosTitle: 'Większe projekty',
     codebrosLabel: 'CodeBros - Wojciech & Michał Pawlik',
     note: 'Designed & built by Wojciech Pawlik.',
     rights: 'Wszelkie prawa zastrzeżone.',
+  },
+
+  legal: {
+    privacy: {
+      title: 'Polityka prywatności',
+      intro:
+        'Informacje o tym, jak przetwarzam dane przekazane przez formularz kontaktowy i podczas korzystania ze strony.',
+      sections: [
+        {
+          title: 'Administrator danych',
+          paragraphs: [
+            'Administratorem danych osobowych jest Wojciech Pawlik, prowadzący działalność nierejestrowaną. Kontakt w sprawach danych osobowych: wojciech.pawlikweb@gmail.com. Telefon: +48 666 223 853.',
+          ],
+        },
+        {
+          title: 'Jakie dane i po co przetwarzam',
+          paragraphs: [
+            'Jeśli korzystasz z formularza, przetwarzam dane, które podajesz: imię i nazwisko, adres e-mail, opcjonalnie numer telefonu oraz opis projektu. Używam ich, aby odpowiedzieć na wiadomość, przygotować kolejny krok rozmowy i prowadzić korespondencję dotyczącą zapytania.',
+            'Podanie danych jest dobrowolne, ale bez imienia, adresu e-mail i opisu projektu nie mogę odpowiedzieć na zapytanie. Podstawą przetwarzania jest zgoda wyrażona przy wysłaniu formularza oraz, gdy dotyczy to podjęcia rozmowy o usłudze, działania na żądanie osoby przed zawarciem umowy.',
+          ],
+        },
+        {
+          title: 'Analityka i pliki cookies',
+          paragraphs: [
+            'Strona korzysta z Vercel Web Analytics, aby mierzyć odwiedziny i popularność podstron. Według dokumentacji Vercel narzędzie nie używa plików cookies, a dane analityczne są anonimizowane i agregowane. Nie korzystam obecnie z Google Analytics, Meta Pixel, Hotjar ani marketingowych plików cookies.',
+            'Hosting strony zapewnia Vercel. Dostawca może przetwarzać dane techniczne niezbędne do dostarczenia strony i analityki zgodnie ze swoją dokumentacją oraz umowami dotyczącymi ochrony danych.',
+          ],
+        },
+        {
+          title: 'Odbiorcy i czas przechowywania',
+          paragraphs: [
+            'Dane z formularza są przekazywane dostawcy usługi e-mail Resend wyłącznie po to, aby dostarczyć wiadomość na adres administratora. Dostęp do danych mam ja oraz dostawcy techniczni zaangażowani w hosting i wysyłkę wiadomości.',
+            'Dane przechowuję przez czas potrzebny do obsługi zapytania, a następnie przez okres niezbędny do obrony przed ewentualnymi roszczeniami. Jeśli dane trafią do dokumentacji księgowej lub umownej, przechowuję je przez okres wymagany przepisami prawa.',
+          ],
+        },
+        {
+          title: 'Twoje prawa',
+          paragraphs: [
+            'Możesz żądać dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania lub przeniesienia danych. Jeśli podstawą jest zgoda, możesz wycofać ją w dowolnym momencie; nie wpływa to na zgodność przetwarzania sprzed wycofania zgody. W sprawie realizacji praw napisz na wojciech.pawlikweb@gmail.com.',
+            'Masz również prawo wnieść skargę do Prezesa Urzędu Ochrony Danych Osobowych, jeśli uznasz, że przetwarzanie narusza przepisy o ochronie danych osobowych.',
+          ],
+        },
+      ],
+    },
+    terms: {
+      title: 'Regulamin',
+      intro: 'Zasady korzystania ze strony PawlikWeb i formularza kontaktowego.',
+      sections: [
+        {
+          title: 'Usługodawca',
+          paragraphs: [
+            'Usługodawcą jest Wojciech Pawlik, prowadzący działalność nierejestrowaną. Kontakt: wojciech.pawlikweb@gmail.com, +48 666 223 853.',
+            'Oferta jest kierowana do wszystkich zainteresowanych osób i podmiotów. Warunki konkretnego projektu ustalam indywidualnie przed rozpoczęciem prac.',
+          ],
+        },
+        {
+          title: 'Zakres usług elektronicznych',
+          paragraphs: [
+            'Strona umożliwia przeglądanie treści oraz wysłanie wiadomości przez formularz kontaktowy. Formularz jest bezpłatny. Samo wysłanie wiadomości nie oznacza zawarcia umowy na wykonanie projektu.',
+            'Do korzystania ze strony potrzebujesz urządzenia z dostępem do internetu i aktualnej przeglądarki. Formularz wymaga podania danych oznaczonych jako wymagane oraz zaakceptowania zgody opisanej przy formularzu.',
+          ],
+        },
+        {
+          title: 'Zasady korzystania i reklamacje',
+          paragraphs: [
+            'Zabronione jest przesyłanie treści bezprawnych, naruszających prawa innych osób, zawierających złośliwe oprogramowanie lub próby zakłócania działania strony. Użytkownik powinien korzystać z formularza zgodnie z prawem i dobrymi obyczajami.',
+            'Reklamacje dotyczące działania formularza możesz zgłosić na wojciech.pawlikweb@gmail.com. Zgłoszenie powinno opisywać problem i umożliwiać kontakt zwrotny. Odpowiedź otrzymasz bez zbędnej zwłoki.',
+          ],
+        },
+        {
+          title: 'Postanowienia końcowe',
+          paragraphs: [
+            'Treści na stronie mają charakter informacyjny. Szczegóły projektu, termin, wynagrodzenie i prawa do rezultatów są ustalane indywidualnie przed rozpoczęciem prac.',
+            'W sprawach nieuregulowanych stosuje się prawo polskie, z poszanowaniem praw konsumenta wynikających z bezwzględnie obowiązujących przepisów. Regulamin obowiązuje od dnia jego opublikowania i może zostać zmieniony, gdy wymaga tego zmiana prawa lub zakresu strony.',
+          ],
+        },
+      ],
+    },
   },
 
   notFound: {

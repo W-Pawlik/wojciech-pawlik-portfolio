@@ -8,6 +8,8 @@ type ChoiceGroupProps<Value extends string> = {
   options: readonly Value[]
   labels: Record<Value, string>
   error?: string
+  value?: Value
+  onChange?: (value: Value) => void
   /** Preselected value, e.g. when the visitor arrived from a service row (Phase 04). */
   defaultValue?: Value
 }
@@ -29,6 +31,8 @@ export function ChoiceGroup<Value extends string>({
   options,
   labels,
   error,
+  value,
+  onChange,
   defaultValue,
 }: ChoiceGroupProps<Value>) {
   const errorId = `${name}-error`
@@ -47,7 +51,8 @@ export function ChoiceGroup<Value extends string>({
               type="radio"
               name={name}
               value={option}
-              defaultChecked={option === defaultValue}
+              checked={value !== undefined ? option === value : option === defaultValue}
+              onChange={() => onChange?.(option)}
               className="peer sr-only"
             />
             <span

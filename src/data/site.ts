@@ -41,20 +41,19 @@ type SiteConfig = {
 export const siteConfig: SiteConfig = {
   name: 'PawlikWeb',
   legalName: 'Wojciech Pawlik',
-  /** TODO(brief): legal form of the business is not settled yet (sole trader or unregistered). */
-  fullLegalName: 'TODO(brief)',
+  fullLegalName: 'Wojciech Pawlik',
   description:
     'Projektuję i buduję strony, systemy webowe i automatyzacje AI dopasowane do tego, jak firma naprawdę działa. Przy większych produktach pracuję z bratem jako CodeBros.',
   /** TODO(brief): first year of client projects - no number on the site until confirmed. */
   foundedYear: 0,
   copyrightYear: 2026,
 
-  address: { street: '', postalCode: '', city: '', country: 'PL' },
+  address: { street: 'Widok 22', postalCode: '55-040', city: 'Bielany Wrocławskie', country: 'PL' },
 
   contact: {
     phone: '+48 666 223 853',
     phoneHref: 'tel:+48666223853',
-    email: 'wojtek.pawlik17@gmail.com',
+    email: 'wojciech.pawlikweb@gmail.com',
   },
 
   /** Empty by design - a project service has no opening hours (ADR-0010). */

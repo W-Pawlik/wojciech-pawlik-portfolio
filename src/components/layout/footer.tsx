@@ -57,6 +57,22 @@ export async function Footer() {
                   {dict.footer.contactTitle}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href={localizedHref(ROUTES.privacy, locale)}
+                  className="text-body-sm text-content-invert-secondary transition-colors duration-fast hover:text-content-invert"
+                >
+                  {dict.footer.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={localizedHref(ROUTES.terms, locale)}
+                  className="text-body-sm text-content-invert-secondary transition-colors duration-fast hover:text-content-invert"
+                >
+                  {dict.footer.terms}
+                </Link>
+              </li>
             </ul>
           </nav>
 

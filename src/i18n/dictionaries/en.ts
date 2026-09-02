@@ -23,7 +23,7 @@ export const en: Dictionary = {
     to: '–',
     email: 'Email',
     phone: 'Phone',
-    address: 'Address',
+    address: 'Correspondence address',
     openingHours: 'Opening hours',
     languageSwitcher: 'Change language',
     optional: 'optional',
@@ -860,6 +860,7 @@ export const en: Dictionary = {
     errorBody: 'Try again, or write to me directly.',
     consent:
       'I agree to my data being processed in order to answer this enquiry and discuss the project.',
+    consentPrivacy: 'Privacy policy',
     steps: {
       type: 'What do you need?',
       stage: 'Where are you now?',
@@ -896,12 +897,92 @@ export const en: Dictionary = {
   },
 
   footer: {
+    privacy: 'Privacy policy',
+    terms: 'Terms',
     navTitle: 'Site',
     contactTitle: 'Contact',
     codebrosTitle: 'Larger projects',
     codebrosLabel: 'CodeBros - Wojciech & Michał Pawlik',
     note: 'Designed & built by Wojciech Pawlik.',
     rights: 'All rights reserved.',
+  },
+
+  legal: {
+    privacy: {
+      title: 'Privacy policy',
+      intro:
+        'How I process data submitted through the contact form and generated while you use the website.',
+      sections: [
+        {
+          title: 'Data controller',
+          paragraphs: [
+            'The data controller is Wojciech Pawlik, operating as an unregistered activity. Contact for data protection matters: wojciech.pawlikweb@gmail.com. Phone: +48 666 223 853.',
+          ],
+        },
+        {
+          title: 'What data I process and why',
+          paragraphs: [
+            'When you use the form, I process the data you provide: name, email address, optional phone number and project description. I use it to answer your message, agree the next step and conduct correspondence about your enquiry.',
+            'Providing data is voluntary, but without your name, email address and project description I cannot answer the enquiry. The legal basis is the consent submitted with the form and, where relevant, steps taken at your request before entering into a service agreement.',
+          ],
+        },
+        {
+          title: 'Analytics and cookies',
+          paragraphs: [
+            'The website uses Vercel Web Analytics to measure visits and page popularity. According to Vercel documentation, the tool does not use cookies and analytics data is anonymised and aggregated. I do not currently use Google Analytics, Meta Pixel, Hotjar or marketing cookies.',
+            'Vercel provides the website hosting. The provider may process technical data needed to deliver the website and analytics in line with its documentation and data protection agreements.',
+          ],
+        },
+        {
+          title: 'Recipients and retention',
+          paragraphs: [
+            'Form data is sent to the Resend email service only to deliver the message to the controller. I and the technical providers involved in hosting and email delivery may access the data.',
+            'I retain data for as long as needed to handle the enquiry and then for the period needed to defend against potential claims. If data becomes part of accounting or contract records, it is retained for the period required by law.',
+          ],
+        },
+        {
+          title: 'Your rights',
+          paragraphs: [
+            'You may request access to, rectification, erasure, restriction or portability of your data. Where processing is based on consent, you may withdraw it at any time; this does not affect processing carried out before withdrawal. To exercise your rights, write to wojciech.pawlikweb@gmail.com.',
+            'You may also lodge a complaint with the President of the Polish Personal Data Protection Office if you believe that processing infringes data protection law.',
+          ],
+        },
+      ],
+    },
+    terms: {
+      title: 'Terms',
+      intro: 'Rules for using the PawlikWeb website and contact form.',
+      sections: [
+        {
+          title: 'Service provider',
+          paragraphs: [
+            'The service provider is Wojciech Pawlik, operating as an unregistered activity. Contact: wojciech.pawlikweb@gmail.com, +48 666 223 853.',
+            'The offer is addressed to all interested individuals and entities. The terms of each project are agreed individually before work begins.',
+          ],
+        },
+        {
+          title: 'Electronic services',
+          paragraphs: [
+            'The website lets you browse content and send a message through the contact form. The form is free of charge. Sending a message does not itself create a contract for a project.',
+            'You need an internet-connected device and a current web browser. The form requires the fields marked as required and acceptance of the consent described next to the form.',
+          ],
+        },
+        {
+          title: 'Use and complaints',
+          paragraphs: [
+            "You must not send unlawful content, content infringing other people's rights, malware or attempts to disrupt the website. Use the form lawfully and in accordance with good practice.",
+            'Complaints about the form may be sent to wojciech.pawlikweb@gmail.com. Describe the problem and provide a way to contact you. I will respond without undue delay.',
+          ],
+        },
+        {
+          title: 'Final provisions',
+          paragraphs: [
+            'The website content is informational. Project details, timing, fee and rights to the deliverables are agreed individually before work begins.',
+            'Polish law applies, while respecting mandatory consumer rights. These terms apply from publication and may be updated when required by law or by a change to the website.',
+          ],
+        },
+      ],
+    },
   },
 
   notFound: {

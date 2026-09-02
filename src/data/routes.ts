@@ -14,6 +14,8 @@ export const ROUTES = {
   pricing: '/cennik',
   about: '/o-mnie',
   contact: '/kontakt',
+  privacy: '/privacy',
+  terms: '/terms',
   planik: '/realizacje/planik',
   creditRisk: '/realizacje/system-oceny-ryzyka-kredytowego',
   /** Internal design-system reference. Deliberately absent from INDEXABLE_ROUTES. */
@@ -29,6 +31,8 @@ export const ROUTE_PATHS: Record<RouteKey, Record<Locale, string>> = {
   pricing: { pl: '/cennik', en: '/pricing' },
   about: { pl: '/o-mnie', en: '/about' },
   contact: { pl: '/kontakt', en: '/contact' },
+  privacy: { pl: '/privacy', en: '/privacy-policy' },
+  terms: { pl: '/terms', en: '/terms-of-service' },
   planik: { pl: '/realizacje/planik', en: '/work/planik' },
   creditRisk: {
     pl: '/realizacje/system-oceny-ryzyka-kredytowego',
@@ -92,6 +96,8 @@ export const INDEXABLE_ROUTES: readonly LocalizedRoute[] = [
   { path: ROUTES.pricing, paths: ROUTE_PATHS.pricing, priority: 0.7 },
   { path: ROUTES.about, paths: ROUTE_PATHS.about, priority: 0.7 },
   { path: ROUTES.contact, paths: ROUTE_PATHS.contact, priority: 0.6 },
+  { path: ROUTES.privacy, paths: ROUTE_PATHS.privacy, priority: 0.2 },
+  { path: ROUTES.terms, paths: ROUTE_PATHS.terms, priority: 0.2 },
   ...Object.entries(PROJECT_ROUTE_PATHS).map(([key, paths]) => ({
     path: paths.pl,
     paths,
