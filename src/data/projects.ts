@@ -66,6 +66,7 @@ export const PROJECTS: readonly Project[] = [
     tags: ['website', 'branding'],
     team: 'solo',
     showOnLanding: true,
+    liveUrl: 'https://dzendzera.vercel.app',
     status: 'pending',
     media: {
       id: 'IMG-11',
@@ -91,6 +92,7 @@ export const PROJECTS: readonly Project[] = [
     tags: ['website', 'branding'],
     team: 'solo',
     showOnLanding: true,
+    liveUrl: 'https://maw-autoserwis-eosin.vercel.app',
     status: 'pending',
     media: {
       id: 'IMG-08',
