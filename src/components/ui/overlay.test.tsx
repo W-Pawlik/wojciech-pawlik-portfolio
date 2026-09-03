@@ -85,10 +85,12 @@ describe('Overlay', () => {
   it('returns focus to the element that opened it', async () => {
     render(<Harness />)
     const opener = screen.getByRole('button', { name: 'Open' })
+    const focus = vi.spyOn(opener, 'focus')
     await userEvent.click(opener)
 
     await userEvent.keyboard('{Escape}')
 
     expect(opener).toHaveFocus()
+    expect(focus).toHaveBeenLastCalledWith({ preventScroll: true })
   })
 })

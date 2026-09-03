@@ -81,7 +81,9 @@ export function Overlay({
     document.addEventListener('keydown', onKeyDown)
     return () => {
       document.removeEventListener('keydown', onKeyDown)
-      openerRef.current?.focus()
+      // Restoring focus must not make the browser scroll to the sticky navbar's
+      // document position after the overlay is removed.
+      openerRef.current?.focus({ preventScroll: true })
     }
   }, [open, onClose])
 
