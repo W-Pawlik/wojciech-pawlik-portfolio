@@ -61,7 +61,7 @@ odpowiadają na pytanie „czy jesteśmy w podobnej kategorii budżetowej?”.
 | Prototyp AI                  | Analiza procesu i prototyp wtedy, gdy AI rozwiązuje konkretny problem.                        | `IND`            | Dane, proces, integracje i poziom kontroli | `BRAK`          | `BRAK`              |
 
 - Czy ceny wolno publikować? **tak, jako najniższą stawkę „od”; ostateczna wycena jest indywidualna**
-- Promocja otwarcia: **pierwszych 3 klientów może otrzymać landing page wyceniony od 900 zł zamiast standardowych 1 200 zł**
+- Promocja otwarcia: **dla pierwszych 3 realizacji odejmowane jest 300 zł od indywidualnej wyceny każdego projektu**
 - Co jest usługą flagową (jedna): **customowa strona internetowa**
 - Branding firmy, logo i SEO: **mogą wejść w zakres procesu i cenę projektu**
 

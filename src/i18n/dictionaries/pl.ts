@@ -713,8 +713,8 @@ export const pl = {
     quote: 'Wycena indywidualna',
     promotion: {
       label: 'Oferta na start',
-      headline: 'Pierwsze {limit} realizacje od {price}',
-      body: 'Z okazji rozpoczęcia działalności na Oferteo przygotowałem promocyjne warunki dla pierwszych klientów.',
+      headline: 'Pierwsze {limit} realizacje: -{discount} do ostatecznej wyceny',
+      body: 'Każda realizacja ma indywidualną wycenę.',
       counter: 'Skorzystało: {claimed} z {limit} miejsc',
     },
     groups: {

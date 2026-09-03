@@ -704,8 +704,8 @@ export const en: Dictionary = {
     quote: 'Individually scoped',
     promotion: {
       label: 'Launch offer',
-      headline: 'First {limit} projects from {price}',
-      body: 'To mark the start of my work on Oferteo, I am offering promotional terms to the first clients.',
+      headline: 'First {limit} projects: {discount} off the individual quote',
+      body: 'Every project is quoted individually — {discount} is deducted from the agreed price for the first {limit} projects.',
       counter: 'Used: {claimed} of {limit} places',
     },
     groups: {

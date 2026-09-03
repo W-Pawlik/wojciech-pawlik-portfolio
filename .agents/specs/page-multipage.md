@@ -28,8 +28,8 @@ Trasa `/pricing` używa pełnej hierarchii informacji:
    główną ofertą.
 
 Promocja z okazji rozpoczęcia działalności na Oferteo jest osobnym komunikatem nad ofertą.
-Obejmuje 3 pierwszych klientów, zaczyna wycenę od 900 zł i pokazuje licznik wykorzystanych
-miejsc. Licznik jest aktualizowany w `src/data/pricing.ts`.
+Obejmuje 3 pierwsze realizacje: od indywidualnej wyceny każdej z nich odejmowane jest 300 zł.
+Komunikat pokazuje licznik wykorzystanych miejsc, aktualizowany w `src/data/pricing.ts`.
 
 Utrzymanie zaczyna się od 150 zł miesięcznie dla prostej strony; większy nakład pracy lub
 zasobów może zmienić kwotę. Nowe sekcje i większe aktualizacje są rozliczane osobno: 100 zł za

@@ -36,5 +36,5 @@ export const AFTERCARE_OFFER = {
 export const PROMOTION_OFFER = {
   claimed: 0,
   limit: 3,
-  from: 900,
+  discount: 300,
 } as const

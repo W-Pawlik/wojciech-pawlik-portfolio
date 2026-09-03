@@ -19,11 +19,14 @@ export function PricingPreview({ common, copy, locale }: PricingPreviewProps) {
           <p className="mt-2 max-w-measure font-display text-display-card text-content">
             {interpolate(copy.promotion.headline, {
               limit: PROMOTION_OFFER.limit,
-              price: formatPrice(PROMOTION_OFFER.from, locale),
+              discount: formatPrice(PROMOTION_OFFER.discount, locale),
             })}
           </p>
           <p className="mt-2 max-w-measure text-body-sm text-content-secondary">
-            {copy.promotion.body}
+            {interpolate(copy.promotion.body, {
+              limit: PROMOTION_OFFER.limit,
+              discount: formatPrice(PROMOTION_OFFER.discount, locale),
+            })}
           </p>
         </div>
         <p className="col-span-12 mt-4 font-mono text-meta text-accent-strong lg:col-span-4 lg:mt-0 lg:text-right">
