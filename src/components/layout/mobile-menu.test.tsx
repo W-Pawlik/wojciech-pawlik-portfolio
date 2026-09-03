@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 
@@ -9,6 +9,8 @@ vi.mock('next/navigation', () => ({
 }))
 
 const props = {
+  logoName: 'PawlikWeb',
+  homeHref: '/pl#top',
   openLabel: 'Menu',
   closeLabel: 'Close',
   languageLabel: 'Change language',
@@ -30,8 +32,16 @@ describe('MobileMenu', () => {
 
     expect(screen.getByRole('dialog', { name: 'Menu' })).toBeInTheDocument()
     expect(opener).toHaveAttribute('aria-expanded', 'true')
+    expect(opener).toHaveAttribute('aria-hidden', 'true')
 
-    await user.click(screen.getByRole('button', { name: 'Close' }))
+    const dialog = screen.getByRole('dialog', { name: 'Menu' })
+    const closeButton = within(dialog).getByRole('button', { name: 'Close' })
+    expect(within(dialog).getByRole('link', { name: 'PawlikWeb' })).toHaveAttribute(
+      'href',
+      '/pl#top',
+    )
+
+    await user.click(closeButton)
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
     expect(opener).toHaveAttribute('aria-expanded', 'false')

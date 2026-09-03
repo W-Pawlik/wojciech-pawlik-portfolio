@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { LanguageSwitcher } from '@/components/layout/language-switcher'
+import { BrandLogo } from '@/components/ui/brand-logo'
 import { Button, ButtonLink } from '@/components/ui/button'
 import { Overlay } from '@/components/ui/overlay'
 import { formatOrdinal } from '@/lib/utils/format'
@@ -11,6 +12,8 @@ import { cn } from '@/lib/utils/cn'
 
 type MobileMenuProps = {
   /** Copy comes in as props: a client component cannot call getDictionary(). */
+  logoName: string
+  homeHref: string
   openLabel: string
   closeLabel: string
   languageLabel: string
@@ -24,11 +27,19 @@ type MobileMenuProps = {
  * server - this exists because a menu has open/closed state, and nothing else does
  * (.agents/03-architecture.md).
  *
- * The menu follows the navbar pattern used by the Vanta build: the header stays visible,
- * the panel fills the viewport underneath it, and the trigger morphs into a close icon.
- * Escape, the focus trap and the scroll lock come from `Overlay`.
+ * The menu follows the navbar pattern used by the Vanta build: the panel fills the
+ * viewport, owns its close control, and the trigger morphs into a close icon while it
+ * opens. Escape, the focus trap and the scroll lock come from `Overlay`.
  */
-export function MobileMenu({ openLabel, closeLabel, languageLabel, items, cta }: MobileMenuProps) {
+export function MobileMenu({
+  logoName,
+  homeHref,
+  openLabel,
+  closeLabel,
+  languageLabel,
+  items,
+  cta,
+}: MobileMenuProps) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -39,20 +50,22 @@ export function MobileMenu({ openLabel, closeLabel, languageLabel, items, cta }:
           onClick={() => setOpen((current) => !current)}
           className="min-h-12 min-w-12 cursor-pointer touch-manipulation border border-line-strong"
           aria-label={open ? closeLabel : openLabel}
+          aria-hidden={open}
           aria-expanded={open}
           aria-controls="mobile-menu"
+          tabIndex={open ? -1 : undefined}
         >
-          <span aria-hidden="true" className="flex w-5 flex-col gap-1.5">
+          <span aria-hidden="true" className="relative size-5">
             <span
               className={cn(
-                'h-px w-full bg-current transition-transform duration-fast',
-                open && 'translate-y-[3.5px] rotate-45',
+                'absolute left-0 h-px w-full bg-current transition-[top,transform] duration-fast',
+                open ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-1/3',
               )}
             />
             <span
               className={cn(
-                'h-px w-full bg-current transition-transform duration-fast',
-                open && '-translate-y-[3.5px] -rotate-45',
+                'absolute left-0 h-px w-full bg-current transition-[top,transform] duration-fast',
+                open ? 'top-1/2 -translate-y-1/2 -rotate-45' : 'top-2/3 -translate-y-1/2',
               )}
             />
           </span>
@@ -65,9 +78,32 @@ export function MobileMenu({ openLabel, closeLabel, languageLabel, items, cta }:
         onClose={() => setOpen(false)}
         label={openLabel}
         panelId="mobile-menu"
-        rootClassName="z-30"
-        className="!inset-0 !h-svh !bg-canvas px-gutter pt-[calc(var(--navbar-height)+var(--spacing-gutter))] pb-gutter"
+        rootClassName="z-50"
+        className="relative !inset-0 !h-svh !bg-canvas px-gutter pt-[calc(var(--navbar-height)+var(--spacing-gutter))] pb-gutter"
       >
+        <Link
+          href={homeHref}
+          onClick={() => setOpen(false)}
+          className="absolute top-[calc(var(--navbar-height)/2)] left-gutter -translate-y-1/2"
+        >
+          <BrandLogo name={logoName} />
+        </Link>
+
+        <div className="absolute top-[calc(var(--navbar-height)/2)] right-gutter -translate-y-1/2">
+          <Button
+            variant="quiet"
+            onClick={() => setOpen(false)}
+            className="min-h-12 min-w-12 cursor-pointer touch-manipulation border border-line-strong"
+            aria-label={closeLabel}
+          >
+            <span aria-hidden="true" className="relative size-5">
+              <span className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 rotate-45 bg-current" />
+              <span className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 -rotate-45 bg-current" />
+            </span>
+            <span className="sr-only">{closeLabel}</span>
+          </Button>
+        </div>
+
         <div className="flex h-full flex-col">
           <nav aria-label={openLabel}>
             <ul className="border-t border-line">

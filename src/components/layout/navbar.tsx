@@ -58,6 +58,8 @@ export async function Navbar() {
             </ButtonLink>
             <LanguageSwitcher label={dict.common.languageSwitcher} className="hidden sm:flex" />
             <MobileMenu
+              logoName={siteConfig.name}
+              homeHref={`${home}#top`}
               openLabel={dict.nav.openMenu}
               closeLabel={dict.nav.closeMenu}
               languageLabel={dict.common.languageSwitcher}
