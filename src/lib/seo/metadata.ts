@@ -18,11 +18,10 @@ type BuildMetadataOptions = {
 }
 
 /**
- * TODO(brand): 1200 x 630, then set this to '/images/og-default.jpg'. Do not point at a
- * file that does not exist - a broken OG image is worse than none, because the crawler
- * caches the miss.
+ * Shared social preview for pages without a route-specific image. Keep this file at
+ * 1200 x 630 so Open Graph and Twitter can use the same uncropped composition.
  */
-const DEFAULT_OG_IMAGE: string | undefined = undefined
+const DEFAULT_OG_IMAGE = '/images/brand/og-default.jpg'
 
 /**
  * Builds a complete Metadata object so no route has to remember the Open Graph and

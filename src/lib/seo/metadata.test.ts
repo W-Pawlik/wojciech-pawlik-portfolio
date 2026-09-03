@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
+import { siteUrl } from '@/data/site'
 import { locales } from '@/i18n/config'
 
 import { buildMetadata } from './metadata'
@@ -41,19 +42,17 @@ describe('buildMetadata', () => {
     expect(metadata.twitter?.description).toBe('Opis.')
   })
 
-  /**
-   * A broken OG image is worse than none: the crawler caches the miss. So when no image
-   * is configured, neither card may declare one.
-   */
-  it('declares no image while none is configured', () => {
+  it('declares the shared social image on both card types', () => {
     const metadata = buildMetadata({ locale: 'pl' })
 
-    expect(metadata.openGraph).not.toHaveProperty('images')
-    expect(metadata.twitter).not.toHaveProperty('images')
+    expect(metadata.openGraph?.images).toEqual([
+      { url: `${siteUrl}/images/brand/og-default.jpg`, width: 1200, height: 630 },
+    ])
+    expect(metadata.twitter?.images).toEqual([`${siteUrl}/images/brand/og-default.jpg`])
   })
 
   it('resolves a relative image path against the site origin', () => {
-    const metadata = buildMetadata({ locale: 'pl', image: '/images/og-default.jpg' })
+    const metadata = buildMetadata({ locale: 'pl', image: '/images/brand/og-default.jpg' })
     const images =
       metadata.openGraph && 'images' in metadata.openGraph ? metadata.openGraph.images : undefined
 
