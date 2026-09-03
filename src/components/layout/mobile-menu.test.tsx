@@ -1,12 +1,17 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { MobileMenu } from './mobile-menu'
+
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/pl',
+}))
 
 const props = {
   openLabel: 'Menu',
   closeLabel: 'Close',
+  languageLabel: 'Change language',
   items: [{ href: '/pl', label: 'Home' }],
   cta: { href: '/pl/contact', label: 'Tell me about your project' },
 } as const

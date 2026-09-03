@@ -24,7 +24,6 @@ type SelectedWorkStageProps = {
 const CARD_HEIGHT_RATIO = 0.25
 const CARD_ASPECT_RATIO = 1.35
 const CARD_GAP_RATIO = 0.04
-const STRIP_TOP_RATIO = 0.5
 const WHEEL_THRESHOLD = 80
 const WHEEL_COOLDOWN = 650
 const ALIGNMENT_TOLERANCE = 4
@@ -256,10 +255,7 @@ export function SelectedWorkStage({ projects, copy, locale }: SelectedWorkStageP
         </div>
       </div>
 
-      <div
-        className="absolute inset-x-0 z-10 overflow-hidden"
-        style={{ top: `${STRIP_TOP_RATIO * 100}%` }}
-      >
+      <div className="absolute inset-x-0 top-1/3 z-10 overflow-hidden lg:top-1/2">
         <motion.div
           className="flex items-start"
           style={{ gap: cardGap, x: stripX, cursor: dragging ? 'grabbing' : 'grab' }}
@@ -318,14 +314,16 @@ export function SelectedWorkStage({ projects, copy, locale }: SelectedWorkStageP
         </motion.div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10 px-gutter pb-gutter">
+      <div className="absolute inset-x-0 bottom-0 z-10 bg-canvas-invert/90 px-gutter pb-gutter lg:bg-transparent">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="max-w-2xl">
-            <p className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-meta text-content-invert-tertiary uppercase">
+            <p className="flex w-fit max-w-full flex-wrap gap-x-2 gap-y-1 bg-canvas-invert/75 px-2 py-1 font-mono text-meta text-content-invert-tertiary uppercase lg:gap-x-4 lg:bg-transparent lg:px-0 lg:py-0">
               {activeProject.tags.map((tag) => (
-                <span key={tag}>{copy.tags[tag]}</span>
+                <span key={tag} className="max-w-full">
+                  {copy.tags[tag]}
+                </span>
               ))}
-              <span className="text-accent">
+              <span className="max-w-full text-accent">
                 {activeProject.team === 'codebros' ? copy.teamCodebros : copy.teamSolo}
               </span>
             </p>

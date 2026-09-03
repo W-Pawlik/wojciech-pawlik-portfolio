@@ -13,6 +13,8 @@ type OverlayProps = {
   label: string
   children: ReactNode
   className?: string
+  panelId?: string
+  rootClassName?: string
 }
 
 const FOCUSABLE =
@@ -27,7 +29,15 @@ const FOCUSABLE =
  * rendered inside a section could never paint over the sticky navbar
  * (.agents/02-design-system.md).
  */
-export function Overlay({ open, onClose, label, children, className }: OverlayProps) {
+export function Overlay({
+  open,
+  onClose,
+  label,
+  children,
+  className,
+  panelId,
+  rootClassName,
+}: OverlayProps) {
   const panelRef = useRef<HTMLDivElement>(null)
   const openerRef = useRef<HTMLElement | null>(null)
 
@@ -78,7 +88,7 @@ export function Overlay({ open, onClose, label, children, className }: OverlayPr
   if (!open) return null
 
   return createPortal(
-    <div className="fixed inset-0 z-50">
+    <div className={cn('fixed inset-0 z-50', rootClassName)}>
       {/* Decorative: the same action is available on the close button inside the panel,
           which is what assistive technology and the keyboard use. */}
       <div
@@ -88,6 +98,7 @@ export function Overlay({ open, onClose, label, children, className }: OverlayPr
       />
       <div
         ref={panelRef}
+        id={panelId}
         role="dialog"
         aria-modal="true"
         aria-label={label}

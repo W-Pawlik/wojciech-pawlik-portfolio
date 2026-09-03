@@ -56,10 +56,11 @@ export async function Navbar() {
             >
               {dict.nav.cta}
             </ButtonLink>
-            <LanguageSwitcher label={dict.common.languageSwitcher} />
+            <LanguageSwitcher label={dict.common.languageSwitcher} className="hidden sm:flex" />
             <MobileMenu
               openLabel={dict.nav.openMenu}
               closeLabel={dict.nav.closeMenu}
+              languageLabel={dict.common.languageSwitcher}
               items={items}
               cta={{ href: localizedHref(ROUTES.contact, locale), label: dict.nav.ctaMobile }}
             />
