@@ -31,7 +31,8 @@ export type Project = {
   /** Search-friendly case-study slugs for every published language. */
   slugs: Record<Locale, string>
   /** Dictionary key under `work.projects`. */
-  key: 'planik' | 'creditRisk' | 'mawAuto' | 'agnieszkaLuzarska' | 'vantaDetailing' | 'dzendzera'
+  key: 'planik' | 'creditRisk' | 'mawAuto' | 'agnieszkaLuzarska' | 'vantaDetailing'
+  // | 'dzendzera' // Temporarily hidden; restore together with the commented project entry.
   tags: readonly ProjectTag[]
   /**
    * Displayed as mono metadata when known. A string, not a number: some builds span two
@@ -59,6 +60,7 @@ export type Project = {
 }
 
 export const PROJECTS: readonly Project[] = [
+  /*
   {
     slug: 'dzendzera',
     slugs: { pl: 'dzendzera', en: 'dzendzera-photography' },
@@ -85,6 +87,7 @@ export const PROJECTS: readonly Project[] = [
     },
     logoSrc: '/images/projects/dzendzera/logo-black.svg',
   },
+  */
   {
     slug: 'maw-autoserwis',
     slugs: { pl: 'maw-autoserwis', en: 'maw-autoservice' },

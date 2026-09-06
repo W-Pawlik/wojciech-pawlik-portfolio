@@ -107,11 +107,13 @@ export const en: Dictionary = {
         title: 'Maw Autoserwis',
         description: 'Branding and website for a versatile automotive workshop.',
       },
+      /*
       dzendzera: {
         title: 'Dzendzera',
         description:
           'A photographer’s website bringing sport, motorsport and wildlife into one visual language.',
       },
+      */
       agnieszkaLuzarska: {
         title: 'Agnieszka Luzarska',
         description:

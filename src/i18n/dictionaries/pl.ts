@@ -117,11 +117,13 @@ export const pl = {
         title: 'Maw Autoserwis',
         description: 'Branding i strona internetowa dla wszechstronnego warsztatu samochodowego.',
       },
+      /*
       dzendzera: {
         title: 'Dżendżera',
         description:
           'Strona fotografa łącząca sport, motorsport i wildlife w jeden spójny język wizualny.',
       },
+      */
       agnieszkaLuzarska: {
         title: 'Agnieszka Luzarska',
         description: 'Osobista strona dyrektor i konsultantki Mary Kay, oparta na storytellingu.',
