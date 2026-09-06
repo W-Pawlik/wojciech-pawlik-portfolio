@@ -179,7 +179,7 @@ export const en: Dictionary = {
       title: 'Dzendzera',
       categories: 'Website / Brand creation',
       statement:
-        'For Maciej Dżendżera, I created a photographer’s website that brings sport, motorsport and wildlife into one coherent brand direction.',
+        'For Dzendzera, I created a photographer’s website that brings sport, motorsport and wildlife into one coherent brand direction.',
       meta: {
         status: { label: 'Status', value: 'Completed project' },
       },

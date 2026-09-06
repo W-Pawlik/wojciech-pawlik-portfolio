@@ -119,7 +119,7 @@ export const pl = {
       },
       /*
       dzendzera: {
-        title: 'Dżendżera',
+        title: 'Dzendzera',
         description:
           'Strona fotografa łącząca sport, motorsport i wildlife w jeden spójny język wizualny.',
       },
@@ -185,10 +185,10 @@ export const pl = {
       nextLabel: 'Następna realizacja',
     },
     dzendzera: {
-      title: 'Dżendżera',
+      title: 'Dzendzera',
       categories: 'Strona internetowa / Stworzenie brandingu',
       statement:
-        'Dla Macieja Dżendżery stworzyłem stronę fotograficzną, która łączy sport, motorsport i wildlife w jeden spójny kierunek marki.',
+        'Dla Dzendzera stworzyłem stronę fotograficzną, która łączy sport, motorsport i wildlife w jeden spójny kierunek marki.',
       meta: {
         status: { label: 'Status', value: 'Projekt zrealizowany' },
       },
